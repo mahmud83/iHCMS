@@ -1,0 +1,23 @@
+2012/10/31 18:03:24 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Applications/AMPPS/www/iHCMS/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Applications/AMPPS/www/yii/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Applications/A...')
+#1 /Applications/AMPPS/www/yii/framework/web/CAssetManager.php(235): CAssetManager->getBasePath()
+#2 /Applications/AMPPS/www/yii/framework/web/CClientScript.php(463): CAssetManager->publish('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CClientScript.php(500): CClientScript->getCoreScriptUrl()
+#4 /Applications/AMPPS/www/yii/framework/web/CClientScript.php(316): CClientScript->getPackageBaseUrl('jquery')
+#5 /Applications/AMPPS/www/yii/framework/web/CClientScript.php(209): CClientScript->renderCoreScripts()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(352): CClientScript->render('<!DOCTYPE html ...')
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(789): CController->processOutput('<!DOCTYPE html ...')
+#8 /Applications/AMPPS/www/iHCMS/protected/controllers/SiteController.php(98): CController->render('login', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/iHCMS/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/iHCMS/index.php?r=site/login
+HTTP_REFERER=http://localhost/iHCMS/
+---
