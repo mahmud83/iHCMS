@@ -21,3 +21,205 @@ Stack trace:
 REQUEST_URI=/iHCMS/index.php?r=site/login
 HTTP_REFERER=http://localhost/iHCMS/
 ---
+2012/11/01 08:10:41 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/Applications/AMPPS/www/ihcms/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /Applications/AMPPS/www/yii/framework/web/CAssetManager.php:128
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CAssetManager.php(113): CAssetManager->setBasePath('/Applications/A...')
+#1 /Applications/AMPPS/www/yii/framework/web/CAssetManager.php(235): CAssetManager->getBasePath()
+#2 /Applications/AMPPS/www/yii/framework/gii/GiiModule.php(143): CAssetManager->publish('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/base/CComponent.php(112): GiiModule->getAssetsUrl()
+#4 /Applications/AMPPS/www/yii/framework/base/CModule.php(106): CComponent->__get('assetsUrl')
+#5 /Applications/AMPPS/www/yii/framework/gii/views/layouts/main.php(5): CModule->__get('assetsUrl')
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#7 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#8 /Applications/AMPPS/www/yii/framework/web/widgets/CContentDecorator.php(77): CBaseController->renderFile('/Applications/A...', Array, true)
+#9 /Applications/AMPPS/www/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate('<div class="con...')
+#10 /Applications/AMPPS/www/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput('<div class="con...')
+#11 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(207): COutputProcessor->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#13 /Applications/AMPPS/www/yii/framework/gii/views/layouts/column1.php(7): CBaseController->endContent()
+#14 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/gii/controllers/DefaultController.php(47): CController->render('login', Array)
+#18 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): DefaultController->actionLogin()
+#19 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#20 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#21 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#23 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii/default/log...')
+#24 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#25 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/ihcms/index.php?r=gii/default/login
+---
+2012/11/01 08:30:58 [error] [php] Invalid argument supplied for foreach() (/Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php:1960)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): PropinsiController->renderInternal()
+#2 /Applications/AMPPS/www/yii/framework/web/CController.php(870): PropinsiController->renderFile()
+#3 /Applications/AMPPS/www/ihcms/protected/views/propinsi/create.php(18): PropinsiController->renderPartial()
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): PropinsiController->renderInternal()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): PropinsiController->renderFile()
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): PropinsiController->renderPartial()
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/PropinsiController.php(79): PropinsiController->render()
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): PropinsiController->actionCreate()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): PropinsiController->runAction()
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): PropinsiController->filterAccessControl()
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): PropinsiController->runActionWithFilters()
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): PropinsiController->run()
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php?r=propinsi/create
+in /Applications/AMPPS/www/ihcms/protected/views/propinsi/_form.php (39)
+in /Applications/AMPPS/www/ihcms/protected/views/propinsi/create.php (18)
+in /Applications/AMPPS/www/ihcms/protected/controllers/PropinsiController.php (79)
+2012/11/01 09:04:55 [error] [exception.CException] exception 'CException' with message 'LoginController cannot find the requested view "index".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/LoginController.php(12): CController->render('index', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionIndex()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('')
+#7 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('login')
+#8 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ihcms/index.php?r=login
+---
+2012/11/01 15:03:16 [error] [exception.CException] exception 'CException' with message 'LoginController cannot find the requested view "index".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/LoginController.php(12): CController->render('index', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionIndex()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('')
+#7 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('login')
+#8 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ihcms/index.php?r=login
+HTTP_REFERER=http://localhost/ihcms/index.php?r=propinsi/index
+---
+2012/11/01 15:18:44 [error] [exception.CException] exception 'CException' with message 'LoginController cannot find the requested view "index".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/LoginController.php(12): CController->render('index', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionIndex()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('')
+#7 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('login')
+#8 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ihcms/index.php?r=login
+HTTP_REFERER=http://localhost/ihcms/index.php?r=propinsi/index
+---
+2012/11/01 15:19:11 [error] [exception.CException] exception 'CException' with message 'LoginController cannot find the requested view "index".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/LoginController.php(12): CController->render('index', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): LoginController->actionIndex()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('')
+#7 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('login')
+#8 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/ihcms/index.php?r=login
+---
+2012/11/01 15:24:09 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.BootMenu" is invalid. Make sure it points to an existing directory or file.' in /Applications/AMPPS/www/yii/framework/YiiBase.php:343
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWidgetFactory.php(147): YiiBase::import('bootstrap.widge...', true)
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(NegaraController), 'bootstrap.widge...', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /Applications/AMPPS/www/ihcms/protected/views/negara/index.php(39): CBaseController->widget('bootstrap.widge...', Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(161): CController->render('index', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionIndex()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/index')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php?r=negara/index
+---
+2012/11/01 15:30:08 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.BootMenu" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /Applications/AMPPS/www/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWidgetFactory.php(147): YiiBase::import('bootstrap.widge...', true)
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(NegaraController), 'bootstrap.widge...', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /Applications/AMPPS/www/ihcms/protected/views/negara/index.php(39): CBaseController->widget('bootstrap.widge...', Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(161): CController->render('index', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionIndex()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/index')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php?r=negara/index
+---
+2012/11/01 15:30:12 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.widgets.BootMenu" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /Applications/AMPPS/www/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWidgetFactory.php(147): YiiBase::import('bootstrap.widge...', true)
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(NegaraController), 'bootstrap.widge...', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /Applications/AMPPS/www/ihcms/protected/views/negara/index.php(39): CBaseController->widget('bootstrap.widge...', Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(161): CController->render('index', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionIndex()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/index')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php?r=negara/index
+---
