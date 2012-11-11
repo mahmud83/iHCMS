@@ -62,6 +62,7 @@ return array(
 		*/
 		
 		'db'=>array(
+			'pdoClass' => 'NestedPDO',
 			'connectionString' => 'mysql:host=localhost;dbname=ihcms',
 			'emulatePrepare' => true,
 			'username' => 'tarjono',

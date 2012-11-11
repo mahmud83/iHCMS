@@ -33,6 +33,16 @@
 #line-chart {
 	height: 300px;
 }
+
+.grid-view {
+	padding-top: 0px !important;
+}
+
+.grid-view .summary {
+	margin-top: -39px;
+	color: white;
+	margin-bottom: 0px !important;
+}
 /** section styles for error boostrap end here **/
 
 

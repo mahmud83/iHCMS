@@ -91,7 +91,6 @@ class Negara extends CActiveRecord
 		$criteria->compare('nama',$this->nama,true);
 		$criteria->compare('iso3',$this->iso3,true);
 		$criteria->compare('numcode',$this->numcode);
-		
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
