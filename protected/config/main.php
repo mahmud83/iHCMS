@@ -20,7 +20,7 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		
+		'Wilayah',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'tarjono',

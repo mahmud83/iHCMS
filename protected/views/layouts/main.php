@@ -1,62 +1,285 @@
-<?php /* @var $this Controller */ ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-
-	<!-- blueprint CSS framework -->
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-	<!--[if lt IE 8]>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-	<![endif]-->
-
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<meta charset="utf-8">
+	<title>Jektungan Admin Theme</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="description apps">
+	<meta name="author" content="masbenx">
+	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/global.css" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css">
 </head>
-
 <body>
-
-<div class="container" id="page">
-
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'Propinsi', 'url'=>array('/propinsi/index')),
-				array('label'=>'Negara', 'url'=>array('/negara/index')),
-				array('label'=>'Setting', 'url'=>array('/preference/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
-
-	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
-</div><!-- page -->
-
+	<!-- navbar start here !-->
+	<div class="top">
+		<div class="navbar">
+		  <div class="navbar-inner">
+		    <div class="logo pull-left">
+		    	<a href="#"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/logo.png" alt=""></a>
+		    </div>
+		    <div class="nav-config dropdown pull-right">
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			    	<i class="icon-cogs"></i>
+			    </a>
+			    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+			    	<li><a>Change Setting</a></li>
+			    	<li><a>Change Setting</a></li>
+			    	<li class="divider"></li>
+			    	<li><a>Logout</a></li>
+			    </ul>
+		    </div>
+		    <!--
+		    <form class="navbar-search pull-right">
+		      <input type="text" class="search-query" placeholder="Search">
+		    </form>
+		    !-->
+		  </div>
+		</div>
+	</div>
+	<!-- navbar stop here !-->
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="sidebar">
+				<div class="row-fluid user-details">
+					<div class="avatar">
+						<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/avatar.png" width="72px" class="img-rounded">
+					</div>
+					<div class="details">
+						<div class="username">Welcome, <strong>John Doe</strong></div>
+						<div class="log-data">Last sign in : 16:11 Feb 27th 2012</div>
+						<div class="control">
+							<a href="#" class="message"><i class="icon-envelope"></i>Notification <span class="badge">10</span></a>
+							<a href="#" class="logout"><i class="icon-unlock"></i>Logout</a>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid" id="sidebar">
+					<div class="first-nav">
+						<ul>
+							<li class="active"><a href="dashboard.html"><i class="icon-home"></i>Dashboard</a></li>
+							<li><a href="graph_stats.html"><i class="icon-bar-chart"></i>Graph &amp; Stats</a></li>
+							<li><a href="#"><i class="icon-external-link"></i>Forms</a></li>
+							<li><a href="#"><i class="icon-text-height"></i>Typografy</a></li>
+							<li><a href="#"><i class="icon-tasks"></i>UI Elements</a></li>
+							<li><a href="#"><i class="icon-file"></i>Pages</a></li>
+						</ul>
+					</div>
+					<!--
+					<div class="second-nav" id="sc">
+						<h2>Dashboard</h2>
+						<div class="divider"></div>
+						<ul>
+							<li><a href="#"><i class="icon-user"></i>User Profile</a></li>
+							<li><a href="#"><i class="icon-key"></i>Change Password</a></li>
+							<li><a href="#"><i class="icon-calendar"></i>Calendar</a></li>
+						</ul>
+					</div>
+					!-->
+				</div>
+			</div>
+			<div class="content" id="content-scale">
+				<div class="second-nav" id="sc">
+					<h2>Dashboard</h2>
+					<div class="divider"></div>
+					<ul>
+						<li><a href="user_profile.html"><i class="icon-user"></i>User Profile</a></li>
+						<li><a href="change_password.html"><i class="icon-key"></i>Change Password</a></li>
+						<li><a href="calendar.html"><i class="icon-calendar"></i>Calendar</a></li>
+					</ul>
+				</div>
+				<div class="content-wrapper">
+					<div class="row-fluid no-clear">
+						<div class="span12 head-info">
+							<div class="head_breadcrumb">
+								<h3>Dashboard</h3>
+								<ul class="breadcrumb">
+								  <li><a href="#">Home</a> <span class="divider">/</span></li>
+								  <li><a href="#">Library</a> <span class="divider">/</span></li>
+								  <li class="active">Data</li>
+								</ul>
+							</div>
+							<div class="date">
+								<div class="day">08</div> 
+								<div class="month">Nov</div> 
+								<div class="year">2012</div>
+							</div>
+						</div>
+					</div>
+					<div class="row-fluid no-clear">
+						<div class="span12 content-info">
+							<button class="btn pull-right" type="button"><i class="icon-info-sign"></i>Information</button>
+						</div>
+					</div>
+					<div class="row-fluid no-clear">
+						<div class="span12 widget">
+							<div class="widget-title">
+								<i class="icon-bar-chart titleicon"></i>
+								<p>Monthly Stats</p>
+							</div>
+							<div class="widget-content">
+								<div id="line-chart"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row-fluid no-clear">
+						<div class="span6 widget">
+							<div class="widget-title">
+								<i class="icon-group titleicon"></i>
+								<p>Last Login user</p>
+							</div>
+							<div class="widget-content">
+								<ul class="list-user">
+									<li>
+										<a href="#" class="user-img"><img src="user/face1.png" width="50px" alt="" /></a>
+										<div class="user-info">
+											<a href="#"><strong>Rahendra Putra</strong></a>
+											<i class="user-occ">Chief Designer On Radicted Corporation</i>
+											<i class="user-ll">Last sign in : 16:11 Feb 27th 2012</i>
+										</div>
+									</li>
+									<li>
+										<a href="#" class="user-img"><img src="user/face2.png" width="50px" alt="" /></a>
+										<div class="user-info">
+											<a href="#"><strong>Angger Dwi Purna</strong></a>
+											<i class="user-occ">Chief Programmer On Script Corporation</i>
+											<i class="user-ll">Last sign in : 16:11 Feb 27th 2012</i>
+										</div>
+									</li>
+									<li>
+										<a href="#" class="user-img"><img src="user/face3.png" width="50px" alt="" /></a>
+										<div class="user-info">
+											<a href="#"><strong>Avriqq Ramadhan</strong></a>
+											<i class="user-occ">Chief Designer On Script Corporation</i>
+											<i class="user-ll">Last sign in : 16:11 Feb 27th 2012</i>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					
+						<div class="span6 widget">
+							<div class="widget-title">
+								<i class="icon-list-alt titleicon"></i>
+								<p>Competency Summary</p>
+							</div>
+							<div class="widget-content">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Competency</th>
+											<th>Value</th>
+											<th>Changes</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Soft Competency</td>
+											<td>82.3%</td>
+											<td class="color-green"><i class="icon-circle-arrow-up"></i> 3.47%</td>
+										</tr>
+										<tr>
+											<td>Hard Competency</td>
+											<td>66.8%</td>
+											<td class="color-red"><i class="icon-circle-arrow-down"></i> 20.47%</td>
+										</tr>
+										<tr>
+											<td>Managerial Competency</td>
+											<td>90.0%</td>
+											<td class="color-green"><i class="icon-circle-arrow-up"></i>11.33%</td>
+										</tr>
+										<tr>
+											<td>Production Competency</td>
+											<td>72.3%</td>
+											<td class="color-green"><i class="icon-circle-arrow-up"></i>7.33%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- let start draw a footer !-->
+				<div class="row-fluid no-clear">
+					<div class="span12 footer">
+						As usually all rights reserved. And as usually brought to you by <a href="http://masbenx.net">@masbenx</a>
+					</div>
+				</div>
+				<!-- footer end draw here !-->
+				<div class="clear-both"></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- this place you can add javascript !-->
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/highcharts.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/modules/exporting.js"></script>
+	<script type="text/javascript" language="javascript">
+		$(function () {
+		    var chart;
+		    $(document).ready(function() {
+		        chart = new Highcharts.Chart({
+		            chart: {
+		                renderTo: 'line-chart',
+		                type: 'line',
+		                marginRight: 130,
+		                marginBottom: 25
+		            },
+		            title: {
+		                text: 'Monthly Average Temperature',
+		                x: -20 //center
+		            },
+		            subtitle: {
+		                text: 'Source: WorldClimate.com',
+		                x: -20
+		            },
+		            xAxis: {
+		                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+		                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+		            },
+		            yAxis: {
+		                title: {
+		                    text: 'Temperature (°C)'
+		                },
+		                plotLines: [{
+		                    value: 0,
+		                    width: 1,
+		                    color: '#808080'
+		                }]
+		            },
+		            tooltip: {
+		                formatter: function() {
+		                        return '<b>'+ this.series.name +'</b><br/>'+
+		                        this.x +': '+ this.y +'°C';
+		                }
+		            },
+		            legend: {
+		                layout: 'vertical',
+		                align: 'right',
+		                verticalAlign: 'top',
+		                x: -10,
+		                y: 100,
+		                borderWidth: 0
+		            },
+		            series: [{
+		                name: 'Tokyo',
+		                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+		            }, {
+		                name: 'New York',
+		                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+		            }, {
+		                name: 'Berlin',
+		                data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+		            }, {
+		                name: 'London',
+		                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+		            }]
+		        });
+		    });
+		    
+		});
+	</script>
+	
 </body>
 </html>

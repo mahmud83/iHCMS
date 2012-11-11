@@ -223,3 +223,1458 @@ Stack trace:
 #22 {main}
 REQUEST_URI=/ihcms/index.php?r=negara/index
 ---
+2012/11/01 17:00:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wilayah".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wilayah')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/wilayah
+---
+2012/11/01 19:11:48 [error] [php] Invalid argument supplied for foreach() (/Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbTabs.php:134)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): TbTabs->run()
+#1 /Applications/AMPPS/www/ihcms/protected/views/layouts/main.php(59): SiteController->widget()
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#4 /Applications/AMPPS/www/yii/framework/web/widgets/CContentDecorator.php(77): SiteController->renderFile()
+#5 /Applications/AMPPS/www/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate()
+#6 /Applications/AMPPS/www/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#7 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(207): CContentDecorator->run()
+#8 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(301): SiteController->endWidget()
+#9 /Applications/AMPPS/www/ihcms/protected/views/layouts/column1.php(6): SiteController->endContent()
+#10 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#11 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(785): SiteController->renderFile()
+#13 /Applications/AMPPS/www/ihcms/protected/controllers/SiteController.php(32): SiteController->render()
+#14 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#15 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(287): SiteController->runAction()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/
+in /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbTabs.php (134)
+in /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbTabs.php (147)
+in /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbTabs.php (90)
+2012/11/02 18:38:19 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:38:58 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:39:00 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:39:48 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:39:51 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:40:27 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:40:42 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:40:44 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:40:46 [error] [exception.CException] exception 'CException' with message 'NegaraController contains improperly nested widget tags in its view "/Applications/AMPPS/www/ihcms/protected/views//layouts/column2.php". A CContentDecorator widget does not have an endWidget() call.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:102
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:41:05 [error] [exception.CException] exception 'CException' with message 'NegaraController has an extra endWidget(CContentDecorator) call in its view.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:211
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#1 /Applications/AMPPS/www/ihcms/protected/views/layouts/column2.php(29): CBaseController->endContent()
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#6 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#16 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#17 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/02 18:41:10 [error] [exception.CException] exception 'CException' with message 'NegaraController has an extra endWidget(CContentDecorator) call in its view.' in /Applications/AMPPS/www/yii/framework/web/CBaseController.php:211
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#1 /Applications/AMPPS/www/ihcms/protected/views/layouts/column2.php(29): CBaseController->endContent()
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(785): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/ihcms/protected/controllers/NegaraController.php(148): CController->render('admin', Array)
+#6 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): NegaraController->actionAdmin()
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#16 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/admin')
+#17 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/ihcms/index.php/negara/admin
+---
+2012/11/09 17:42:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/bootst...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/bootstrap-responsive.min.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/bootst...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/font-a...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/font-awesome.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/DT_boo...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/DT_bootstrap.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/global...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/global.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/bootstr...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.dataTables.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/DT_boot...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/DT_bootstrap.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('img')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('img')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/img/logo.p...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/img/logo.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('img')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('img')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/img/avatar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/img/avatar.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:42:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.dataTables.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/bootstr...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/DT_boot...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/DT_bootstrap.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('img')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('img')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/img/logo.p...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/img/logo.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('img')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('img')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/img/avatar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/img/avatar.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:43:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/bootstr...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/DT_boot...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/DT_bootstrap.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.dataTables.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:44:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/DT_boot...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/DT_bootstrap.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.dataTables.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/bootstr...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.dataTables.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/DT_boot...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/DT_bootstrap.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:46:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:47:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/bootstr...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:47:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:47:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/jquery....')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/jquery.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:47:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:47:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:47:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:48:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:48:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:48:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:48:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:48:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:49:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:50:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/modules...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/modules/exporting.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('js')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('js')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/js/highcha...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/js/highcharts.js
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:53:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:54:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face1...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:54:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face3...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:54:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/user/face2...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 17:56:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/face1.png".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face1.png')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2012/11/09 17:56:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/face2.png".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face2.png')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2012/11/09 17:56:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/face3.png".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face3.png')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2012/11/09 18:09:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/bootst...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 18:09:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/global...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/global.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 18:09:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/font-a...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/font-awesome.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 18:09:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "img".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('img')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('img')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/img/logo.p...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/img/logo.png
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 18:09:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/bootst...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/bootstrap-responsive.min.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 18:09:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('css')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('css')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/css/DT_boo...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/css/DT_bootstrap.css
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2012/11/09 19:14:56 [error] [exception.CException] exception 'CException' with message 'Property "CActiveForm.class" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWidgetFactory.php(162): CComponent->__set('class', 'form-horizontal')
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'CActiveForm', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(190): CBaseController->createWidget('CActiveForm', Array)
+#3 /Applications/AMPPS/www/ihcms/protected/views/site/login.php(13): CBaseController->beginWidget('CActiveForm', Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('login', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/site/login
+---
+2012/11/10 12:08:35 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "textFieldRow".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/views/site/login.php(15): CComponent->__call('textFieldRow', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/views/site/login.php(15): CActiveForm->textFieldRow(Object(LoginForm), 'username', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('login', Array, true)
+#6 /Applications/AMPPS/www/ihcms/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#7 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#8 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/site/login
+---
+2012/11/10 12:16:41 [error] [exception.CException] exception 'CException' with message 'Property "TbButton.class" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWidgetFactory.php(162): CComponent->__set('class', 'pull-right')
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /Applications/AMPPS/www/ihcms/protected/views/site/login.php(13): CBaseController->widget('bootstrap.widge...', Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('login', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/site/login
+---
+2012/11/10 12:24:54 [error] [exception.CException] exception 'CException' with message 'Property "TbButton.class" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWidgetFactory.php(162): CComponent->__set('class', '')
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 /Applications/AMPPS/www/ihcms/protected/views/site/login.php(13): CBaseController->widget('bootstrap.widge...', Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('login', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/SiteController.php(99): CController->render('login', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/site/login
+---
