@@ -5469,3 +5469,142 @@ Stack trace:
 REQUEST_URI=/ihcms/index.php/negara/user/face2.png
 HTTP_REFERER=http://localhost/ihcms/index.php/negara/index
 ---
+2012/11/12 03:14:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "BV".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('BV')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('BV')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/BV')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/BV
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:14:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Applications/AMPPS/www/yii/framework/web/CController.php:337
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('update')
+#9 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/update/B...')
+#10 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/ihcms/index.php/negara/update/BV
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:15:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "graph_stats.html".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('graph_stats.htm...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('graph_stats.htm...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/graph_st...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/graph_stats.html
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:15:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard.html".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('dashboard.html')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('dashboard.html')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/dashboar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/dashboard.html
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/graph_stats.html
+---
+2012/11/12 03:15:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard.html".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('dashboard.html')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('dashboard.html')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/dashboar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/dashboard.html
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/dashboard.html
+---
+2012/11/12 03:15:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard.html".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('dashboard.html')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('dashboard.html')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/dashboar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/dashboard.html
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/dashboard.html
+---
+2012/11/12 03:25:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/user/fac...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:25:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/user/fac...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:25:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/user/fac...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:28:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/user/fac...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:28:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/user/fac...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
+2012/11/12 03:28:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('user')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('user')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('negara/user/fac...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/negara/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/negara/admin
+---
