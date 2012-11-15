@@ -7,9 +7,10 @@ class NegaraController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
+	public $breadcrumbs=array();
+	public $sub_title = "";
+	public $title = "";
 	
-	public $breadcrumbs = array();
-
 	/**
 	 * @return array action filters
 	 */
@@ -52,6 +53,9 @@ class NegaraController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->breadcrumbs = array('Negara'=>'', 'Detail');
+		$this->sub_title = "Detail Data Negara";
+		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -66,13 +70,13 @@ class NegaraController extends Controller
 		$model=new Negara;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Negara']))
 		{
 			$model->attributes=$_POST['Negara'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->kode));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -87,6 +91,9 @@ class NegaraController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->breadcrumbs = array('Negara'=>'', 'Ubah');
+		$this->sub_title = "Ubah Data Negara";
+		
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -96,7 +103,7 @@ class NegaraController extends Controller
 		{
 			$model->attributes=$_POST['Negara'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->kode));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -129,13 +136,14 @@ class NegaraController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array('Negara'=>'#', 'List');
+		$this->breadcrumbs = array('Negara');
+		$this->sub_title = "Daftar Data Negara";
+		
 		//$dataProvider=new CActiveDataProvider('Negara');
 		$dataProvider=new Negara('search');
 		$dataProvider->unsetAttributes();  // clear any default values
 		if(isset($_GET['Negara']))
-			$dataProvider->attributes=$_GET['Negara'];
-			
+			$model->attributes=$_GET['Negara'];
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -146,6 +154,9 @@ class NegaraController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->breadcrumbs = array('Negara'=>'', 'Manajemen');
+		$this->sub_title = "Manajemen Data Negara";
+	
 		$model=new Negara('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Negara']))

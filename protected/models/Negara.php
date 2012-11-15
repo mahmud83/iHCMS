@@ -4,12 +4,14 @@
  * This is the model class for table "negara".
  *
  * The followings are the available columns in table 'negara':
+ * @property integer $id
  * @property string $kode
  * @property string $nama
  * @property string $iso3
  * @property integer $numcode
  *
  * The followings are the available model relations:
+ * @property KaryawanImigrasi[] $karyawanImigrasis
  * @property Propinsi[] $propinsis
  */
 class Negara extends CActiveRecord
@@ -40,14 +42,15 @@ class Negara extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('kode', 'required'),
+			array('kode, nama', 'required'),
+			array('kode, iso3', 'unique'),
 			array('numcode', 'numerical', 'integerOnly'=>true),
 			array('kode', 'length', 'max'=>2),
 			array('nama', 'length', 'max'=>100),
 			array('iso3', 'length', 'max'=>3),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('kode, nama, iso3, numcode', 'safe', 'on'=>'search'),
+			array('id, kode, nama, iso3, numcode', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +62,8 @@ class Negara extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'propinsis' => array(self::HAS_MANY, 'Propinsi', 'negara'),
+			'karyawanImigrasis' => array(self::HAS_MANY, 'KaryawanImigrasi', 'negara_id'),
+			'propinsis' => array(self::HAS_MANY, 'Propinsi', 'negara_id'),
 		);
 	}
 
@@ -69,6 +73,7 @@ class Negara extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'kode' => 'Kode',
 			'nama' => 'Nama',
 			'iso3' => 'Iso3',
@@ -87,6 +92,7 @@ class Negara extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('kode',$this->kode,true);
 		$criteria->compare('nama',$this->nama,true);
 		$criteria->compare('iso3',$this->iso3,true);

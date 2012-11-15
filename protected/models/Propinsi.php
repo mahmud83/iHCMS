@@ -7,10 +7,10 @@
  * @property integer $id
  * @property string $nama
  * @property string $kode
- * @property string $negara
+ * @property integer $negara_id
  *
  * The followings are the available model relations:
- * @property Negara $negara0
+ * @property Negara $negara
  */
 class Propinsi extends CActiveRecord
 {
@@ -40,14 +40,13 @@ class Propinsi extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, negara', 'required'),
-			array('id', 'numerical', 'integerOnly'=>true),
+			array('nama, negara_id', 'required'),
+			array('negara_id', 'numerical', 'integerOnly'=>true),
 			array('nama', 'length', 'max'=>45),
 			array('kode', 'length', 'max'=>5),
-			array('negara', 'length', 'max'=>2),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nama, kode, negara', 'safe', 'on'=>'search'),
+			array('id, nama, kode, negara_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +58,7 @@ class Propinsi extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'negara0' => array(self::BELONGS_TO, 'Negara', 'negara'),
+			'negara' => array(self::BELONGS_TO, 'Negara', 'negara_id'),
 		);
 	}
 
@@ -72,7 +71,7 @@ class Propinsi extends CActiveRecord
 			'id' => 'ID',
 			'nama' => 'Nama',
 			'kode' => 'Kode',
-			'negara' => 'Negara',
+			'negara_id' => 'Negara',
 		);
 	}
 
@@ -90,7 +89,7 @@ class Propinsi extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nama',$this->nama,true);
 		$criteria->compare('kode',$this->kode,true);
-		$criteria->compare('negara',$this->negara,true);
+		$criteria->compare('negara_id',$this->negara_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

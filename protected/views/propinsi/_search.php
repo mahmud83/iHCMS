@@ -1,40 +1,22 @@
-<?php
-/* @var $this PropinsiController */
-/* @var $model Propinsi */
-/* @var $form CActiveForm */
-?>
-
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'id',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'nama'); ?>
-		<?php echo $form->textField($model,'nama',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'nama',array('class'=>'span5','maxlength'=>45)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'kode'); ?>
-		<?php echo $form->textField($model,'kode',array('size'=>5,'maxlength'=>5)); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'kode',array('class'=>'span5','maxlength'=>5)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'negara'); ?>
-		<?php echo $form->textField($model,'negara',array('size'=>2,'maxlength'=>2)); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'negara_id',array('class'=>'span5')); ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+	<div class="form-actions">
+		<?php $this->widget('bootstrap.widgets.TbButton', array(
+			'buttonType' => 'submit',
+			'type'=>'primary',
+			'label'=>'Search',
+		)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- search-form -->

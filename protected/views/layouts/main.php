@@ -80,7 +80,7 @@
 			</div>
 			<div class="content" id="content-scale">
 				<div class="second-nav" id="sc">
-					<h2>Dashboard</h2>
+					<h2><?php echo ucfirst((isset($this->module))?$this->module->getName():$this->ID);?></h2>
 					<div class="divider"></div>
 					<ul>
 						<li><a href="user_profile.html"><i class="icon-user"></i>User Profile</a></li>
@@ -92,7 +92,7 @@
 					<div class="row-fluid no-clear">
 						<div class="span12 head-info">
 							<div class="head_breadcrumb">
-								<h3>Dashboard</h3>
+								<h3><?php echo ucfirst((isset($this->sub_title))?$this->sub_title:$this->getAction()->getId()); ?></h3>
 								<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 								    'links'=>$this->breadcrumbs,
 								)); ?>

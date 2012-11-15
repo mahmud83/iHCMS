@@ -3,6 +3,8 @@
 	'method'=>'get',
 )); ?>
 
+	<?php echo $form->textFieldRow($model,'id',array('class'=>'span5')); ?>
+
 	<?php echo $form->textFieldRow($model,'kode',array('class'=>'span5','maxlength'=>2)); ?>
 
 	<?php echo $form->textFieldRow($model,'nama',array('class'=>'span5','maxlength'=>100)); ?>

@@ -1,15 +1,12 @@
 <?php
-/* @var $this PropinsiController */
-/* @var $model Propinsi */
-
 $this->breadcrumbs=array(
 	'Propinsis'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List Propinsi', 'url'=>array('index')),
-	array('label'=>'Manage Propinsi', 'url'=>array('admin')),
+	array('label'=>'List Propinsi','url'=>array('index')),
+	array('label'=>'Manage Propinsi','url'=>array('admin')),
 );
 ?>
 
