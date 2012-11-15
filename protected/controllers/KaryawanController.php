@@ -1,16 +1,13 @@
 <?php
 
-class NegaraController extends Controller
+class KaryawanController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-	public $breadcrumbs=array();
-	public $sub_title = "";
-	public $title = "";
-	
+
 	/**
 	 * @return array action filters
 	 */
@@ -53,9 +50,6 @@ class NegaraController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->breadcrumbs = array('Negara'=>'', 'Detail');
-		$this->sub_title = "Detail Data Negara";
-		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -67,14 +61,14 @@ class NegaraController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Negara;
+		$model=new Karyawan;
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Negara']))
+		if(isset($_POST['Karyawan']))
 		{
-			$model->attributes=$_POST['Negara'];
+			$model->attributes=$_POST['Karyawan'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,17 +85,14 @@ class NegaraController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->breadcrumbs = array('Negara'=>'', 'Ubah');
-		$this->sub_title = "Ubah Data Negara";
-		
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Negara']))
+		if(isset($_POST['Karyawan']))
 		{
-			$model->attributes=$_POST['Negara'];
+			$model->attributes=$_POST['Karyawan'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -136,14 +127,7 @@ class NegaraController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array('Negara');
-		$this->sub_title = "Daftar Data Negara";
-		
-		//$dataProvider=new CActiveDataProvider('Negara');
-		$dataProvider=new Negara('search');
-		$dataProvider->unsetAttributes();  // clear any default values
-		if(isset($_GET['Negara']))
-			$model->attributes=$_GET['Negara'];
+		$dataProvider=new CActiveDataProvider('Karyawan');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -154,13 +138,10 @@ class NegaraController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$this->breadcrumbs = array('Negara'=>'', 'Manajemen');
-		$this->sub_title = "Manajemen Data Negara";
-	
-		$model=new Negara('search');
+		$model=new Karyawan('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Negara']))
-			$model->attributes=$_GET['Negara'];
+		if(isset($_GET['Karyawan']))
+			$model->attributes=$_GET['Karyawan'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -174,7 +155,7 @@ class NegaraController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Negara::model()->findByPk($id);
+		$model=Karyawan::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -186,7 +167,7 @@ class NegaraController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='negara-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='karyawan-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

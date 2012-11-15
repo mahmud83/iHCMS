@@ -37,7 +37,7 @@ $('.search-form form').submit(function(){
 					'id',
 					'nama',
 					'kode',
-					'negara_id',
+					array('name'=>'negara_id', 'header'=>'negara_id', 'value'=>'$data->negara->nama'),
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
 					),

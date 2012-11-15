@@ -86,10 +86,13 @@ class Propinsi extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('nama',$this->nama,true);
-		$criteria->compare('kode',$this->kode,true);
-		$criteria->compare('negara_id',$this->negara_id);
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('t.nama',$this->nama,true);
+		$criteria->compare('t.kode',$this->kode,true);
+		$criteria->compare('negara.nama',$this->negara_id, true);
+		
+		//load the related table at the same time:
+		$criteria->with=array('negara');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
