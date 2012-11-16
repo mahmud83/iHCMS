@@ -41,6 +41,7 @@
 			</div>
 		</div>
 		<?php echo "<?php \$this->endWidget(); ?>\n"; ?>
+		</div>
 	</div>
 </div>
 

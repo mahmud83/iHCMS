@@ -7,7 +7,10 @@ class KaryawanController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
+	public $breadcrumbs=array();
+	public $sub_title = '';
+	public $title = '';
+	
 	/**
 	 * @return array action filters
 	 */
@@ -50,6 +53,9 @@ class KaryawanController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->breadcrumbs = array('Karyawan'=>'', 'Karyawan');
+		$this->sub_title = 'Detail Data Karyawan';
+		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -61,10 +67,13 @@ class KaryawanController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->breadcrumbs = array('Karyawan'=>'', 'Karyawan');
+		$this->sub_title = 'Tambah Data Karyawan';
+		
 		$model=new Karyawan;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		// Comment the following line if AJAX validation is not needed
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Karyawan']))
 		{
@@ -85,10 +94,13 @@ class KaryawanController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->breadcrumbs = array('Karyawan'=>'', 'Karyawan');
+		$this->sub_title = 'Ubah Data Karyawan';
+		
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		// Comment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Karyawan']))
 		{
@@ -127,6 +139,9 @@ class KaryawanController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->breadcrumbs = array('Karyawan'=>'', 'list');
+		$this->sub_title = 'Daftar Data Karyawan';
+		
 		$dataProvider=new CActiveDataProvider('Karyawan');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -138,6 +153,9 @@ class KaryawanController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->breadcrumbs = array('Karyawan'=>'', 'list');
+		$this->sub_title = 'Daftar Data Karyawan';
+		
 		$model=new Karyawan('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Karyawan']))

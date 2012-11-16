@@ -19,6 +19,4 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create <?php echo $this->modelClass; ?></h1>
-
 <?php echo "<?php echo \$this->renderPartial('_form', array('model'=>\$model)); ?>"; ?>

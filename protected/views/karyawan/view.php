@@ -12,13 +12,17 @@ $this->menu=array(
 	array('label'=>'Manage Karyawan','url'=>array('admin')),
 );
 ?>
-
-<h1>View Karyawan #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
+<div class="row-fluid no-clear">
+	<div class="span12 widget">
+		<div class="widget-title">
+			<i class="icon-bar-chart titleicon"></i>
+			<p>Detail Karyawan #<?php echo $model->id; ?></p>
+		</div>
+		<div class="widget-content">
+		<?php $this->widget('bootstrap.widgets.TbDetailView',array(
+			'data'=>$model,
+			'attributes'=>array(
+				'id',
 		'nip',
 		'nama_depan',
 		'nama_tengah',
@@ -45,5 +49,8 @@ $this->menu=array(
 		'email1',
 		'email2',
 		'custom',
-	),
-)); ?>
+			),
+		)); ?>
+		</div>
+	</div>
+</div>

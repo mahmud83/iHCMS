@@ -522,6 +522,11 @@ body {
 	margin: 6px !important;
 }
 
+.content-wrapper .widget form {
+	margin-top: 10px !important;
+}
+
+
 .content-wrapper .widget .btn-small [class^="icon-"], .content-wrapper .widget .btn-small
 [class*=" icon-"] {
 	line-height: normal !important;
