@@ -1,20 +1,14 @@
 <?php
-/* @var $this PreferenceController */
-/* @var $dataProvider CActiveDataProvider */
-
 $this->breadcrumbs=array(
 	'Preferences',
 );
 
 $this->menu=array(
-	array('label'=>'Create Preference', 'url'=>array('create')),
-	array('label'=>'Manage Preference', 'url'=>array('admin')),
+	array('label'=>'Create Preference','url'=>array('create')),
+	array('label'=>'Manage Preference','url'=>array('admin')),
 );
 ?>
-
-<h1>Preferences</h1>
-
-<?php $this->widget('zii.widgets.CListView', array(
+<?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>

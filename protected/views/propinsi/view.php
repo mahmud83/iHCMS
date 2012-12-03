@@ -25,7 +25,7 @@ $this->menu=array(
 				'id',
 				'nama',
 				'kode',
-				array('label'=>'negara_id', 'value'=>$model->negara->nama),
+				array('label'=>'Negara', 'value'=>$model->negara->nama),
 			),
 		)); ?>
 		</div>

@@ -1,36 +1,33 @@
-<?php
-/* @var $this PreferenceController */
-/* @var $model Preference */
-/* @var $form CActiveForm */
-?>
+<div class="row-fluid no-clear">
+	<div class="span12 widget">
+		<div class="widget-title">
+			<i class="icon-external-link titleicon"></i>
+			<p>Form</p>
+		</div>
+		<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
+			'id'=>'preference-form',
+			'type'=>'horizontal',
+			'enableAjaxValidation'=>true,
+		)); ?>
 
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'preference-form',
-	'enableAjaxValidation'=>false,
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'name'); ?>
+					<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>255)); ?>
+		
+					<?php echo $form->textAreaRow($model,'value',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+		
+				<div class="control-group">
+			<div class="controls">
+				<?php $this->widget('bootstrap.widgets.TbButton', array(
+					'buttonType'=>'submit',
+					'type'=>'primary',
+					'label'=>$model->isNewRecord ? 'Create' : 'Save',
+				)); ?>
+				<?php $this->widget('bootstrap.widgets.TbButton', array(
+					'buttonType'=>'reset',
+					'label'=>'Reset',
+				)); ?>
+			</div>
+		</div>
+		<?php $this->endWidget(); ?>
 	</div>
+</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'value'); ?>
-		<?php echo $form->textArea($model,'value',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'value'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->

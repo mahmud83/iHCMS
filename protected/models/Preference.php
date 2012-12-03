@@ -4,6 +4,7 @@
  * This is the model class for table "preference".
  *
  * The followings are the available columns in table 'preference':
+ * @property integer $id
  * @property string $name
  * @property string $value
  */
@@ -39,7 +40,7 @@ class Preference extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('name, value', 'safe', 'on'=>'search'),
+			array('id, name, value', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +61,7 @@ class Preference extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'name' => 'Name',
 			'value' => 'Value',
 		);
@@ -76,6 +78,7 @@ class Preference extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('value',$this->value,true);
 

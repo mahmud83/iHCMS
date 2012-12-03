@@ -161,7 +161,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	public function actionAdmin()
 	{
 		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', 'list');
-		$this->sub_title = 'Daftar Data <?php echo $this->class2name($this->modelClass);?>';
+		$this->sub_title = 'Manajemen Data <?php echo $this->class2name($this->modelClass);?>';
 		
 		$model=new <?php echo $this->modelClass; ?>('search');
 		$model->unsetAttributes();  // clear any default values

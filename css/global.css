@@ -48,6 +48,18 @@
 	margin-left: 5px !important;
 	margin-right: 5px !important;
 }
+
+.redactor_box, .redactor_box textarea {
+	margin-right: 20px !important;
+}
+
+label, input, button, select, textarea  {
+	font-size: 12px !important;
+}
+
+.head-info {
+	margin-left: 0px !important;
+}
 /** section styles for error boostrap end here **/
 
 
@@ -67,6 +79,14 @@ body {
 
 .color-red {
 	color: #A73939;
+}
+
+fieldset {
+	margin: 0px 20px !important;
+}
+
+legend {
+	font-size: 12px !important;
 }
 
 /** styles for color end **/
@@ -495,6 +515,7 @@ body {
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
+	margin-bottom: 20px;
 }
 
 .content-wrapper .widget .widget-title, .content-wrapper .talent-pool .talent-pool-title {

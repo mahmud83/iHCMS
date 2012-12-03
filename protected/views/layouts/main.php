@@ -25,7 +25,7 @@
 			    	<li><a>Change Setting</a></li>
 			    	<li><a>Change Setting</a></li>
 			    	<li class="divider"></li>
-			    	<li><a>Logout</a></li>
+			    	<li><?php echo CHtml::link('Log Out', 'site/logout');?></li>
 			    </ul>
 		    </div>
 		    <!--
@@ -50,7 +50,7 @@
 						<div class="log-data">Last sign in : 16:11 Feb 27th 2012</div>
 						<div class="control">
 							<a href="#" class="message"><i class="icon-envelope"></i>Notification <span class="badge">10</span></a>
-							<a href="#" class="logout"><i class="icon-unlock"></i>Logout</a>
+							<?php echo CHtml::link('<i class="icon-unlock"></i>Log Out', 'site/logout', array('class'=>'logout'));?>
 						</div>
 					</div>
 				</div>
@@ -82,11 +82,19 @@
 				<div class="second-nav" id="sc">
 					<h2><?php echo ucfirst((isset($this->module))?$this->module->getName():$this->ID);?></h2>
 					<div class="divider"></div>
+					<?php 
+						$controllers = Yii::app()->metadata->getControllers($this->module->getName());
+						//$controllers = str_replace('Controller','',$controller,count)
+						//print_r($controllers);
+						echo Yii::app()->allspark->renderSubmenu($controllers, $this->module->getName(), array("Default"));
+					?>
+					<!--
 					<ul>
-						<li><a href="user_profile.html"><i class="icon-user"></i>User Profile</a></li>
+						
 						<li><a href="change_password.html"><i class="icon-key"></i>Change Password</a></li>
 						<li><a href="calendar.html"><i class="icon-calendar"></i>Calendar</a></li>
 					</ul>
+					!-->
 				</div>
 				<div class="content-wrapper">
 					<div class="row-fluid no-clear">

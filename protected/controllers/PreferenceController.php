@@ -7,15 +7,17 @@ class PreferenceController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
+	public $breadcrumbs=array();
+	public $sub_title = '';
+	public $title = '';
+	
 	/**
 	 * @return array action filters
 	 */
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
+			'rights', // perform access control for CRUD operations
 		);
 	}
 
@@ -51,6 +53,9 @@ class PreferenceController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->breadcrumbs = array('Preference'=>'', 'Preference');
+		$this->sub_title = 'Detail Data Preference';
+		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -62,16 +67,19 @@ class PreferenceController extends Controller
 	 */
 	public function actionCreate()
 	{
+		$this->breadcrumbs = array('Preference'=>'', 'Preference');
+		$this->sub_title = 'Tambah Data Preference';
+		
 		$model=new Preference;
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		// Comment the following line if AJAX validation is not needed
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Preference']))
 		{
 			$model->attributes=$_POST['Preference'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->name));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -86,16 +94,19 @@ class PreferenceController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->breadcrumbs = array('Preference'=>'', 'Preference');
+		$this->sub_title = 'Ubah Data Preference';
+		
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		// Comment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Preference']))
 		{
 			$model->attributes=$_POST['Preference'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->name));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -110,11 +121,17 @@ class PreferenceController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		if(Yii::app()->request->isPostRequest)
+		{
+			// we only allow deletion via POST request
+			$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
 
 	/**
@@ -122,6 +139,9 @@ class PreferenceController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->breadcrumbs = array('Preference'=>'', 'list');
+		$this->sub_title = 'Daftar Data Preference';
+		
 		$dataProvider=new CActiveDataProvider('Preference');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -133,6 +153,9 @@ class PreferenceController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		$this->breadcrumbs = array('Preference'=>'', 'list');
+		$this->sub_title = 'Manajemen Data Preference';
+		
 		$model=new Preference('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Preference']))

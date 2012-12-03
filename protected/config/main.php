@@ -16,11 +16,13 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.modules.rights.*', 
+		'application.modules.rights.components.*',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		'Wilayah',
+		'pim',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'tarjono',
@@ -29,16 +31,48 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
+		'rights'=>array(
+			'superuserName'=>'admin',
+			'authenticatedName'=>'Authenticated',
+			'userIdColumn'=>'id',
+			'userNameColumn'=>'username',
+			'enableBizRule'=>true,
+			'enableBizRuleData'=>false,
+			'displayDescription'=>true,
+			'flashSuccessKey'=>'RightsSuccess', 
+			'flashErrorKey'=>'RightsError', 
+			'baseUrl'=>'/rights', 
+			'layout'=>'rights.views.layouts.main', 
+			'appLayout'=>'application.views.layouts.main', 
+			'cssFile'=>'rights.css',
+			'debug'=>false,
+			//'install'=>true,
+		),
 		
 	),
 
 	// application components
 	'components'=>array(
+		'metadata'=>array('class'=>'Metadata'),
+		'allspark'=>array('class'=>'AllSpark'),
+		
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			//rights rbac
+			'class'=>'RWebUser',
 			
 		),
+		
+		'authManager'=>array(
+			'class'=>'RDbAuthManager',
+			'connectionID'=>'db',
+			'itemTable'=>'AuthItem',
+			'itemChildTable'=>'AuthItemChild',
+			'assignmentTable'=>'AuthAssignment',
+			'rightsTable'=>'Rights',
+
+		),	
 		'bootstrap' => array(
 		    'class' => 'ext.bootstrap.components.Bootstrap',
 		    'responsiveCss' => true,
