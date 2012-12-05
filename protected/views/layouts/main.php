@@ -43,10 +43,10 @@
 			<div class="sidebar">
 				<div class="row-fluid user-details">
 					<div class="avatar">
-						<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/avatar.png" width="72px" class="img-rounded">
+						<img src="<?php echo Yii::app()->request->baseUrl; ?>/user/<?php echo Yii::app()->allspark->renderAvatar();?>" width="72px" class="img-rounded">
 					</div>
 					<div class="details">
-						<div class="username">Welcome, <strong>John Doe</strong></div>
+						<div class="username">Welcome, <strong><?php echo Yii::app()->user->id;?></strong></div>
 						<div class="log-data">Last sign in : 16:11 Feb 27th 2012</div>
 						<div class="control">
 							<a href="#" class="message"><i class="icon-envelope"></i>Notification <span class="badge">10</span></a>

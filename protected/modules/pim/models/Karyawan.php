@@ -87,6 +87,7 @@ class Karyawan extends CActiveRecord
 			array('kota, kodepos', 'length', 'max'=>100),
 			array('tlp_rumah, tlp_mobile, tlp_kantor, email1, email2', 'length', 'max'=>50),
 			array('tgl_lahir, no_ktp_exp_date, no_sim_exp_date, custom', 'safe'),
+			array('avatar', 'file', 'types'=>'jpg,gif,png,', 'allowEmpty'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, nip, nama_depan, nama_tengah, nama_belakang, nama_panggilan, tgl_lahir, warga_negara, kelamin, no_ktp, no_ktp_exp_date, no_sim, no_sim_exp_date, status_kawin, status_karyawan, alamat1, alamat2, kota, negara, propinsi, kodepos, tlp_rumah, tlp_mobile, tlp_kantor, email1, email2, custom, user_id', 'safe', 'on'=>'search'),

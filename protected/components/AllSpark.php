@@ -33,7 +33,22 @@ class AllSpark extends CApplicationComponent {
 		return $render;
 	}
 	
-	public function renderAva () {
-		
+	public function renderAvatar () {
+		$user_id = Yii::app()->user->id;
+		$avatar =  Karyawan::model()->find('user_id=:userID', array(':userID'=>$user_id))->avatar;
+		return $avatar;
+	}
+	
+	public function getActions ($controllers, $module=null) {
+		$user_actions = Yii::app()->metadata->getActions($controllers, $module);
+		$render = array();
+		if (sizeof($user_actions) > 0):
+			$i=0;
+			foreach($user_actions as $action):
+				$render[$i]=array('label'=>$action, 'url'=>array($action));
+				$i++;
+			endforeach;
+		endif;
+		return $render;
 	}
 }

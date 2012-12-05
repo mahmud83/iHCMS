@@ -19,6 +19,7 @@ $this->menu=array(
 		<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 			'id'=>'karyawan-form',
 			'type'=>'horizontal',
+			'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 			'enableAjaxValidation'=>true,
 		)); ?>
 			<fieldset>
@@ -86,21 +87,23 @@ $this->menu=array(
 					<?php echo $form->textFieldRow($model,'email2',array('class'=>'span5','maxlength'=>50)); ?>
 		
 					<?php echo $form->textAreaRow($model,'custom',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+					
+					<?php echo $form->fileFieldRow($model,'avatar'); ?>
         
 				<div class="control-group">
-			<div class="controls">
-				<?php $this->widget('bootstrap.widgets.TbButton', array(
-					'buttonType'=>'submit',
-					'type'=>'primary',
-					'label'=>$model->isNewRecord ? 'Create' : 'Save',
-				)); ?>
-				<?php $this->widget('bootstrap.widgets.TbButton', array(
-					'buttonType'=>'reset',
-					'label'=>'Reset',
-				)); ?>
-			</div>
+					<div class="controls">
+						<?php $this->widget('bootstrap.widgets.TbButton', array(
+							'buttonType'=>'submit',
+							'type'=>'primary',
+							'label'=>$model->isNewRecord ? 'Create' : 'Save',
+						)); ?>
+						<?php $this->widget('bootstrap.widgets.TbButton', array(
+							'buttonType'=>'reset',
+							'label'=>'Reset',
+						)); ?>
+					</div>
+				</div>
 			</fieldset>
-		</div>
 		<?php $this->endWidget(); ?>
 	</div>
 </div>

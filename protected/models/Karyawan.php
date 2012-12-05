@@ -211,4 +211,5 @@ class Karyawan extends CActiveRecord
 		
 		return $nama;
 	}
+	
 }

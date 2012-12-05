@@ -60,6 +60,17 @@ label, input, button, select, textarea  {
 .head-info {
 	margin-left: 0px !important;
 }
+
+.list-view .summary {
+	top: -40px !important;
+	position: relative !important;
+	color: white !important;
+	margin-bottom: 0px !important;
+}
+
+.list-view {
+	padding-top: 0px !important;
+}
 /** section styles for error boostrap end here **/
 
 

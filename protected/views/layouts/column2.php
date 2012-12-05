@@ -14,37 +14,6 @@
 				'items'=>$this->menu,
 				'htmlOptions'=>array('class'=>'nav nav-tabs nav-stacked'),
 			));
-			
-			$this->widget('application.components.YiiSmartMenu',array(
-		        //No required init options
-		        'partItemSeparator'=>'.',
-		        'upperCaseFirstLetter'=>true,
-		 
-		        //Same options used in CMenu
-			    'items'=>array(
-			            array(
-			                  'label'=>'Home Page',
-			                  'url'=>array('/site/index',
-			            ),
-			            array(
-			                  'label'=>'Other Page',
-			                  'url'=>array('something/other'),
-			 
-			                  //optional, if not set, YSM will controll visibility;
-			                  //'visible'=>{your own rule, YSM will not touch this},
-			 
-			                  //optional, params to be sent to checkAccess() function;
-			                  //if not set, YSM will use params from url/submit options
-			                  //or $_GET.
-			                  'authParams'=>array('myParam'=>'myValue',),
-			 
-			                  //optional, auth item name to be used in checkAccess() function;
-			                  //if not set, YSM will auto generate this.
-			                  'authItemName'=>'Admin',
-			           ),
-			        ),
-			    ),
-			    ));
 			/*$this->endWidget();*/
 		?>
 		

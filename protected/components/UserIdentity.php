@@ -8,6 +8,7 @@
 class UserIdentity extends CUserIdentity
 {
 	private $_id;
+	private $_username;
 	
 	/**
 	 * Authenticates a user.
@@ -36,6 +37,7 @@ class UserIdentity extends CUserIdentity
 		else:
 			$this->_id = $user->id;
 			$this->username = $user->username;
+			$this->_username = $user->username;
 			$this->errorCode=self::ERROR_NONE;
 		endif;
 		/*

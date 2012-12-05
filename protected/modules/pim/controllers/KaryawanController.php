@@ -201,8 +201,15 @@ class KaryawanController extends Controller
 			$modelUser->tgl_edit = date('Y-m-d H:i:s');
 			if ($modelUser->save()):
 				$model->attributes=$_POST['Karyawan'];
-				$model->user_id=$modelUser->primaryKey;
 				
+				//upload Image
+				//$rand = rand(0,999);
+				$uploadFile = CUploadedFile::getInstance($model, 'avatar');
+				$fileName = $modelUser->hash.".".$uploadFile->extensionName;  // random number + file name
+				$model->avatar = $fileName;
+				$uploadFile->saveAs(Yii::app()->basePath.'/../user/'.$fileName);  
+				
+				$model->user_id=$modelUser->primaryKey;
 				
 				if($model->save())
 					$this->redirect(array('view','id'=>$model->id));
