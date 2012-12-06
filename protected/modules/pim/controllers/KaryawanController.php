@@ -229,9 +229,33 @@ class KaryawanController extends Controller
 		$this->sub_title = 'Detail Data Personal Karyawan';
 		$this->layout='//layouts/column1';
 		
+		$modelPendidikan = new KaryawanPendidikan;
+		$modelPendidikan->karyawan_id = $id;
+		
+		$modelPengalamanKerja = new KaryawanPengalamanKerja;
+		$modelPengalamanKerja->karyawan_id = $id;
+		
+		$modelSertifikasi = new KaryawanSertifikasi;
+		$modelSertifikasi->karyawan_id = $id;
+		
+		$modelImigrasi = new KaryawanImigrasi;
+		$modelImigrasi->karyawan_id = $id;
+		
+		$modelTanggungan = new KaryawanTanggungan;
+		$modelTanggungan->karyawan_id = $id;
+		
+		$modelKontakDarurat = new KaryawanKontakDarurat;
+		$modelKontakDarurat->karyawan_id = $id;
+		
 		
 		$this->render('personalView',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$this->loadModel($id), 
+			'modelPendidikan'=>$modelPendidikan->search(),
+			'modelPengalamanKerja'=>$modelPengalamanKerja->search(),
+			'modelSertifikasi'=>$modelSertifikasi->search(),
+			'modelImigrasi'=>$modelImigrasi->search(),
+			'modelTanggungan'=>$modelTanggungan->search(),
+			'modelKontakDarurat'=>$modelKontakDarurat->search(),
 		));
 	}
 

@@ -199,4 +199,11 @@ class Karyawan extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	/**
+	 * Get avatar picture path
+	 */
+	public function getProfilePage () {
+		return Yii::app()->request->baseUrl.'/user/'.$this->avatar;
+	}
 }

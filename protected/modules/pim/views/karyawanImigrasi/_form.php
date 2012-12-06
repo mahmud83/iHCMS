@@ -10,8 +10,8 @@
 			'enableAjaxValidation'=>true,
 		)); ?>
 
-					<?php echo $form->dropDownListRow($model, 'karyawan_id',
-        CHtml::listData(User::model()->findAll(), 'id', 'nip')); ?>
+					<?php echo $form->dropDownListRow($model, 'karyawan_id', CHtml::listData(Karyawan::model()->findAll(), 'id', 'nama_depan')); ?>	
+					<?php $this->widget('application.components.widgets.userlookup.UserLookupWidget'); ?>
 		
 					<?php echo $form->textFieldRow($model,'nomor_dokumen',array('class'=>'span5','maxlength'=>100)); ?>
 		
@@ -23,8 +23,7 @@
 		
 					<?php echo $form->textFieldRow($model,'review_date',array('class'=>'span5')); ?>
 		
-					<?php echo $form->dropDownListRow($model, 'negara_id',
-        CHtml::listData(Negara::model()->findAll(), 'id', 'nama')); ?>
+					<?php echo $form->textFieldRow($model,'negara_id',array('class'=>'span5')); ?>
 		
 				<div class="control-group">
 			<div class="controls">

@@ -32,11 +32,11 @@ $this->menu=array(
 	</div>
 </div>
 
-<div class="row-fluid no-clear">
-	<div class="span12 widget">
+<div class="row-fluid">
+	<div class="span6 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Detail Karyawan #<?php echo $model->id; ?></p>
+			<p>Detail Karyawan</p>
 		</div>
 		<div class="widget-content">
 		<?php $this->widget('bootstrap.widgets.TbDetailView',array(
@@ -72,6 +72,144 @@ $this->menu=array(
 				array('label'=>'User', 'value'=>$model->user->username),
 			),
 		)); ?>
+		</div>
+	</div>
+	<div class="span6">
+		<div class="row-fluid">
+			<div class="span12 widget">
+				<div class="widget-title">
+					<i class="icon-bar-chart titleicon"></i>
+					<p>Data Pendidikan</p>
+				</div>
+				<div class="widget-content">
+				<?php
+				$this->widget('bootstrap.widgets.TbGridView', array(
+					'id'=>'karyawan-pendidikan-grid',
+					'dataProvider'=>$modelPendidikan,
+					'emptyText'=> 'Data pendidikan Kosong',
+					'columns'=>array(
+						'jenis',
+						'institusi',
+						'major',
+						'nilai',
+					),
+				));
+				?>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row-fluid">
+			<div class="span12 widget">
+				<div class="widget-title">
+					<i class="icon-bar-chart titleicon"></i>
+					<p>Data Pengalaman Kerja</p>
+				</div>
+				<div class="widget-content">
+				<?php
+				$this->widget('bootstrap.widgets.TbGridView', array(
+					'dataProvider'=>$modelPengalamanKerja,
+					'emptyText'=> 'Data Pengalaman Kerja Kosong',
+					'columns'=>array(
+						'perusahaan',
+						'jabatan',
+						'tgl_masuk',
+						'tgl_keluar',
+						/*
+						'komentar',
+						*/
+					),
+				));
+				?>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row-fluid">
+			<div class="span12 widget">
+				<div class="widget-title">
+					<i class="icon-bar-chart titleicon"></i>
+					<p>Data Sertifikasi</p>
+				</div>
+				<div class="widget-content">
+				<?php
+				$this->widget('bootstrap.widgets.TbGridView', array(
+					'dataProvider'=>$modelSertifikasi,
+					'emptyText'=> 'Data Sertifikasi Kosong',
+					'columns'=>array(
+						'jenis',
+						'nomor',
+						'tgl_dikeluarkan',
+						'tgl_berakhir',
+					),
+				));
+				?>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row-fluid">
+			<div class="span12 widget">
+				<div class="widget-title">
+					<i class="icon-bar-chart titleicon"></i>
+					<p>Data Imigrasi</p>
+				</div>
+				<div class="widget-content">
+				<?php
+				$this->widget('bootstrap.widgets.TbGridView', array(
+					'dataProvider'=>$modelImigrasi,
+					'emptyText'=> 'Data imigrasi Kosong',
+					'columns'=>array(
+						'nomor_dokumen',
+						'status_kelayakan',
+					),
+				));
+				?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div class="span6 widget">
+		<div class="widget-title">
+			<i class="icon-bar-chart titleicon"></i>
+			<p>Data Tanggungan</p>
+		</div>
+		<div class="widget-content">
+			<?php
+			$this->widget('bootstrap.widgets.TbGridView', array(
+				'dataProvider'=>$modelTanggungan,
+				'emptyText'=> 'Data Tanggungan Kosong',
+				'columns'=>array(
+					'nama',
+					'relasi',
+					'tgl_lahir',
+				),
+			));
+			?>
+		</div>
+	</div>
+	
+	<div class="span6 widget">
+		<div class="widget-title">
+			<i class="icon-bar-chart titleicon"></i>
+			<p>Data Kontak Darurat</p>
+		</div>
+		<div class="widget-content">
+			<?php
+			$this->widget('bootstrap.widgets.TbGridView', array(
+				'dataProvider'=>$modelKontakDarurat,
+				'emptyText'=> 'Data Kontak Darurat Kosong',
+				'columns'=>array(
+					'nama',
+					'relasi',
+					'telp_rumah',
+					'telp_mobile',
+				),
+			));
+			?>
 		</div>
 	</div>
 </div>
