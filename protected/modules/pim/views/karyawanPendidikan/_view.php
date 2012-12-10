@@ -1,3 +1,17 @@
+<li>
+	<div class="user-info">
+		<a href="<?php echo Yii::app()->createAbsoluteUrl('pim/karyawanpendidikan/empdetail/user/'.CHtml::encode($data->karyawan_id).''); ?>">
+			<strong><?php echo CHtml::encode($data->jenis); ?></strong>
+		</a>
+		<i class="user-occ">
+			<?php echo CHtml::encode($data->institusi); ?>
+		</i>
+		<i class="user-ll"><?php echo CHtml::encode($data->major); ?></i>
+	</div>
+</li>
+
+<?php 
+/*
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
@@ -33,6 +47,7 @@
 	<?php echo CHtml::encode($data->tgl_keluar); ?>
 	<br />
 
-	*/ ?>
+
 
 </div>
+	*/ ?>

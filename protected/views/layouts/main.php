@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Jektungan Admin Theme</title>
+	<title><?php echo Yii::app()->allspark->Preference('site_name'); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="description apps">
 	<meta name="author" content="masbenx">
@@ -28,7 +28,7 @@
 			    	<li><?php echo CHtml::link('Log Out', 'site/logout');?></li>
 			    </ul>
 		    </div>
-		    <!--
+		    		    <!--
 		    <form class="navbar-search pull-right">
 		      <input type="text" class="search-query" placeholder="Search">
 		    </form>

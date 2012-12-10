@@ -10,8 +10,7 @@
 			'enableAjaxValidation'=>true,
 		)); ?>
 
-					<?php echo $form->dropDownListRow($model, 'karyawan_id', CHtml::listData(Karyawan::model()->findAll(), 'id', 'nama_depan')); ?>	
-					<?php $this->widget('application.components.widgets.userlookup.UserLookupWidget'); ?>
+					<?php echo $form->textFieldRow($model,'karyawan_id',array('class'=>'span5')); ?>
 		
 					<?php echo $form->textFieldRow($model,'nomor_dokumen',array('class'=>'span5','maxlength'=>100)); ?>
 		

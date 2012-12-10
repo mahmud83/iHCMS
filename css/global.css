@@ -71,6 +71,17 @@ label, input, button, select, textarea  {
 .list-view {
 	padding-top: 0px !important;
 }
+
+.side-user ul {
+	list-style: none;
+	margin: 0px !important;
+}
+
+.side-user ul li {
+	padding: 10px;
+	border-bottom: 1px solid #CDCDCD;
+}
+
 /** section styles for error boostrap end here **/
 
 

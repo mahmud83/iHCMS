@@ -51,4 +51,8 @@ class AllSpark extends CApplicationComponent {
 		endif;
 		return $render;
 	}
+	
+	public function Preference($name = '') {
+		return Preference::model()->find('name=:Name', array(':Name'=>$name))->value;	
+	}
 }

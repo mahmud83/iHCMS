@@ -10,6 +10,7 @@ class KaryawanTanggunganController extends Controller
 	public $breadcrumbs=array();
 	public $sub_title = '';
 	public $title = '';
+	public $karyawanId = '';
 	
 	/**
 	 * @return array action filters
@@ -17,7 +18,7 @@ class KaryawanTanggunganController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			'rights', // perform access control for CRUD operations
 		);
 	}
 
@@ -190,5 +191,22 @@ class KaryawanTanggunganController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionEmpDetail($user) {
+		
+		$this->layout = '//layouts/column3';
+		$this->karyawanId = $user;
+		
+		$model = new KaryawanTanggungan;
+		$model->karyawan_id = $user;
+		
+		$this->breadcrumbs = array('Karyawan'=>array('/pim/karyawan'), $model->karyawan->nip=>array('/pim/karyawan/detailemp/id/'.$model->karyawan->id.''), 'Daftar Tanggungan');
+		$this->sub_title = 'Daftar Data Tanggungan Karyawan';
+		
+		//$dataProvider=new CActiveDataProvider('KaryawanPendidikan');
+		$this->render('index',array(
+			'dataProvider'=>$model,
+		));
 	}
 }

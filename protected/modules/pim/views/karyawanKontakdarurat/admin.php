@@ -47,14 +47,14 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'filter'=>$model,
 			'columns'=>array(
 					'id',
-				'karyawan_id',
-				'nama',
-				'relasi',
-				'telp_rumah',
-				'telp_mobile',
-				/*
-				'telp_kantor',
-				*/
+		'karyawan_id',
+		'nama',
+		'relasi',
+		'telp_rumah',
+		'telp_mobile',
+		/*
+		'telp_kantor',
+		*/
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
 					),

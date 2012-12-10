@@ -79,6 +79,7 @@ class Karyawan extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nip, nama_depan, warga_negara, negara, username, password, password2', 'required', 'on'=>'withUser'),
+			array('nip', 'unique'),
 			array('password2', 'compare', 'compareAttribute'=>'password', 'on'=>'withUser'),
 			array('nip, nama_depan, warga_negara, negara, user_id', 'required'),
 			array('warga_negara, status_karyawan, negara, propinsi, user_id', 'numerical', 'integerOnly'=>true),

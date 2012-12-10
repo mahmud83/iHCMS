@@ -1,8 +1,4 @@
 <?php
-$this->breadcrumbs=array(
-	'Karyawans'=>array('index'),
-	$model->id,
-);
 
 $this->menu=array(
 	array('label'=>'List Karyawan','url'=>array('index')),
@@ -16,7 +12,7 @@ $this->menu=array(
 <div class="row-fluid no-clear">
 	<div class="span12 user-profile">
 		<div class="user-avatar">
-			<img src="<?php echo Yii::app()->request->baseUrl."/user/male.jpg";?>" alt="" />
+			<img src="<?php echo Yii::app()->request->baseUrl."/user/".$model->avatar."";?>" style="height:150px;" alt="" />
 		</div>
 		<div class="user-info">
 			<h3><?php echo ucfirst("".$model->nama_depan." ".$model->nama_tengah." ".$model->nama_belakang.""); ?></h3>
@@ -37,6 +33,7 @@ $this->menu=array(
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
 			<p>Detail Karyawan</p>
+			<a href="<?php echo Yii::app()->createUrl('pim/karyawan/update/', array('id'=>$model->id));?>" class="btn btn-small pull-right"><i class="icon-edit"></i>Ubah</a>
 		</div>
 		<div class="widget-content">
 		<?php $this->widget('bootstrap.widgets.TbDetailView',array(
@@ -80,6 +77,7 @@ $this->menu=array(
 				<div class="widget-title">
 					<i class="icon-bar-chart titleicon"></i>
 					<p>Data Pendidikan</p>
+					<a href="<?php echo Yii::app()->createUrl('pim/karyawanpendidikan/empdetail/', array('user'=>$model->id));?>" class="btn btn-small pull-right"><i class="icon-edit"></i>Ubah</a>
 				</div>
 				<div class="widget-content">
 				<?php
@@ -87,6 +85,7 @@ $this->menu=array(
 					'id'=>'karyawan-pendidikan-grid',
 					'dataProvider'=>$modelPendidikan,
 					'emptyText'=> 'Data pendidikan Kosong',
+					'summaryText'=>'',
 					'columns'=>array(
 						'jenis',
 						'institusi',
@@ -104,12 +103,14 @@ $this->menu=array(
 				<div class="widget-title">
 					<i class="icon-bar-chart titleicon"></i>
 					<p>Data Pengalaman Kerja</p>
+					<a href="<?php echo Yii::app()->createUrl('pim/karyawanpengalamankerja/empdetail/', array('user'=>$model->id));?>" class="btn btn-small pull-right"><i class="icon-edit"></i>Edit</a>
 				</div>
 				<div class="widget-content">
 				<?php
 				$this->widget('bootstrap.widgets.TbGridView', array(
 					'dataProvider'=>$modelPengalamanKerja,
 					'emptyText'=> 'Data Pengalaman Kerja Kosong',
+					'summaryText'=>'',
 					'columns'=>array(
 						'perusahaan',
 						'jabatan',
@@ -130,12 +131,14 @@ $this->menu=array(
 				<div class="widget-title">
 					<i class="icon-bar-chart titleicon"></i>
 					<p>Data Sertifikasi</p>
+					<a href="<?php echo Yii::app()->createUrl('pim/karyawansertifikasi/empdetail/', array('user'=>$model->id));?>" class="btn btn-small pull-right"><i class="icon-edit"></i>Edit</a>
 				</div>
 				<div class="widget-content">
 				<?php
 				$this->widget('bootstrap.widgets.TbGridView', array(
 					'dataProvider'=>$modelSertifikasi,
 					'emptyText'=> 'Data Sertifikasi Kosong',
+					'summaryText'=>'',
 					'columns'=>array(
 						'jenis',
 						'nomor',
@@ -153,6 +156,7 @@ $this->menu=array(
 				<div class="widget-title">
 					<i class="icon-bar-chart titleicon"></i>
 					<p>Data Imigrasi</p>
+					<a href="<?php echo Yii::app()->createUrl('pim/karyawanimigrasi/empdetail/', array('user'=>$model->id));?>" class="btn btn-small pull-right"><i class="icon-edit"></i>Edit</a>
 				</div>
 				<div class="widget-content">
 				<?php
@@ -176,12 +180,14 @@ $this->menu=array(
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
 			<p>Data Tanggungan</p>
+			<a href="<?php echo Yii::app()->createUrl('pim/karyawantanggungan/empdetail/', array('user'=>$model->id));?>" class="btn btn-small pull-right"><i class="icon-edit"></i>Edit</a>
 		</div>
 		<div class="widget-content">
 			<?php
 			$this->widget('bootstrap.widgets.TbGridView', array(
 				'dataProvider'=>$modelTanggungan,
 				'emptyText'=> 'Data Tanggungan Kosong',
+				'summaryText'=>'',
 				'columns'=>array(
 					'nama',
 					'relasi',
@@ -196,12 +202,14 @@ $this->menu=array(
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
 			<p>Data Kontak Darurat</p>
+			<a href="<?php echo Yii::app()->createUrl('pim/karyawankontakdarurat/empdetail/', array('user'=>$model->id));?>" class="btn btn-small pull-right"><i class="icon-edit"></i>Edit</a>
 		</div>
 		<div class="widget-content">
 			<?php
 			$this->widget('bootstrap.widgets.TbGridView', array(
 				'dataProvider'=>$modelKontakDarurat,
 				'emptyText'=> 'Data Kontak Darurat Kosong',
+				'summaryText'=>'',
 				'columns'=>array(
 					'nama',
 					'relasi',

@@ -106,7 +106,8 @@ class KaryawanController extends Controller
 		{
 			$model->attributes=$_POST['Karyawan'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('detailemp', 'id'=>$model->id));
+				//$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -225,10 +226,7 @@ class KaryawanController extends Controller
 	 * Show data from Employee detail and User
 	 */
 	public function actionDetailEmp($id) {
-		$this->breadcrumbs = array('Karyawan'=>'', 'Karyawan');
-		$this->sub_title = 'Detail Data Personal Karyawan';
-		$this->layout='//layouts/column1';
-		
+	
 		$modelPendidikan = new KaryawanPendidikan;
 		$modelPendidikan->karyawan_id = $id;
 		
@@ -247,6 +245,9 @@ class KaryawanController extends Controller
 		$modelKontakDarurat = new KaryawanKontakDarurat;
 		$modelKontakDarurat->karyawan_id = $id;
 		
+		$this->breadcrumbs = array('Karyawan'=>array('index'), $this->loadModel($id)->nip);
+		$this->sub_title = 'Detail Data Personal Karyawan';
+		$this->layout='//layouts/column1';
 		
 		$this->render('personalView',array(
 			'model'=>$this->loadModel($id), 

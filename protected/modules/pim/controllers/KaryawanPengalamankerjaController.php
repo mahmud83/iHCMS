@@ -10,6 +10,7 @@ class KaryawanPengalamankerjaController extends Controller
 	public $breadcrumbs=array();
 	public $sub_title = '';
 	public $title = '';
+	public $karyawanId = '';
 	
 	/**
 	 * @return array action filters
@@ -17,7 +18,7 @@ class KaryawanPengalamankerjaController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			'rights', // perform access control for CRUD operations
 		);
 	}
 
@@ -190,5 +191,23 @@ class KaryawanPengalamankerjaController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionEmpDetail ($user) {
+		
+		$this->layout = '//layouts/column3';
+		$this->karyawanId = $user;
+		
+		$model = new KaryawanPengalamankerja;
+		$model->karyawan_id = $user;
+		
+		
+		$this->breadcrumbs = array('Karyawan'=>array('/pim/karyawan'), $model->karyawan->nip=>array('/pim/karyawan/detailemp/id/'.$model->karyawan->id.''), 'Riwayat Pekerjaan');
+		$this->sub_title = 'Daftar Data Pengalaman Kerja Karyawan';
+		
+		//$dataProvider=new CActiveDataProvider('KaryawanPendidikan');
+		$this->render('index',array(
+			'dataProvider'=>$model,
+		));
 	}
 }
