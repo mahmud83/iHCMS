@@ -35,6 +35,7 @@ class AllSpark extends CApplicationComponent {
 	
 	public function renderAvatar () {
 		$user_id = Yii::app()->user->id;
+		Yii::import('application.modules.pim.models.Karyawan');
 		$avatar =  Karyawan::model()->find('user_id=:userID', array(':userID'=>$user_id))->avatar;
 		if ($avatar == null):
 			$avatar = "male.jpg";

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2012 at 05:29 PM
+-- Generation Time: Dec 11, 2012 at 07:27 AM
 -- Server version: 5.5.27-log
 -- PHP Version: 5.3.16
 
@@ -208,6 +208,85 @@ INSERT INTO `AuthItemChild` (`parent`, `child`) VALUES
 ('Authenticated', 'User.Index'),
 ('Authenticated', 'User.Update'),
 ('Authenticated', 'User.View');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cbr`
+--
+
+CREATE TABLE IF NOT EXISTS `cbr` (
+  `id` int(11) NOT NULL,
+  `jabatan_id` int(11) NOT NULL,
+  `date` date NOT NULL COMMENT 'tanggal input cbr',
+  `kh_score` int(11) NOT NULL COMMENT 'score Know How',
+  `ps_persent` int(11) NOT NULL COMMENT 'persentasi nilai problem solving',
+  `ps_score` int(11) NOT NULL COMMENT 'score problem solving',
+  `ac_score` int(11) NOT NULL COMMENT 'score Accountability',
+  PRIMARY KEY (`id`),
+  KEY `fk_cbr_jabatan1_idx` (`jabatan_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cbr_accountability`
+--
+
+CREATE TABLE IF NOT EXISTS `cbr_accountability` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cbr_id` int(11) NOT NULL,
+  `fta` varchar(45) NOT NULL COMMENT 'Freedom To Act',
+  `aid` varchar(45) DEFAULT NULL COMMENT 'Area Indeterminate',
+  `amt` varchar(45) DEFAULT NULL COMMENT 'Area Magnitude',
+  `toi` varchar(45) DEFAULT NULL COMMENT 'Type Of Impact',
+  `prf` varchar(45) DEFAULT NULL COMMENT 'Profile',
+  PRIMARY KEY (`id`),
+  KEY `fk_cbr_accountability_cbr1_idx` (`cbr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cbr_know_how`
+--
+
+CREATE TABLE IF NOT EXISTS `cbr_know_how` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cbr_id` int(11) NOT NULL,
+  `tkh` varchar(45) NOT NULL COMMENT 'Technical Know How',
+  `mkh` varchar(45) NOT NULL COMMENT 'Management Know How',
+  `hrs` varchar(45) NOT NULL COMMENT 'Human Relation Skill',
+  PRIMARY KEY (`id`),
+  KEY `fk_cbr_know_how_cbr1_idx` (`cbr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cbr_problem_solving`
+--
+
+CREATE TABLE IF NOT EXISTS `cbr_problem_solving` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cbr_id` int(11) NOT NULL,
+  `tet` varchar(45) NOT NULL COMMENT 'Thingking Environtment',
+  `tce` varchar(45) NOT NULL COMMENT 'Thingking Challenge',
+  PRIMARY KEY (`id`),
+  KEY `fk_cbr_problem_solving_cbr1_idx` (`cbr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jabatan`
+--
+
+CREATE TABLE IF NOT EXISTS `jabatan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -506,7 +585,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `tgl_edit` datetime DEFAULT NULL,
   `deskripsi` text,
   `status` enum('aktif','non-aktif') DEFAULT 'non-aktif' COMMENT 'status user',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
@@ -561,6 +641,30 @@ ALTER TABLE `AuthAssignment`
 ALTER TABLE `AuthItemChild`
   ADD CONSTRAINT `authitemchild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `authitemchild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `cbr`
+--
+ALTER TABLE `cbr`
+  ADD CONSTRAINT `fk_cbr_jabatan1` FOREIGN KEY (`jabatan_id`) REFERENCES `jabatan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `cbr_accountability`
+--
+ALTER TABLE `cbr_accountability`
+  ADD CONSTRAINT `fk_cbr_accountability_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `cbr_know_how`
+--
+ALTER TABLE `cbr_know_how`
+  ADD CONSTRAINT `fk_cbr_know_how_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `cbr_problem_solving`
+--
+ALTER TABLE `cbr_problem_solving`
+  ADD CONSTRAINT `fk_cbr_problem_solving_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `karyawan`

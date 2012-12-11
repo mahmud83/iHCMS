@@ -23,6 +23,7 @@ return array(
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		'pim',
+		'renum',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'tarjono',
