@@ -5,24 +5,22 @@
 			<p>Form</p>
 		</div>
 		<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
-			'id'=>'cbr-form',
+			'id'=>'cbr-accountability-form',
 			'type'=>'horizontal',
 			'enableAjaxValidation'=>true,
 		)); ?>
 
-					<?php echo $form->textFieldRow($model,'id',array('class'=>'span5')); ?>
+					<?php echo $form->textFieldRow($model,'cbr_id',array('class'=>'span5')); ?>
 		
-					<?php echo $form->textFieldRow($model,'jabatan_id',array('class'=>'span5')); ?>
+					<?php echo $form->textFieldRow($model,'fta',array('class'=>'span5','maxlength'=>45)); ?>
 		
-					<?php echo $form->textFieldRow($model,'date',array('class'=>'span5')); ?>
+					<?php echo $form->textFieldRow($model,'aid',array('class'=>'span5','maxlength'=>45)); ?>
 		
-					<?php echo $form->textFieldRow($model,'kh_score',array('class'=>'span5')); ?>
+					<?php echo $form->textFieldRow($model,'amt',array('class'=>'span5','maxlength'=>45)); ?>
 		
-					<?php echo $form->textFieldRow($model,'ps_persent',array('class'=>'span5')); ?>
+					<?php echo $form->textFieldRow($model,'toi',array('class'=>'span5','maxlength'=>45)); ?>
 		
-					<?php echo $form->textFieldRow($model,'ps_score',array('class'=>'span5')); ?>
-		
-					<?php echo $form->textFieldRow($model,'ac_score',array('class'=>'span5')); ?>
+					<?php echo $form->textFieldRow($model,'prf',array('class'=>'span5','maxlength'=>45)); ?>
 		
 				<div class="control-group">
 			<div class="controls">

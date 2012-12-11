@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Cbrs'=>array('index'),
+	'Cbr Problem Solvings'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Cbr','url'=>array('index')),
-	array('label'=>'Create Cbr','url'=>array('create')),
+	array('label'=>'List CbrProblemSolving','url'=>array('index')),
+	array('label'=>'Create CbrProblemSolving','url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('cbr-grid', {
+	$.fn.yiiGridView.update('cbr-problem-solving-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -38,23 +38,18 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	<div class="span12 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen Cbr</p>
+			<p>Manajemen Cbr Problem Solving</p>
 		</div>
 		<div class="widget-content">
 			<?php $this->widget('bootstrap.widgets.TbGridView',array(
-			'id'=>'cbr-grid',
+			'id'=>'cbr-problem-solving-grid',
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
 					'id',
-		'jabatan_id',
-		'date',
-		'kh_score',
-		'ps_persent',
-		'ps_score',
-		/*
-		'ac_score',
-		*/
+		'cbr_id',
+		'tet',
+		'tce',
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
 					),

@@ -78,7 +78,7 @@ class Cbr extends CActiveRecord
 			'id' => 'ID',
 			'jabatan_id' => 'Jabatan',
 			'date' => 'Date',
-			'kh_score' => 'Kh Score',
+			'kh_score' => 'Know How Score',
 			'ps_persent' => 'Ps Persent',
 			'ps_score' => 'Ps Score',
 			'ac_score' => 'Ac Score',

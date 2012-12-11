@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Cbrs',
+	'Cbr Problem Solvings',
 );
 
 $this->menu=array(
-	array('label'=>'Create Cbr','url'=>array('create')),
-	array('label'=>'Manage Cbr','url'=>array('admin')),
+	array('label'=>'Create CbrProblemSolving','url'=>array('create')),
+	array('label'=>'Manage CbrProblemSolving','url'=>array('admin')),
 );
 ?>
 <?php $this->widget('bootstrap.widgets.TbListView',array(

@@ -1,6 +1,6 @@
 <?php
 
-class CbrController extends Controller
+class CbrKnowHowController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -17,7 +17,7 @@ class CbrController extends Controller
 	public function filters()
 	{
 		return array(
-			'rights', // perform access control for CRUD operations
+			'accessControl', // perform access control for CRUD operations
 		);
 	}
 
@@ -53,8 +53,8 @@ class CbrController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->breadcrumbs = array('Cbr'=>'', 'Cbr');
-		$this->sub_title = 'Detail Data Cbr';
+		$this->breadcrumbs = array('CbrKnowHow'=>'', 'Cbr Know How');
+		$this->sub_title = 'Detail Data Cbr Know How';
 		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -67,17 +67,17 @@ class CbrController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$this->breadcrumbs = array('Cbr'=>'', 'Cbr');
-		$this->sub_title = 'Tambah Data Cbr';
+		$this->breadcrumbs = array('CbrKnowHow'=>'', 'Cbr Know How');
+		$this->sub_title = 'Tambah Data Cbr Know How';
 		
-		$model=new Cbr;
+		$model=new CbrKnowHow;
 
 		// Comment the following line if AJAX validation is not needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Cbr']))
+		if(isset($_POST['CbrKnowHow']))
 		{
-			$model->attributes=$_POST['Cbr'];
+			$model->attributes=$_POST['CbrKnowHow'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -94,17 +94,17 @@ class CbrController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->breadcrumbs = array('Cbr'=>'', 'Cbr');
-		$this->sub_title = 'Ubah Data Cbr';
+		$this->breadcrumbs = array('CbrKnowHow'=>'', 'Cbr Know How');
+		$this->sub_title = 'Ubah Data Cbr Know How';
 		
 		$model=$this->loadModel($id);
 
 		// Comment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Cbr']))
+		if(isset($_POST['CbrKnowHow']))
 		{
-			$model->attributes=$_POST['Cbr'];
+			$model->attributes=$_POST['CbrKnowHow'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -139,10 +139,10 @@ class CbrController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array('Cbr'=>'', 'list');
-		$this->sub_title = 'Daftar Data Cbr';
+		$this->breadcrumbs = array('CbrKnowHow'=>'', 'list');
+		$this->sub_title = 'Daftar Data Cbr Know How';
 		
-		$dataProvider=new CActiveDataProvider('Cbr');
+		$dataProvider=new CActiveDataProvider('CbrKnowHow');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -153,13 +153,13 @@ class CbrController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$this->breadcrumbs = array('Cbr'=>'', 'list');
-		$this->sub_title = 'Manajemen Data Cbr';
+		$this->breadcrumbs = array('CbrKnowHow'=>'', 'list');
+		$this->sub_title = 'Manajemen Data Cbr Know How';
 		
-		$model=new Cbr('search');
+		$model=new CbrKnowHow('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Cbr']))
-			$model->attributes=$_GET['Cbr'];
+		if(isset($_GET['CbrKnowHow']))
+			$model->attributes=$_GET['CbrKnowHow'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -173,7 +173,7 @@ class CbrController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Cbr::model()->findByPk($id);
+		$model=CbrKnowHow::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -185,31 +185,10 @@ class CbrController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='cbr-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='cbr-know-how-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-    
-    public function actionForm()
-    {
-		$this->breadcrumbs = array('Cbr'=>'', 'list');
-		$this->sub_title = 'Daftar Data Cbr';
-		
-		$model = new Cbr;
-        $modelKh = new CbrKnowHow;
-        $modelPs = new CbrProblemSolving;
-        $modelAc = new CbrAccountability;
-        
-        // Comment the following line if AJAX validation is needed
-		$this->performAjaxValidation(array($model, $modelAc, $modelKh, $modelPs));
-        
-		$this->render('inputForm',array(
-			'model'=>$model,
-            'modelKh'=>$modelKh,
-            'modelPs'=>$modelPs,
-            'modelAc'=>$modelAc
-		));        
-    }
 }
