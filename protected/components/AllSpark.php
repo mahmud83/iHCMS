@@ -3,29 +3,19 @@
 class AllSpark extends CApplicationComponent {
 	
 	
-	public function renderSubmenu ($controllers, $module="", $block=array()) {
+	public function moduleName($name = '') {
 	
-		$render = "<ul>";
-		foreach ($controllers as $row=>$name):
-			$name = str_replace('Controller', '', $name);
-			$string = preg_replace('/(?<=\\w)(?=[A-Z])/',' $1', $name);
-			$string = trim($string);
-			$key = "okay";
-			if (sizeof($block) > 0):
-				foreach ($block as $rowBlock=>$nameBlock):
-					if ($string == $nameBlock):
-						//do nothing
-					else:
-						$render .= $this->renderLink ($string, $name, $module);
-					endif;
-				endforeach;
-			else:
-				$render .= $this->renderLink ($string, $name, $module);
-			endif;
-		endforeach;
-		$render .= "</ul>";
+		if ($name !== ''):
+			$moduleName = ucfirst($name);
+		elseif (isset(Yii::app()->controller->module)):
+			$moduleName = Yii::app()->controller->module->getName();
+		elseif (isset(Yii::app()->controller->id)):
+			$moduleName = Yii::app()->controller->id;
+		else:
+			$moduleName = 'Default';
+		endif;
 		
-		return $render;
+		echo ucfirst($moduleName);
 	}
 	
 	private function renderLink ($string, $name, $module) {
