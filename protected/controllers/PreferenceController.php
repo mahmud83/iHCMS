@@ -10,6 +10,38 @@ class PreferenceController extends Controller
 	public $breadcrumbs=array();
 	public $sub_title = '';
 	public $title = '';
+	public $submenu = '';
+	
+	public function init() {
+		
+		$this->submenu = array(
+			array(
+				'title'=>'user',
+				'icon'=>'icon-user',
+				'url'=>'user'
+			),
+			array(
+				'title'=>'jabatan',
+				'icon'=>'icon-cog',
+				'url'=>'jabatan',
+			),
+			array(
+				'title'=>'preference',
+				'icon'=>'icon-cog',
+				'url'=>'preference/form',
+			),
+			array(
+				'title'=>'negara',
+				'icon'=>'icon-cog',
+				'url'=>'negara',
+			),			
+			array(
+				'title'=>'propinsi',
+				'icon'=>'icon-cog',
+				'url'=>'propinsi',
+			),
+		);
+	}
 	
 	/**
 	 * @return array action filters
@@ -190,5 +222,29 @@ class PreferenceController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	/**
+	 * Form for Setting and preference
+	 */
+	public function actionForm() {
+		$this->breadcrumbs = array('Preference'=>'', 'Preference');
+		$this->sub_title = 'Tambah Data Preference';
+		
+		$model=new Preference;
+
+		// Comment the following line if AJAX validation is not needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Preference']))
+		{
+			$model->attributes=$_POST['Preference'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('form',array(
+			'model'=>$model,
+		));
 	}
 }

@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Karyawan Imigrasis'=>array('index'),
+	'Jabatans'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List KaryawanImigrasi','url'=>array('index')),
-	array('label'=>'Create KaryawanImigrasi','url'=>array('create')),
+	array('label'=>'List Jabatan','url'=>array('index')),
+	array('label'=>'Create Jabatan','url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('karyawan-imigrasi-grid', {
+	$.fn.yiiGridView.update('jabatan-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -38,24 +38,19 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	<div class="span12 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen Karyawan Imigrasi</p>
+			<p>Manajemen Jabatan</p>
 		</div>
 		<div class="widget-content">
 			<?php $this->widget('bootstrap.widgets.TbGridView',array(
-			'id'=>'karyawan-imigrasi-grid',
+			'id'=>'jabatan-grid',
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
 					'id',
-		'karyawan_id',
-		'nomor_dokumen',
-		'tgl_dikeluarkan',
-		'tgl_berakhir',
-		'status_kelayakan',
-		/*
-		'review_date',
-		'negara_id',
-		*/
+		'kode',
+		'nama',
+		'level',
+		'parent',
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
 					),

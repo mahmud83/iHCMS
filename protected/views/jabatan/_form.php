@@ -5,21 +5,20 @@
 			<p>Form</p>
 		</div>
 		<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
-			'id'=>'karyawan-sertifikasi-form',
+			'id'=>'jabatan-form',
 			'type'=>'horizontal',
 			'enableAjaxValidation'=>true,
 		)); ?>
 
-					<?php echo $form->textFieldRow($model,'karyawan_id',array('class'=>'span5')); ?>
+					<?php echo $form->textFieldRow($model,'kode',array('class'=>'span5','maxlength'=>45)); ?>
 		
-					<?php echo $form->textFieldRow($model,'jenis',array('class'=>'span5','maxlength'=>100)); ?>
+					<?php echo $form->textFieldRow($model,'nama',array('class'=>'span5','maxlength'=>200)); ?>
 		
-					<?php echo $form->textFieldRow($model,'nomor',array('class'=>'span5','maxlength'=>50)); ?>
+					<?php //echo $form->textFieldRow($model,'level',array('class'=>'span5')); ?>
 		
-					<?php echo $form->textFieldRow($model,'tgl_dikeluarkan',array('class'=>'span5')); ?>
-		
-					<?php echo $form->textFieldRow($model,'tgl_berakhir',array('class'=>'span5')); ?>
-		
+					<?php //echo $form->textFieldRow($model,'parent',array('class'=>'span5')); ?>
+					<?php echo $form->dropDownListRow($model, 'parent',
+        CHtml::listData(Jabatan::model()->findAll(), 'id', 'nama')); ?>
 				<div class="control-group">
 			<div class="controls">
 				<?php $this->widget('bootstrap.widgets.TbButton', array(

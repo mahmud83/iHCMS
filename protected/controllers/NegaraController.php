@@ -8,8 +8,40 @@ class NegaraController extends Controller
 	 */
 	public $layout='//layouts/column2';
 	public $breadcrumbs=array();
-	public $sub_title = "";
-	public $title = "";
+	public $sub_title = '';
+	public $title = '';
+	public $submenu = '';
+	
+	public function init() {
+		
+		$this->submenu = array(
+			array(
+				'title'=>'user',
+				'icon'=>'icon-user',
+				'url'=>'user'
+			),
+			array(
+				'title'=>'jabatan',
+				'icon'=>'icon-cog',
+				'url'=>'jabatan',
+			),
+			array(
+				'title'=>'preference',
+				'icon'=>'icon-cog',
+				'url'=>'preference/form',
+			),
+			array(
+				'title'=>'negara',
+				'icon'=>'icon-cog',
+				'url'=>'negara',
+			),			
+			array(
+				'title'=>'propinsi',
+				'icon'=>'icon-cog',
+				'url'=>'propinsi',
+			),
+		);
+	}
 	
 	/**
 	 * @return array action filters

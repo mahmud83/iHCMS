@@ -58,7 +58,7 @@
 					<div class="first-nav">
 						<?php 
 						$this->widget('application.components.widgets.thememilan.SuperMenu', array(
-							'active'=>'Dashboard',
+							'active'=>(isset($this->module))?$this->module->getName():'Dashboard',
 							'columns'=>array(
 								array(
 									'title'=>'Dashboard',
@@ -71,7 +71,7 @@
 									'url'=>'pim/karyawan',
 								),
 								array(
-									'title'=>'Renumeration',
+									'title'=>'Renum',
 									'icon'=>'icon-credit-card',
 									'url'=>'renum/cbr'
 								),
@@ -84,30 +84,15 @@
 			</div>
 			<div class="content" id="content-scale">
 				<div class="second-nav" id="sc">
-					<h2><?php Yii::app()->allspark->moduleName();?></h2>
+					<h2><?php Yii::app()->allspark->moduleName(); ?></h2>
 					<div class="divider"></div>
 					<?php 
 						
 						$this->widget('application.components.widgets.thememilan.SuperMenu', array(
-							'active'=>'Dashboard',
-							'columns'=>array(
-								array(
-									'title'=>'Dashboard',
-									'icon'=>'icon-home',
-									'url'=>'preference',
-								),
-								array(
-									'title'=>'pim',
-									'icon'=>'icon-group',
-									'url'=>'pim/karyawan',
-								),
-								array(
-									'title'=>'Renumeration',
-									'icon'=>'icon-credit-card',
-									'url'=>'renum/cbr'
-								),
-							),
-						)); 
+							'active'=>(isset($this->ID))?$this->ID:'Dashboard',
+							'columns'=>(isset($this->submenu))?$this->submenu:"",
+							)
+						); 
 					?>
 					<!--
 					<ul>

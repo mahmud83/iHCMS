@@ -1,6 +1,6 @@
 <?php
 
-class PropinsiController extends Controller
+class JabatanController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -42,7 +42,7 @@ class PropinsiController extends Controller
 			),
 		);
 	}
-
+	
 	/**
 	 * @return array action filters
 	 */
@@ -85,6 +85,9 @@ class PropinsiController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$this->breadcrumbs = array('Jabatan'=>'', 'Jabatan');
+		$this->sub_title = 'Detail Data Jabatan';
+		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -96,14 +99,21 @@ class PropinsiController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Propinsi;
+		$this->breadcrumbs = array('Jabatan'=>'', 'Jabatan');
+		$this->sub_title = 'Tambah Data Jabatan';
+		
+		$model=new Jabatan;
 
-		// Uncomment the following line if AJAX validation is needed
+		// Comment the following line if AJAX validation is not needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Propinsi']))
+		if(isset($_POST['Jabatan']))
 		{
-			$model->attributes=$_POST['Propinsi'];
+			$model->attributes=$_POST['Jabatan'];
+			$parent = Jabatan::model()->find("id=:ID", array(":ID"=>$_POST['Jabatan']['parent']));
+			
+			$model->level = $parent->level + 1;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -120,14 +130,20 @@ class PropinsiController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		$this->breadcrumbs = array('Jabatan'=>'', 'Jabatan');
+		$this->sub_title = 'Ubah Data Jabatan';
+		
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
+		// Comment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['Propinsi']))
+		if(isset($_POST['Jabatan']))
 		{
-			$model->attributes=$_POST['Propinsi'];
+			$model->attributes=$_POST['Jabatan'];
+			$parent = Jabatan::model()->find("id=:ID", array(":ID"=>$_POST['Jabatan']['parent']));
+			
+			$model->level = $parent->level + 1;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -162,7 +178,10 @@ class PropinsiController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Propinsi');
+		$this->breadcrumbs = array('Jabatan'=>'', 'list');
+		$this->sub_title = 'Daftar Data Jabatan';
+		
+		$dataProvider=new CActiveDataProvider('Jabatan');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -173,10 +192,13 @@ class PropinsiController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Propinsi('search');
+		$this->breadcrumbs = array('Jabatan'=>'', 'list');
+		$this->sub_title = 'Manajemen Data Jabatan';
+		
+		$model=new Jabatan('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Propinsi']))
-			$model->attributes=$_GET['Propinsi'];
+		if(isset($_GET['Jabatan']))
+			$model->attributes=$_GET['Jabatan'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -190,7 +212,7 @@ class PropinsiController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Propinsi::model()->findByPk($id);
+		$model=Jabatan::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -202,7 +224,7 @@ class PropinsiController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='propinsi-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='jabatan-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

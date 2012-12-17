@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Karyawan Imigrasis',
+	'Jabatans',
 );
 
 $this->menu=array(
-	array('label'=>'Create KaryawanImigrasi','url'=>array('create')),
-	array('label'=>'Manage KaryawanImigrasi','url'=>array('admin')),
+	array('label'=>'Create Jabatan','url'=>array('create')),
+	array('label'=>'Manage Jabatan','url'=>array('admin')),
 );
 ?>
 <?php $this->widget('bootstrap.widgets.TbListView',array(
