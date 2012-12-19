@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Wstates'=>array('index'),
+	'Wunits'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List WState','url'=>array('index')),
-	array('label'=>'Create WState','url'=>array('create')),
+	array('label'=>'List WUnit','url'=>array('index')),
+	array('label'=>'Create WUnit','url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('wstate-grid', {
+	$.fn.yiiGridView.update('wunit-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -27,18 +27,19 @@ $('.search-form form').submit(function(){
 	<div class="span12 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen Wstate</p>
+			<p>Manajemen Wunit</p>
 		</div>
 		<div class="widget-content">
 			<?php $this->widget('bootstrap.widgets.TbGridView',array(
-			'id'=>'wstate-grid',
+			'id'=>'wunit-grid',
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
 					'id',
-		'name',
 		'code',
-		'country_id',
+		'name',
+		'level',
+		'parent_id',
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
 					),
