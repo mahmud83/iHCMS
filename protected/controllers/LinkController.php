@@ -1,13 +1,6 @@
 <?php
-/**
- * This is the template for generating a controller class file for CRUD feature.
- * The following variables are available in this template:
- * - $this: the BootCrudCode object
- */
-?>
-<?php echo "<?php\n"; ?>
 
-class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseControllerClass."\n"; ?>
+class LinkController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -61,8 +54,8 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionView($id)
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', '<?php echo $this->class2name($this->modelClass);?>');
-		$this->sub_title = 'Detail Data <?php echo $this->class2name($this->modelClass);?>';
+		$this->breadcrumbs = array('Link'=>'', 'Link');
+		$this->sub_title = 'Detail Data Link';
 		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -75,19 +68,26 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionCreate()
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', '<?php echo $this->class2name($this->modelClass);?>');
-		$this->sub_title = 'Tambah Data <?php echo $this->class2name($this->modelClass);?>';
+		$this->breadcrumbs = array('Link'=>'', 'Link');
+		$this->sub_title = 'Tambah Data Link';
 		
-		$model=new <?php echo $this->modelClass; ?>;
+		$model=new Link;
 
 		// Comment the following line if AJAX validation is not needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['<?php echo $this->modelClass; ?>']))
+		if(isset($_POST['Link']))
 		{
-			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
+			$model->attributes=$_POST['Link'];
+			//upload Image
+			//$rand = rand(0,999);
+			$uploadFile = CUploadedFile::getInstance($model, 'avatar');
+			$fileName = $modelUser->hash.".".$uploadFile->extensionName;  // random number + file name
+			$model->avatar = $fileName;
+			$uploadFile->saveAs(Yii::app()->basePath.'/../user/'.$fileName);
+			
 			if($model->save())
-				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -102,19 +102,19 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionUpdate($id)
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', '<?php echo $this->class2name($this->modelClass);?>');
-		$this->sub_title = 'Ubah Data <?php echo $this->class2name($this->modelClass);?>';
+		$this->breadcrumbs = array('Link'=>'', 'Link');
+		$this->sub_title = 'Ubah Data Link';
 		
 		$model=$this->loadModel($id);
 
 		// Comment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['<?php echo $this->modelClass; ?>']))
+		if(isset($_POST['Link']))
 		{
-			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
+			$model->attributes=$_POST['Link'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -147,10 +147,10 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', 'list');
-		$this->sub_title = 'Daftar Data <?php echo $this->class2name($this->modelClass);?>';
+		$this->breadcrumbs = array('Link'=>'', 'list');
+		$this->sub_title = 'Daftar Data Link';
 		
-		$dataProvider=new CActiveDataProvider('<?php echo $this->modelClass; ?>');
+		$dataProvider=new CActiveDataProvider('Link');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -161,13 +161,13 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionAdmin()
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', 'list');
-		$this->sub_title = 'Manajemen Data <?php echo $this->class2name($this->modelClass);?>';
+		$this->breadcrumbs = array('Link'=>'', 'list');
+		$this->sub_title = 'Manajemen Data Link';
 		
-		$model=new <?php echo $this->modelClass; ?>('search');
+		$model=new Link('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['<?php echo $this->modelClass; ?>']))
-			$model->attributes=$_GET['<?php echo $this->modelClass; ?>'];
+		if(isset($_GET['Link']))
+			$model->attributes=$_GET['Link'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -181,7 +181,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function loadModel($id)
 	{
-		$model=<?php echo $this->modelClass; ?>::model()->findByPk($id);
+		$model=Link::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -193,7 +193,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='<?php echo $this->class2id($this->modelClass); ?>-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='link-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

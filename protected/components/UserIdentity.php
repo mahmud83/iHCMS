@@ -28,7 +28,7 @@ class UserIdentity extends CUserIdentity
 		);*/
 		
 		$username = strtolower($this->username);
-		$user = User::model()->find('Lower(username)=?', array($username));
+		$user = WUser::model()->find('Lower(username)=?', array($username));
 		
 		if ($user === null):
 			$this->errorCode=self::ERROR_USERNAME_INVALID;

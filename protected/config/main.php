@@ -47,6 +47,7 @@ return array(
 			'appLayout'=>'application.views.layouts.main', 
 			'cssFile'=>'rights.css',
 			'debug'=>false,
+			'userClass'=>'WUser',
 			//'install'=>true,
 		),
 		

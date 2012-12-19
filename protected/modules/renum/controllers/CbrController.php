@@ -194,6 +194,8 @@ class CbrController extends Controller
     
     public function actionForm()
     {
+    
+    	$this->layout='//layouts/column1';
 		$this->breadcrumbs = array('Cbr'=>'', 'list');
 		$this->sub_title = 'Daftar Data Cbr';
 		

@@ -8,6 +8,7 @@
 	<meta name="author" content="masbenx">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/global.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css">
+	<link href="<?php echo Yii::app()->request->baseUrl;?>/css/bwizard.min.css" rel="stylesheet">
 </head>
 <body>
 	<!-- navbar start here !-->
@@ -58,24 +59,8 @@
 					<div class="first-nav">
 						<?php 
 						$this->widget('application.components.widgets.thememilan.SuperMenu', array(
-							'active'=>(isset($this->module))?$this->module->getName():'Dashboard',
-							'columns'=>array(
-								array(
-									'title'=>'Dashboard',
-									'icon'=>'icon-home',
-									'url'=>'preference',
-								),
-								array(
-									'title'=>'pim',
-									'icon'=>'icon-group',
-									'url'=>'pim/karyawan',
-								),
-								array(
-									'title'=>'Renum',
-									'icon'=>'icon-credit-card',
-									'url'=>'renum/cbr'
-								),
-							),
+							'active'=>(isset($this->module))?$this->module->getName():'core',
+							'columns'=> Yii::app()->allspark->getModule()
 						)); 
 						?>
 						
@@ -87,10 +72,10 @@
 					<h2><?php Yii::app()->allspark->moduleName(); ?></h2>
 					<div class="divider"></div>
 					<?php 
-						
 						$this->widget('application.components.widgets.thememilan.SuperMenu', array(
 							'active'=>(isset($this->ID))?$this->ID:'Dashboard',
-							'columns'=>(isset($this->submenu))?$this->submenu:"",
+							//'columns'=>(isset($this->submenu))?$this->submenu:"",
+							'columns'=> Yii::app()->allspark->getMenu()
 							)
 						); 
 					?>

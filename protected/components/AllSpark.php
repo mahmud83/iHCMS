@@ -48,7 +48,7 @@ class AllSpark extends CApplicationComponent {
 	}
 	
 	public function Preference($name = '') {
-		return Preference::model()->find('name=:Name', array(':Name'=>$name))->value;	
+		return WPreference::model()->find('name=:Name', array(':Name'=>$name))->value;	
 	}
 	
 	public function getUsername () {
@@ -64,5 +64,63 @@ class AllSpark extends CApplicationComponent {
 		endif;
 		
 		return $name;
+	}
+	
+	
+	public function getMenu($parent='IS NULL') {
+	
+		$moduleName = (isset(Yii::app()->controller->module))?Yii::app()->controller->module->getName():'core';
+	
+		if ($parent === 'IS NULL'):
+			//$links = Wlink::model()->findAll('parent_id '.$parent);
+			$criteria = new CDbCriteria;
+			$criteria->condition = 'wModule.name = :moduleName AND t.parent_id IS NULL';
+			$criteria->params = array(':moduleName'=>$moduleName);
+			
+			$links = Wlink::model()->with('wModule')->findAll($criteria);
+		else:
+			$criteria = new CDbCriteria;
+			$criteria->condition = 'w_module.name = :moduleName';
+			$criteria->params = array(':moduleName'=>$parent);
+			
+			$links = Wlink::model()->with('module','link.w_module_id')->findAll($criteria);
+		endif;
+		
+		$columns = array();
+		
+		if (sizeof($links) > 0):
+			foreach($links as $link):
+				
+				//echo CHtml::encode($key->name);
+				$columns[]= array(
+					'title' => $link->title,
+					'name' => $link->name,
+					'icon'  => 'icon-home',
+					'url' => $link->url,
+				);
+			endforeach;
+		endif;
+		
+		return $columns;
+	}
+	
+	public function getModule($parent='IS NULL') {
+		$links = WModule::model()->findAll('parent_id '.$parent);
+		
+		$columns = array();
+		
+		if (sizeof($links) > 0):
+			foreach($links as $link):
+				
+				//echo CHtml::encode($key->name);
+				$columns[]= array(
+					'title' => $link->name,
+					'icon'  => 'icon-home',
+					'url' => $link->url,
+				);
+			endforeach;
+		endif;
+		
+		return $columns;
 	}
 }
