@@ -114,7 +114,8 @@ class AllSpark extends CApplicationComponent {
 				
 				//echo CHtml::encode($key->name);
 				$columns[]= array(
-					'title' => $link->name,
+					'title' => $link->title,
+					'name' => $link->name,
 					'icon'  => 'icon-home',
 					'url' => $link->url,
 				);
