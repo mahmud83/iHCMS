@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2012 at 07:27 AM
+-- Generation Time: Dec 21, 2012 at 04:37 AM
 -- Server version: 5.5.27-log
 -- PHP Version: 5.3.16
 
@@ -11,12 +11,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT=0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `ihcms`
@@ -58,118 +52,6 @@ CREATE TABLE IF NOT EXISTS `AuthItem` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `AuthItem`
---
-
-INSERT INTO `AuthItem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
-('admin', 2, NULL, NULL, 'N;'),
-('Authenticated', 2, NULL, NULL, 'N;'),
-('Guest', 2, 'guest', NULL, 'N;'),
-('Karyawan.*', 1, NULL, NULL, 'N;'),
-('Karyawan.Admin', 0, NULL, NULL, 'N;'),
-('Karyawan.Create', 0, NULL, NULL, 'N;'),
-('Karyawan.Delete', 0, NULL, NULL, 'N;'),
-('Karyawan.Index', 0, NULL, NULL, 'N;'),
-('Karyawan.Update', 0, NULL, NULL, 'N;'),
-('Karyawan.View', 0, NULL, NULL, 'N;'),
-('KaryawanSertifikasi.*', 1, NULL, NULL, 'N;'),
-('KaryawanSertifikasi.Admin', 0, NULL, NULL, 'N;'),
-('KaryawanSertifikasi.Create', 0, NULL, NULL, 'N;'),
-('KaryawanSertifikasi.Delete', 0, NULL, NULL, 'N;'),
-('KaryawanSertifikasi.Index', 0, NULL, NULL, 'N;'),
-('KaryawanSertifikasi.Update', 0, NULL, NULL, 'N;'),
-('KaryawanSertifikasi.View', 0, NULL, NULL, 'N;'),
-('Login.*', 1, NULL, NULL, 'N;'),
-('Login.Index', 0, NULL, NULL, 'N;'),
-('Negara.*', 1, NULL, NULL, 'N;'),
-('Negara.Admin', 0, NULL, NULL, 'N;'),
-('Negara.Create', 0, NULL, NULL, 'N;'),
-('Negara.Delete', 0, NULL, NULL, 'N;'),
-('Negara.Index', 0, NULL, NULL, 'N;'),
-('Negara.Update', 0, NULL, NULL, 'N;'),
-('Negara.View', 0, NULL, NULL, 'N;'),
-('Pim.Default.*', 1, NULL, NULL, 'N;'),
-('Pim.Default.Index', 0, NULL, NULL, 'N;'),
-('Pim.Karyawan.*', 1, NULL, NULL, 'N;'),
-('Pim.Karyawan.Admin', 0, NULL, NULL, 'N;'),
-('Pim.Karyawan.Create', 0, NULL, NULL, 'N;'),
-('Pim.Karyawan.Delete', 0, NULL, NULL, 'N;'),
-('Pim.Karyawan.Index', 0, NULL, NULL, 'N;'),
-('Pim.Karyawan.Update', 0, NULL, NULL, 'N;'),
-('Pim.Karyawan.View', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanImigrasi.*', 1, NULL, NULL, 'N;'),
-('Pim.KaryawanImigrasi.Admin', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanImigrasi.Create', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanImigrasi.Delete', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanImigrasi.Index', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanImigrasi.Update', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanImigrasi.View', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanKontakdarurat.*', 1, NULL, NULL, 'N;'),
-('Pim.KaryawanKontakdarurat.Admin', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanKontakdarurat.Create', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanKontakdarurat.Delete', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanKontakdarurat.Index', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanKontakdarurat.Update', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanKontakdarurat.View', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPendidikan.*', 1, NULL, NULL, 'N;'),
-('Pim.KaryawanPendidikan.Admin', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPendidikan.Create', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPendidikan.Delete', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPendidikan.Index', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPendidikan.Update', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPendidikan.View', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPengalamankerja.*', 1, NULL, NULL, 'N;'),
-('Pim.KaryawanPengalamankerja.Admin', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPengalamankerja.Create', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPengalamankerja.Delete', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPengalamankerja.Index', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPengalamankerja.Update', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanPengalamankerja.View', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanSertifikasi.*', 1, NULL, NULL, 'N;'),
-('Pim.KaryawanSertifikasi.Admin', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanSertifikasi.Create', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanSertifikasi.Delete', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanSertifikasi.Index', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanSertifikasi.Update', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanSertifikasi.View', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanTanggungan.*', 1, NULL, NULL, 'N;'),
-('Pim.KaryawanTanggungan.Admin', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanTanggungan.Create', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanTanggungan.Delete', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanTanggungan.Index', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanTanggungan.Update', 0, NULL, NULL, 'N;'),
-('Pim.KaryawanTanggungan.View', 0, NULL, NULL, 'N;'),
-('Preference.*', 1, NULL, NULL, 'N;'),
-('Preference.Admin', 0, NULL, NULL, 'N;'),
-('Preference.Create', 0, NULL, NULL, 'N;'),
-('Preference.Delete', 0, NULL, NULL, 'N;'),
-('Preference.Index', 0, NULL, NULL, 'N;'),
-('Preference.Update', 0, NULL, NULL, 'N;'),
-('Preference.View', 0, NULL, NULL, 'N;'),
-('Propinsi.*', 1, NULL, NULL, 'N;'),
-('Propinsi.Admin', 0, NULL, NULL, 'N;'),
-('Propinsi.Create', 0, NULL, NULL, 'N;'),
-('Propinsi.Delete', 0, NULL, NULL, 'N;'),
-('Propinsi.Index', 0, NULL, NULL, 'N;'),
-('Propinsi.Update', 0, NULL, NULL, 'N;'),
-('Propinsi.View', 0, NULL, NULL, 'N;'),
-('Site.*', 1, NULL, NULL, 'N;'),
-('Site.Contact', 0, NULL, NULL, 'N;'),
-('Site.Error', 0, NULL, NULL, 'N;'),
-('Site.Index', 0, NULL, NULL, 'N;'),
-('Site.Login', 0, NULL, NULL, 'N;'),
-('Site.Logout', 0, NULL, NULL, 'N;'),
-('User.*', 1, NULL, NULL, 'N;'),
-('User.Admin', 0, NULL, NULL, 'N;'),
-('User.Create', 0, NULL, NULL, 'N;'),
-('User.Delete', 0, NULL, NULL, 'N;'),
-('User.Index', 0, NULL, NULL, 'N;'),
-('User.Update', 0, NULL, NULL, 'N;'),
-('User.View', 0, NULL, NULL, 'N;'),
-('Wilayah.Default.*', 1, NULL, NULL, 'N;'),
-('Wilayah.Default.Index', 0, NULL, NULL, 'N;');
-
 -- --------------------------------------------------------
 
 --
@@ -183,32 +65,6 @@ CREATE TABLE IF NOT EXISTS `AuthItemChild` (
   KEY `child` (`child`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `AuthItemChild`
---
-
-INSERT INTO `AuthItemChild` (`parent`, `child`) VALUES
-('Authenticated', 'Karyawan.*'),
-('Authenticated', 'KaryawanSertifikasi.*'),
-('Authenticated', 'Login.*'),
-('Authenticated', 'Negara.*'),
-('Authenticated', 'Negara.Admin'),
-('Authenticated', 'Negara.Create'),
-('Authenticated', 'Negara.Delete'),
-('Authenticated', 'Negara.Index'),
-('Authenticated', 'Negara.Update'),
-('Authenticated', 'Negara.View'),
-('Authenticated', 'Preference.*'),
-('Authenticated', 'Propinsi.*'),
-('Authenticated', 'Site.*'),
-('Authenticated', 'User.*'),
-('Authenticated', 'User.Admin'),
-('Authenticated', 'User.Create'),
-('Authenticated', 'User.Delete'),
-('Authenticated', 'User.Index'),
-('Authenticated', 'User.Update'),
-('Authenticated', 'User.View');
-
 -- --------------------------------------------------------
 
 --
@@ -217,7 +73,7 @@ INSERT INTO `AuthItemChild` (`parent`, `child`) VALUES
 
 CREATE TABLE IF NOT EXISTS `cbr` (
   `id` int(11) NOT NULL,
-  `jabatan_id` int(11) NOT NULL,
+  `jabatan_id` int(11) DEFAULT NULL,
   `date` date NOT NULL COMMENT 'tanggal input cbr',
   `kh_score` int(11) NOT NULL COMMENT 'score Know How',
   `ps_persent` int(11) NOT NULL COMMENT 'persentasi nilai problem solving',
@@ -279,18 +135,6 @@ CREATE TABLE IF NOT EXISTS `cbr_problem_solving` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatan`
---
-
-CREATE TABLE IF NOT EXISTS `jabatan` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `karyawan`
 --
 
@@ -302,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `karyawan` (
   `nama_belakang` varchar(45) DEFAULT NULL COMMENT 'nama belakang karyawan',
   `nama_panggilan` varchar(45) DEFAULT NULL COMMENT 'nikcname / nama panggilan karyawan',
   `tgl_lahir` date DEFAULT NULL COMMENT 'tanggal lahir karyawan',
-  `warga_negara` int(11) NOT NULL COMMENT 'negara asal karyawan',
+  `warga_negara` int(11) DEFAULT NULL COMMENT 'negara asal karyawan',
   `kelamin` varchar(45) DEFAULT NULL COMMENT 'jenis kelamin karyawan',
   `no_ktp` varchar(255) DEFAULT NULL COMMENT 'nomor ktp karyawan',
   `no_ktp_exp_date` date DEFAULT NULL COMMENT 'tanggal berakhir ktp karyawan',
@@ -313,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `karyawan` (
   `alamat1` varchar(255) DEFAULT NULL COMMENT 'alamat utama karyawan',
   `alamat2` varchar(255) DEFAULT NULL COMMENT 'alamat alternatif karyawan',
   `kota` varchar(100) DEFAULT NULL COMMENT 'kota tempat tinggal ',
-  `negara` int(11) NOT NULL COMMENT 'negara tempat tinggal',
+  `negara` int(11) DEFAULT NULL COMMENT 'negara tempat tinggal',
   `propinsi` int(11) DEFAULT NULL COMMENT 'propinsi tempat tinggal',
   `kodepos` varchar(100) DEFAULT NULL COMMENT 'kodepos tempat tinggal',
   `tlp_rumah` varchar(50) DEFAULT NULL COMMENT 'nomer telepon rumah',
@@ -324,22 +168,33 @@ CREATE TABLE IF NOT EXISTS `karyawan` (
   `custom` text COMMENT 'custom field',
   `avatar` varchar(200) NOT NULL,
   `avatar_date` date NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `jabatan_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `nip` (`nip`),
+  UNIQUE KEY `nip_UNIQUE` (`nip`),
   KEY `fk_karyawan_negara1_idx` (`negara`),
   KEY `fk_karyawan_propinsi1_idx` (`propinsi`),
   KEY `fk_karyawan_negara2_idx` (`warga_negara`),
-  KEY `fk_karyawan_user1_idx` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  KEY `fk_karyawan_user1_idx` (`user_id`),
+  KEY `fk_karyawan_jabatan1_idx` (`jabatan_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `karyawan`
+-- Table structure for table `karyawan_historical_jabatan`
 --
 
-INSERT INTO `karyawan` (`id`, `nip`, `nama_depan`, `nama_tengah`, `nama_belakang`, `nama_panggilan`, `tgl_lahir`, `warga_negara`, `kelamin`, `no_ktp`, `no_ktp_exp_date`, `no_sim`, `no_sim_exp_date`, `status_kawin`, `status_karyawan`, `alamat1`, `alamat2`, `kota`, `negara`, `propinsi`, `kodepos`, `tlp_rumah`, `tlp_mobile`, `tlp_kantor`, `email1`, `email2`, `custom`, `avatar`, `avatar_date`, `user_id`) VALUES
-(1, '10018030', 'dimas', '', 'angger', '', '0000-00-00', 3, '', '', '0000-00-00', '', '0000-00-00', '', NULL, '', '', '', 3, 2, '', '', '', '', '', '', '', 'male.jpg', '0000-00-00', 8),
-(3, '0987654321', 'tar', 'jo', 'no', 'tarjono', '0000-00-00', 3, 'Pria', '0987654', '0000-00-00', '87678987', '0000-00-00', '', NULL, '', '', '', 3, 2, '55167', '', '', '', '', '', '', '50bef0a05cf9d1.40982545-nyoh cilikan.png', '0000-00-00', 13);
+CREATE TABLE IF NOT EXISTS `karyawan_historical_jabatan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `karyawan_id` int(11) NOT NULL,
+  `jabatan_id` int(11) NOT NULL,
+  `tgl_mulai` date DEFAULT NULL,
+  `tgl_selesai` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_karyawan_historical_jabatan_karyawan1_idx` (`karyawan_id`),
+  KEY `fk_karyawan_historical_jabatan_jabatan1_idx` (`jabatan_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -388,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `karyawan_kontakdarurat` (
 CREATE TABLE IF NOT EXISTS `karyawan_pendidikan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `karyawan_id` int(11) NOT NULL COMMENT 'nomor karyawan',
-  `jenis` varchar(100) DEFAULT NULL COMMENT 'jenis pendidikan yang ditempuh (nilai diambil dari setting)\\n',
+  `jenis` varchar(100) DEFAULT NULL COMMENT 'jenis pendidikan yang ditempuh (nilai diambil dari setting)\\\\\\\\n',
   `institusi` varchar(100) DEFAULT NULL COMMENT 'institusi tempat menempuh pendidikan',
   `major` varchar(45) DEFAULT NULL COMMENT 'program studi, penjurusan / sepsialisasi',
   `nilai` varchar(25) DEFAULT NULL COMMENT 'Indeks Prestasi',
@@ -396,14 +251,7 @@ CREATE TABLE IF NOT EXISTS `karyawan_pendidikan` (
   `tgl_keluar` date DEFAULT NULL COMMENT 'tanggal keluar',
   PRIMARY KEY (`id`),
   KEY `fk_karyawan_pendidikan_karyawan1_idx` (`karyawan_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `karyawan_pendidikan`
---
-
-INSERT INTO `karyawan_pendidikan` (`id`, `karyawan_id`, `jenis`, `institusi`, `major`, `nilai`, `tgl_masuk`, `tgl_keluar`) VALUES
-(1, 1, 'S1', 'Universitas Ahmad Dahlan', 'Teknik Informatika', '3.45', NULL, NULL);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -459,82 +307,6 @@ CREATE TABLE IF NOT EXISTS `karyawan_tanggungan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `negara`
---
-
-CREATE TABLE IF NOT EXISTS `negara` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `kode` varchar(2) NOT NULL COMMENT 'format penulisan kode negara dalam 2 huruf',
-  `nama` varchar(100) NOT NULL COMMENT 'nama terang negara	',
-  `iso3` varchar(3) DEFAULT NULL COMMENT 'penulisan kode negara dalam format 3 huruf',
-  `numcode` int(11) DEFAULT NULL COMMENT 'kode negara dalam angka',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `kode_UNIQUE` (`kode`),
-  UNIQUE KEY `iso3_UNIQUE` (`iso3`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
-
---
--- Dumping data for table `negara`
---
-
-INSERT INTO `negara` (`id`, `kode`, `nama`, `iso3`, `numcode`) VALUES
-(1, 'AD', 'Andorra', 'AND', 20),
-(2, 'BV', 'Bouvet Island', '', NULL),
-(3, 'ID', 'Indonesia', 'IDN', NULL),
-(4, 'US', 'Amerika Serikat', 'USA', NULL),
-(8, 'AE', 'United Arab Emirates', 'ARE', 784),
-(10, 'AF', 'Afganistan', 'AFG', 4);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `preference`
---
-
-CREATE TABLE IF NOT EXISTS `preference` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `value` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `preference`
---
-
-INSERT INTO `preference` (`id`, `name`, `value`) VALUES
-(1, 'site_logo', 'logo/logo.png'),
-(2, 'site_name', 'iHCMS'),
-(3, 'theme', 'benthik');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `propinsi`
---
-
-CREATE TABLE IF NOT EXISTS `propinsi` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(45) NOT NULL COMMENT 'nama propinsi',
-  `kode` varchar(5) DEFAULT NULL COMMENT 'kode propinsi',
-  `negara_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_propinsi_negara1_idx` (`negara_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
-
---
--- Dumping data for table `propinsi`
---
-
-INSERT INTO `propinsi` (`id`, `nama`, `kode`, `negara_id`) VALUES
-(2, 'Yogyakarta', 'JOG', 3),
-(8, 'Jakarta', 'JKT', 3),
-(18, 'Jawa Barat', 'JBR', 3),
-(19, 'Jawa Timur', 'JTM', 3);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `Rights`
 --
 
@@ -561,126 +333,260 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `sessions`
+-- Table structure for table `w_country`
 --
 
-INSERT INTO `sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('4913838a9f50a329bd49b3ea0e0e421b', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/536.26.14 (KHTML, like Gecko)', 1351592698, ''),
-('7249af0bde2b6d873fd5dac2939c51bd', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.92 Safari/537.4', 1351598778, ''),
-('d614c63077b782c0d68e0215de70733a', '::1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.92 Safari/537.4', 1351525653, '');
+CREATE TABLE IF NOT EXISTS `w_country` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(2) NOT NULL COMMENT 'format penulisan kode negara dalam 2 huruf',
+  `name` varchar(100) NOT NULL COMMENT 'nama terang negara	',
+  `iso3` varchar(3) DEFAULT NULL COMMENT 'penulisan kode negara dalam format 3 huruf',
+  `numcode` int(11) DEFAULT NULL COMMENT 'kode negara dalam angka',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `kode_UNIQUE` (`code`),
+  UNIQUE KEY `iso3_UNIQUE` (`iso3`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `w_country`
+--
+
+INSERT INTO `w_country` (`id`, `code`, `name`, `iso3`, `numcode`) VALUES
+(1, 'AD', 'Andorra', 'AND', 20),
+(2, 'BV', 'Bouvet Island', '', NULL),
+(3, 'ID', 'Indonesia', 'IDN', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `w_link`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `w_link` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `image` varchar(200) DEFAULT NULL,
+  `auth` text,
+  `w_module_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_link_link1_idx` (`parent_id`),
+  KEY `fk_w_link_w_module1_idx` (`w_module_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `w_link`
+--
+
+INSERT INTO `w_link` (`id`, `parent_id`, `name`, `title`, `url`, `image`, `auth`, `w_module_id`) VALUES
+(11, NULL, 'wModule', 'module', 'wModule', '', '', 1),
+(12, NULL, 'wLink', 'link', 'wLink', '', '', 1),
+(13, NULL, 'wCountry', 'country', 'wCountry', '', '', 1),
+(14, NULL, 'wState', 'State', 'wState', '', '', 1),
+(15, NULL, 'wUnit', 'Unit', 'wUnit', '', '', 1),
+(16, NULL, 'wOccupation', 'Occupation', 'wOccupation', '', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `w_module`
+--
+
+CREATE TABLE IF NOT EXISTS `w_module` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) DEFAULT NULL,
+  `name` varchar(45) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `image` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_module_module1_idx` (`parent_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `w_module`
+--
+
+INSERT INTO `w_module` (`id`, `parent_id`, `name`, `title`, `description`, `url`, `image`) VALUES
+(1, NULL, 'core', 'System Core', '', 'core', ''),
+(2, NULL, 'pim', 'Personal Information Manager', '', 'pim', ''),
+(3, NULL, 'renum', 'Renumeration', '', 'renum', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `w_occupation`
+--
+
+CREATE TABLE IF NOT EXISTS `w_occupation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(45) DEFAULT NULL,
+  `name` varchar(200) NOT NULL,
+  `level` int(11) DEFAULT '0',
+  `parent` int(11) DEFAULT NULL,
+  `w_unit_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_jabatan_jabatan1_idx` (`parent`),
+  KEY `fk_w_occupation_w_unit1_idx` (`w_unit_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `w_preference`
+--
+
+CREATE TABLE IF NOT EXISTS `w_preference` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `w_preference`
+--
+
+INSERT INTO `w_preference` (`id`, `name`, `value`) VALUES
+(1, 'site_name', 'iHCMS');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `w_state`
+--
+
+CREATE TABLE IF NOT EXISTS `w_state` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL COMMENT 'nama propinsi',
+  `code` varchar(5) DEFAULT NULL COMMENT 'kode propinsi',
+  `country_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_propinsi_negara1_idx` (`country_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `w_state`
+--
+
+INSERT INTO `w_state` (`id`, `name`, `code`, `country_id`) VALUES
+(1, 'Yogyakarta', '', 3),
+(2, 'Jakarta', '', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `w_unit`
+--
+
+CREATE TABLE IF NOT EXISTS `w_unit` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(45) DEFAULT NULL,
+  `name` varchar(200) NOT NULL,
+  `level` int(11) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_w_unit_w_unit1_idx` (`parent_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `w_unit`
+--
+
+INSERT INTO `w_unit` (`id`, `code`, `name`, `level`, `parent_id`) VALUES
+(1, '', 'Dewan Direksi', NULL, NULL),
+(2, '', 'Kantor Pusat', 1, 1),
+(3, '', 'SBU Tandun', 1, 1),
+(4, '', 'SBU Tandun', 1, 1),
+(5, '', 'SBU Sei Galuh', 1, 1),
+(6, '', 'SBU Sei Rokan', 1, 1),
+(7, '', 'SBU Sei Rokan', 1, 1),
+(8, '', 'SBU Lubuk Dalam', 1, 1),
+(9, '', 'Kebun Tandun', 2, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `w_user`
+--
+
+CREATE TABLE IF NOT EXISTS `w_user` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user id',
-  `username` varchar(45) NOT NULL COMMENT '\\''username untuk login\\''',
-  `password` varchar(45) NOT NULL COMMENT '\\''password untuk login\\''',
-  `hash` varchar(45) NOT NULL COMMENT '\\''kode enkripsi khusus milik user\\''',
+  `username` varchar(45) NOT NULL COMMENT 'username untuk login',
+  `password` varchar(45) NOT NULL COMMENT 'password untuk login',
+  `hash` varchar(45) NOT NULL COMMENT '\\\\\\\\\\\\\\''kode enkripsi khusus milik user\\\\\\\\\\\\\\''',
   `tgl_buat` datetime DEFAULT NULL,
   `tgl_edit` datetime DEFAULT NULL,
   `deskripsi` text,
   `status` enum('aktif','non-aktif') DEFAULT 'non-aktif' COMMENT 'status user',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `w_user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `hash`, `tgl_buat`, `tgl_edit`, `deskripsi`, `status`) VALUES
-(1, 'masbenx', 'a12a095b40f06a95d6e478c1c75cd32d', '50adc1ab30eae2.62563975', '2012-11-22 06:09:47', '2012-11-22 06:09:47', '', 'non-aktif'),
-(7, 'danang', 'f9ed82ad94aa662928554a9011a11d58', '50adc5d8471c69.99539251', '2012-11-22 06:25:48', '2012-11-22 06:27:36', '<p>okesip</p>', 'non-aktif'),
-(8, 'dimas', '3566e246ab80b9989149b84a0b62e433', '50b86eafe09b14.73729655', '2012-11-30 08:30:39', '2012-11-30 08:30:39', '<p>aku kudu piye</p>', 'non-aktif'),
-(13, 'tarjono', '9fc847a437a28bb4af79de8b0326ee0f', '50bef0a05cf9d1.40982545', '2012-12-05 06:58:40', '2012-12-05 06:58:40', NULL, 'non-aktif');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_role`
---
-
-CREATE TABLE IF NOT EXISTS `user_role` (
-  `user_id` int(11) NOT NULL,
-  `user_role_group_id` int(11) NOT NULL,
-  KEY `fk_user_has_user_role_group_user_role_group1_idx` (`user_role_group_id`),
-  KEY `fk_user_has_user_role_group_user_idx` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_role_group`
---
-
-CREATE TABLE IF NOT EXISTS `user_role_group` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id user role',
-  `nama` varchar(255) DEFAULT NULL COMMENT 'nama user role',
-  `deskripsi` text COMMENT 'deskripsi singkat tentang user role',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+INSERT INTO `w_user` (`id`, `username`, `password`, `hash`, `tgl_buat`, `tgl_edit`, `deskripsi`, `status`) VALUES
+(1, 'admin', '3566e246ab80b9989149b84a0b62e433', '50b86eafe09b14.73729655', '2012-11-30 08:30:39', '2012-11-30 08:30:39', NULL, 'aktif');
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `AuthAssignment`
---
-ALTER TABLE `AuthAssignment`
-  ADD CONSTRAINT `authassignment_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `AuthItemChild`
---
-ALTER TABLE `AuthItemChild`
-  ADD CONSTRAINT `authitemchild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `authitemchild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `cbr`
 --
 ALTER TABLE `cbr`
-  ADD CONSTRAINT `fk_cbr_jabatan1` FOREIGN KEY (`jabatan_id`) REFERENCES `jabatan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_cbr_jabatan1` FOREIGN KEY (`jabatan_id`) REFERENCES `w_occupation` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cbr_accountability`
 --
 ALTER TABLE `cbr_accountability`
-  ADD CONSTRAINT `fk_cbr_accountability_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_cbr_accountability_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cbr_know_how`
 --
 ALTER TABLE `cbr_know_how`
-  ADD CONSTRAINT `fk_cbr_know_how_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_cbr_know_how_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cbr_problem_solving`
 --
 ALTER TABLE `cbr_problem_solving`
-  ADD CONSTRAINT `fk_cbr_problem_solving_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_cbr_problem_solving_cbr1` FOREIGN KEY (`cbr_id`) REFERENCES `cbr` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `karyawan`
 --
 ALTER TABLE `karyawan`
-  ADD CONSTRAINT `fk_karyawan_negara1` FOREIGN KEY (`negara`) REFERENCES `negara` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_karyawan_negara2` FOREIGN KEY (`warga_negara`) REFERENCES `negara` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_karyawan_propinsi1` FOREIGN KEY (`propinsi`) REFERENCES `propinsi` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_karyawan_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_karyawan_jabatan1` FOREIGN KEY (`jabatan_id`) REFERENCES `w_occupation` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_karyawan_negara1` FOREIGN KEY (`negara`) REFERENCES `w_country` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_karyawan_negara2` FOREIGN KEY (`warga_negara`) REFERENCES `w_country` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_karyawan_propinsi1` FOREIGN KEY (`propinsi`) REFERENCES `w_state` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_karyawan_user1` FOREIGN KEY (`user_id`) REFERENCES `w_user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `karyawan_historical_jabatan`
+--
+ALTER TABLE `karyawan_historical_jabatan`
+  ADD CONSTRAINT `fk_karyawan_historical_jabatan_jabatan1` FOREIGN KEY (`jabatan_id`) REFERENCES `w_occupation` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_karyawan_historical_jabatan_karyawan1` FOREIGN KEY (`karyawan_id`) REFERENCES `karyawan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `karyawan_imigrasi`
 --
 ALTER TABLE `karyawan_imigrasi`
   ADD CONSTRAINT `fk_employee_imigrasi_employee1` FOREIGN KEY (`karyawan_id`) REFERENCES `karyawan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_karyawan_imigrasi_negara1` FOREIGN KEY (`negara_id`) REFERENCES `negara` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_karyawan_imigrasi_negara1` FOREIGN KEY (`negara_id`) REFERENCES `w_country` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `karyawan_kontakdarurat`
@@ -713,25 +619,34 @@ ALTER TABLE `karyawan_tanggungan`
   ADD CONSTRAINT `fk_employee_tanggungan_employee1` FOREIGN KEY (`karyawan_id`) REFERENCES `karyawan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `propinsi`
+-- Constraints for table `w_link`
 --
-ALTER TABLE `propinsi`
-  ADD CONSTRAINT `fk_propinsi_negara1` FOREIGN KEY (`negara_id`) REFERENCES `negara` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `w_link`
+  ADD CONSTRAINT `fk_link_link1` FOREIGN KEY (`parent_id`) REFERENCES `w_link` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_w_link_w_module1` FOREIGN KEY (`w_module_id`) REFERENCES `w_module` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `Rights`
+-- Constraints for table `w_module`
 --
-ALTER TABLE `Rights`
-  ADD CONSTRAINT `rights_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `w_module`
+  ADD CONSTRAINT `fk_module_module1` FOREIGN KEY (`parent_id`) REFERENCES `w_module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `user_role`
+-- Constraints for table `w_occupation`
 --
-ALTER TABLE `user_role`
-  ADD CONSTRAINT `fk_user_has_user_role_group_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_user_has_user_role_group_user_role_group1` FOREIGN KEY (`user_role_group_id`) REFERENCES `user_role_group` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+ALTER TABLE `w_occupation`
+  ADD CONSTRAINT `fk_jabatan_jabatan1` FOREIGN KEY (`parent`) REFERENCES `w_occupation` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_w_occupation_w_unit1` FOREIGN KEY (`w_unit_id`) REFERENCES `w_unit` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `w_state`
+--
+ALTER TABLE `w_state`
+  ADD CONSTRAINT `fk_propinsi_negara1` FOREIGN KEY (`country_id`) REFERENCES `w_country` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `w_unit`
+--
+ALTER TABLE `w_unit`
+  ADD CONSTRAINT `fk_w_unit_w_unit1` FOREIGN KEY (`parent_id`) REFERENCES `w_unit` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
