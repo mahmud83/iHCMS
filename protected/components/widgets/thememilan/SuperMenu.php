@@ -16,8 +16,9 @@ class SuperMenu extends CWidget {
 			foreach ($this->columns as $row):
 				//$active = (isset($row['active']))?"class=\"active\"":"";
 				$active = (strtolower($this->active) === strtolower($row['name']))?"class=\"active\"":"";
+				$url = ($row['module'] != 'core')?"".$row['module']."/".$row['url']."":"".$row['url']."";
 				$icon = (isset($row['icon']))?"<i class=\"".$row['icon']."\"></i>":"";
-				$render .= "<li ".$active."><a href=\"".Yii::app()->createUrl($row['url'])."\">".$icon."".ucfirst($row['title'])."</a></li>";
+				$render .= "<li ".$active."><a href=\"".Yii::app()->createUrl($url)."\">".$icon."".ucfirst($row['title'])."</a></li>";
 			endforeach;
 		endif;
 		$render .= "</ul>";

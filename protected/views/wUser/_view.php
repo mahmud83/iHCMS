@@ -16,21 +16,29 @@
 	<?php echo CHtml::encode($data->hash); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('tgl_buat')); ?>:</b>
-	<?php echo CHtml::encode($data->tgl_buat); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('created_date')); ?>:</b>
+	<?php echo CHtml::encode($data->created_date); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('tgl_edit')); ?>:</b>
-	<?php echo CHtml::encode($data->tgl_edit); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('created_by')); ?>:</b>
+	<?php echo CHtml::encode($data->created_by); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('deskripsi')); ?>:</b>
-	<?php echo CHtml::encode($data->deskripsi); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('modified_date')); ?>:</b>
+	<?php echo CHtml::encode($data->modified_date); ?>
 	<br />
 
 	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('status')); ?>:</b>
-	<?php echo CHtml::encode($data->status); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('modified_by')); ?>:</b>
+	<?php echo CHtml::encode($data->modified_by); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
+	<?php echo CHtml::encode($data->description); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('status_id')); ?>:</b>
+	<?php echo CHtml::encode($data->status_id); ?>
 	<br />
 
 	*/ ?>

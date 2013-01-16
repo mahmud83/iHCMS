@@ -25,8 +25,9 @@ class AllSpark extends CApplicationComponent {
 	
 	public function renderAvatar () {
 		$user_id = Yii::app()->user->id;
-		Yii::import('application.modules.pim.models.Karyawan');
-		$avatar =  Karyawan::model()->find('user_id=:userID', array(':userID'=>$user_id))->avatar;
+		Yii::import('application.modules.pim.models.PPerson');
+		
+		$avatar =  PPerson::model()->find('user_id=:userID', array(':userID'=>$user_id))->avatar;
 		if (empty($avatar)):
 			$avatar = "male.jpg";
 		endif;
@@ -52,13 +53,13 @@ class AllSpark extends CApplicationComponent {
 	}
 	
 	public function getUsername () {
-		Yii::import('application.modules.pim.models.Karyawan');
+		Yii::import('application.modules.pim.models.PPerson');
 		
-		$model = new Karyawan;
+		$model = new PPerson;
 		$model->user_id = Yii::app()->user->id;
 		
 		if ($model->id == null):
-			$name = Yii::app()->user->id;
+			$name = $model->user->username;//Yii::app()->user->id;
 		else:
 			$name = $model->nama_depan." ".$model->nama_tengah." ".$model->nama_belakang;
 		endif;
@@ -97,6 +98,7 @@ class AllSpark extends CApplicationComponent {
 					'name' => $link->name,
 					'icon'  => 'icon-home',
 					'url' => $link->url,
+					'module' => $link->wModule->url,
 				);
 			endforeach;
 		endif;

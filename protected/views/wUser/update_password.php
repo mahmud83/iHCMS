@@ -13,4 +13,4 @@ $this->menu=array(
 );
 ?>
 
-<?php echo $this->renderPartial('_formUpdate',array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_formChangePassword',array('model'=>$model)); ?>

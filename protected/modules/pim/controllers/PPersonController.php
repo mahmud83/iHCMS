@@ -1,6 +1,6 @@
 <?php
 
-class WOccupationController extends Controller
+class PPersonController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -54,8 +54,8 @@ class WOccupationController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'Woccupation');
-		$this->sub_title = 'Detail Data Woccupation';
+		$this->breadcrumbs = array('PPerson'=>'', 'Pperson');
+		$this->sub_title = 'Detail Data Pperson';
 		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -68,17 +68,17 @@ class WOccupationController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'Woccupation');
-		$this->sub_title = 'Tambah Data Woccupation';
+		$this->breadcrumbs = array('PPerson'=>'', 'Pperson');
+		$this->sub_title = 'Tambah Data Pperson';
 		
-		$model=new WOccupation;
+		$model=new PPerson;
 
 		// Comment the following line if AJAX validation is not needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['WOccupation']))
+		if(isset($_POST['PPerson']))
 		{
-			$model->attributes=$_POST['WOccupation'];
+			$model->attributes=$_POST['PPerson'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -95,17 +95,17 @@ class WOccupationController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'Woccupation');
-		$this->sub_title = 'Ubah Data Woccupation';
+		$this->breadcrumbs = array('PPerson'=>'', 'Pperson');
+		$this->sub_title = 'Ubah Data Pperson';
 		
 		$model=$this->loadModel($id);
 
 		// Comment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['WOccupation']))
+		if(isset($_POST['PPerson']))
 		{
-			$model->attributes=$_POST['WOccupation'];
+			$model->attributes=$_POST['PPerson'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -140,16 +140,13 @@ class WOccupationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*
-		$this->breadcrumbs = array('WOccupation'=>'', 'list');
-		$this->sub_title = 'Daftar Data Woccupation';
+		$this->breadcrumbs = array('PPerson'=>'', 'list');
+		$this->sub_title = 'Daftar Data Pperson';
 		
-		$dataProvider=new CActiveDataProvider('WOccupation');
+		$dataProvider=new CActiveDataProvider('PPerson');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-		*/
-		$this->redirect(array('admin'));
 	}
 
 	/**
@@ -157,13 +154,13 @@ class WOccupationController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'list');
-		$this->sub_title = 'Manajemen Data Woccupation';
+		$this->breadcrumbs = array('PPerson'=>'', 'list');
+		$this->sub_title = 'Manajemen Data Pperson';
 		
-		$model=new WOccupation('search');
+		$model=new PPerson('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['WOccupation']))
-			$model->attributes=$_GET['WOccupation'];
+		if(isset($_GET['PPerson']))
+			$model->attributes=$_GET['PPerson'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -177,7 +174,7 @@ class WOccupationController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=WOccupation::model()->findByPk($id);
+		$model=PPerson::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -189,10 +186,35 @@ class WOccupationController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='woccupation-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pperson-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
+	
+	/**
+	 * Performs autocomplete
+	 *
+	 */ 
+	function actionAutocomplete() {
+		if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
+			$models = WUser::model()->getData($_GET['term']);
+			$result = array();
+			foreach ($models as $m) :
+	            $result[] = array(
+	                'label' => $m->username,
+	                'value' => $m->user_id,
+	                'id' => $m->user_id,
+	                //'field' => $m->attribute_for_another_field,
+	            );
+            endforeach;
+ 
+        echo CJSON::encode($result);
+        }
+    }
+    
+    function actionTest() {
+	    $this->render('test');
+    }
 }

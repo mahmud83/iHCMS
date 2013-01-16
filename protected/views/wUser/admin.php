@@ -22,18 +22,6 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
 <div class="row-fluid no-clear">
 	<div class="span12 widget">
 		<div class="widget-title">
@@ -46,18 +34,33 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-					'id',
-		'username',
-		'password',
-		'hash',
-		'tgl_buat',
-		'tgl_edit',
-		/*
-		'deskripsi',
-		'status',
-		*/
+				//'id',
+				'username',
+				//'password',
+				//'hash',
+				//'created_date',
+				array('name'=>'created_date', 'value'=>'date("d F Y", strtotime($data->created_date))'),
+				//'created_by',
+				array('name'=>'created_by', 'value'=>'$data->createdBy->username'),
+				/*
+				'modified_date',
+				'modified_by',
+				'description',
+				*/
+				array('name'=>'status_id', 'value'=>'WUser::model()->userStatus($data->status_id)'),
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
+						'template'=>'{view}{update}{change password}{delete}',
+					    'buttons'=>array
+					    (
+					        'change password' => array
+					        (
+					            //'label'=>'Change Password',
+					            'icon'=>'icon-lock',
+					            //'imageUrl'=>Yii::app()->request->baseUrl.'/images/email.png',
+					            'url'=>'Yii::app()->createUrl("wUser/changePassword", array("id"=>$data->id))',
+					        ),
+					    ),
 					),
 				),
 			)); ?>

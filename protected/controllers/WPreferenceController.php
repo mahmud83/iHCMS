@@ -143,6 +143,24 @@ class WPreferenceController extends Controller
 		$this->breadcrumbs = array('WPreference'=>'', 'list');
 		$this->sub_title = 'Daftar Data Wpreference';
 		
+		if(isset($_POST['submit'])):
+			//update setting site name
+			/*if ($_POST['siteName']):
+				$sql = "UPDATE w_preference SET value = '".$_POST['siteName']."' WHERE  `w_preference`.`id` =1; ";
+			endif;
+			*/
+			foreach($_POST['WPreference'] as $form=>$value):
+				if ($form == 'site_logo'):
+					//do upload image
+				else:
+					$sql = "UPDATE w_preference SET value = :value WHERE  name = :name; ";
+					$command = Yii::app()->db->createCommand($sql);
+					$command->execute(array(':value' => $value, ':name' => $form));
+				endif;
+			endforeach;
+
+		endif;
+		
 		$dataProvider=new CActiveDataProvider('WPreference');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

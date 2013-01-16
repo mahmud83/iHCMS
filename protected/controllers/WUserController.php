@@ -79,6 +79,17 @@ class WUserController extends Controller
 		if(isset($_POST['WUser']))
 		{
 			$model->attributes=$_POST['WUser'];
+			
+			$getPassword = $model->password;
+			$getPassword2 = $model->password2;
+			
+			$model->hash = $model->generateHash();
+			$model->password = $model->hashPassword($getPassword, $model->hash);
+			
+			$model->password2 = $model->hashPassword($getPassword2, $model->hash);
+			$model->created_date = date('Y-m-d');
+			$model->created_by = Yii::app()->user->id;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -106,6 +117,10 @@ class WUserController extends Controller
 		if(isset($_POST['WUser']))
 		{
 			$model->attributes=$_POST['WUser'];
+			
+			$model->modified_date = date('Y-m-d');
+			$model->modified_by = Yii::app()->user->id;;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -140,13 +155,14 @@ class WUserController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array('WUser'=>'', 'list');
+		/*$this->breadcrumbs = array('WUser'=>'', 'list');
 		$this->sub_title = 'Daftar Data Wuser';
 		
 		$dataProvider=new CActiveDataProvider('WUser');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
+		$this->redirect(array('admin'));
 	}
 
 	/**
@@ -191,5 +207,63 @@ class WUserController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionAdd()
+	{
+		$this->breadcrumbs = array('WUser'=>'', 'Wuser');
+		$this->sub_title = 'Tambah Data Wuser';
+		
+		$model=new WUser;
+
+		// Comment the following line if AJAX validation is not needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['WUser']))
+		{
+			$model->attributes=$_POST['WUser'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('add',array(
+			'model'=>$model,
+		));
+	}
+	
+	public function actionChangePassword($id) {
+		$this->breadcrumbs = array('WUser'=>'', 'Wuser');
+		$this->sub_title = 'Ubah Data Wuser';
+		
+		$model=$this->loadModel($id);
+		$model->scenario='changePassword';
+		
+		$model->password = $model->password2 = '';
+		$hash = $model->hash;
+
+		// Comment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['WUser']))
+		{
+			$model->attributes=$_POST['WUser'];
+			
+			$getPassword = $model->password;
+			$getPassword2 = $model->password2;
+			
+			//$model->hash = $model->generateHash();
+			$model->password = $model->hashPassword($getPassword, $hash);
+			
+			$model->password2 = $model->hashPassword($getPassword2, $hash);
+			$model->modified_date = date('Y-m-d');
+			$model->modified_by = Yii::app()->user->id;
+			
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('update_password',array(
+			'model'=>$model,
+		));
 	}
 }

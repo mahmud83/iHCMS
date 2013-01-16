@@ -8,16 +8,26 @@
  * @property string $username
  * @property string $password
  * @property string $hash
- * @property string $tgl_buat
- * @property string $tgl_edit
- * @property string $deskripsi
- * @property string $status
+ * @property string $created_date
+ * @property integer $created_by
+ * @property string $modified_date
+ * @property integer $modified_by
+ * @property string $description
+ * @property integer $status_id
  *
  * The followings are the available model relations:
- * @property Karyawan[] $karyawans
+ * @property PPerson[] $pPeople
+ * @property PPerson[] $pPeople1
+ * @property PPerson[] $pPeople2
+ * @property WUser $createdBy
+ * @property WUser[] $wUsers
+ * @property WUser $modifiedBy
+ * @property WUser[] $wUsers1
  */
 class WUser extends CActiveRecord
 {
+	public $password2;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -44,13 +54,18 @@ class WUser extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, hash', 'required'),
+			array('username, password, password2', 'required', 'on'=>'create'),
+			array('username', 'required', 'on'=>'update'),
+			array('username', 'unique'),
+			array('password2', 'compare', 'compareAttribute'=>'password', 'on'=>'create'),
+			array('password2', 'compare', 'compareAttribute'=>'password', 'on'=>'changePassword'),
+			//array('username, password, hash, created_by', 'required'),
+			array('created_by, modified_by, status_id', 'numerical', 'integerOnly'=>true),
 			array('username, password, hash', 'length', 'max'=>45),
-			array('status', 'length', 'max'=>9),
-			array('tgl_buat, tgl_edit, deskripsi', 'safe'),
+			array('created_date, modified_date, description', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, username, password, hash, tgl_buat, tgl_edit, deskripsi, status', 'safe', 'on'=>'search'),
+			array('id, username, password, hash, created_date, created_by, modified_date, modified_by, description, status_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,7 +77,13 @@ class WUser extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'karyawans' => array(self::HAS_MANY, 'Karyawan', 'user_id'),
+			'pPeople' => array(self::HAS_MANY, 'PPerson', 'user_id'),
+			'pPeople1' => array(self::HAS_MANY, 'PPerson', 'create_by'),
+			'pPeople2' => array(self::HAS_MANY, 'PPerson', 'modified_by'),
+			'createdBy' => array(self::BELONGS_TO, 'WUser', 'created_by'),
+			'wUsers' => array(self::HAS_MANY, 'WUser', 'created_by'),
+			'modifiedBy' => array(self::BELONGS_TO, 'WUser', 'modified_by'),
+			'wUsers1' => array(self::HAS_MANY, 'WUser', 'modified_by'),
 		);
 	}
 
@@ -75,11 +96,14 @@ class WUser extends CActiveRecord
 			'id' => 'ID',
 			'username' => 'Username',
 			'password' => 'Password',
+			'password2' => 'Confirm Password',
 			'hash' => 'Hash',
-			'tgl_buat' => 'Tgl Buat',
-			'tgl_edit' => 'Tgl Edit',
-			'deskripsi' => 'Deskripsi',
-			'status' => 'Status',
+			'created_date' => 'Created Date',
+			'created_by' => 'Created By',
+			'modified_date' => 'Modified Date',
+			'modified_by' => 'Modified By',
+			'description' => 'Description',
+			'status_id' => 'Status',
 		);
 	}
 
@@ -94,14 +118,20 @@ class WUser extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('hash',$this->hash,true);
-		$criteria->compare('tgl_buat',$this->tgl_buat,true);
-		$criteria->compare('tgl_edit',$this->tgl_edit,true);
-		$criteria->compare('deskripsi',$this->deskripsi,true);
-		$criteria->compare('status',$this->status,true);
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('t.username',$this->username,true);
+		$criteria->compare('t.password',$this->password,true);
+		$criteria->compare('t.hash',$this->hash,true);
+		$criteria->compare('t.created_date',$this->created_date,true);
+		//$criteria->compare('created_by',$this->created_by);
+		$criteria->compare('createdBy.username',$this->created_by, true);
+		$criteria->compare('t.modified_date',$this->modified_date,true);
+		$criteria->compare('t.modified_by',$this->modified_by);
+		$criteria->compare('t.description',$this->description,true);
+		$criteria->compare('t.status_id',$this->status_id);
+		
+		//load the related table at the same time:
+		$criteria->with=array('createdBy');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -118,5 +148,9 @@ class WUser extends CActiveRecord
 	
 	public function generateHash () {
 		return uniqid('', true);
+	}
+	
+	public function userStatus($status_id) {
+		return ($status_id == 1)?'aktif':'non aktif';
 	}
 }
