@@ -153,4 +153,15 @@ class WUser extends CActiveRecord
 	public function userStatus($status_id) {
 		return ($status_id == 1)?'aktif':'non aktif';
 	}
+	
+	public function suggestUsername($keyword){
+		$tags=$this->findAll(array(
+			'condition'=>'username LIKE :keyword',
+			'params'=>array(
+				':keyword'=>'%'.strtr($keyword,array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%',
+			)
+		));
+		
+		return $tags;
+ }
 }

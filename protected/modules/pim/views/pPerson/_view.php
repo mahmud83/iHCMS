@@ -1,3 +1,17 @@
+<div class="span4">
+	<div class="row-fluid">
+		<div class="span4">
+			<img />
+		</div>
+		<div class="span6">
+			<b> Nama Lengkap </b><?php echo CHtml::encode($data->firstname)." ".CHtml::encode($data->lastname); ?></br>
+		</div>
+	</div>
+</div>
+
+
+<?php
+/*
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>

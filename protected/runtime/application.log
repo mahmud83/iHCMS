@@ -149,3 +149,190 @@ Stack trace:
 REQUEST_URI=/ihcms/index.php/wUser/admin
 HTTP_REFERER=http://localhost/ihcms/index.php/wUser/2
 ---
+2013/01/16 06:52:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson
+---
+2013/01/16 06:53:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ihcms`.`w_module`, CONSTRAINT `fk_module_module1` FOREIGN KEY (`parent_id`) REFERENCES `w_module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: UPDATE `w_module` SET `id`=:yp0, `parent_id`=:yp1, `name`=:yp2, `title`=:yp3, `description`=:yp4, `url`=:yp5, `image`=:yp6 WHERE `w_module`.`id`=2.
+in /Applications/AMPPS/www/ihcms/protected/controllers/WModuleController.php (114)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/01/16 06:53:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ihcms`.`w_module`, CONSTRAINT `fk_module_module1` FOREIGN KEY (`parent_id`) REFERENCES `w_module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: UPDATE `w_module` SET `id`=:yp0, `parent_id`=:yp1, `name`=:yp2, `title`=:yp3, `description`=:yp4, `url`=:yp5, `image`=:yp6 WHERE `w_module`.`id`=2' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1685): CDbCommand->execute()
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1064): CActiveRecord->updateByPk('2', Array)
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->update(NULL)
+#3 /Applications/AMPPS/www/ihcms/protected/controllers/WModuleController.php(114): CActiveRecord->save()
+#4 [internal function]: WModuleController->actionUpdate('2')
+#5 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(WModuleController), Array)
+#6 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(WModuleController), Object(ReflectionMethod), Array)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('update')
+#16 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wModule/update')
+#17 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/ihcms/index.php/wModule/update/2
+HTTP_REFERER=http://localhost/ihcms/index.php/wModule/update/2
+---
+2013/01/16 07:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson
+---
+2013/01/16 07:15:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=and
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---
+2013/01/16 07:15:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=aa
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---
+2013/01/16 07:15:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=ad
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---
+2013/01/16 07:15:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=admin
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---
+2013/01/16 07:15:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=and
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---
+2013/01/16 07:15:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=andi
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---
+2013/01/16 07:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=and
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---
+2013/01/16 07:46:28 [error] [php] include(Model.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/AMPPS/www/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): spl_autoload_call()
+#1 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionLookup()
+#2 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#3 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): WUserController->runAction()
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): WUserController->filterRights()
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#8 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(266): WUserController->runActionWithFilters()
+#10 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): WUserController->run()
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#12 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/wUser/lookup
+in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (272)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/01/16 07:47:20 [error] [exception.CException] exception 'CException' with message 'WUser and its behaviors do not have a method or closure named "getData".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('getData', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): CActiveRecord->__call('getData', Array)
+#2 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): WUser->getData(NULL)
+#3 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionLookup()
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#14 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup
+---
+2013/01/16 07:51:42 [error] [exception.CException] exception 'CException' with message 'WUser and its behaviors do not have a method or closure named "getData".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('getData', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): CActiveRecord->__call('getData', Array)
+#2 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): WUser->getData('an')
+#3 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionLookup()
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#14 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ihcms/index.php/wUser/lookup?term=an
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+---

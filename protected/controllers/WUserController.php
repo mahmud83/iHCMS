@@ -266,4 +266,19 @@ class WUserController extends Controller
 			'model'=>$model,
 		));
 	}
+	
+	public function actionLookup () {
+		//if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
+			$models = WUser::model()->suggestUsername($_GET['term']);
+			
+			$result = array();
+			foreach ($models as $m)
+	            $result[] = array(
+	                'value' => $m->username,
+	                'id' => $m->id,
+	            );
+	        
+	        echo CJSON::encode($result);
+		//}
+	}
 }
