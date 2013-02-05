@@ -214,4 +214,21 @@ class CbrController extends Controller
             'modelAc'=>$modelAc
 		));        
     }
+    
+    public function actionNama() {
+        $isi='';
+        if($_POST['haha']==1)
+        {
+            $isi.='Hai Cowok Cakep';
+        }
+        else {
+            $isi.='Hai Cewek Cantik';
+        }
+
+        echo CJSON::encode(array
+         (
+             'isi'=>$isi,
+        ));
+          Yii::app()->end();
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class WOccupationController extends Controller
+class PPersonEducationController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -54,8 +54,8 @@ class WOccupationController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'Woccupation');
-		$this->sub_title = 'Detail Data Woccupation';
+		$this->breadcrumbs = array('PPersonEducation'=>'', 'Pperson Education');
+		$this->sub_title = 'Detail Data Pperson Education';
 		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -68,17 +68,17 @@ class WOccupationController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'Woccupation');
-		$this->sub_title = 'Tambah Data Woccupation';
+		$this->breadcrumbs = array('PPersonEducation'=>'', 'Pperson Education');
+		$this->sub_title = 'Tambah Data Pperson Education';
 		
-		$model=new WOccupation;
+		$model=new PPersonEducation;
 
 		// Comment the following line if AJAX validation is not needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['WOccupation']))
+		if(isset($_POST['PPersonEducation']))
 		{
-			$model->attributes=$_POST['WOccupation'];
+			$model->attributes=$_POST['PPersonEducation'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -95,17 +95,17 @@ class WOccupationController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'Woccupation');
-		$this->sub_title = 'Ubah Data Woccupation';
+		$this->breadcrumbs = array('PPersonEducation'=>'', 'Pperson Education');
+		$this->sub_title = 'Ubah Data Pperson Education';
 		
 		$model=$this->loadModel($id);
 
 		// Comment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['WOccupation']))
+		if(isset($_POST['PPersonEducation']))
 		{
-			$model->attributes=$_POST['WOccupation'];
+			$model->attributes=$_POST['PPersonEducation'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -140,16 +140,13 @@ class WOccupationController extends Controller
 	 */
 	public function actionIndex()
 	{
-		/*
-		$this->breadcrumbs = array('WOccupation'=>'', 'list');
-		$this->sub_title = 'Daftar Data Woccupation';
+		$this->breadcrumbs = array('PPersonEducation'=>'', 'list');
+		$this->sub_title = 'Daftar Data Pperson Education';
 		
-		$dataProvider=new CActiveDataProvider('WOccupation');
+		$dataProvider=new CActiveDataProvider('PPersonEducation');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
-		*/
-		$this->redirect(array('admin'));
 	}
 
 	/**
@@ -157,13 +154,13 @@ class WOccupationController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$this->breadcrumbs = array('WOccupation'=>'', 'list');
-		$this->sub_title = 'Manajemen Data Woccupation';
+		$this->breadcrumbs = array('PPersonEducation'=>'', 'list');
+		$this->sub_title = 'Manajemen Data Pperson Education';
 		
-		$model=new WOccupation('search');
+		$model=new PPersonEducation('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['WOccupation']))
-			$model->attributes=$_GET['WOccupation'];
+		if(isset($_GET['PPersonEducation']))
+			$model->attributes=$_GET['PPersonEducation'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -177,7 +174,7 @@ class WOccupationController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=WOccupation::model()->findByPk($id);
+		$model=PPersonEducation::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -189,25 +186,10 @@ class WOccupationController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='woccupation-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='pperson-education-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-	}
-	
-	public function actionLookup () {
-		//if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
-			$models = WOccupation::model()->suggestUsername($_GET['term']);
-			
-			$result = array();
-			foreach ($models as $m)
-	            $result[] = array(
-	                'value' => $m->name,
-	                'id' => $m->id,
-	            );
-	        
-	        echo CJSON::encode($result);
-		//}
 	}
 }

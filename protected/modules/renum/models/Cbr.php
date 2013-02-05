@@ -108,4 +108,21 @@ class Cbr extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function actionDynamicDropdown () {
+		$mkh = array('Primary', 'Elementary Vocational', 'Vocational', 'Advance Vocational', 'Basic Professional', 'Seasoned Professional', 'Professional Mastery');
+		$mkh_prm = array('A-', 'A', 'A+');
+		$mkh_elv = array('B-', 'B', 'B+');
+		
+		$data=Location::model()->findAll('parent_id=:parent_id', 
+                  array(':parent_id'=>(int) $_POST['country_id']));
+        
+        $mkh_id = $
+ 
+	    $data=CHtml::listData($data,'id','name');
+	    foreach($data as $value=>$name)
+	    {
+	        echo CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
+	    }
+	}
 }

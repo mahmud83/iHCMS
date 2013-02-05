@@ -217,4 +217,90 @@ class PPersonController extends Controller
     function actionTest() {
 	    $this->render('test');
     }
+    
+    /**
+    * Performs UX simply create user
+    *
+    */
+    function actionAdd() {
+	    $this->breadcrumbs = array('PPerson'=>'', 'Pperson');
+		$this->sub_title = 'Tambah Data Pperson';
+		
+		$model=new PPerson;
+		$modelUser = new WUser;
+		
+		$model->scenario = 'add';
+
+		// Comment the following line if AJAX validation is not needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['PPerson']))
+		{
+			//create user
+			//$modelUser->attributes=$_POST[''];
+			$modelUser->username = $_POST['PPerson']['username'];
+			$modelUser->password = $_POST['PPerson']['password'];
+			$modelUser->password2= $_POST['PPerson']['password2'];
+			$getPassword = $modelUser->password;
+			$getPassword2 = $modelUser->password2;
+			
+			$modelUser->hash = $modelUser->generateHash();
+			$modelUser->password = $modelUser->hashPassword($getPassword, $modelUser->hash);
+			//echo $model->password;
+			//exit;
+			
+			$modelUser->password2 = $modelUser->hashPassword($getPassword2, $modelUser->hash);
+			$modelUser->created_date = date('Y-m-d H:i:s');
+			$modelUser->created_by = Yii::app()->user->id;
+			
+			if ($modelUser->save()):
+				
+				$model->attributes=$_POST['PPerson'];
+				$model->create_date = date('Y-m-d H:i:s');
+				$model->create_by = Yii::app()->user->id;
+				
+				$avatar = CUploadedFile::getInstance($model, 'avatar');
+	            $ext = $modelUser->hash.".".$avatar->getExtensionName();
+	            $model->avatar = $ext;
+	            $model->user_id = $modelUser->primaryKey;
+	            $avatar->saveAs(Yii::app()->basePath.'/../avatar/' . $ext);
+	            //$avatar->saveAs(Yii::app()->basePath.'/1.jpg');
+	            
+	            if($model->save()):
+	            	$this->redirect(array('detail','id'=>$model->id));
+	            endif;
+			
+			endif;	
+			
+			/*
+			$model->attributes=$_POST['PPerson'];
+			$model->namaAttribute=CUploadedFile::getInstance($model,'namaAttribute');
+            $ext = $model->avatar->getExtensionName();
+            
+            if($model->save())
+            {
+                $model->namaAttribute->saveAs(Yii::app()->basePath.'/avatar/' . $model->id.$ext);
+                $this->redirect(array('view','id'=>$model->id));
+            }
+            */
+		}
+
+		$this->render('add',array(
+			'model'=>$model,
+		));
+    }
+    
+    public function actionDetail($id) {
+    	$model = $this->loadModel($id);
+    	$this->layout='//layouts/column1';
+    	
+    	//cek data pendidikan
+    	$modelPendidikan = new PPersonEducation;
+		$modelPendidikan->person_id = $id;
+    	
+	    $this->render('detail', array(
+	    	'model'=>$model,
+	    	'modelPendidikan'=>$modelPendidikan->search(),
+	    ));
+    }
 }

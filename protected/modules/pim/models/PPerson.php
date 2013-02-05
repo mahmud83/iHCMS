@@ -56,6 +56,10 @@
  */
 class PPerson extends CActiveRecord
 {
+	public $username;
+	public $password;
+	public $password2;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -82,7 +86,8 @@ class PPerson extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('avatar, employee_code, firstname, create_date, create_by', 'required'),
+			array('employee_code, firstname, create_date, create_by, username, password, password2', 'required'),
+			array('password2', 'compare', 'compareAttribute'=>'password', 'on'=>'add'),
 			array('user_id, jabatan_id, employee_status, marital_id, sex_id, religion_id, identity_state, create_by, modified_by', 'numerical', 'integerOnly'=>true),
 			array('avatar', 'length', 'max'=>200),
 			array('employee_code, firstname, lastname, nickname, birth_place, driver_license_number', 'length', 'max'=>45),
@@ -93,6 +98,7 @@ class PPerson extends CActiveRecord
 			array('email1, email2', 'length', 'max'=>50),
 			array('phone_mobile, phone_home, phone_office', 'length', 'max'=>20),
 			array('birth_date, identity_valid, driver_license_valid, custom, modified_date', 'safe'),
+			//array('avatar', 'file', 'types'=>'jpg, gif, png, pdf'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, user_id, jabatan_id, avatar, employee_status, employee_code, firstname, lastname, nickname, birth_date, birth_place, blood_id, marital_id, sex_id, religion_id, address1, address2, pos_code, identity_number, identity_valid, identity_state, identity_pos_code, driver_license_number, driver_license_valid, email1, email2, phone_mobile, phone_home, phone_office, custom, create_date, create_by, modified_date, modified_by', 'safe', 'on'=>'search'),

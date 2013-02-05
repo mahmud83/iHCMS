@@ -620,8 +620,10 @@ legend {
 /**styles user profile **/
 
 .user-profile .user-avatar {
-	width: 200px;
-	margin-right: 20px;
+	/** width: 200px; **/
+	/** margin-right: 20px;**/
+	width: 150px;
+	margin:10px;
 	float: left;
 }
 .user-profile .user-avatar-mini {
@@ -655,7 +657,8 @@ legend {
 }
 
 .user-profile .user-competency li {
-	width: 150px;
+	/** width: 150px; **/
+	width: 140px;
 	float: left;
 	display: block;
 	height: 50px;

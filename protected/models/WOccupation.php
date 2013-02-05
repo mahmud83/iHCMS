@@ -111,4 +111,15 @@ class WOccupation extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function suggestUsername($keyword){
+		$tags=$this->findAll(array(
+			'condition'=>'name LIKE :keyword',
+			'params'=>array(
+				':keyword'=>'%'.strtr($keyword,array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%',
+			)
+		));
+		
+		return $tags;
+	}
 }

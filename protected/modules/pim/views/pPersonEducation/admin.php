@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Links'=>array('index'),
+	'Pperson Educations'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Link','url'=>array('index')),
-	array('label'=>'Create Link','url'=>array('create')),
+	array('label'=>'List PPersonEducation','url'=>array('index')),
+	array('label'=>'Create PPersonEducation','url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('link-grid', {
+	$.fn.yiiGridView.update('pperson-education-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -38,22 +38,23 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	<div class="span12 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen Link</p>
+			<p>Manajemen Pperson Education</p>
 		</div>
 		<div class="widget-content">
 			<?php $this->widget('bootstrap.widgets.TbGridView',array(
-			'id'=>'link-grid',
+			'id'=>'pperson-education-grid',
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
 					'id',
-		'parent_id',
-		'name',
-		'title',
-		'url',
-		'image',
+		'person_id',
+		'level',
+		'institution_name',
+		'institution_major',
+		'gpa_score',
 		/*
-		'auth',
+		'tgl_masuk',
+		'tgl_keluar',
 		*/
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',

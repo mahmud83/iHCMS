@@ -1,53 +1,237 @@
-2013/01/14 08:16:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php:195
+2013/01/23 05:34:52 [error] [exception.CException] exception 'CException' with message 'Property "PPerson.nama_depan" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
 Stack trace:
-#0 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(238): WUserController->loadModel(NULL)
-#1 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionChangePassword()
-#2 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
-#3 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
-#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#5 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
-#6 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
-#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
-#8 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#9 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('changePassword')
-#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/changePas...')
-#12 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#13 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#14 {main}
-REQUEST_URI=/ihcms/index.php/wUser/changePassword/2
-HTTP_REFERER=http://localhost/ihcms/index.php/wUser/2
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('nama_depan')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/detail.php(18): CActiveRecord->__get('nama_depan')
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('detail', Array, true)
+#6 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(297): CController->render('detail', Array)
+#7 [internal function]: PPersonController->actionDetail('2')
+#8 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PPersonController), Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PPersonController), Object(ReflectionMethod), Array)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('detail')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pPerson/det...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/pim/pPerson/detail/id/2
 ---
-2013/01/14 08:16:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php:195
+2013/01/23 05:39:07 [error] [exception.CException] exception 'CException' with message 'Property "WUser.deskripsi" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
 Stack trace:
-#0 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(238): WUserController->loadModel(NULL)
-#1 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionChangePassword()
-#2 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
-#3 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
-#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#5 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
-#6 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
-#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
-#8 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#9 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('changePassword')
-#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/changePas...')
-#12 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#13 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#14 {main}
-REQUEST_URI=/ihcms/index.php/wUser/changePassword/2
-HTTP_REFERER=http://localhost/ihcms/index.php/wUser/2
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('deskripsi')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/detail.php(20): CActiveRecord->__get('deskripsi')
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('detail', Array, true)
+#6 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(297): CController->render('detail', Array)
+#7 [internal function]: PPersonController->actionDetail('2')
+#8 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PPersonController), Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PPersonController), Object(ReflectionMethod), Array)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('detail')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pPerson/det...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/pim/pPerson/detail/id/2
 ---
-2013/01/16 05:26:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+2013/01/23 05:39:20 [error] [exception.CException] exception 'CException' with message 'Property "PPerson.wargaNegara" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('admin')
-#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#3 {main}
-REQUEST_URI=/ihcms/index.php/admin
-HTTP_REFERER=http://localhost/ihcms/index.php
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('wargaNegara')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/detail.php(49): CActiveRecord->__get('wargaNegara')
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('detail', Array, true)
+#6 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(297): CController->render('detail', Array)
+#7 [internal function]: PPersonController->actionDetail('2')
+#8 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PPersonController), Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PPersonController), Object(ReflectionMethod), Array)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('detail')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pPerson/det...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/pim/pPerson/detail/id/2
 ---
-2013/01/16 05:27:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+2013/01/23 05:40:28 [error] [exception.CException] exception 'CException' with message 'Property "PPerson.wargaNegara" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('wargaNegara')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/detail.php(49): CActiveRecord->__get('wargaNegara')
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('detail', Array, true)
+#6 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(297): CController->render('detail', Array)
+#7 [internal function]: PPersonController->actionDetail('2')
+#8 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PPersonController), Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PPersonController), Object(ReflectionMethod), Array)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('detail')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pPerson/det...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/pim/pPerson/detail/id/2
+---
+2013/01/23 05:48:22 [error] [exception.CException] exception 'CException' with message 'The "dataProvider" property cannot be empty.' in /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php:106
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(289): CBaseListView->init()
+#1 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(148): TbGridView->init()
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#4 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/detail.php(85): CBaseController->widget('bootstrap.widge...', Array)
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#8 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('detail', Array, true)
+#9 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(297): CController->render('detail', Array)
+#10 [internal function]: PPersonController->actionDetail('2')
+#11 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PPersonController), Array)
+#12 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PPersonController), Object(ReflectionMethod), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#16 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#17 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#18 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#20 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('detail')
+#22 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pPerson/det...')
+#23 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#24 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/ihcms/index.php/pim/pPerson/detail/id/2
+---
+2013/01/24 12:51:09 [error] [exception.CException] exception 'CException' with message 'PPersonEducation and its behaviors do not have a method or closure named "getData".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('getData', Array)
+#1 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(108): CActiveRecord->__call('getData', Array)
+#2 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(108): PPersonEducation->getData()
+#3 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(289): CBaseListView->init()
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(148): TbGridView->init()
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/detail.php(86): CBaseController->widget('bootstrap.widge...', Array)
+#8 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#9 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('detail', Array, true)
+#12 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(304): CController->render('detail', Array)
+#13 [internal function]: PPersonController->actionDetail('2')
+#14 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PPersonController), Array)
+#15 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PPersonController), Object(ReflectionMethod), Array)
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#17 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#19 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#20 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#23 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('detail')
+#25 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pPerson/det...')
+#26 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#27 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/ihcms/index.php/pim/pPerson/detail/id/2
+---
+2013/01/24 12:51:36 [error] [exception.CException] exception 'CException' with message 'PPersonEducation and its behaviors do not have a method or closure named "getData".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('getData', Array)
+#1 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(108): CActiveRecord->__call('getData', Array)
+#2 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(108): PPersonEducation->getData()
+#3 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(289): CBaseListView->init()
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(148): TbGridView->init()
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/detail.php(86): CBaseController->widget('bootstrap.widge...', Array)
+#8 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#9 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('detail', Array, true)
+#12 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(304): CController->render('detail', Array)
+#13 [internal function]: PPersonController->actionDetail('2')
+#14 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(PPersonController), Array)
+#15 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(PPersonController), Object(ReflectionMethod), Array)
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#17 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#19 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#20 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#23 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('detail')
+#25 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pPerson/det...')
+#26 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#27 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/ihcms/index.php/pim/pPerson/detail/id/2
+---
+2013/01/24 14:39:48 [error] [php] Invalid argument supplied for foreach() (/Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php:1779)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): PPersonController->renderInternal()
+#1 /Applications/AMPPS/www/yii/framework/web/CController.php(870): PPersonController->renderFile()
+#2 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/update.php(16): PPersonController->renderPartial()
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): PPersonController->renderInternal()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(870): PPersonController->renderFile()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(783): PPersonController->renderPartial()
+#7 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php(115): PPersonController->render()
+#8 unknown(0): PPersonController->actionUpdate()
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#10 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): PPersonController->runAction()
+#13 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): PPersonController->filterRights()
+#16 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(266): PPersonController->runActionWithFilters()
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): PPersonController->run()
+#20 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/pim/pPerson/update/id/2
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/_form.php (60)
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/views/pPerson/update.php (16)
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php (115)
+2013/01/30 12:41:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
 Stack trace:
 #0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
 #1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
@@ -57,7 +241,7 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
 ---
-2013/01/16 05:27:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+2013/01/30 12:41:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
 Stack trace:
 #0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
 #1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
@@ -67,272 +251,119 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
 ---
-2013/01/16 05:31:32 [error] [exception.CException] exception 'CException' with message 'WUserController cannot find the requested view "update_password".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+2013/02/05 02:04:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('update_password', Array, true)
-#1 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(253): CController->render('update_password', Array)
-#2 [internal function]: WUserController->actionChangePassword('1')
-#3 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(WUserController), Array)
-#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(WUserController), Object(ReflectionMethod), Array)
-#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
-#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
-#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
-#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
-#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
-#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('changePassword')
-#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/changePas...')
-#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#17 {main}
-REQUEST_URI=/ihcms/index.php/wUser/changePassword/1
-HTTP_REFERER=http://localhost/ihcms/index.php/wUser/1
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
 ---
-2013/01/16 05:34:07 [warning] [application] Failed to set unsafe attribute "password2" of "WUser".
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (207)
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (241)
-in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
-2013/01/16 05:38:26 [warning] [application] Failed to set unsafe attribute "password2" of "WUser".
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (207)
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (243)
-in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
-2013/01/16 05:38:29 [warning] [application] Failed to set unsafe attribute "password2" of "WUser".
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (247)
-in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
-in /Applications/AMPPS/www/ihcms/index.php (13)
-2013/01/16 05:45:11 [warning] [application] Failed to set unsafe attribute "password2" of "WUser".
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (207)
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (244)
-in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
-2013/01/16 05:45:12 [warning] [application] Failed to set unsafe attribute "password2" of "WUser".
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (207)
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (244)
-in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
-2013/01/16 06:22:54 [error] [exception.CException] exception 'CException' with message 'Property "WUser.score" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+2013/02/05 02:04:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('score')
-#1 /Applications/AMPPS/www/yii/framework/base/CComponent.php(607) : eval()'d code(1): CActiveRecord->__get('score')
-#2 /Applications/AMPPS/www/yii/framework/base/CComponent.php(607): eval()
-#3 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbButtonColumn.php(56): CComponent->evaluateExpression('$data->score > ...', Array)
-#4 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CButtonColumn.php(293): TbButtonColumn->renderButton('down', Array, 0, Object(WUser))
-#5 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridColumn.php(145): CButtonColumn->renderDataCellContent(0, Object(WUser))
-#6 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(546): CGridColumn->renderDataCell(0)
-#7 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(517): CGridView->renderTableRow(0)
-#8 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(427): CGridView->renderTableBody()
-#9 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(161): CGridView->renderItems()
-#10 [internal function]: CBaseListView->renderSection(Array)
-#11 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(144): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
-#12 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(129): CBaseListView->renderContent()
-#13 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): CBaseListView->run()
-#14 /Applications/AMPPS/www/ihcms/protected/views/wUser/admin.php(72): CBaseController->widget('bootstrap.widge...', Array)
-#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
-#16 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
-#17 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
-#18 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
-#19 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(183): CController->render('admin', Array)
-#20 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionAdmin()
-#21 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
-#22 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
-#23 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#24 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
-#25 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
-#26 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
-#27 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#28 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#29 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
-#30 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/admin')
-#31 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#32 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#33 {main}
-REQUEST_URI=/ihcms/index.php/wUser/admin
-HTTP_REFERER=http://localhost/ihcms/index.php/wUser/2
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
 ---
-2013/01/16 06:52:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+2013/02/05 02:58:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
 Stack trace:
 #0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
 #1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
 #2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
 #3 {main}
 REQUEST_URI=/ihcms/index.php/core
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
 ---
-2013/01/16 06:53:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ihcms`.`w_module`, CONSTRAINT `fk_module_module1` FOREIGN KEY (`parent_id`) REFERENCES `w_module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: UPDATE `w_module` SET `id`=:yp0, `parent_id`=:yp1, `name`=:yp2, `title`=:yp3, `description`=:yp4, `url`=:yp5, `image`=:yp6 WHERE `w_module`.`id`=2.
-in /Applications/AMPPS/www/ihcms/protected/controllers/WModuleController.php (114)
-in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
-in /Applications/AMPPS/www/ihcms/index.php (13)
-2013/01/16 06:53:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`ihcms`.`w_module`, CONSTRAINT `fk_module_module1` FOREIGN KEY (`parent_id`) REFERENCES `w_module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: UPDATE `w_module` SET `id`=:yp0, `parent_id`=:yp1, `name`=:yp2, `title`=:yp3, `description`=:yp4, `url`=:yp5, `image`=:yp6 WHERE `w_module`.`id`=2' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:354
-Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1685): CDbCommand->execute()
-#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1064): CActiveRecord->updateByPk('2', Array)
-#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->update(NULL)
-#3 /Applications/AMPPS/www/ihcms/protected/controllers/WModuleController.php(114): CActiveRecord->save()
-#4 [internal function]: WModuleController->actionUpdate('2')
-#5 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(WModuleController), Array)
-#6 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(WModuleController), Object(ReflectionMethod), Array)
-#7 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
-#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
-#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#10 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
-#11 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
-#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
-#13 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#14 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('update')
-#16 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wModule/update')
-#17 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#18 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#19 {main}
-REQUEST_URI=/ihcms/index.php/wModule/update/2
-HTTP_REFERER=http://localhost/ihcms/index.php/wModule/update/2
----
-2013/01/16 07:15:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+2013/02/05 03:00:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
 Stack trace:
 #0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
 #1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
 #2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
 #3 {main}
 REQUEST_URI=/ihcms/index.php/core
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
 ---
-2013/01/16 07:15:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+2013/02/05 03:11:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
-#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/core
+---
+2013/02/05 04:16:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "knowHow".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('knowHow')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('knowHow')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/knowH...')
 #3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
 #4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
 #5 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=and
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+REQUEST_URI=/ihcms/index.php/renum/cbr/knowHow
 ---
-2013/01/16 07:15:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+2013/02/05 04:16:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "cbrknowHow".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
-#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('cbrknowHow')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('cbrknowHow')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/cbrkn...')
 #3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
 #4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
 #5 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=aa
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+REQUEST_URI=/ihcms/index.php/renum/cbr/cbrknowHow
 ---
-2013/01/16 07:15:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+2013/02/05 04:16:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "cbrknowHow".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
-#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('cbrknowHow')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('cbrknowHow')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/cbrkn...')
 #3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
 #4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
 #5 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=ad
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+REQUEST_URI=/ihcms/index.php/renum/cbr/cbrknowHow
 ---
-2013/01/16 07:15:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+2013/02/05 06:01:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cat/nama".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
-#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cat/nama')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/cat/nama
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
+---
+2013/02/05 06:03:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "renum/nama".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/nama')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/renum/nama
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
+---
+2013/02/05 06:04:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nama".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('nama')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('nama')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/nama')
 #3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
 #4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
 #5 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=admin
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+REQUEST_URI=/ihcms/index.php/renum/cbr/nama
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
 ---
-2013/01/16 07:15:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+2013/02/05 06:04:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nama".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
 Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
-#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('nama')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('nama')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/nama')
 #3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
 #4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
 #5 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=and
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
----
-2013/01/16 07:15:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
-Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
-#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
-#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=andi
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
----
-2013/01/16 07:16:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "lookup".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
-Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('lookup')
-#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
-#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=and
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
----
-2013/01/16 07:46:28 [error] [php] include(Model.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/AMPPS/www/yii/framework/YiiBase.php:423)
-Stack trace:
-#0 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): spl_autoload_call()
-#1 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionLookup()
-#2 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
-#3 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): WUserController->runAction()
-#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#5 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
-#6 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): WUserController->filterRights()
-#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
-#8 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#9 /Applications/AMPPS/www/yii/framework/web/CController.php(266): WUserController->runActionWithFilters()
-#10 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): WUserController->run()
-#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
-#12 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#13 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
-REQUEST_URI=/ihcms/index.php/wUser/lookup
-in /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php (272)
-in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
-in /Applications/AMPPS/www/ihcms/index.php (13)
-2013/01/16 07:47:20 [error] [exception.CException] exception 'CException' with message 'WUser and its behaviors do not have a method or closure named "getData".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
-Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('getData', Array)
-#1 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): CActiveRecord->__call('getData', Array)
-#2 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): WUser->getData(NULL)
-#3 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionLookup()
-#4 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
-#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
-#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#7 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
-#8 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
-#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
-#10 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#11 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
-#14 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#15 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup
----
-2013/01/16 07:51:42 [error] [exception.CException] exception 'CException' with message 'WUser and its behaviors do not have a method or closure named "getData".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
-Stack trace:
-#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('getData', Array)
-#1 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): CActiveRecord->__call('getData', Array)
-#2 /Applications/AMPPS/www/ihcms/protected/controllers/WUserController.php(272): WUser->getData('an')
-#3 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WUserController->actionLookup()
-#4 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
-#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
-#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
-#7 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
-#8 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
-#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
-#10 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
-#11 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
-#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wUser/lookup')
-#14 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
-#15 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
-#16 {main}
-REQUEST_URI=/ihcms/index.php/wUser/lookup?term=an
-HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson/create
+REQUEST_URI=/ihcms/index.php/renum/cbr/nama
 ---
