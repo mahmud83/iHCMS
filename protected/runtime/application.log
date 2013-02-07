@@ -367,3 +367,245 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/ihcms/index.php/renum/cbr/nama
 ---
+2013/02/05 14:24:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
+---
+2013/02/05 14:24:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
+---
+2013/02/05 17:21:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "safari-extension:".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('safari-extensio...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('safari-extensio...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/safar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/safari-extension://com.slicefactory.firebug-M6DQ5JZ52E/a32ca320/skin/xp/pixel_transparent.gif
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
+---
+2013/02/05 17:25:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "form\".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('form\')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('form\')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/form\')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/form%5C
+---
+2013/02/06 12:54:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "safari-extension:".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('safari-extensio...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('safari-extensio...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/safar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/safari-extension://com.slicefactory.firebug-M6DQ5JZ52E/a32ca320/skin/xp/pixel_transparent.gif
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
+---
+2013/02/06 12:54:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "safari-extension:".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('safari-extensio...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('safari-extensio...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/safar...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/safari-extension://com.slicefactory.firebug-M6DQ5JZ52E/a32ca320/skin/xp/pixel_transparent.gif
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
+---
+2013/02/06 13:26:17 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.name" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/schema/CDbCriteria.php(161): CComponent->__set('name', 'name = :keyword')
+#1 /Applications/AMPPS/www/yii/framework/db/schema/CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1409): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /Applications/AMPPS/www/ihcms/protected/models/WOption.php(96): CActiveRecord->findAll(Array)
+#4 /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php(220): WOption->pullvalue('cbr_mkh')
+#5 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionNama()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('nama')
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/nama')
+#16 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/nama
+---
+2013/02/06 13:27:37 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.name" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/schema/CDbCriteria.php(161): CComponent->__set('name', 'name = :keyword')
+#1 /Applications/AMPPS/www/yii/framework/db/schema/CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1409): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /Applications/AMPPS/www/ihcms/protected/models/WOption.php(96): CActiveRecord->findAll(Array)
+#4 /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php(220): WOption->pullvalue('cbr_mkh')
+#5 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionNama()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('nama')
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/nama')
+#16 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/nama
+---
+2013/02/06 13:31:06 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.name" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/schema/CDbCriteria.php(161): CComponent->__set('name', 'name = :keyword')
+#1 /Applications/AMPPS/www/yii/framework/db/schema/CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1409): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /Applications/AMPPS/www/ihcms/protected/models/WOption.php(96): CActiveRecord->findAll(Array)
+#4 /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php(220): WOption->pullvalue('cbr_mkh')
+#5 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionNama()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('nama')
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/nama')
+#16 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/nama
+---
+2013/02/06 13:31:09 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.name" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/schema/CDbCriteria.php(161): CComponent->__set('name', 'name = :keyword')
+#1 /Applications/AMPPS/www/yii/framework/db/schema/CDbCommandBuilder.php(462): CDbCriteria->__construct(Array)
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1409): CDbCommandBuilder->createCriteria(Array, Array)
+#3 /Applications/AMPPS/www/ihcms/protected/models/WOption.php(96): CActiveRecord->findAll(Array)
+#4 /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php(220): WOption->pullvalue('cbr_mkh')
+#5 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionNama()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('nama')
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/nama')
+#16 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/nama
+---
+2013/02/06 18:29:12 [error] [php] json_decode() expects parameter 1 to be string, array given (/Applications/AMPPS/www/yii/framework/web/helpers/CJSON.php:327)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionMkh()
+#1 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#2 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CbrController->runAction()
+#3 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#4 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CbrController->filterRights()
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#8 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CbrController->runActionWithFilters()
+#9 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CbrController->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#11 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#12 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/renum/cbr/mkh
+in /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php (405)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/02/06 19:25:19 [error] [exception.CException] exception 'CException' with message 'Property "CbrProblemSolving.fta" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('fta')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('fta')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1515): CHtml::resolveValue(Object(CbrProblemSolving), 'fta')
+#3 /Applications/AMPPS/www/yii/framework/web/widgets/CActiveForm.php(764): CHtml::activeDropDownList(Object(CbrProblemSolving), 'fta', Array, Array)
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInputHorizontal.php(113): CActiveForm->dropDownList(Object(CbrProblemSolving), 'fta', Array, Array)
+#5 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInput.php(201): TbInputHorizontal->dropDownList()
+#6 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInputHorizontal.php(24): TbInput->run()
+#7 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): TbInputHorizontal->run()
+#8 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbActiveForm.php(584): CBaseController->widget('bootstrap.widge...', Array)
+#9 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbActiveForm.php(124): TbActiveForm->inputRow('dropdownlist', Object(CbrProblemSolving), 'fta', Array, Array)
+#10 /Applications/AMPPS/www/ihcms/protected/modules/renum/views/cbr/inputForm.php(139): TbActiveForm->dropDownListRow(Object(CbrProblemSolving), 'fta', Array, Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#12 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#14 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('inputForm', Array, true)
+#15 /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php(215): CController->render('inputForm', Array)
+#16 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionForm()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#18 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#20 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#22 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#24 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('form')
+#26 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/form')
+#27 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#28 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/form
+---
+2013/02/07 03:44:23 [error] [exception.CException] exception 'CException' with message 'Property "CbrProblemSolving.toi" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('toi')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('toi')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1515): CHtml::resolveValue(Object(CbrProblemSolving), 'toi')
+#3 /Applications/AMPPS/www/yii/framework/web/widgets/CActiveForm.php(764): CHtml::activeDropDownList(Object(CbrProblemSolving), 'toi', Array, Array)
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInputHorizontal.php(113): CActiveForm->dropDownList(Object(CbrProblemSolving), 'toi', Array, Array)
+#5 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInput.php(201): TbInputHorizontal->dropDownList()
+#6 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInputHorizontal.php(24): TbInput->run()
+#7 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): TbInputHorizontal->run()
+#8 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbActiveForm.php(584): CBaseController->widget('bootstrap.widge...', Array)
+#9 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbActiveForm.php(124): TbActiveForm->inputRow('dropdownlist', Object(CbrProblemSolving), 'toi', Array, Array)
+#10 /Applications/AMPPS/www/ihcms/protected/modules/renum/views/cbr/inputForm.php(166): TbActiveForm->dropDownListRow(Object(CbrProblemSolving), 'toi', Array, Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#12 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#14 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('inputForm', Array, true)
+#15 /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php(215): CController->render('inputForm', Array)
+#16 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionForm()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#18 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#19 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#20 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#22 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#24 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('form')
+#26 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/form')
+#27 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#28 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/form
+---

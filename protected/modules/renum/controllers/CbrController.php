@@ -215,20 +215,119 @@ class CbrController extends Controller
 		));        
     }
     
+    public function actionPsv() {
+    	
+	    $tet = ($_POST['tet'] != '')? strtolower($_POST['tet']):'a';
+	    $tce = ($_POST['tce'] != '')? strtolower($_POST['tce']):'1';
+	    
+	    $act = array("+", "-");
+	    $head = str_replace($act, "", $tet);
+	    
+	    $models = WOption::model()->pullvalue('cbr_psv');
+	    
+	    foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		
+		$oke = $value[$head][$tet][$tce];
+		
+		echo CJSON::encode(array
+         (
+             'isi'=>$oke,
+        ));
+        //var_dump($value);
+        Yii::app()->end();
+    }
+    
+    public function actionAcc() {
+	    $fta = ($_POST['fta'] != '')? strtolower($_POST['fta']):'a';
+	    $aid = ($_POST['aid'] != '')? strtolower($_POST['aid']):'a';
+	    $amt = ($_POST['amt'] != '')? $_POST['amt']:'1';
+	    $toi = ($_POST['toi'] != '')? strtolower($_POST['toi']):'r';
+	    $prf = ($_POST['prf'] != '')? strtolower($_POST['prf']):'0';
+	    
+	    $models = WOption::model()->pullvalue('cbr_acc');
+	    
+	    foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		
+		if ($_POST['aid'] != '') :
+			$oke = $value[$fta][$aid];
+		else:
+			$oke = $value[$fta][$amt][$toi];
+		endif;
+		
+		echo CJSON::encode(array
+         (
+             'isi'=>$oke,
+        ));
+        Yii::app()->end();
+    }
+    
     public function actionNama() {
-        $isi='';
-        if($_POST['haha']==1)
+    
+    	$tkh = ($_POST['tkh'] != '')? strtolower($_POST['tkh']):'a';
+    	$mkh = ($_POST['mkh'] != '')? strtolower($_POST['mkh']):'n';
+    	$hrs = ($_POST['hrs'] != '')? strtolower($_POST['hrs']):'1';
+    	//$tkh = $_POST['CbrKnowHow']['tkh'];
+    	
+    	$act = array("+", "-");
+	    $head = str_replace($act, "", $tkh);
+    
+    	$models = WOption::model()->pullvalue('cbr_mkh');
+    	
+    	//$result = array();
+		foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		
+		$oke = $value[$head][$tkh][$mkh][$hrs];
+		
+		/*if ($_POST['mkh']):
+			$tkh = "satu";
+		else:
+			$tkh = "dua";
+		endif;*/
+		
+		echo CJSON::encode(array
+         (
+             'isi'=>$oke,
+        ));
+        Yii::app()->end();
+		
+		//	$result[] = array(
+	      //          'value' => $m->value,
+	        //        'id' => $m->id,
+	         //   );
+	     //var_dump($oke);
+    	/*
+        if(($_POST['tkh']!='') && ($_POST['mkh'] != '') && ($_POST['hrs'] != ''))
         {
-            $isi.='Hai Cowok Cakep';
+            //$isi.='Hai Cowok Cakep'.$_POST['tkh']. " - ".$_POST['mkh']." - ".$_POST['hrs'];
+            $models = WOption::model()->pullvalue('cbr_mkh');
+            
         }
         else {
-            $isi.='Hai Cewek Cantik';
+            $isi.='Hai Cewek Cantik'.$_POST['tkh']. " - ".$_POST['mkh']." - ".$_POST['hrs'];
         }
 
         echo CJSON::encode(array
          (
              'isi'=>$isi,
         ));
-          Yii::app()->end();
+        Yii::app()->end();
+          */
+    }
+    
+    public function actionMkh() {
+	    
+	echo CJSON::encode($mkh);
     }
 }
