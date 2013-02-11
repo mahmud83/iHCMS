@@ -67,6 +67,7 @@
 	            			'data' => "js:{tkh:$(CbrKnowHow_tkh).val(), mkh:$(CbrKnowHow_mkh).val(), hrs:$(CbrKnowHow_hrs).val()}",
 	            			'success'=>'function(data){
 	            				$("#Cbr_kh_score").val(data.isi);
+	            				$("#Cbr_ps_score").val(data.psp);
 	            			}',
 	            		),
 	            	)
@@ -81,6 +82,7 @@
 	            			'data' => "js:{tkh:$(CbrKnowHow_tkh).val(), mkh:$(CbrKnowHow_mkh).val(), hrs:$(CbrKnowHow_hrs).val()}",
 	            			'success'=>'function(data){
 	            				$("#Cbr_kh_score").val(data.isi);
+	            				$("#Cbr_ps_score").val(data.psp);
 	            			}',
 	            		),)) ;?>
 	            
@@ -92,6 +94,7 @@
 	            			'data' => "js:{tkh:$(CbrKnowHow_tkh).val(), mkh:$(CbrKnowHow_mkh).val(), hrs:$(CbrKnowHow_hrs).val()}",
 	            			'success'=>'function(data){
 	            				$("#Cbr_kh_score").val(data.isi);
+	            				$("#Cbr_ps_score").val(data.psp);
 	            			}',
 	            		),
 	            		
@@ -106,23 +109,29 @@
 	            			'type'=>'POST',
 	            			'dataType'=>'json',
 	            			'url'=>CController::createUrl('/renum/cbr/psv'),
-	            			'data' => "js:{tet:$(CbrProblemSolving_tet).val(), tce:$(CbrProblemSolving_tce).val()}",
+	            			'data' => "js:{tet:$(CbrProblemSolving_tet).val(), tce:$(CbrProblemSolving_tce).val(), kha:$(Cbr_kh_score).val()}",
 	            			'success'=>'function(data){
 	            				$("#Cbr_ps_persent").val(data.isi);
+	            				$("#Cbr_ps_score").val(data.psp);
+	            				$("#Cbr_information").val(data.info);
 	            			}',),)) ;?>
 				
 				<?php echo $form->dropDownListRow($modelPs, 'tce', array(''=>'please select', '1'=>'Repetitive', '2'=>'Patterned', '3'=>'Variable', '4'=>'Adaptive', '5'=>'Unearthed'), array('ajax' => array(
 	            			'type'=>'POST',
 	            			'dataType'=>'json',
 	            			'url'=>CController::createUrl('/renum/cbr/psv'),
-	            			'data' => "js:{tet:$(CbrProblemSolving_tet).val(), tce:$(CbrProblemSolving_tce).val()}",
+	            			'data' => "js:{tet:$(CbrProblemSolving_tet).val(), tce:$(CbrProblemSolving_tce).val(), kha:$(Cbr_kh_score).val()}",
 	            			'success'=>'function(data){
 	            				$("#Cbr_ps_persent").val(data.isi);
+	            				$("#Cbr_ps_score").val(data.psp);
+	            				$("#Cbr_information").val(data.info);
 	            			}',),)) ;?>
 				
 				<?php echo $form->textFieldRow($model,'ps_persent',array('class'=>'span5')); ?>
 
 				<?php echo $form->textFieldRow($model,'ps_score',array('class'=>'span5')); ?>
+				
+				<?php echo $form->textFieldRow($model,'information',array('class'=>'span5')); ?>
 			</div>
 			<div>
 				<ul>
@@ -165,6 +174,8 @@
 	            				$("#Cbr_ac_score").val(data.isi);
 	            			}',),)) ;?>
 	            			
+	            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/profiling.png" width="100%" />
+	            
 	            <?php echo $form->dropDownListRow($modelAc, 'prf', array(''=>'please select', 'P4'=>'P4', 'P3'=>'P3', 'P2'=>'P2', 'P1'=>'P1', '0'=>'P0/A0', 'A1'=>'A1', 'A2'=>'A2', 'A3'=>'A3', 'A4'=>'A4'), array('ajax' => array(
 	            			'type'=>'POST',
 	            			'dataType'=>'json',

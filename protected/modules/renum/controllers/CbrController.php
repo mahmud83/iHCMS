@@ -213,6 +213,10 @@ class CbrController extends Controller
             'modelPs'=>$modelPs,
             'modelAc'=>$modelAc
 		));        
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> update meneh
     }
     
     public function actionPsv() {
@@ -890,5 +894,163 @@ class CbrController extends Controller
 	    	),
 	    );
 	echo CJSON::encode($mkh);
+<<<<<<< HEAD
+=======
+=======
+    }
+    
+    public function actionPsp($kha, $psv) {
+	    //$kha = ($_POST['kha'] != '')? strtolower($_POST['kha']):'87';
+	    //$psv = ($_POST['psv'] != '')? strtolower($_POST['psv']):'38';
+	    
+	    $models = WOption::model()->pullvalue('cbr_psp');
+	    
+	    foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		
+		$oke = $value[$psv][$kha];
+		
+		return $oke;
+    }
+    
+    public function actionPsv() {
+    	
+	    $tet = ($_POST['tet'] != '')? strtolower($_POST['tet']):'g';
+	    $tce = ($_POST['tce'] != '')? strtolower($_POST['tce']):'1';
+	    $kha = ($_POST['kha'] != '')? strtolower($_POST['kha']):'152';
+	    
+	    $act = array("+", "-");
+	    $head = str_replace($act, "", $tet);
+	    
+	    $models = WOption::model()->pullvalue('cbr_psv');
+	    
+	    $sesuai = WOption::model()->pullValue('cbr_hub');
+	    
+	    foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		foreach ($sesuai as $m):
+			$hub = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		$hub = CJSON::decode($hub);
+		
+		$oke = $value[$head][$tet][$tce];
+		$info = $hub[$kha];
+		$result = array_search(strval($oke),$info);
+		$res = "tidak sesuai";
+		
+		//var_dump($oke);
+		//var_dump($result);
+		if(isset($info)):
+			foreach($info as $list=>$row):
+				if ($row == $oke):
+					$res = "sesuai";
+				endif;
+			endforeach;
+		endif;
+		
+		$psp = $this->actionPsp($kha, $oke);
+		///*
+		echo CJSON::encode(array
+         (
+             'isi'=>$oke,
+             'psp'=>$psp,
+             'info'=>$res,
+        ));
+        // */
+        //var_dump($value);
+        Yii::app()->end();
+    }
+    
+    public function actionAcc() {
+	    $fta = ($_POST['fta'] != '')? strtolower($_POST['fta']):'a';
+	    $aid = ($_POST['aid'] != '')? strtolower($_POST['aid']):'a';
+	    $amt = ($_POST['amt'] != '')? $_POST['amt']:'1';
+	    $toi = ($_POST['toi'] != '')? strtolower($_POST['toi']):'r';
+	    $prf = ($_POST['prf'] != '')? strtolower($_POST['prf']):'0';
+	    
+	    $models = WOption::model()->pullvalue('cbr_acc');
+	    
+	    foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		
+		if ($_POST['aid'] != '') :
+			$oke = $value[$fta][$aid];
+		else:
+			$oke = $value[$fta][$amt][$toi];
+		endif;
+		
+		echo CJSON::encode(array
+         (
+             'isi'=>$oke,
+        ));
+        Yii::app()->end();
+    }
+    
+    public function actionNama() {
+    
+    	$tkh = ($_POST['tkh'] != '')? strtolower($_POST['tkh']):'a';
+    	$mkh = ($_POST['mkh'] != '')? strtolower($_POST['mkh']):'n';
+    	$hrs = ($_POST['hrs'] != '')? strtolower($_POST['hrs']):'1';
+    	$psv = ($_POST['psv'] != '')? strtolower($_POST['psv']):'10';
+    	//$tkh = $_POST['CbrKnowHow']['tkh'];
+    	
+    	$act = array("+", "-");
+	    $head = str_replace($act, "", $tkh);
+    
+    	$models = WOption::model()->pullvalue('cbr_mkh');
+    	
+    	//$result = array();
+		foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		
+		$oke = $value[$head][$tkh][$mkh][$hrs];
+		$psp = $this->actionPsp($oke, $psv);
+		
+		/*if ($_POST['mkh']):
+			$tkh = "satu";
+		else:
+			$tkh = "dua";
+		endif;*/
+		
+		echo CJSON::encode(array
+         (
+             //'isi'=>$head."-".$tkh."-".$mkh."-".$hrs,
+             'isi'=>$oke,
+             'psp'=>$psp,
+        ));
+        Yii::app()->end();
+    }
+    
+    public function actionMkh() {
+	    $mkh = array(
+	    	'152'=>array('25','29'),
+	    	'175'=>array('25','29','33'),
+	    	'200'=>array('29','33','38'),
+	    	'230'=>array('33','38','43'),
+	    	'264'=>array('33','38','43'),
+	    	'304'=>array('38','43','50'),
+	    	'350'=>array('38','43','50'),
+	    	'400'=>array('43','50','57'),
+	    	'460'=>array('50','57'),
+	    	'528'=>array('50','57','66'),
+	    	'608'=>array('50','57','66'),
+	    	'700'=>array('57','66'),
+	    );
+	echo CJSON::encode($mkh);
+>>>>>>> hitung cbr
+>>>>>>> update meneh
     }
 }

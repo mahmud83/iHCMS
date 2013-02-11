@@ -11,9 +11,11 @@
  * @property integer $ps_persent
  * @property integer $ps_score
  * @property integer $ac_score
+ * @property integer $relation
+ * @property string $information
  *
  * The followings are the available model relations:
- * @property Jabatan $jabatan
+ * @property WOccupation $jabatan
  * @property CbrAccountability[] $cbrAccountabilities
  * @property CbrKnowHow[] $cbrKnowHows
  * @property CbrProblemSolving[] $cbrProblemSolvings
@@ -46,11 +48,12 @@ class Cbr extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, jabatan_id, date, kh_score, ps_persent, ps_score, ac_score', 'required'),
-			array('id, jabatan_id, kh_score, ps_persent, ps_score, ac_score', 'numerical', 'integerOnly'=>true),
+			array('id, date, kh_score, ps_persent, ps_score, ac_score', 'required'),
+			array('id, jabatan_id, kh_score, ps_persent, ps_score, ac_score, relation', 'numerical', 'integerOnly'=>true),
+			array('information', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, jabatan_id, date, kh_score, ps_persent, ps_score, ac_score', 'safe', 'on'=>'search'),
+			array('id, jabatan_id, date, kh_score, ps_persent, ps_score, ac_score, relation, information', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,7 +65,7 @@ class Cbr extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'jabatan' => array(self::BELONGS_TO, 'Jabatan', 'jabatan_id'),
+			'jabatan' => array(self::BELONGS_TO, 'WOccupation', 'jabatan_id'),
 			'cbrAccountabilities' => array(self::HAS_MANY, 'CbrAccountability', 'cbr_id'),
 			'cbrKnowHows' => array(self::HAS_MANY, 'CbrKnowHow', 'cbr_id'),
 			'cbrProblemSolvings' => array(self::HAS_MANY, 'CbrProblemSolving', 'cbr_id'),
@@ -78,10 +81,12 @@ class Cbr extends CActiveRecord
 			'id' => 'ID',
 			'jabatan_id' => 'Jabatan',
 			'date' => 'Date',
-			'kh_score' => 'Know How Score',
+			'kh_score' => 'Kh Score',
 			'ps_persent' => 'Ps Persent',
 			'ps_score' => 'Ps Score',
 			'ac_score' => 'Ac Score',
+			'relation' => 'Relation',
+			'information' => 'Information',
 		);
 	}
 
@@ -103,26 +108,11 @@ class Cbr extends CActiveRecord
 		$criteria->compare('ps_persent',$this->ps_persent);
 		$criteria->compare('ps_score',$this->ps_score);
 		$criteria->compare('ac_score',$this->ac_score);
+		$criteria->compare('relation',$this->relation);
+		$criteria->compare('information',$this->information,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-	}
-	
-	public function actionDynamicDropdown () {
-		$mkh = array('Primary', 'Elementary Vocational', 'Vocational', 'Advance Vocational', 'Basic Professional', 'Seasoned Professional', 'Professional Mastery');
-		$mkh_prm = array('A-', 'A', 'A+');
-		$mkh_elv = array('B-', 'B', 'B+');
-		
-		$data=Location::model()->findAll('parent_id=:parent_id', 
-                  array(':parent_id'=>(int) $_POST['country_id']));
-        
-        $mkh_id = $
- 
-	    $data=CHtml::listData($data,'id','name');
-	    foreach($data as $value=>$name)
-	    {
-	        echo CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
-	    }
 	}
 }

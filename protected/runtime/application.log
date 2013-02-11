@@ -609,3 +609,80 @@ Stack trace:
 #29 {main}
 REQUEST_URI=/ihcms/index.php/renum/cbr/form
 ---
+2013/02/11 02:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
+---
+2013/02/11 02:57:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
+---
+2013/02/11 05:27:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "nama".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('nama')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('nama')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/nama')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/nama
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
+---
+2013/02/11 06:12:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "kha".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('kha')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('kha')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/kha')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/kha
+---
+2013/02/11 16:48:30 [error] [php] array_search() expects parameter 2 to be array, null given (/Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php:261)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#1 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CbrController->runAction()
+#2 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CbrController->filterRights()
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CbrController->runActionWithFilters()
+#8 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CbrController->run()
+#9 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#10 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/renum/cbr/psv
+in /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php (261)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/02/11 16:48:46 [error] [php] array_search() expects parameter 2 to be array, null given (/Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php:261)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#1 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CbrController->runAction()
+#2 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CbrController->filterRights()
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CbrController->runActionWithFilters()
+#8 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CbrController->run()
+#9 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#10 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/renum/cbr/psv
+in /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php (261)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
