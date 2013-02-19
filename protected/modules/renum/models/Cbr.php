@@ -11,6 +11,7 @@
  * @property integer $ps_persent
  * @property integer $ps_score
  * @property integer $ac_score
+ * @property integer $total
  * @property integer $relation
  * @property string $information
  *
@@ -48,12 +49,12 @@ class Cbr extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, date, kh_score, ps_persent, ps_score, ac_score', 'required'),
-			array('id, jabatan_id, kh_score, ps_persent, ps_score, ac_score, relation', 'numerical', 'integerOnly'=>true),
+			array('id, date, kh_score, ps_persent, ps_score, ac_score, total', 'required'),
+			array('id, jabatan_id, kh_score, ps_persent, ps_score, ac_score, total, relation', 'numerical', 'integerOnly'=>true),
 			array('information', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, jabatan_id, date, kh_score, ps_persent, ps_score, ac_score, relation, information', 'safe', 'on'=>'search'),
+			array('id, jabatan_id, date, kh_score, ps_persent, ps_score, ac_score, total, relation, information', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,10 +82,11 @@ class Cbr extends CActiveRecord
 			'id' => 'ID',
 			'jabatan_id' => 'Jabatan',
 			'date' => 'Date',
-			'kh_score' => 'Kh Score',
-			'ps_persent' => 'Ps Persent',
-			'ps_score' => 'Ps Score',
-			'ac_score' => 'Ac Score',
+			'kh_score' => 'Know How Score',
+			'ps_persent' => 'Problem Solving Persent',
+			'ps_score' => 'Problem Solving Score',
+			'ac_score' => 'Accountability Score',
+			'total' => 'Total Job unit',
 			'relation' => 'Relation',
 			'information' => 'Information',
 		);
@@ -108,6 +110,7 @@ class Cbr extends CActiveRecord
 		$criteria->compare('ps_persent',$this->ps_persent);
 		$criteria->compare('ps_score',$this->ps_score);
 		$criteria->compare('ac_score',$this->ac_score);
+		$criteria->compare('total',$this->total);
 		$criteria->compare('relation',$this->relation);
 		$criteria->compare('information',$this->information,true);
 

@@ -215,6 +215,25 @@ class CbrController extends Controller
 		));        
     }
     
+    private function hitungKha($tkh, $mkh, $hrs) {
+    	
+    	$act = array("+", "-");
+	    $head = str_replace($act, "", $tkh);
+    
+    	$models = WOption::model()->pullvalue('cbr_mkh');
+    	
+    	//$result = array();
+		foreach ($models as $m):
+			$value = $m->value;
+		endforeach;
+		
+		$value = CJSON::decode($value);
+		
+		$nilai = $value[$head][$tkh][$mkh][$hrs];
+		
+		return $nilai;
+    }
+    
     public function actionPsp($kha, $psv) {
 	    //$kha = ($_POST['kha'] != '')? strtolower($_POST['kha']):'87';
 	    //$psv = ($_POST['psv'] != '')? strtolower($_POST['psv']):'38';
@@ -234,9 +253,14 @@ class CbrController extends Controller
     
     public function actionPsv() {
     	
-	    $tet = ($_POST['tet'] != '')? strtolower($_POST['tet']):'g';
-	    $tce = ($_POST['tce'] != '')? strtolower($_POST['tce']):'1';
-	    $kha = ($_POST['kha'] != '')? strtolower($_POST['kha']):'152';
+	    $tet = ($_POST['tet'] != '')? strtolower($_POST['tet']):'d';
+	    $tce = ($_POST['tce'] != '')? strtolower($_POST['tce']):'2';
+	    
+	    $tkh = ($_POST['tkh'] != '')? strtolower($_POST['tkh']):'d-';
+    	$mkh = ($_POST['mkh'] != '')? strtolower($_POST['mkh']):'i';
+    	$hrs = ($_POST['hrs'] != '')? strtolower($_POST['hrs']):'2';
+    	
+    	$kha = $this->hitungKha($tkh, $mkh, $hrs);
 	    
 	    $act = array("+", "-");
 	    $head = str_replace($act, "", $tet);
@@ -257,21 +281,37 @@ class CbrController extends Controller
 		$hub = CJSON::decode($hub);
 		
 		$oke = $value[$head][$tet][$tce];
-		$info = $hub[$kha];
-		$result = array_search(strval($oke),$info);
-		$res = "tidak sesuai";
+		
+		$cek = "no";
+		$res = "-";
+		foreach ($hub as $point=>$value):
+			if ($value == $kha):
+				$cek = "yes";
+				$info = $hub[$kha];
+				$result = array_search(strval($oke),$info);
+			endif;
+		endforeach;
+		//print_r($hub);
+		//exit();
+		//$result = array_search(strval($oke),$info);
 		
 		//var_dump($oke);
 		//var_dump($result);
-		if(isset($info)):
-			foreach($info as $list=>$row):
-				if ($row == $oke):
-					$res = "sesuai";
-				endif;
-			endforeach;
+		if ($cek == "yes"):
+			$res = "tidak sesuai";
+			if(isset($info)):
+				foreach($info as $list=>$row):
+					if ($row == $oke):
+						$res = "sesuai";
+					endif;
+				endforeach;
+			endif;
 		endif;
 		
+		
 		$psp = $this->actionPsp($kha, $oke);
+		//print_r($oke);
+		//exit;
 		///*
 		echo CJSON::encode(array
          (
@@ -291,23 +331,52 @@ class CbrController extends Controller
 	    $toi = ($_POST['toi'] != '')? strtolower($_POST['toi']):'r';
 	    $prf = ($_POST['prf'] != '')? strtolower($_POST['prf']):'0';
 	    
+	    $kha = ($_POST['kha'] != '')? strtolower($_POST['kha']):'0';
+	    $psa = ($_POST['psa'] != '')? strtolower($_POST['psa']):'0';
+	    
 	    $models = WOption::model()->pullvalue('cbr_acc');
+	    $tangga = WOption::model()->pullvalue('cbr_level');
 	    
 	    foreach ($models as $m):
 			$value = $m->value;
 		endforeach;
 		
-		$value = CJSON::decode($value);
+		foreach ($tangga as $m):
+			$hub = $m->value;
+		endforeach;
 		
+		$value = CJSON::decode($value);
+		$hub = CJSON::decode($hub);
+		//print_r($hub);
+		//exit();
 		if ($_POST['aid'] != '') :
 			$oke = $value[$fta][$aid];
 		else:
 			$oke = $value[$fta][$amt][$toi];
 		endif;
+		//echo "oke = ".$oke;
+		
+		if ($prf != '0'):
+			$key = array_search($oke, $hub);
+			if (isset($key)):
+				$key = $key;
+			else:
+				$key=0;
+			endif;
+			
+			$new_key = $key-$prf;
+			
+			$new_val = $hub[$new_key];
+			//var_dump($new_val);
+			//exit();
+		else:
+			$new_val = $oke;
+		endif;
 		
 		echo CJSON::encode(array
          (
-             'isi'=>$oke,
+             'isi'=>$new_val,
+             'total'=>$oke+$kha+$psa,
         ));
         Yii::app()->end();
     }
@@ -317,7 +386,7 @@ class CbrController extends Controller
     	$tkh = ($_POST['tkh'] != '')? strtolower($_POST['tkh']):'a';
     	$mkh = ($_POST['mkh'] != '')? strtolower($_POST['mkh']):'n';
     	$hrs = ($_POST['hrs'] != '')? strtolower($_POST['hrs']):'1';
-    	$psv = ($_POST['psv'] != '')? strtolower($_POST['psv']):'10';
+    	//$psv = ($_POST['psv'] != '')? strtolower($_POST['psv']):'10';
     	//$tkh = $_POST['CbrKnowHow']['tkh'];
     	
     	$act = array("+", "-");
@@ -351,20 +420,330 @@ class CbrController extends Controller
     }
     
     public function actionMkh() {
-	    $mkh = array(
-	    	'152'=>array('25','29'),
-	    	'175'=>array('25','29','33'),
-	    	'200'=>array('29','33','38'),
-	    	'230'=>array('33','38','43'),
-	    	'264'=>array('33','38','43'),
-	    	'304'=>array('38','43','50'),
-	    	'350'=>array('38','43','50'),
-	    	'400'=>array('43','50','57'),
-	    	'460'=>array('50','57'),
-	    	'528'=>array('50','57','66'),
-	    	'608'=>array('50','57','66'),
-	    	'700'=>array('57','66'),
-	    );
-	echo CJSON::encode($mkh);
+	   	$fail = array('5600',
+	   	'4864',
+	   	'4224',
+	   	'3680',
+	   	'3200',
+	   	'2800',
+	   	'2432',
+	   	'2112',
+	   	'1840',
+	   	'1600',
+	   	'1400',
+	   	'1216',
+	   	'1056',
+	   	'920',
+	   	'800',
+	   	'700',
+	   	'608',
+	   	'528',
+	   	'460',
+	   	'400',
+	   	'350',
+	   	'304',
+	   	'264',
+	   	'230',
+	   	'200',
+	   	'175',
+	   	'152',
+	   	'132',
+	   	'115',
+	   	'100',
+	   	'87',
+	   	'76',
+	   	'66',
+	   	'57',
+	   	'50',
+	   	'43',
+	   	'38',
+	   	'33',
+	   	'29',
+	   	'25',
+	   	'22',
+	   	'19',
+	   	'16',
+	   	'14',
+	   	'12',
+	   	'10',
+	   	'9',
+	   	'8',
+	   	'7',
+	   	'6',
+	   	'5',
+	   	'4',);
+	   	 echo CJSON::encode($fail);
     }
+    
+    public function actionOmg() {
+             $mkh = array(
+                'a'=>array(
+                        
+                            'a'=>'8',
+                            'b'=>'10',
+                            'c'=>'14',
+                            'd'=>'19',
+                            '1'=>array(
+                                    'r'=>'10',
+                                    'c'=>'14',
+                                    's'=>'19',
+                                    'p'=>'25'
+                                ),
+                            '2'=>array(
+                                    'r'=>'14',
+                                    'c'=>'19',
+                                    's'=>'25',
+                                    'p'=>'33'
+                                ),
+                            '3'=>array(
+                                    'r'=>'19',
+                                    'c'=>'25',
+                                    's'=>'33',
+                                    'p'=>'43'
+                                ),
+                            '4'=>array(
+                                    'r'=>'25',
+                                    'c'=>'33',
+                                    's'=>'43',
+                                    'p'=>'57'
+                                ),
+                            '5'=>array(
+                                    'r'=>'33',
+                                    'c'=>'43',
+                                    's'=>'57',
+                                    'p'=>'76'
+                                )
+                        
+                ),
+                  'b'=>array(
+                        
+                            'a'=>'12',
+                            'b'=>'16',
+                            'c'=>'22',
+                            'd'=>'29',
+                            '1'=>array(
+                                    'r'=>'16',
+                                    'c'=>'22',
+                                    's'=>'29',
+                                    'p'=>'38'
+                                ),
+                            '2'=>array(
+                                    'r'=>'22',
+                                    'c'=>'29',
+                                    's'=>'38',
+                                    'p'=>'50'
+                                ),
+                            '3'=>array(
+                                    'r'=>'29',
+                                    'c'=>'38',
+                                    's'=>'50',
+                                    'p'=>'66'
+                                ),
+                            '4'=>array(
+                                    'r'=>'38',
+                                    'c'=>'50',
+                                    's'=>'66',
+                                    'p'=>'87'
+                                ),
+                            '5'=>array(
+                                    'r'=>'50',
+                                    'c'=>'66',
+                                    's'=>'87',
+                                    'p'=>'115'
+                                )
+                        
+                ),
+                'c'=>array(
+                        
+                            'a'=>'19',
+                            'b'=>'25',
+                            'c'=>'33',
+                            'd'=>'43',
+                            '1'=>array(
+                                    'r'=>'25',
+                                    'c'=>'33',
+                                    's'=>'43',
+                                    'p'=>'57'
+                                ),
+                            '2'=>array(
+                                    'r'=>'33',
+                                    'c'=>'43',
+                                    's'=>'57',
+                                    'p'=>'76'
+                                ),
+                            '3'=>array(
+                                    'r'=>'43',
+                                    'c'=>'57',
+                                    's'=>'76',
+                                    'p'=>'100'
+                                ),
+                            '4'=>array(
+                                    'r'=>'57',
+                                    'c'=>'76',
+                                    's'=>'100',
+                                    'p'=>'132'
+                                ),
+                            '5'=>array(
+                                    'r'=>'76',
+                                    'c'=>'100',
+                                    's'=>'132',
+                                    'p'=>'175'
+                                )
+                        
+                ),
+                'd'=>array(
+                       
+                            'a'=>'29',
+                            'b'=>'38',
+                            'c'=>'50',
+                            'd'=>'66',
+                            '1'=>array(
+                                    'r'=>'38',
+                                    'c'=>'50',
+                                    's'=>'66',
+                                    'p'=>'87'
+                                ),
+                            '2'=>array(
+                                    'r'=>'50',
+                                    'c'=>'66',
+                                    's'=>'87',
+                                    'p'=>'115'
+                                ),
+                            '3'=>array(
+                                    'r'=>'66',
+                                    'c'=>'87',
+                                    's'=>'115',
+                                    'p'=>'152'
+                                ),
+                            '4'=>array(
+                                    'r'=>'87',
+                                    'c'=>'115',
+                                    's'=>'152',
+                                    'p'=>'200'
+                                ),
+                            '5'=>array(
+                                    'r'=>'115',
+                                    'c'=>'152',
+                                    's'=>'200',
+                                    'p'=>'264'
+                                )
+                        
+                ),
+                'e'=>array(
+                        
+                            'a'=>'43',
+                            'b'=>'57',
+                            'c'=>'76',
+                            'd'=>'100',
+                            '1'=>array(
+                                    'r'=>'57',
+                                    'c'=>'76',
+                                    's'=>'100',
+                                    'p'=>'132'
+                                ),
+                            '2'=>array(
+                                    'r'=>'76',
+                                    'c'=>'100',
+                                    's'=>'132',
+                                    'p'=>'175'
+                                ),
+                            '3'=>array(
+                                    'r'=>'100',
+                                    'c'=>'132',
+                                    's'=>'175',
+                                    'p'=>'230'
+                                ),
+                            '4'=>array(
+                                    'r'=>'132',
+                                    'c'=>'175',
+                                    's'=>'230',
+                                    'p'=>'304'
+                                ),
+                            '5'=>array(
+                                    'r'=>'175',
+                                    'c'=>'230',
+                                    's'=>'304',
+                                    'p'=>'400'
+                                )
+                        
+                ),
+                'f'=>array(
+                       
+                            'a'=>'66',
+                            'b'=>'87',
+                            'c'=>'115',
+                            'd'=>'152',
+                            '1'=>array(
+                                    'r'=>'87',
+                                    'c'=>'115',
+                                    's'=>'152',
+                                    'p'=>'200'
+                                ),
+                            '2'=>array(
+                                    'r'=>'115',
+                                    'c'=>'152',
+                                    's'=>'200',
+                                    'p'=>'264'
+                                ),
+                            '3'=>array(
+                                    'r'=>'152',
+                                    'c'=>'200',
+                                    's'=>'264',
+                                    'p'=>'350'
+                                ),
+                            '4'=>array(
+                                    'r'=>'200',
+                                    'c'=>'264',
+                                    's'=>'350',
+                                    'p'=>'460'
+                                ),
+                            '5'=>array(
+                                    'r'=>'264',
+                                    'c'=>'350',
+                                    's'=>'460',
+                                    'p'=>'608'
+                                )
+                        
+                ),
+                'g'=>array(
+                       
+                            'a'=>'100',
+                            'b'=>'132',
+                            'c'=>'175',
+                            'd'=>'230',
+                            '1'=>array(
+                                    'r'=>'132',
+                                    'c'=>'175',
+                                    's'=>'230',
+                                    'p'=>'304'
+                                ),
+                            '2'=>array(
+                                    'r'=>'175',
+                                    'c'=>'230',
+                                    's'=>'304',
+                                    'p'=>'400'
+                                ),
+                            '3'=>array(
+                                    'r'=>'230',
+                                    'c'=>'304',
+                                    's'=>'400',
+                                    'p'=>'528'
+                                ),
+                            '4'=>array(
+                                    'r'=>'304',
+                                    'c'=>'400',
+                                    's'=>'528',
+                                    'p'=>'700'
+                                ),
+                            '5'=>array(
+                                    'r'=>'400',
+                                    'c'=>'528',
+                                    's'=>'700',
+                                    'p'=>'920'
+                                )
+                        
+                ),
+             );
+         echo CJSON::encode($mkh);
+        }
 }
