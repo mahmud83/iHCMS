@@ -87,7 +87,7 @@ label, input, button, select, textarea  {
 
 body {
 	/*background: #f5f5f5 url('../img/background1.png')  left top;*/
-	background: #f5f5f5 url('../img/sawit1.jpg')  left top;
+	background: #f5f5f5 url('../img/karet1.jpg')  left top;
 	-webkit-font-smoothing: antialiased;
 	font-size: 12px !important;
 	color: #424242;
@@ -121,7 +121,7 @@ legend {
 	-moz-border-radius: 0px !important;
 	border-radius: 0px !important;
 	
-	background: #036109 url('../img/pattern_navbar.png') left top !important;
+	background: #515B5E url('../img/pattern_navbar.png') left top !important;
 	/*padding-bottom: 15px !important;*/
 	padding-top: 15px !important;
 	border: none !important;
@@ -268,7 +268,7 @@ legend {
 }
 
 .user-details .details {
-	background: #036109;
+	background: #3D434B;
 	width: 183px;
 	/*float: left;*/
 	position: absolute;

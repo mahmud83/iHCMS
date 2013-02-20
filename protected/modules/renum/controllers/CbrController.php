@@ -262,8 +262,8 @@ class CbrController extends Controller
     	
     	$kha = $this->hitungKha($tkh, $mkh, $hrs);
 	    
-	    $act = array("+", "-");
-	    $head = str_replace($act, "", $tet);
+	    //$act = array("+", "-");
+	    //$head = str_replace($act, "", $tet);
 	    
 	    $models = WOption::model()->pullvalue('cbr_psv');
 	    
@@ -280,7 +280,11 @@ class CbrController extends Controller
 		$value = CJSON::decode($value);
 		$hub = CJSON::decode($hub);
 		
-		$oke = $value[$head][$tet][$tce];
+		//$oke = $value[$head][$tet][$tce];
+		$oke = $value[$tet][$tce];
+		
+		//var_dump($value[$tet][$tce]);
+		//exit();
 		
 		$cek = "no";
 		$res = "-";
@@ -336,6 +340,9 @@ class CbrController extends Controller
 	    
 	    $models = WOption::model()->pullvalue('cbr_acc');
 	    $tangga = WOption::model()->pullvalue('cbr_level');
+	    
+	    $act = array("+", "-");
+	    $prf = str_replace($act, "", $prf);
 	    
 	    foreach ($models as $m):
 			$value = $m->value;
@@ -746,4 +753,107 @@ class CbrController extends Controller
              );
          echo CJSON::encode($mkh);
         }
+        
+        public function actionProblemSolving()
+    {
+        $proSel = array(
+                    'a'=>array(
+                            '1'=>'10',
+                            '1+'=>'12',
+                            '2'=>'14',
+                            '2+'=>'16',
+                            '3'=>'19',
+                            '3+'=>'22',
+                            '4'=>'25',
+                            '4+'=>'29',
+                            '5'=>'33',
+                            '5+'=>'38'
+                    ),
+                    'b'=>array(
+                            '1'=>'12',
+                            '1+'=>'14',
+                            '2'=>'16',
+                            '2+'=>'19',
+                            '3'=>'22',
+                            '3+'=>'25',
+                            '4'=>'29',
+                            '4+'=>'33',
+                            '5'=>'38',
+                            '5+'=>'43'
+                    ),
+                    'c'=>array(
+                            '1'=>'14',
+                            '1+'=>'16',
+                            '2'=>'19',
+                            '2+'=>'22',
+                            '3'=>'25',
+                            '3+'=>'29',
+                            '4'=>'33',
+                            '4+'=>'38',
+                            '5'=>'43',
+                            '5+'=>'50'
+                    ),
+                    'd'=>array(
+                            '1'=>'16',
+                            '1+'=>'19',
+                            '2'=>'22',
+                            '2+'=>'25',
+                            '3'=>'29',
+                            '3+'=>'33',
+                            '4'=>'38',
+                            '4+'=>'43',
+                            '5'=>'50',
+                            '5+'=>'57'
+                    ),
+                    'e'=>array(
+                            '1'=>'19',
+                            '1+'=>'22',
+                            '2'=>'25',
+                            '2+'=>'29',
+                            '3'=>'33',
+                            '3+'=>'38',
+                            '4'=>'43',
+                            '4+'=>'50',
+                            '5'=>'57',
+                            '5+'=>'66'
+                    ),
+                    'f'=>array(
+                            '1'=>'22',
+                            '1+'=>'25',
+                            '2'=>'29',
+                            '2+'=>'33',
+                            '3'=>'38',
+                            '3+'=>'43',
+                            '4'=>'50',
+                            '4+'=>'57',
+                            '5'=>'66',
+                            '5+'=>'76'
+                    ),
+                    'g'=>array(
+                            '1'=>'25',
+                            '1+'=>'29',
+                            '2'=>'33',
+                            '2+'=>'38',
+                            '3'=>'43',
+                            '3+'=>'50',
+                            '4'=>'57',
+                            '4+'=>'66',
+                            '5'=>'76',
+                            '5+'=>'87'
+                    ),
+                    'h'=>array(
+                            '1'=>'29',
+                            '1+'=>'33',
+                            '2'=>'38',
+                            '2+'=>'43',
+                            '3'=>'50',
+                            '3+'=>'57',
+                            '4'=>'66',
+                            '4+'=>'76',
+                            '5'=>'87',
+                            '5+'=>'100'
+                    ),
+        );
+        echo CJSON::encode($proSel);
+    }
 }

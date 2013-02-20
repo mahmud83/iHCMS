@@ -117,11 +117,11 @@
 	            	'mkh', 
 	            	array(
 	            		''=>'please select', 
-	            		'N'=>'Task', 
-	            		'I'=>'Supervisory', 
-	            		'II'=>'Managerial', 
-	            		'III'=>'Diverse Managerial', 
-	            		'IV'=>'Total'), 
+	            		'N'=>'Task (N)', 
+	            		'I'=>'Supervisory (I)', 
+	            		'II'=>'Managerial (II)', 
+	            		'III'=>'Diverse Managerial (III)', 
+	            		'IV'=>'Total (IV)'), 
 	            	array(
 	            		'class'=>'mkh', 
 	            		'rel'=>'popover', 
@@ -162,9 +162,9 @@
 	            	'hrs', 
 	            	array(
 	            		''=>'please select', 
-	            		'1'=>'Basic', 
-	            		'2'=>'Important', 
-	            		'3'=>'Critical'), 
+	            		'1'=>'Basic (1)', 
+	            		'2'=>'Important (2)', 
+	            		'3'=>'Critical (3)'), 
 	            	array(
 	            		'class'=>'mkh', 
 	            		'rel'=>'popover', 
@@ -207,6 +207,7 @@
 				<?php echo $form->dropDownListRow(
 					$modelPs, 
 					'tet', 
+					/*
 					array(
 						''=>'please select', 
 						'Strict Routine'=>array('A'=>'A', 'A+'=>'A+'), 
@@ -217,6 +218,18 @@
 						'Broadly Defined'=>array('F'=>'F', 'F+'=>'F+'), 
 						'Generally Defined'=>array('G'=>'G', 'G+'=>'G+'), 
 						'Abstractly Defined'=>array('H'=>'H', 'H+'=>'H+'),
+					), 
+					*/
+					array(
+						''=>'please select', 
+						'A' => 'Strict Routine (A)', 
+						'B' => 'Routine (B)', 
+						'C' => 'Semi Routine (C)', 
+						'D' => 'Standarised (D)', 
+						'E' => 'Clearly Defined (E)', 
+						'F' => 'Broadly Defined (F)', 
+						'G' => 'Generally Defined (G)', 
+						'H' => 'Abstractly Defined (H)',
 					), 
 					array(
 						'rel'=>'popover', 
@@ -270,6 +283,7 @@
 				<?php echo $form->dropDownListRow(
 					$modelPs, 
 					'tce', 
+					/*
 					array(
 						''=>'please select', 
 						'1'=>'Repetitive', 
@@ -277,6 +291,15 @@
 						'3'=>'Variable', 
 						'4'=>'Adaptive', 
 						'5'=>'Unearthed'), 
+					*/
+					array(
+						''=>'please select', 
+						'Repetitive'=>array('1'=>'1', '1+'=>'1+'), 
+						'Patterned'=>array('2'=>'2', '2+'=>'2+'), 
+						'Variable'=>array('3'=>'3', '3+'=>'3+'), 
+						'Adaptive'=>array('4'=>'4', '4+'=>'4+'), 
+						'Unearthed'=>array('5'=>'5', '5+'=>'5+'),
+					),
 					array(
 						'rel'=>'popover', 
 						'data-original-title'=>'Thinkng Challenge',
@@ -331,13 +354,13 @@
 					'fta', 
 					array(
 						''=>'please select', 
-						'A'=>'Prescribed', 
-						'B'=>'Controlled', 
-						'C'=>'Standardised', 
-						'D'=>'Regulated', 
-						'E'=>'Directed', 
-						'F'=>'Generally Directed', 
-						'G'=>'Guided'), 
+						'A'=>'Prescribed (A)', 
+						'B'=>'Controlled (B)', 
+						'C'=>'Standardised (C)', 
+						'D'=>'Regulated (D)', 
+						'E'=>'Directed (E)', 
+						'F'=>'Generally Directed (F)', 
+						'G'=>'Guided (G)'), 
 					array(
 						'rel'=>'popover', 
 						'data-original-title'=>'Freedom to Act',
@@ -395,10 +418,10 @@
 	            	'aid', 
 	            	array(
 	            		''=>'please select', 
-	            		'A'=>'Nominal', 
-	            		'B'=>'Moderate', 
-	            		'C'=>'Major', 
-	            		'D'=>'Critical'), 
+	            		'A'=>'Nominal (A)', 
+	            		'B'=>'Moderate (B)', 
+	            		'C'=>'Major (C)', 
+	            		'D'=>'Critical (D)'), 
 	            	array(
 	            		'rel'=>'popover', 
 	            		'data-original-title'=>'Area Indeterminated',
@@ -436,11 +459,11 @@
 	            	'amt', 
 	            	array(
 	            		''=>'please select', 
-	            		'1'=>'Very Small', 
-	            		'2'=>'Small', 
-	            		'3'=>'Medium', 
-	            		'4'=>'Large', 
-	            		'5'=>'Very Large'), 
+	            		'1'=>'Very Small (1)', 
+	            		'2'=>'Small (2)', 
+	            		'3'=>'Medium (3)', 
+	            		'4'=>'Large (4)', 
+	            		'5'=>'Very Large (5)'), 
 	            	array(
 	            		'rel'=>'popover', 
 	            		'data-original-title'=>'Magnitude',
@@ -474,10 +497,10 @@
 	            	'toi', 
 	            	array(
 	            		''=>'please select', 
-	            		'R'=>'Remote', 
-	            		'C'=>'Contributory', 
-	            		'S'=>'Shared', 
-	            		'P'=>'Prime'), 
+	            		'R'=>'Remote (R)', 
+	            		'C'=>'Contributory (C)', 
+	            		'S'=>'Shared (S)', 
+	            		'P'=>'Prime (P)'), 
 	            	array(
 	            		'rel'=>'popover', 
 	            		'data-original-title'=>'Type of Impact',
@@ -522,10 +545,10 @@
 	            		'2'=>'P2', 
 	            		'1'=>'P1', 
 	            		'0'=>'P0/A0', 
-	            		'1'=>'A1', 
-	            		'2'=>'A2', 
-	            		'3'=>'A3', 
-	            		'4'=>'A4'), 
+	            		'1+'=>'A1', 
+	            		'2+'=>'A2', 
+	            		'3+'=>'A3', 
+	            		'4+'=>'A4'), 
 	            	array(
 	            		'ajax' => array(
 	            			'type'=>'POST',
