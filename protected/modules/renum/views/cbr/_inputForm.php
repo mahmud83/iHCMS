@@ -1,4 +1,3 @@
-<?php $fungsi = "<div class='alert alert-error'><button type='button' class='close' data-dismiss='alert'>×</button><h5>Warning!</h5>Data Tidak sesuai</div>"; ?>
 <div class="row-fluid no-clear">
 	<div class="span12 widget">
 		<div class="widget-title">
@@ -22,7 +21,7 @@
 			    	'showAnim' => 'fold',
 			    	'minLength'=>'2',
 			    	'select'=>'js:function( event, ui ) {  
-                               $("#Cbr_jabatan_id").val(ui.item.id);  
+                               $("#user_id").val(ui.item.id);  
                                $("#user").val(ui.item.value);  
                                return false;  
                           }',
@@ -31,7 +30,6 @@
 			     	'style' => 'height:20px;'
 			     	),
 			    )); ?>
-			    <input type="hidden" readonly="readonly" size="2" maxlength="2" name="Cbr[jabatan_id]" id="Cbr_jabatan_id">
 			</div>
 		</div>
 		
@@ -88,11 +86,11 @@
 	            			</li>
 	            			<li>
 	            				Seasoned Professional (S1 + keahlian khusus professional/Strata V)
-	            				<p>pengetahuan/keahlian/pengalaman yang diperloeh melalui pengalaman yang luas dalam hal teknis</p>
+	            				<p>pengetahuan/keahlian/pengalaman yang diperloeh melalui pengalaman yang luas dlm hal teknis</p>
 	            			</li>
 	            			<li>
 	            				Professional Mastery (S2/Strata VI)
-	            				<p>pemahaman secara mendalam konsep, prinsip dan praktek yang diperoleh melalui pengalaman luas</p>
+	            				<p>pemahaman secara mendalam konsep, prinsip dan prakterk yang diperoleh melalui pengalaman luas</p>
 	            			</li>
 	            			<li>
 	            				Unique Authority (S3)
@@ -132,7 +130,7 @@
 	            		<ul>
 	            			<li>
 	            				Supervisory (Strata IV)
-	            				<p>Pelaksanaan tugas/supervisi pekerjaan yang spesifik tujuan dan isinya</p>
+	            				<p>Pelaksanaan tugas /supervisi pekerjaan yang spesifik tujuan dan isinya</p>
 	            			</li>
 	            			<li>
 	            				Managerial (Strata V)
@@ -140,7 +138,7 @@
 	            			</li>
 	            			<li>
 	            				Diverse Managerial (Strata VI)
-	            				<p>Integrasi konseptual atau operasional dari fungsi fungsi yang berbeda sifat dan tujuannya</p>
+	            				<p>Integrasi konseptual atau operasional dari fungsi funsi yang berbeda sifat dan tujuan nya</p>
 	            			</li>
 	            			<li>
 	            				Total
@@ -204,7 +202,7 @@
 			</div>
 			<!-- Problem Solving !-->
 			<div>
-				<p>Pemikiran yang diperlukan untuk menganalisa, emngevaluasi, menciptakan, mememberi alasan, mencapai dan menarik kesimpulan.</p>
+				<p>Pemikiran yang diperlukan untuk menganalisa, emngevaluasi, menciptakan, mememberi alasan, mencapai dan menarik kesimpulasn.</p>
 				
 				<?php echo $form->dropDownListRow(
 					$modelPs, 
@@ -227,7 +225,7 @@
 						'A' => 'Strict Routine (A)', 
 						'B' => 'Routine (B)', 
 						'C' => 'Semi Routine (C)', 
-						'D' => 'Standarized (D)', 
+						'D' => 'Standarised (D)', 
 						'E' => 'Clearly Defined (E)', 
 						'F' => 'Broadly Defined (F)', 
 						'G' => 'Generally Defined (G)', 
@@ -240,7 +238,7 @@
 						<ul>
 							<li>
 								Strict Routine (SD)
-								<p>Berpikir di dalam batas instruksi rinci, precedent</p>
+								<p>Berpikir di dalam batas intruksi rinci, precedent</p>
 							</li>
 							<li>
 								Routine (SLTP)
@@ -252,7 +250,7 @@
 							</li>
 							<li>
 								Standardized (Diploma , Strata IV)
-								<p>Pemegang peran diminta untuk memikirkan masalah mengambil tindakan dan mempertimbangkan konsekuensi tindakan</p>
+								<p>Pemegang peran diminta untuk memikirkan masalah mengambil tindakan dan mempertimbangkan kensekuensi tindakan</p>
 							</li>
 							<li>
 								Clearly Defined (S1, Strata IV – V)
@@ -279,14 +277,7 @@
 	            			'success'=>'function(data){
 	            				$("#Cbr_ps_persent").val(data.isi);
 	            				$("#Cbr_ps_score").val(data.psp);
-	            				if (parseInt(data.info) == 2) {
-	            					$("#infocuy").addClass("alert alert-error");
-	            					$("#infocuy").html("Maaf Data tidak sesuai");
-	            				}
-	            				else {
-	            					$("#infocuy").removeClass("alert alert-error");
-	            					$("#infocuy").html("");
-	            				}
+	            				$("#Cbr_information").val(data.info);
 	            			}',),)) ;?>
 				
 				<?php echo $form->dropDownListRow(
@@ -320,7 +311,7 @@
 							</li>
 							<li>
 								Patterned (Strata IV)
-								<p>Situasi sama, pemecahannya ada beberapa alternatif (lebih dari2), Tapi sudah tersedia</p>
+								<p>Situasi sama, pemecahan nya ada beberapa alternatif (lebih dari2), Tapi sudah tersedia</p>
 							</li>
 							<li>
 								Variable (Strata IV – V)
@@ -343,28 +334,20 @@
 	            			'success'=>'function(data){
 	            				$("#Cbr_ps_persent").val(data.isi);
 	            				$("#Cbr_ps_score").val(data.psp);
-	            				if (parseInt(data.info) == 2) {
-	            					$("#infocuy").addClass("alert alert-error");
-	            					$("#infocuy").html("Maaf Data tidak sesuai");
-	            				}
-	            				else {
-	            					$("#infocuy").removeClass("alert alert-error");
-	            					$("#infocuy").html("");
-	            				}
+	            				$("#Cbr_information").val(data.info);
 	            			}',),)) ;?>
 				
 				<?php echo $form->textFieldRow($model,'ps_persent',array('class'=>'span5')); ?>
 
 				<?php echo $form->textFieldRow($model,'ps_score',array('class'=>'span5')); ?>
 				
-				<?php //echo $form->textFieldRow($model,'information',array('class'=>'span5')); ?>
-				<div id="infocuy"></div>
+				<?php echo $form->textFieldRow($model,'information',array('class'=>'span5')); ?>
 			</div>
 			<!-- Accountability !-->
 			<div>
 				<ul>
 				   <li>Hasil dan Konsekuensi dari tindakan.</li>
-				   <li>Efek dari peran terhadap hasil akhir.</li>
+				   <li>Efek danri peran terhadap hasil akhir.</li>
 				</ul>
 				<?php echo $form->dropDownListRow(
 					$modelAc, 
@@ -373,7 +356,7 @@
 						''=>'please select', 
 						'A'=>'Prescribed (A)', 
 						'B'=>'Controlled (B)', 
-						'C'=>'Standardized (C)', 
+						'C'=>'Standardised (C)', 
 						'D'=>'Regulated (D)', 
 						'E'=>'Directed (E)', 
 						'F'=>'Generally Directed (F)', 
@@ -393,7 +376,7 @@
 							</li>
 							<li>
 								Standardized (Strata IV)
-								<p>Situasi berbeda yang memerlukan identifikasi dan seleksi dari pemecahan penggunaan aplikasi dan pengetahuan</p>
+								<p>Situasi berbeda yang memerlukan identifikasi dan seleksi dari pemencahan penggunaan aplikasi dan pengetahuan</p>
 							</li>
 							<li>
 								Adaptive (Strata VI)
@@ -409,7 +392,7 @@
 							</li>
 							<li>
 								Generally Directed
-								<p>Menerapkan kebijakan fungsional, melakukan kontrol terhadap unit operasional/perusahaan</p>
+								<p>Menerapkan kebijakan fungsional, emlakukan kontrol terhadap unit operasional/perusahaan</p>
 							</li>
 							<li>
 								Guided
@@ -588,7 +571,6 @@
 					</p>
 				</blockquote>
 				<?php echo $form->textFieldRow($model,'total',array('class'=>'span5')); ?>
-				<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>'Submit')); ?>
 			</div>
 			
 		</div>

@@ -5,13 +5,18 @@ $this->breadcrumbs=array(
 	$this->module->id,
 );
 ?>
-<h1><?php echo $this->uniqueId . '/' . $this->action->id; ?></h1>
+<div class="row-fluid no-clear">
+	<div class="span12 widget">
+		<div class="widget-content">
+			<h3>Selamat datang di Aplikasi Program Competency Based Remunerations (CBR)</h3>
+			<p>
+				CBR merupakan sistem remunerasi  yang disusun berdasarkan jabatan, kinerja  dan  kompetensi  masing-masing karyawan.  Sistem ini bertujuan untuk memberikan remunerasi yang adil sesuai dengan kontribusi karyawan,  agar lebih dapat memperkuat perilaku kerja secara efektif dan  sejalan dengan tujuan perusahaan.
+			</p>
+			<p>
+				Aplikasi Program CBR ini memberikan informasi tentang penghitungan poin berdasarkan position, performance and person, oleh karenanya aplikasi ini terhubung dengan aplikasi program Competency Based Performance Management (CBPM) dan Pengukuran Competency Level Index (CLI).
+			</p>
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/animasi.gif" alt="PTPN 5">
+		</div>
+	</div>
+</div>
 
-<p>
-This is the view content for action "<?php echo $this->action->id; ?>".
-The action belongs to the controller "<?php echo get_class($this); ?>"
-in the "<?php echo $this->module->id; ?>" module.
-</p>
-<p>
-You may customize this page by editing <tt><?php echo __FILE__; ?></tt>
-</p>

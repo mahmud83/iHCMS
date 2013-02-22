@@ -49,9 +49,9 @@ class Cbr extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, date, kh_score, ps_persent, ps_score, ac_score, total', 'required'),
-			array('id, jabatan_id, kh_score, ps_persent, ps_score, ac_score, total, relation', 'numerical', 'integerOnly'=>true),
-			array('information', 'safe'),
+			array('date, kh_score, ps_persent, ps_score, ac_score, total', 'required'),
+			array('jabatan_id, kh_score, ps_persent, ps_score, ac_score, total, relation', 'numerical', 'integerOnly'=>true),
+			//array('information', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, jabatan_id, date, kh_score, ps_persent, ps_score, ac_score, total, relation, information', 'safe', 'on'=>'search'),

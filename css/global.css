@@ -92,6 +92,7 @@ body {
 	font-size: 12px !important;
 	color: #424242;
 	height: 100%;
+    background-attachment: fixed;
 }
 
 /** styles for color **/
@@ -361,24 +362,24 @@ legend {
 
 .first-nav ul li a {
 	width: 90px;
-	color: #5E482C;
+	color: #fff;
 	text-decoration: none;
 	display: block;
 	font-size: 14px;
-	text-shadow: 0px 1px 1px #EDE2D4;
+	text-shadow: 0px 1px 1px #F58634;
 }
 
 .first-nav ul a [class^="icon-"], .first-nav ul a [class*=" icon-"] {
 	font-size: 30px;
 	margin-bottom: 10px;
-	color: #97754a;
+	color: #fff;
 	width: 100%;
 }
 
 .first-nav ul .active {
 	background: url(../img/active_nav.png) no-repeat left top white;
 	border-radius: 5px 0px 0px 5px;
-	box-shadow: 0px 3px 0px 0px #6B7683;
+	box-shadow: 0px 3px 0px 0px #F58634;
 	-webkit-box-shadow: 0px 3px 0px 0px #6B7683;
 	padding-left: 4px;
 	padding-right: 6px;
@@ -401,11 +402,11 @@ legend {
 }
 
 .second-nav h2 {
-	color: #272C32;
+	color: #fff;
 	font-size: 20px;
 	margin-top: 21px;
 	line-height: 32px;
-	text-shadow: 0px 1px 0px #677380;
+	text-shadow: 0px 1px 0px #F58634;
 	/*border-bottom: solid 1px #374049;
 	box-shadow: 0px 1px 0px #606974;*/
 }
@@ -426,12 +427,12 @@ legend {
 }
 
 .second-nav ul .active [class^="icon-"], .second-nav ul .active [class*=" icon-"] {
-	color: #F84C61;
+	color: #F58634;
 	text-shadow: 0px 1px 0px #2D3238;
 }
 
 .second-nav ul li a {
-	color: #9AA4A8;
+	color: #fff;
 	font-size: 14px;
 	text-decoration: none;
 	display: inline-block;
@@ -448,7 +449,7 @@ legend {
 }
 
 .second-nav ul li [class^="icon-"], .second-nav ul li [class*=" icon-"] {
-	color: #2D3238;
+	color: #fff;
 	text-shadow: 0px 1px 0px #6B7989;
 	margin-right: 8px;
 }

@@ -197,7 +197,7 @@ class CbrController extends Controller
     
     	$this->layout='//layouts/column1';
 		$this->breadcrumbs = array('Cbr'=>'', 'list');
-		$this->sub_title = 'Daftar Data Cbr';
+		$this->sub_title = 'Input Data CBR';
 		
 		$model = new Cbr;
         $modelKh = new CbrKnowHow;
@@ -206,13 +206,59 @@ class CbrController extends Controller
         
         // Comment the following line if AJAX validation is needed
 		$this->performAjaxValidation(array($model, $modelAc, $modelKh, $modelPs));
-        
-		$this->render('inputForm',array(
-			'model'=>$model,
-            'modelKh'=>$modelKh,
-            'modelPs'=>$modelPs,
-            'modelAc'=>$modelAc
-		));        
+		
+		if(isset($_POST['Cbr']))
+		{
+			/*
+			$model->attributes=$_POST['Cbr'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+			*/
+			//echo "hae";
+			//var_dump($_POST['Cbr']);
+			//exit();
+			
+			//var_dump($_POST['Cbr']);
+			//echo "<br/>";
+			//var_dump($_POST['CbrKnowHow']);
+			//echo "<br/>";
+			//var_dump($_POST['CbrProblemSolving']);
+			//echo "<br/>";
+			//var_dump($_POST['CbrAccountability']);
+			
+			$model->attributes=$_POST['Cbr'];
+			$model->date = date("Y-m-d");
+			
+			if($model->save()) {
+				
+				$primary = $model->getPrimaryKey();
+				
+				$modelKh->attributes=$_POST['CbrKnowHow'];
+				$modelKh->cbr_id = $primary;
+				$modelKh->save();
+				
+				$modelPs->attributes=$_POST['CbrProblemSolving'];
+				$modelPs->cbr_id = $primary;
+				$modelPs->save();
+				
+				$modelAc->attributes=$_POST['CbrAccountability'];
+				$modelAc->cbr_id = $primary;
+				$modelAc->save();
+				
+				$this->redirect(array('view','id'=>$model->id));
+			}
+			else {
+				var_dump($model->attributes);
+			}
+		}
+		else { 
+			$this->render('inputForm',array(
+				'model'=>$model,
+	            'modelKh'=>$modelKh,
+	            'modelPs'=>$modelPs,
+	            'modelAc'=>$modelAc
+			));
+		}        
     }
     
     private function hitungKha($tkh, $mkh, $hrs) {
@@ -287,7 +333,7 @@ class CbrController extends Controller
 		//exit();
 		
 		$cek = "no";
-		$res = "-";
+		$res = "1";
 		foreach ($hub as $point=>$value):
 			if ($value == $kha):
 				$cek = "yes";
@@ -306,7 +352,7 @@ class CbrController extends Controller
 			if(isset($info)):
 				foreach($info as $list=>$row):
 					if ($row == $oke):
-						$res = "sesuai";
+						$res = "2";
 					endif;
 				endforeach;
 			endif;
