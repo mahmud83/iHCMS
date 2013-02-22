@@ -589,6 +589,7 @@
 				</blockquote>
 				<?php echo $form->textFieldRow($model,'total',array('class'=>'span5')); ?>
 				<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>'Submit')); ?>
+				
 			</div>
 			
 		</div>

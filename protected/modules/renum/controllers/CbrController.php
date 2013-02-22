@@ -429,7 +429,7 @@ class CbrController extends Controller
 		echo CJSON::encode(array
          (
              'isi'=>$new_val,
-             'total'=>$oke+$kha+$psa,
+             'total'=>$new_val+$kha+$psa,
         ));
         Yii::app()->end();
     }

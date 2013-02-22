@@ -23,12 +23,13 @@ $this->menu=array(
 			'data'=>$model,
 			'attributes'=>array(
 				'id',
-		'jabatan_id',
-		'date',
-		'kh_score',
-		'ps_persent',
-		'ps_score',
-		'ac_score',
+				'jabatan_id',
+				'date',
+				'kh_score',
+				'ps_persent',
+				'ps_score',
+				'ac_score',
+				'total',
 			),
 		)); ?>
 		</div>
