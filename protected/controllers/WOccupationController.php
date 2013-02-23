@@ -203,7 +203,7 @@ class WOccupationController extends Controller
 			$result = array();
 			foreach ($models as $m)
 	            $result[] = array(
-	                'value' => $m->name,
+	                'value' => ''.$m->name.' ('.$m->wUnit->name.')',
 	                'id' => $m->id,
 	            );
 	        

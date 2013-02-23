@@ -1,0 +1,46 @@
+2013/02/22 07:29:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/view/id/2
+---
+2013/02/22 07:57:57 [error] [exception.CException] exception 'CException' with message 'Property "CJuiAutoComplete.style" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWidgetFactory.php(162): CComponent->__set('style', 'z-index: 4')
+#1 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(CbrController), 'zii.widgets.jui...', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('zii.widgets.jui...', Array)
+#3 /Applications/AMPPS/www/ihcms/protected/modules/renum/views/cbr/inputForm.php(34): CBaseController->widget('zii.widgets.jui...', Array)
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('inputForm', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/modules/renum/controllers/CbrController.php(260): CController->render('inputForm', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CbrController->actionForm()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('form')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/form')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/form
+---
+2013/02/22 08:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "manage".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('manage')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('manage')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('renum/cbr/manag...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/renum/cbr/manage
+---

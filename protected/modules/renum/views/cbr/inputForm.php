@@ -28,7 +28,7 @@
                           }',
 			    	),
 			     'htmlOptions' => array(
-			     	'style' => 'height:20px;'
+			     	'style' => 'height:20px; z-index: 4;'
 			     	),
 			    )); ?>
 			    <input type="hidden" readonly="readonly" size="2" maxlength="2" name="Cbr[jabatan_id]" id="Cbr_jabatan_id">
