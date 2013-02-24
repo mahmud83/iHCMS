@@ -10,16 +10,14 @@
  * @property integer $level
  * @property integer $parent
  * @property integer $w_unit_id
- * @property integer $job_family
  *
  * The followings are the available model relations:
  * @property Cbr[] $cbrs
- * @property PPerson[] $pPeople
- * @property PPersonOccupationHistorical[] $pPersonOccupationHistoricals
- * @property WJobFamily $jobFamily
+ * @property Karyawan[] $karyawans
+ * @property KaryawanHistoricalJabatan[] $karyawanHistoricalJabatans
+ * @property WUnit $wUnit
  * @property WOccupation $parent0
  * @property WOccupation[] $wOccupations
- * @property WUnit $wUnit
  */
 class WOccupation extends CActiveRecord
 {
@@ -50,12 +48,12 @@ class WOccupation extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('level, parent, w_unit_id, job_family', 'numerical', 'integerOnly'=>true),
+			array('level, parent, w_unit_id', 'numerical', 'integerOnly'=>true),
 			array('code', 'length', 'max'=>45),
 			array('name', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, code, name, level, parent, w_unit_id, job_family', 'safe', 'on'=>'search'),
+			array('id, code, name, level, parent, w_unit_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,12 +66,11 @@ class WOccupation extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'cbrs' => array(self::HAS_MANY, 'Cbr', 'jabatan_id'),
-			'pPeople' => array(self::HAS_MANY, 'PPerson', 'jabatan_id'),
-			'pPersonOccupationHistoricals' => array(self::HAS_MANY, 'PPersonOccupationHistorical', 'occupation_id'),
-			'jobFamily' => array(self::BELONGS_TO, 'WJobFamily', 'job_family'),
+			'karyawans' => array(self::HAS_MANY, 'Karyawan', 'jabatan_id'),
+			'karyawanHistoricalJabatans' => array(self::HAS_MANY, 'KaryawanHistoricalJabatan', 'jabatan_id'),
+			'wUnit' => array(self::BELONGS_TO, 'WUnit', 'w_unit_id'),
 			'parent0' => array(self::BELONGS_TO, 'WOccupation', 'parent'),
 			'wOccupations' => array(self::HAS_MANY, 'WOccupation', 'parent'),
-			'wUnit' => array(self::BELONGS_TO, 'WUnit', 'w_unit_id'),
 		);
 	}
 
@@ -89,7 +86,6 @@ class WOccupation extends CActiveRecord
 			'level' => 'Level',
 			'parent' => 'Parent',
 			'w_unit_id' => 'W Unit',
-			'job_family' => 'Job Family',
 		);
 	}
 
@@ -110,32 +106,9 @@ class WOccupation extends CActiveRecord
 		$criteria->compare('level',$this->level);
 		$criteria->compare('parent',$this->parent);
 		$criteria->compare('w_unit_id',$this->w_unit_id);
-		//$criteria->compare('job_family',$this->job_family);
-		$criteria->compare('jobFamily.nama',$this->job_family, true);
-		//$criteria->compare('negara.nama',$this->negara_id, true);
-		
-		//load the related table at the same time:
-		$criteria->with=array('jobFamily');
-		
-		$sort = new CSort();
-		$sort->attributes = array(
-			'id',
-			'code',
-			'name',
-			'level',
-			'parent',
-			'w_unit_id',
-			'jobFamily' => array(
-				'asc'=>'jobFamily.name',
-				'desc'=>'jobFamily.name DESC',
-			),
-		);
-		
-		$sort->defaultOrder = 't.id, t.code ASC';
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-			'sort'=>$sort,
 		));
 	}
 	

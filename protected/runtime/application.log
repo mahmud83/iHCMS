@@ -44,3 +44,234 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/ihcms/index.php/renum/cbr/manage
 ---
+2013/02/23 15:30:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
+---
+2013/02/23 15:30:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
+---
+2013/02/24 01:56:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/form
+---
+2013/02/24 04:16:01 [error] [exception.CException] exception 'CException' with message 'Property "TbDataColumn.label" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/YiiBase.php(222): CComponent->__set('label', 'Job Family')
+#1 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(336): YiiBase::createComponent(Array, Object(TbGridView))
+#2 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(103): CGridView->initColumns()
+#3 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(307): TbGridView->initColumns()
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(148): TbGridView->init()
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php(53): CBaseController->widget('bootstrap.widge...', Array)
+#8 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#9 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#12 /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php(170): CController->render('admin', Array)
+#13 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WOccupationController->actionAdmin()
+#14 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#17 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#18 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#19 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#21 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#23 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wOccupation/adm...')
+#24 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#25 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/ihcms/index.php/wOccupation/admin
+HTTP_REFERER=http://localhost/ihcms/index.php/wJobFamily/admin
+---
+2013/02/24 04:30:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
+---
+2013/02/24 04:30:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
+---
+2013/02/24 04:51:11 [error] [exception.CException] exception 'CException' with message 'Property "WJobFamily.nama" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('nama')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1809): CActiveRecord->__get('nama')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1773): CHtml::value(Object(WJobFamily), 'nama')
+#3 /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php(47): CHtml::listData(Array, 'id', 'nama')
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#7 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#8 /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php(170): CController->render('admin', Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WOccupationController->actionAdmin()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wOccupation/adm...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/wOccupation/admin
+---
+2013/02/24 05:06:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`code` AS `t0_c1`, `t`.`name` AS `t0_c2`, `t`.`level` AS `t0_c3`, `t`.`parent` AS `t0_c4`, `t`.`w_unit_id` AS `t0_c5`, `t`.`job_family` AS `t0_c6`, `jobFamily`.`id` AS `t1_c0`, `jobFamily`.`name` AS `t1_c1`, `jobFamily`.`information` AS `t1_c2` FROM `w_occupation` `t`  LEFT OUTER JOIN `w_job_family` `jobFamily` ON (`t`.`job_family`=`jobFamily`.`id`)  ORDER BY id, code ASC LIMIT 10.
+in /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php (55)
+in /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php (170)
+2013/02/24 05:06:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`code` AS `t0_c1`, `t`.`name` AS `t0_c2`, `t`.`level` AS `t0_c3`, `t`.`parent` AS `t0_c4`, `t`.`w_unit_id` AS `t0_c5`, `t`.`job_family` AS `t0_c6`, `jobFamily`.`id` AS `t1_c0`, `jobFamily`.`name` AS `t1_c1`, `jobFamily`.`information` AS `t1_c2` FROM `w_occupation` `t`  LEFT OUTER JOIN `w_job_family` `jobFamily` ON (`t`.`job_family`=`jobFamily`.`id`)  ORDER BY id, code ASC LIMIT 10' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(784): CDbCommand->queryAll()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(422): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#4 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), true)
+#5 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#6 /Applications/AMPPS/www/yii/framework/web/CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#7 /Applications/AMPPS/www/yii/framework/web/CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(108): CDataProvider->getData()
+#9 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(289): CBaseListView->init()
+#10 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#11 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(148): TbGridView->init()
+#12 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#13 /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php(55): CBaseController->widget('bootstrap.widge...', Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#18 /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php(170): CController->render('admin', Array)
+#19 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WOccupationController->actionAdmin()
+#20 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#22 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#23 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#25 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#27 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#29 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wOccupation/adm...')
+#30 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#31 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/ihcms/index.php/wOccupation/admin
+---
+2013/02/24 05:06:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`code` AS `t0_c1`, `t`.`name` AS `t0_c2`, `t`.`level` AS `t0_c3`, `t`.`parent` AS `t0_c4`, `t`.`w_unit_id` AS `t0_c5`, `t`.`job_family` AS `t0_c6`, `jobFamily`.`id` AS `t1_c0`, `jobFamily`.`name` AS `t1_c1`, `jobFamily`.`information` AS `t1_c2` FROM `w_occupation` `t`  LEFT OUTER JOIN `w_job_family` `jobFamily` ON (`t`.`job_family`=`jobFamily`.`id`)  ORDER BY id, code ASC LIMIT 10.
+in /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php (55)
+in /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php (170)
+2013/02/24 05:06:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`code` AS `t0_c1`, `t`.`name` AS `t0_c2`, `t`.`level` AS `t0_c3`, `t`.`parent` AS `t0_c4`, `t`.`w_unit_id` AS `t0_c5`, `t`.`job_family` AS `t0_c6`, `jobFamily`.`id` AS `t1_c0`, `jobFamily`.`name` AS `t1_c1`, `jobFamily`.`information` AS `t1_c2` FROM `w_occupation` `t`  LEFT OUTER JOIN `w_job_family` `jobFamily` ON (`t`.`job_family`=`jobFamily`.`id`)  ORDER BY id, code ASC LIMIT 10' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(784): CDbCommand->queryAll()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(422): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#4 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), true)
+#5 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#6 /Applications/AMPPS/www/yii/framework/web/CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#7 /Applications/AMPPS/www/yii/framework/web/CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(108): CDataProvider->getData()
+#9 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(289): CBaseListView->init()
+#10 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#11 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(148): TbGridView->init()
+#12 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#13 /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php(55): CBaseController->widget('bootstrap.widge...', Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#18 /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php(170): CController->render('admin', Array)
+#19 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WOccupationController->actionAdmin()
+#20 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#22 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#23 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#25 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#27 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#29 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wOccupation/adm...')
+#30 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#31 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/ihcms/index.php/wOccupation/admin
+---
+2013/02/24 05:06:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`code` AS `t0_c1`, `t`.`name` AS `t0_c2`, `t`.`level` AS `t0_c3`, `t`.`parent` AS `t0_c4`, `t`.`w_unit_id` AS `t0_c5`, `t`.`job_family` AS `t0_c6`, `jobFamily`.`id` AS `t1_c0`, `jobFamily`.`name` AS `t1_c1`, `jobFamily`.`information` AS `t1_c2` FROM `w_occupation` `t`  LEFT OUTER JOIN `w_job_family` `jobFamily` ON (`t`.`job_family`=`jobFamily`.`id`)  ORDER BY id, code ASC LIMIT 10.
+in /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php (48)
+in /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php (55)
+in /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php (170)
+2013/02/24 05:06:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in order clause is ambiguous. The SQL statement executed was: SELECT `t`.`id` AS `t0_c0`, `t`.`code` AS `t0_c1`, `t`.`name` AS `t0_c2`, `t`.`level` AS `t0_c3`, `t`.`parent` AS `t0_c4`, `t`.`w_unit_id` AS `t0_c5`, `t`.`job_family` AS `t0_c6`, `jobFamily`.`id` AS `t1_c0`, `jobFamily`.`name` AS `t1_c1`, `jobFamily`.`information` AS `t1_c2` FROM `w_occupation` `t`  LEFT OUTER JOIN `w_job_family` `jobFamily` ON (`t`.`job_family`=`jobFamily`.`id`)  ORDER BY id, code ASC LIMIT 10' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(784): CDbCommand->queryAll()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(422): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(70): CJoinElement->find(Object(CDbCriteria))
+#4 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1296): CActiveFinder->query(Object(CDbCriteria), true)
+#5 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#6 /Applications/AMPPS/www/yii/framework/web/CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#7 /Applications/AMPPS/www/yii/framework/web/CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(108): CDataProvider->getData()
+#9 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(289): CBaseListView->init()
+#10 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbGridView.php(48): CGridView->init()
+#11 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(148): TbGridView->init()
+#12 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(173): CBaseController->createWidget('bootstrap.widge...', Array)
+#13 /Applications/AMPPS/www/ihcms/protected/views/wOccupation/admin.php(55): CBaseController->widget('bootstrap.widge...', Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#18 /Applications/AMPPS/www/ihcms/protected/controllers/WOccupationController.php(170): CController->render('admin', Array)
+#19 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): WOccupationController->actionAdmin()
+#20 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#22 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#23 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#25 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#27 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#29 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('wOccupation/adm...')
+#30 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#31 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/ihcms/index.php/wOccupation/admin
+---
