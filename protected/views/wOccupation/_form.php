@@ -16,9 +16,15 @@
 		
 					<?php echo $form->textFieldRow($model,'level',array('class'=>'span5')); ?>
 		
-					<?php echo $form->textFieldRow($model,'parent',array('class'=>'span5')); ?>
+					<?php //echo $form->textFieldRow($model,'parent',array('class'=>'span5')); ?>
+					
+					<?php echo $form->dropDownListRow($model, 'parent', CHtml::listData(wOccupation::model()->findAll(), 'id', 'name'), array('prompt'=>'Head')); ?>
 		
-					<?php echo $form->textFieldRow($model,'w_unit_id',array('class'=>'span5')); ?>
+					<?php //echo $form->textFieldRow($model,'w_unit_id',array('class'=>'span5')); ?>
+					
+					<?php echo $form->dropDownListRow($model, 'w_unit_id', CHtml::listData(wUnit::model()->findAll(), 'id', 'name'), array('prompt'=>'Please Select')); ?>
+					
+					<?php echo $form->dropDownListRow($model, 'job_family', CHtml::listData(WJobFamily::model()->findAll(), 'id', 'name'), array('prompt'=>'Please Select')); ?>
 		
 				<div class="control-group">
 			<div class="controls">

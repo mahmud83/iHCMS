@@ -104,18 +104,22 @@ class WOccupation extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('code',$this->code,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('level',$this->level);
-		$criteria->compare('parent',$this->parent);
-		$criteria->compare('w_unit_id',$this->w_unit_id);
+		$criteria->compare('t.id',$this->id);
+		$criteria->compare('t.code',$this->code,true);
+		$criteria->compare('t.name',$this->name,true);
+		$criteria->compare('t.level',$this->level);
+		//$criteria->compare('parent',$this->parent);
+		$criteria->compare('parent0.name',$this->parent, true);
+		//$criteria->compare('w_unit_id',$this->w_unit_id);
+		$criteria->compare('wUnit.name',$this->w_unit_id, true);
 		//$criteria->compare('job_family',$this->job_family);
-		$criteria->compare('jobFamily.nama',$this->job_family, true);
+		$criteria->compare('jobFamily.name',$this->job_family, true);
 		//$criteria->compare('negara.nama',$this->negara_id, true);
 		
 		//load the related table at the same time:
-		$criteria->with=array('jobFamily');
+		$criteria->with=array('parent0', 'wUnit', 'jobFamily');
+		//$criteria->with=array('wUnit');
+		//s$criteria->with=array('parent0');
 		
 		$sort = new CSort();
 		$sort->attributes = array(
@@ -123,9 +127,15 @@ class WOccupation extends CActiveRecord
 			'code',
 			'name',
 			'level',
-			'parent',
-			'w_unit_id',
-			'jobFamily' => array(
+			'parent' => array(
+				'asc'=>'parent0.name',
+				'desc'=>'parent0.name DESC',
+			),
+			'w_unit_id' => array(
+				'asc'=>'wUnit.name',
+				'desc'=>'wUnit.name DESC',
+			),
+			'job_family' => array(
 				'asc'=>'jobFamily.name',
 				'desc'=>'jobFamily.name DESC',
 			),
@@ -136,6 +146,34 @@ class WOccupation extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'sort'=>$sort,
+		));
+	}
+	
+	public function jbSearch()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		//$criteria->compare('t.id',$this->id);
+		//$criteria->compare('t.code',$this->code,true);
+		//$criteria->compare('t.name',$this->name,true);
+		//$criteria->compare('t.level',$this->level);
+		//$criteria->compare('parent0.name',$this->parent, true);
+		//$criteria->compare('wUnit.name',$this->w_unit_id, true);
+		//$criteria->compare('jobFamily.name',$this->job_family, true);
+		
+		$criteria->select = array(
+			'jobFamily.name'
+		);
+		
+		$criteria->group = 'jobFamily.name';
+		
+		$criteria->with = array('jobFamily');
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria
 		));
 	}
 	

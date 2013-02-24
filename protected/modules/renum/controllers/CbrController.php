@@ -139,12 +139,26 @@ class CbrController extends Controller
 	 */
 	public function actionIndex()
 	{
+		/*
 		$this->breadcrumbs = array('Cbr'=>'', 'list');
 		$this->sub_title = 'Daftar Data Cbr';
 		
 		$dataProvider=new CActiveDataProvider('Cbr');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+		));
+		*/
+		$this->layout='//layouts/column1';
+		$this->breadcrumbs = array('Cbr'=>'', 'list');
+		$this->sub_title = 'Daftar Data CBR';
+		
+		$model=new Cbr('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Cbr']))
+			$model->attributes=$_GET['Cbr'];
+
+		$this->render('index',array(
+			'model'=>$model,
 		));
 	}
 
@@ -164,6 +178,28 @@ class CbrController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
 		));
+	}
+	
+	public function actionJobFamily() {
+	
+		$this->layout='//layouts/column1';
+		$this->breadcrumbs = array('Cbr'=>'', 'Job Family');
+		$this->sub_title = 'Manajemen Data Cbr Berdasar Job Family';
+		
+		
+		$model=new cbr('jbSearch');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Cbr']))
+			$model->attributes=$_GET['Cbr'];
+
+		$this->render('jobFamily',array(
+			'model'=>$model,
+		));
+		/*
+		$dataProvider=new Cbr::model()->jobFamily();
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));*/
 	}
 
 	/**

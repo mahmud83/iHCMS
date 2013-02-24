@@ -23,6 +23,13 @@
  */
 class Cbr extends CActiveRecord
 {
+	
+	public $total_kh;
+	public $total_pss;
+	public $total_psp;
+	public $total_ac;
+	public $total_kdw;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -70,6 +77,7 @@ class Cbr extends CActiveRecord
 			'cbrAccountabilities' => array(self::HAS_MANY, 'CbrAccountability', 'cbr_id'),
 			'cbrKnowHows' => array(self::HAS_MANY, 'CbrKnowHow', 'cbr_id'),
 			'cbrProblemSolvings' => array(self::HAS_MANY, 'CbrProblemSolving', 'cbr_id'),
+			'jobFamily'=> array( self::MANY_MANY, 'WJobFamily', 'w_occupation(id,job_family)'),
 		);
 	}
 
@@ -86,9 +94,15 @@ class Cbr extends CActiveRecord
 			'ps_persent' => 'Problem Solving Persent',
 			'ps_score' => 'Problem Solving Score',
 			'ac_score' => 'Accountability Score',
-			'total' => 'Total Job unit',
+			'total' => 'Total CBR',
 			'relation' => 'Relation',
 			'information' => 'Information',
+			
+			'total_kh' => 'total Know How Score',
+			'total_psp' => 'total Problem Solving Persent',
+			'total_pss' => 'total Problem Solving Score',
+			'total_ac' => 'total Accountability Score',
+			'total_kdw' => 'total Total CBR',
 		);
 	}
 
@@ -104,7 +118,8 @@ class Cbr extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('jabatan_id',$this->jabatan_id);
+		//$criteria->compare('jabatan_id',$this->jabatan_id);
+		$criteria->compare('jabatan.name',$this->jabatan_id);
 		$criteria->compare('date',$this->date,true);
 		$criteria->compare('kh_score',$this->kh_score);
 		$criteria->compare('ps_persent',$this->ps_persent);
@@ -113,7 +128,64 @@ class Cbr extends CActiveRecord
 		$criteria->compare('total',$this->total);
 		$criteria->compare('relation',$this->relation);
 		$criteria->compare('information',$this->information,true);
+		
+		$criteria->with=array('jabatan');
+		
+		$sort = new CSort();
+		$sort->attributes = array(
+			'id',
+			'jabatan_id' => array(
+				'asc'=>'jabatan.name',
+				'desc'=>'jabatan.name DESC',
+			),
+			'date',
+			'kh_score',
+			'ps_percsnt',
+			'ps_score',
+			'ac_score',
+			'relation',
+			'information',
+		);
+		
+		$sort->defaultOrder = 't.id, t.code ASC';
 
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+	
+	public function jobFamily()
+	{
+		$command = Yii::app()->db->createCommand();
+		$command->select('sum(kh_score)');
+		$command->from('cbr');
+		$command->join('w_occupation ON w_occupation.id = cbr.jabatan_id w_job_family ON w_job_family.id = w_occupation.job_family');
+
+
+		$command->group('job_family.id');
+	}
+	
+	public function jbSearch()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+		
+		$criteria->select = array(
+			'sum(kh_score) as total_kh',
+			'sum(ps_score) as total_pss',
+			'sum(ps_persent) as total_psp',
+			'sum(ac_score) as total_ac',
+			'sum(total) as total_kdw',
+		);
+		
+		$criteria->condition = 'jabatan.job_family != 0';
+		$criteria->with=array('jabatan');
+		
+		//$criteria->params = array (':job_family' => 0);
+		$criteria->group= 'jabatan.job_family';
+		
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

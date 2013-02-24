@@ -1,14 +1,37 @@
 <?php
 $this->breadcrumbs=array(
-	'Cbrs',
-);
-
-$this->menu=array(
-	array('label'=>'Create Cbr','url'=>array('create')),
-	array('label'=>'Manage Cbr','url'=>array('admin')),
+	'Cbrs'=>array('index'),
+	'Manage',
 );
 ?>
-<?php $this->widget('bootstrap.widgets.TbListView',array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+<div class="row-fluid no-clear">
+	<div class="span12 widget">
+		<div class="widget-title">
+			<i class="icon-bar-chart titleicon"></i>
+			<p>Manajemen Cbr</p>
+		</div>
+		<div class="widget-content">
+			<?php $this->widget('bootstrap.widgets.TbGridView',array(
+				'id'=>'cbr-grid',
+				'type'=>'striped',
+				'dataProvider'=>$model->search(),
+				'filter'=>$model,
+				'columns'=>array(
+					//'id',
+					//'jabatan_id',
+					array(
+						'header' => 'Jabatan',
+						'name' => 'jabatan_id',
+                        'value'=>'$data->jabatan->name." (".$data->jabatan->wUnit->name.") "',
+                        'sortable' => true,
+					),
+					//'date',
+					'kh_score',
+					'ps_persent',
+					'ps_score',
+					'ac_score',
+				),
+			)); ?>
+		</div>
+	</div>
+</div>
