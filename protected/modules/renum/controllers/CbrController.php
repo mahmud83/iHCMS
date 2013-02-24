@@ -336,13 +336,15 @@ class CbrController extends Controller
     public function actionPsv() {
     	
 	    $tet = ($_POST['tet'] != '')? strtolower($_POST['tet']):'d';
-	    $tce = ($_POST['tce'] != '')? strtolower($_POST['tce']):'2';
+	    $tce = ($_POST['tce'] != '')? strtolower($_POST['tce']):'2+';
 	    
-	    $tkh = ($_POST['tkh'] != '')? strtolower($_POST['tkh']):'d-';
-    	$mkh = ($_POST['mkh'] != '')? strtolower($_POST['mkh']):'i';
+	    $tkh = ($_POST['tkh'] != '')? strtolower($_POST['tkh']):'e-';
+    	$mkh = ($_POST['mkh'] != '')? strtolower($_POST['mkh']):'ii';
     	$hrs = ($_POST['hrs'] != '')? strtolower($_POST['hrs']):'2';
     	
     	$kha = $this->hitungKha($tkh, $mkh, $hrs);
+    	//var_dump($kha);
+    	//exit();
 	    
 	    //$act = array("+", "-");
 	    //$head = str_replace($act, "", $tet);
@@ -371,10 +373,14 @@ class CbrController extends Controller
 		$cek = "no";
 		$res = "1";
 		foreach ($hub as $point=>$value):
-			if ($value == $kha):
+			//var_dump($point);
+			//echo "<br/>";
+			if ($point == $kha):
 				$cek = "yes";
 				$info = $hub[$kha];
-				$result = array_search(strval($oke),$info);
+				//$result = array_search(strval($oke),$info);
+				//var_dump($info);
+				//exit();
 			endif;
 		endforeach;
 		//print_r($hub);
@@ -384,7 +390,7 @@ class CbrController extends Controller
 		//var_dump($oke);
 		//var_dump($result);
 		if ($cek == "yes"):
-			$res = "tidak sesuai";
+			$res = "3";
 			if(isset($info)):
 				foreach($info as $list=>$row):
 					if ($row == $oke):

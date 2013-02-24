@@ -343,7 +343,7 @@
 	            			'success'=>'function(data){
 	            				$("#Cbr_ps_persent").val(data.isi);
 	            				$("#Cbr_ps_score").val(data.psp);
-	            				if (parseInt(data.info) == 2) {
+	            				if (parseInt(data.info) == 3) {
 	            					$("#infocuy").addClass("alert alert-error");
 	            					$("#infocuy").html("Maaf Data tidak sesuai");
 	            				}
