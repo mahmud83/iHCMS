@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Cbrs'=>array('index'),
+	'Competency Libraries'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Cbr','url'=>array('index')),
-	array('label'=>'Create Cbr','url'=>array('create')),
+	array('label'=>'List CompetencyLibrary','url'=>array('index')),
+	array('label'=>'Create CompetencyLibrary','url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -15,7 +15,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$.fn.yiiGridView.update('cbr-grid', {
+	$.fn.yiiGridView.update('competency-library-grid', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -38,23 +38,30 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	<div class="span12 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen Cbr</p>
+			<p>Manajemen Competency Library</p>
 		</div>
 		<div class="widget-content">
 			<?php $this->widget('bootstrap.widgets.TbGridView',array(
-			'id'=>'cbr-grid',
+			'id'=>'competency-library-grid',
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
 					'id',
-		'jabatan_id',
+		'code',
+		'dimension',
+		'name',
+		'description',
+		'definition',
+		/*
+		'level_1',
+		'level_2',
+		'level_3',
+		'level_4',
+		'level_5',
 		'date',
-		'kh_score',
-		'ps_persent',
-		'ps_score',
-		'ac_score',
-		'total',
-		
+		'active',
+		'dictionary_type_id',
+		*/
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
 					),

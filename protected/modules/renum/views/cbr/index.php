@@ -30,6 +30,7 @@ $this->breadcrumbs=array(
 					'ps_persent',
 					'ps_score',
 					'ac_score',
+					'total',
 				),
 			)); ?>
 		</div>

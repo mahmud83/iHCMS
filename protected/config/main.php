@@ -24,6 +24,7 @@ return array(
 		// uncomment the following to enable the Gii tool
 		'pim',
 		'renum',
+		'cli',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'tarjono',

@@ -154,15 +154,47 @@ class Cbr extends CActiveRecord
 		));
 	}
 	
-	public function jobFamily()
+	public function jobFamily($jobFamilyID)
 	{
-		$command = Yii::app()->db->createCommand();
-		$command->select('sum(kh_score)');
-		$command->from('cbr');
-		$command->join('w_occupation ON w_occupation.id = cbr.jabatan_id w_job_family ON w_job_family.id = w_occupation.job_family');
+		$criteria=new CDbCriteria;
+		
+		$criteria->compare('id',$this->id);
+		//$criteria->compare('jabatan_id',$this->jabatan_id);
+		$criteria->compare('jabatan.name',$this->jabatan_id);
+		$criteria->compare('date',$this->date,true);
+		$criteria->compare('kh_score',$this->kh_score);
+		$criteria->compare('ps_persent',$this->ps_persent);
+		$criteria->compare('ps_score',$this->ps_score);
+		$criteria->compare('ac_score',$this->ac_score);
+		$criteria->compare('total',$this->total);
+		$criteria->compare('relation',$this->relation);
+		$criteria->compare('information',$this->information,true);
+		
+		$criteria->with = array('jabatan');
+		$criteria->condition = 'jabatan.job_family = :jobFamily';
+		$criteria->params = array (':jobFamily' => $jobFamilyID);
+		
+		$sort = new CSort();
+		$sort->attributes = array(
+			'id',
+			'jabatan_id' => array(
+				'asc'=>'jabatan.name',
+				'desc'=>'jabatan.name DESC',
+			),
+			'date',
+			'kh_score',
+			'ps_percsnt',
+			'ps_score',
+			'ac_score',
+			'relation',
+			'information',
+		);
+		
+		$sort->defaultOrder = 't.id, t.code ASC';
 
-
-		$command->group('job_family.id');
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
 	}
 	
 	public function jbSearch()

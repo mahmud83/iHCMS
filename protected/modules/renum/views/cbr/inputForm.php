@@ -57,7 +57,7 @@
 	            		'Advance Vocational'=>array('D-'=>'D-', 'D'=>'D', 'D+'=>'D+'), 
 	            		'Basic Professional'=>array('E-'=>'E-', 'E'=>'E', 'E+'=>'E+'), 
 	            		'Seasoned Professional'=>array('F-'=>'F-', 'F'=>'F', 'F+'=>'F+'), 
-	            		'Professional Mastery'=>array('G-'=>'G-','G'=>'G', 'G+'=>'G+'),
+	            		'Professional'=>array('G-'=>'G-','G'=>'G', 'G+'=>'G+'),
 	            		'Professional Mastery'=>array('H-'=>'H-','H'=>'H', 'H+'=>'H+'),
 	            	), 
 	            	array(

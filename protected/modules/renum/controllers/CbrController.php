@@ -201,6 +201,29 @@ class CbrController extends Controller
 			'dataProvider'=>$dataProvider,
 		));*/
 	}
+	
+	public function actionByJobFamily () {
+		
+		$this->layout='//layouts/column1';
+		$this->breadcrumbs = array('Cbr'=>'', 'Job Family');
+		$this->sub_title = 'Manajemen Data Cbr Berdasar Job Family';
+		
+		$model_jabatan = new WOccupation;
+		
+		if(isset($_POST['WOccupation'])){
+			$model = Cbr::model()->jobFamily($_POST['WOccupation']['job_family']);
+			
+			$this->render('byJobFamily', array(
+			'model_jabatan' => $model_jabatan,
+			'model'=> $model,
+			));
+		}
+		else {
+			$this->render('byJobFamily', array(
+				'model_jabatan' => $model_jabatan,
+			));
+		}
+	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

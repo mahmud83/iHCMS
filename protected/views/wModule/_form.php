@@ -11,7 +11,7 @@
 		)); ?>
 
 					<?php //echo $form->textFieldRow($model,'parent_id',array('class'=>'span5')); ?>
-					<?php echo $form->dropDownListRow($model, 'parent_id', array('pilih salah satu', 'pilihan : '=>CHtml::listData(WModule::model()->findAll(), 'id', 'name'))); ?>
+					<?php echo $form->dropDownListRow($model, 'parent_id', CHtml::listData(WModule::model()->findAll(), 'id', 'name'), array('prompt' => 'Pilih Salah Satu')); ?>
 		
 					<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>45)); ?>
 		

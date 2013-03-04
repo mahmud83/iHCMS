@@ -15,6 +15,8 @@ class AllSpark extends CApplicationComponent {
 			$moduleName = 'Default';
 		endif;
 		
+		if ($moduleName == 'renum') $moduleName = 'remuneration';
+		
 		echo ucfirst($moduleName);
 	}
 	
