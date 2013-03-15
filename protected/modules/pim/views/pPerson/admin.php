@@ -16,7 +16,7 @@ $this->menu=array(
 	<div class="span12 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen Pperson</p>
+			<p>Manajemen Karyawan</p>
 		</div>
 		<div class="widget-content">
 			<?php $this->widget('bootstrap.widgets.TbGridView',array(
@@ -24,9 +24,18 @@ $this->menu=array(
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-					'id',
-					'user_id',
-					'jabatan_id',
+					//'id',
+					//'user_id',
+					array(
+						'header' => 'Nama Lengkap',
+						'name'=> 'fullname',
+						'value'=>'$data->firstname." ".$data->lastname." "'
+					),
+					array(
+						'header'=> 'Jabatan',
+						'value' => '$data->jabatan->name." (".$data->jabatan->wUnit->name.") "',
+					),
+					//'jabatan_id',
 					//'avatar',
 					'employee_status',
 					'employee_code',

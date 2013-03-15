@@ -584,7 +584,7 @@
 			<div>
 				<blockquote>
 					<p>
-						Total Job Unit : adalah jumlah nilai dari Know How, Problem Solving, dan Accountability
+						Total Point CBR : adalah jumlah nilai dari Know How, Problem Solving, dan Accountability
 					</p>
 				</blockquote>
 				<?php echo $form->textFieldRow($model,'total',array('class'=>'span5')); ?>

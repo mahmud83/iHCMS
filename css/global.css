@@ -122,8 +122,10 @@ legend {
 	-moz-border-radius: 0px !important;
 	border-radius: 0px !important;
 	
-	background: #036109 url('../img/pattern_navbar.png') left top !important;
+	/* background: #036109 url('../img/pattern_navbar.jpg') left top !important;
 	/*padding-bottom: 15px !important;*/
+	
+	background: #118aa9 !important;
 	padding-top: 15px !important;
 	border: none !important;
 }
@@ -157,7 +159,8 @@ legend {
 }
 
 .top .nav-config .dropdown-toggle, .top .nav-config .dropdown-toggle:hover, .top .nav-config .dropdown-toggle::after  {
-	color: #cbcccb;
+	/*color: #cbcccb;*/
+	color: #e17f1c;
 }
 
 .top .nav-config a:hover {
@@ -200,7 +203,7 @@ legend {
 	width: 350px;
 	min-height: 30px;
 	padding: 20px 20px 10px 20px;
-	background: url(../img/pattern_navbar.png) #515B5E;
+	background:  #118aa9;
 	color: #fafafb;
 	text-shadow: 0px 1px 0px #70797C;
 	border-radius: 3px;
@@ -269,7 +272,8 @@ legend {
 }
 
 .user-details .details {
-	background: #036109;
+	/*background: #036109;*/
+	background: #118aa9;
 	width: 183px;
 	/*float: left;*/
 	position: absolute;
@@ -281,7 +285,7 @@ legend {
 
 .user-details .details .username {
 	text-decoration: none;
-	color: #9BA7AD;
+	color: #fff;
 	font-size: 14px;
 	display: block;
 	margin-bottom: 7px;
@@ -294,7 +298,7 @@ legend {
 }
 
 .user-details .details .log-data {
-	color: #9BA7AD;
+	color: #fff;
 	display: block;
 	margin-bottom: 12px;
 	font-size: 10px;
@@ -307,12 +311,12 @@ legend {
 }
 
 .user-details .details .control a {
-	color: #9BA7AD;
+	color: #fff;
 	text-decoration: none;
 }
 
 .user-details .details .control a:hover {
-	color: #fff;
+	color: #e17f1c;
 }
 
 .user-details .details .control .message {
@@ -377,10 +381,11 @@ legend {
 }
 
 .first-nav ul .active {
-	background: url(../img/active_nav.png) no-repeat left top white;
+	/*background: url(../img/active_nav.png) no-repeat left top white;*/
+	background: #118aa9;
 	border-radius: 5px 0px 0px 5px;
 	box-shadow: 0px 3px 0px 0px #F58634;
-	-webkit-box-shadow: 0px 3px 0px 0px #6B7683;
+	-webkit-box-shadow: 0px 3px 0px 0px #F58634;
 	padding-left: 4px;
 	padding-right: 6px;
 }
@@ -402,11 +407,12 @@ legend {
 }
 
 .second-nav h2 {
-	color: #fff;
+	/*color: #fff;*/
+	color: #118aa9;
 	font-size: 20px;
 	margin-top: 21px;
 	line-height: 32px;
-	text-shadow: 0px 1px 0px #F58634;
+	text-shadow: 0px 1px 0px #000;
 	/*border-bottom: solid 1px #374049;
 	box-shadow: 0px 1px 0px #606974;*/
 }
@@ -432,12 +438,12 @@ legend {
 }
 
 .second-nav ul li a {
-	color: #fff;
+	color: #118aa9;
 	font-size: 14px;
 	text-decoration: none;
 	display: inline-block;
 	line-height: 17px;
-	text-shadow: 0px 1px 0px #2D3238;
+	text-shadow: 0px 1px 0px #000;
 }
 
 .second-nav ul li {
@@ -449,8 +455,8 @@ legend {
 }
 
 .second-nav ul li [class^="icon-"], .second-nav ul li [class*=" icon-"] {
-	color: #fff;
-	text-shadow: 0px 1px 0px #6B7989;
+	color: #118aa9;
+	text-shadow: 0px 1px 0px #000;
 	margin-right: 8px;
 }
 /** styles sidebar end here **/

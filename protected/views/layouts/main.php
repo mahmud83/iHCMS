@@ -9,17 +9,11 @@
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/global.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css">
 	<link href="<?php echo Yii::app()->request->baseUrl;?>/css/bwizard.min.css" rel="stylesheet">
-    
+    <?php 
+    /*
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/formwizard.css" />    
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/formwizard.js" type="text/javascript">
-    
-    /***********************************************
-    * jQuery Form to Form Wizard- (c) Dynamic Drive (www.dynamicdrive.com)
-    * This notice MUST stay intact for legal use
-    * Visit http://www.dynamicdrive.com/ for this script and 100s more.
-    ***********************************************/
-    
     </script>
     
     <script type="text/javascript">
@@ -33,7 +27,7 @@
     })
     
     </script>
-    
+    */ ?>
 </head>
 <body>
 	<!-- navbar start here !-->

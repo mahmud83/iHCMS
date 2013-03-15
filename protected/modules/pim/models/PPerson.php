@@ -59,6 +59,7 @@ class PPerson extends CActiveRecord
 	public $username;
 	public $password;
 	public $password2;
+	public $fullname;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -86,7 +87,8 @@ class PPerson extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('employee_code, firstname, create_date, create_by, username, password, password2', 'required'),
+			array('employee_code, firstname, create_date, create_by, username, password, password2', 'required', 'on'=>'add'),
+			array('employee_code, firstname, create_date, create_by', 'required'),
 			array('password2', 'compare', 'compareAttribute'=>'password', 'on'=>'add'),
 			array('user_id, jabatan_id, employee_status, marital_id, sex_id, religion_id, identity_state, create_by, modified_by', 'numerical', 'integerOnly'=>true),
 			array('avatar', 'length', 'max'=>200),
@@ -217,9 +219,37 @@ class PPerson extends CActiveRecord
 		$criteria->compare('create_by',$this->create_by);
 		$criteria->compare('modified_date',$this->modified_date,true);
 		$criteria->compare('modified_by',$this->modified_by);
+		
+		$sort = new CSort();
+		$sort->attributes = array(
+			'id',
+			'fullname' => array(
+				'asc'=>'t.firstname',
+				'desc'=>'t.firstname DESC',
+			),
+			'jabatan_id' => array(
+				'asc'=>'jabatan.name',
+				'desc'=>'jabatan.name DESC',
+			),
+			'employee_status',
+			'employee_code',
+		);
+		
+		$sort->defaultOrder = 't.id, t.code ASC';
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function suggestUsername($keyword){
+		$tags=$this->findAll(array(
+			'condition'=>'firstname LIKE :keyword OR lastname LIKE :keyword OR employee_code LIKE :keyword',
+			'params'=>array(
+				':keyword'=>'%'.strtr($keyword,array('%'=>'\%', '_'=>'\_', '\\'=>'\\\\')).'%',
+			)
+		));
+		
+		return $tags;
 	}
 }

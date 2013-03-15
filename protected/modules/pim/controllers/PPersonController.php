@@ -55,7 +55,7 @@ class PPersonController extends Controller
 	public function actionView($id)
 	{
 		$this->breadcrumbs = array('PPerson'=>'', 'Pperson');
-		$this->sub_title = 'Detail Data Pperson';
+		$this->sub_title = 'Detail Data Karyawan';
 		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -69,7 +69,7 @@ class PPersonController extends Controller
 	public function actionCreate()
 	{
 		$this->breadcrumbs = array('PPerson'=>'', 'Pperson');
-		$this->sub_title = 'Tambah Data Pperson';
+		$this->sub_title = 'Tambah Data Karyawan';
 		
 		$model=new PPerson;
 
@@ -96,7 +96,7 @@ class PPersonController extends Controller
 	public function actionUpdate($id)
 	{
 		$this->breadcrumbs = array('PPerson'=>'', 'Pperson');
-		$this->sub_title = 'Ubah Data Pperson';
+		$this->sub_title = 'Ubah Data Karyawan';
 		
 		$model=$this->loadModel($id);
 
@@ -141,7 +141,7 @@ class PPersonController extends Controller
 	public function actionIndex()
 	{
 		$this->breadcrumbs = array('PPerson'=>'', 'list');
-		$this->sub_title = 'Daftar Data Pperson';
+		$this->sub_title = 'Daftar Data Karyawan';
 		
 		$dataProvider=new CActiveDataProvider('PPerson');
 		$this->render('index',array(
@@ -155,7 +155,7 @@ class PPersonController extends Controller
 	public function actionAdmin()
 	{
 		$this->breadcrumbs = array('PPerson'=>'', 'list');
-		$this->sub_title = 'Manajemen Data Pperson';
+		$this->sub_title = 'Manajemen Data Karyawan';
 		
 		$model=new PPerson('search');
 		$model->unsetAttributes();  // clear any default values
@@ -302,5 +302,94 @@ class PPersonController extends Controller
 	    	'model'=>$model,
 	    	'modelPendidikan'=>$modelPendidikan->search(),
 	    ));
+    }
+    
+    public function actionPlus () {
+	    $this->breadcrumbs = array('PPerson'=>'', 'Pperson');
+		$this->sub_title = 'Tambah Data Karyawan';
+		
+		$model=new PPerson;
+		$modelUser = new WUser;
+		$modelHistory = new PPersonOccupationHistorical;
+
+		// Comment the following line if AJAX validation is not needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['PPerson']))
+		{
+			$var_date = date('Y-m-d H:i:s');;
+			$var_admin = Yii::app()->user->id;
+			
+			//create user
+			$modelUser->username = $_POST['PPerson']['employee_code'];
+			if (isset($_POST['PPerson']['jabatan_id'])) :
+				$var_long = strlen($_POST['PPerson']['jabatan_id']);
+				if ($var_long == 2):
+					$var_pass = "b".$_POST['PPerson']['jabatan_id'];
+				elseif ($var_long > 2):
+					$var_pass = $_POST['PPerson']['jabatan_id'];
+				else :
+					$var_pass = "b0".$_POST['PPerson']['jabatan_id'];
+				endif;
+			else:
+				$var_pass = "b00";
+			endif;
+			
+			$password = "emp".$var_pass;
+			$modelUser->password = $password;
+			$modelUser->description = CJSON::encode(array('password'=>$password));
+			
+			$modelUser->hash = $modelUser->generateHash();
+			$modelUser->password = $modelUser->hashPassword($password, $modelUser->hash);
+			//echo $model->password;
+			//exit;
+			
+			$modelUser->created_date = $var_date;
+			$modelUser->created_by = $var_admin;
+			
+			if ($modelUser->save()) :
+				
+				//create employee
+				$model->attributes = $_POST['PPerson'];
+				$model->avatar = "male.jpg";
+				$model->create_date = $var_date;
+				$model->create_by = $var_admin;
+				$model->user_id = $modelUser->primaryKey;
+				
+				
+				//var_dump($model->employee_code);
+				//exit();
+				
+				if($model->save()):
+					$modelHistory->person_id = $model->primaryKey;
+					$modelHistory->occupation_id = $_POST['PPerson']['jabatan_id'];
+					$modelHistory->start_date = $var_date;
+					
+					if($modelHistory->save())
+						$this->redirect(array('view','id'=>$model->id));
+				endif;
+					
+			endif;
+		}
+
+		$this->render('plus',array(
+			'model'=>$model,
+		));
+
+    }
+    
+    public function actionLookup () {
+    	//if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
+    		$models = PPerson::model()->suggestUsername($_GET['term']);
+    		
+    		$result = array();
+    		foreach ($models as $m)
+                $result[] = array(
+                    'value' => ''.$m->firstname.' '.$m->lastname.' ('.$m->employee_code.')',
+                    'id' => $m->id,
+                );
+            
+            echo CJSON::encode($result);
+    	//}
     }
 }

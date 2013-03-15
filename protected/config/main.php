@@ -105,6 +105,8 @@ return array(
 			'username' => 'tarjono',
 			'password' => 'tarjono',
 			'charset' => 'utf8',
+			'enableProfiling'=>true,
+			'enableParamLogging' => true,
 		),
 		
 		'errorHandler'=>array(
@@ -118,6 +120,11 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
+				array(
+		            'class'=>'CProfileLogRoute',
+		            'levels'=>'profile',
+		            'enabled'=>true,
+		        ),
 				// uncomment the following to show log messages on web pages
 				/*
 				array(
