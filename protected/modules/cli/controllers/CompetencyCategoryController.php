@@ -1,6 +1,6 @@
 <?php
 
-class CompetencyTypeController extends Controller
+class CompetencyCategoryController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -54,8 +54,8 @@ class CompetencyTypeController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->breadcrumbs = array('CompetencyType'=>'', 'Competency Type');
-		$this->sub_title = 'Detail Data Competency Type';
+		$this->breadcrumbs = array('CompetencyCategory'=>'', 'Competency Category');
+		$this->sub_title = 'Detail Data Competency Category';
 		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -68,17 +68,17 @@ class CompetencyTypeController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$this->breadcrumbs = array('CompetencyType'=>'', 'Competency Type');
-		$this->sub_title = 'Tambah Data Competency Type';
+		$this->breadcrumbs = array('CompetencyCategory'=>'', 'Competency Category');
+		$this->sub_title = 'Tambah Data Competency Category';
 		
-		$model=new CompetencyType;
+		$model=new CompetencyCategory;
 
 		// Comment the following line if AJAX validation is not needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['CompetencyType']))
+		if(isset($_POST['CompetencyCategory']))
 		{
-			$model->attributes=$_POST['CompetencyType'];
+			$model->attributes=$_POST['CompetencyCategory'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -95,17 +95,17 @@ class CompetencyTypeController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$this->breadcrumbs = array('CompetencyType'=>'', 'Competency Type');
-		$this->sub_title = 'Ubah Data Competency Type';
+		$this->breadcrumbs = array('CompetencyCategory'=>'', 'Competency Category');
+		$this->sub_title = 'Ubah Data Competency Category';
 		
 		$model=$this->loadModel($id);
 
 		// Comment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
-		if(isset($_POST['CompetencyType']))
+		if(isset($_POST['CompetencyCategory']))
 		{
-			$model->attributes=$_POST['CompetencyType'];
+			$model->attributes=$_POST['CompetencyCategory'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -141,13 +141,14 @@ class CompetencyTypeController extends Controller
 	public function actionIndex()
 	{
 		/*
-		$this->breadcrumbs = array('CompetencyType'=>'', 'list');
-		$this->sub_title = 'Daftar Data Competency Type';
+		$this->breadcrumbs = array('CompetencyCategory'=>'', 'list');
+		$this->sub_title = 'Daftar Data Competency Category';
 		
-		$dataProvider=new CActiveDataProvider('CompetencyType');
+		$dataProvider=new CActiveDataProvider('CompetencyCategory');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));*/
+		));
+		*/
 		$this->actionAdmin();
 	}
 
@@ -156,13 +157,13 @@ class CompetencyTypeController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$this->breadcrumbs = array('CompetencyType'=>'', 'list');
-		$this->sub_title = 'Manajemen Data Competency Type';
+		$this->breadcrumbs = array('CompetencyCategory'=>'', 'list');
+		$this->sub_title = 'Manajemen Data Competency Category';
 		
-		$model=new CompetencyType('search');
+		$model=new CompetencyCategory('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['CompetencyType']))
-			$model->attributes=$_GET['CompetencyType'];
+		if(isset($_GET['CompetencyCategory']))
+			$model->attributes=$_GET['CompetencyCategory'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -176,7 +177,7 @@ class CompetencyTypeController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=CompetencyType::model()->findByPk($id);
+		$model=CompetencyCategory::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -188,10 +189,25 @@ class CompetencyTypeController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='competency-type-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='competency-category-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionLookup () {
+		//if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
+			$models = CompetencyCategory::model()->suggestUsername($_GET['term']);
+			
+			$result = array();
+			foreach ($models as $m)
+	            $result[] = array(
+	                'value' => '['.$m->code.'] '.$m->name.'',
+	                'id' => $m->id,
+	            );
+	        
+	        echo CJSON::encode($result);
+		//}
 	}
 }

@@ -40,12 +40,9 @@
  * @property integer $modified_by
  *
  * The followings are the available model relations:
- * @property CompetencyCli[] $competencyClis
- * @property CompetencyRekap[] $competencyRekaps
- * @property CompetencyResult[] $competencyResults
- * @property CompetencyResult[] $competencyResults1
- * @property WOccupation $jabatan
+ * @property KaryawanHistoricalJabatan[] $karyawanHistoricalJabatans
  * @property WUser $user
+ * @property WOccupation $jabatan
  * @property WReligion $religion
  * @property WState $identityState
  * @property WUser $createBy
@@ -54,12 +51,16 @@
  * @property PPersonEmergencyContact[] $pPersonEmergencyContacts
  * @property PPersonFamily[] $pPersonFamilies
  * @property PPersonImigration[] $pPersonImigrations
- * @property PPersonOccupationHistorical[] $pPersonOccupationHistoricals
  * @property PPersonSertification[] $pPersonSertifications
  * @property PPersonSkill[] $pPersonSkills
  */
 class PPerson extends CActiveRecord
 {
+	public $username;
+	public $password;
+	public $password2;
+	public $fullname;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -86,7 +87,9 @@ class PPerson extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('avatar, employee_code, firstname, create_date, create_by', 'required'),
+			array('employee_code, firstname, create_date, create_by, username, password, password2', 'required', 'on'=>'add'),
+			array('employee_code, firstname, create_date, create_by', 'required'),
+			array('password2', 'compare', 'compareAttribute'=>'password', 'on'=>'add'),
 			array('user_id, jabatan_id, employee_status, marital_id, sex_id, religion_id, identity_state, create_by, modified_by', 'numerical', 'integerOnly'=>true),
 			array('avatar', 'length', 'max'=>200),
 			array('employee_code, firstname, lastname, nickname, birth_place, driver_license_number', 'length', 'max'=>45),
@@ -97,6 +100,7 @@ class PPerson extends CActiveRecord
 			array('email1, email2', 'length', 'max'=>50),
 			array('phone_mobile, phone_home, phone_office', 'length', 'max'=>20),
 			array('birth_date, identity_valid, driver_license_valid, custom, modified_date', 'safe'),
+			//array('avatar', 'file', 'types'=>'jpg, gif, png, pdf'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, user_id, jabatan_id, avatar, employee_status, employee_code, firstname, lastname, nickname, birth_date, birth_place, blood_id, marital_id, sex_id, religion_id, address1, address2, pos_code, identity_number, identity_valid, identity_state, identity_pos_code, driver_license_number, driver_license_valid, email1, email2, phone_mobile, phone_home, phone_office, custom, create_date, create_by, modified_date, modified_by', 'safe', 'on'=>'search'),
@@ -111,12 +115,9 @@ class PPerson extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'competencyClis' => array(self::HAS_MANY, 'CompetencyCli', 'p_person_id'),
-			'competencyRekaps' => array(self::HAS_MANY, 'CompetencyRekap', 'p_person_id'),
-			'competencyResults' => array(self::HAS_MANY, 'CompetencyResult', 'assessor_id'),
-			'competencyResults1' => array(self::HAS_MANY, 'CompetencyResult', 'assessed_id'),
-			'jabatan' => array(self::BELONGS_TO, 'WOccupation', 'jabatan_id'),
+			'karyawanHistoricalJabatans' => array(self::HAS_MANY, 'KaryawanHistoricalJabatan', 'karyawan_id'),
 			'user' => array(self::BELONGS_TO, 'WUser', 'user_id'),
+			'jabatan' => array(self::BELONGS_TO, 'WOccupation', 'jabatan_id'),
 			'religion' => array(self::BELONGS_TO, 'WReligion', 'religion_id'),
 			'identityState' => array(self::BELONGS_TO, 'WState', 'identity_state'),
 			'createBy' => array(self::BELONGS_TO, 'WUser', 'create_by'),
@@ -125,7 +126,6 @@ class PPerson extends CActiveRecord
 			'pPersonEmergencyContacts' => array(self::HAS_MANY, 'PPersonEmergencyContact', 'person_id'),
 			'pPersonFamilies' => array(self::HAS_MANY, 'PPersonFamily', 'person_id'),
 			'pPersonImigrations' => array(self::HAS_MANY, 'PPersonImigration', 'person_id'),
-			'pPersonOccupationHistoricals' => array(self::HAS_MANY, 'PPersonOccupationHistorical', 'person_id'),
 			'pPersonSertifications' => array(self::HAS_MANY, 'PPersonSertification', 'person_id'),
 			'pPersonSkills' => array(self::HAS_MANY, 'PPersonSkill', 'person_id'),
 		);
@@ -178,7 +178,7 @@ class PPerson extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-		public function search()
+	public function search()
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.

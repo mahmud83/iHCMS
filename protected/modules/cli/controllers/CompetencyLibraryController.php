@@ -79,6 +79,7 @@ class CompetencyLibraryController extends Controller
 		if(isset($_POST['CompetencyLibrary']))
 		{
 			$model->attributes=$_POST['CompetencyLibrary'];
+			$model->date = date("Y-m-d");
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

@@ -160,7 +160,7 @@ legend {
 
 .top .nav-config .dropdown-toggle, .top .nav-config .dropdown-toggle:hover, .top .nav-config .dropdown-toggle::after  {
 	/*color: #cbcccb;*/
-	color: #e17f1c;
+	color: #ffffff;
 }
 
 .top .nav-config a:hover {
@@ -796,3 +796,46 @@ legend {
 }
 
 /** styles footer end here **/
+
+
+
+
+.big-button {
+	height: 100px;
+	/*min-width: 80px;
+	min-height: 50px;*/
+	/*padding: 15px;*/
+	/*margin: 5px;*/
+	color: #ffffff;
+	background: #eeeeee;
+	border: 1px solid #e1e1e1;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.big-button i {
+	text-align: center;
+	line-height: 36px;
+	font-size: 30px;
+	/*font-size: 2em;*/
+	display: block;
+	width: 46px;
+	margin: 0px auto;
+	height: auto;
+	vertical-align: middle;
+}
+
+.big-button .button-text {
+	/*font-size: 12px;*/
+	font-size: 1.2em;
+	line-height: 28px;
+}
+
+.medium-blue {
+	background: #67a0be;
+	border: 1px solid #5595b6;
+}

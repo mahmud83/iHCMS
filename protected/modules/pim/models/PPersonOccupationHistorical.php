@@ -11,8 +11,8 @@
  * @property string $finish_date
  *
  * The followings are the available model relations:
- * @property PPerson $person
  * @property WOccupation $occupation
+ * @property PPerson $person
  */
 class PPersonOccupationHistorical extends CActiveRecord
 {
@@ -59,8 +59,8 @@ class PPersonOccupationHistorical extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'person' => array(self::BELONGS_TO, 'PPerson', 'person_id'),
 			'occupation' => array(self::BELONGS_TO, 'WOccupation', 'occupation_id'),
+			'person' => array(self::BELONGS_TO, 'PPerson', 'person_id'),
 		);
 	}
 

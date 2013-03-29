@@ -4224,3 +4224,1587 @@ in /Applications/AMPPS/www/ihcms/index.php (13)
 in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/PPersonController.php (163)
 in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
 in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/03/16 02:53:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/dummy/mutasi
+---
+2013/03/16 02:54:45 [error] [exception.CException] exception 'CException' with message 'RollingController cannot find the requested view "mutasi".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('mutasi', NULL, true)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(50): CController->render('mutasi')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionMutasi()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('mutasi')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/mut...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/mutasi
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/pPerson
+---
+2013/03/16 03:22:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404139181
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404140435
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404141163
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404140812
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404140988
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404143629
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404144016
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404144195
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:22:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/UpdateAjax".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/UpdateAjax?_=1363404144348
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404184270
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404184827
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404184998
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404185173
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404185357
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404190020
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404190516
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404190692
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404190875
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404224270
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404225793
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404226259
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404226699
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404226901
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404227086
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404227328
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404227880
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404228089
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404228298
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404228507
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:23:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404228691
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:24:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404245941
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/16 03:26:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pim/pim/rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/pim/rolling...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/pim/pim/rolling/AjaxUpdate?_=1363404245941
+---
+2013/03/17 15:35:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "advert/LoadAdvertFromSay".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('advert/LoadAdve...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/advert/LoadAdvertFromSay
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 15:35:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "advert/LoadAdvertFromSay".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('advert/LoadAdve...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/advert/LoadAdvertFromSay
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 15:36:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "advert/LoadAdvertFromSay".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('advert/LoadAdve...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/advert/LoadAdvertFromSay
+---
+2013/03/17 15:37:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rolling/AjaxUpdate".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('rolling/AjaxUpd...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 16:23:45 [error] [exception.CException] exception 'CException' with message 'RollingController and its behaviors do not have a method or closure named "loadModel".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): CComponent->__call('loadModel', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): RollingController->loadModel(NULL)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 16:24:24 [error] [exception.CException] exception 'CException' with message 'RollingController and its behaviors do not have a method or closure named "loadModel".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): CComponent->__call('loadModel', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): RollingController->loadModel(NULL)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 16:24:29 [error] [exception.CException] exception 'CException' with message 'RollingController and its behaviors do not have a method or closure named "loadModel".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): CComponent->__call('loadModel', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): RollingController->loadModel(NULL)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 16:24:58 [error] [exception.CException] exception 'CException' with message 'RollingController and its behaviors do not have a method or closure named "loadModel".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): CComponent->__call('loadModel', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): RollingController->loadModel('9')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 16:25:11 [error] [exception.CException] exception 'CException' with message 'RollingController and its behaviors do not have a method or closure named "loadModel".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): CComponent->__call('loadModel', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(57): RollingController->loadModel('9')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 16:51:05 [error] [php] include(KaryawanHistoricalJabatan.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/AMPPS/www/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(387): spl_autoload_call()
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(220): model()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(49): CActiveFinder->buildJoinTree()
+#3 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(272): CActiveFinder->__construct()
+#4 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(142): PPerson->getRelated()
+#5 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/rolling/_ajaxContent.php(24): PPerson->__get()
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#7 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): RollingController->renderInternal()
+#8 /Applications/AMPPS/www/yii/framework/web/CController.php(870): RollingController->renderFile()
+#9 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(66): RollingController->renderPartial()
+#10 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): RollingController->runAction()
+#13 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RollingController->filterRights()
+#16 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(266): RollingController->runActionWithFilters()
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): RollingController->run()
+#20 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/views/rolling/_ajaxContent.php (24)
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php (66)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+2013/03/17 16:51:11 [error] [php] include(KaryawanHistoricalJabatan.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/AMPPS/www/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(387): spl_autoload_call()
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(220): model()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(49): CActiveFinder->buildJoinTree()
+#3 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(272): CActiveFinder->__construct()
+#4 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(142): PPerson->getRelated()
+#5 /Applications/AMPPS/www/ihcms/protected/modules/pim/views/rolling/_ajaxContent.php(24): PPerson->__get()
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#7 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): RollingController->renderInternal()
+#8 /Applications/AMPPS/www/yii/framework/web/CController.php(870): RollingController->renderFile()
+#9 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(66): RollingController->renderPartial()
+#10 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): RollingController->runAction()
+#13 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RollingController->filterRights()
+#16 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(266): RollingController->runActionWithFilters()
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): RollingController->run()
+#20 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#21 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/views/rolling/_ajaxContent.php (24)
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php (66)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+2013/03/17 17:09:44 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit=1 AND order_by=DESC LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=1 AND order_by=DESC LIMIT 1. Bound with :PersonId='9'.
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php (66)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/03/17 17:09:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit=1 AND order_by=DESC LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=1 AND order_by=DESC LIMIT 1. Bound with :PersonId='9'' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(66): CActiveRecord->find(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 17:10:04 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit=1 AND order_by=DESC LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=1 AND order_by=DESC LIMIT 1. Bound with :PersonId='9'.
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php (66)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/03/17 17:10:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit=1 AND order_by=DESC LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=1 AND order_by=DESC LIMIT 1. Bound with :PersonId='9'' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(66): CActiveRecord->find(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+HTTP_REFERER=http://localhost/ihcms/index.php/pim/rolling/mutasi
+---
+2013/03/17 17:10:38 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit=1 AND order_by=DESC LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=1 AND order_by=DESC LIMIT 1. Bound with :PersonId='9'.
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php (66)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/03/17 17:10:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit=1 AND order_by=DESC LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=1 AND order_by=DESC LIMIT 1. Bound with :PersonId='9'' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(66): CActiveRecord->find(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+---
+2013/03/17 17:12:44 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit='1' LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=:limit LIMIT 1. Bound with :PersonId='9', :limit='1'.
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php (66)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/03/17 17:12:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit='1' LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId AND limit=:limit LIMIT 1. Bound with :PersonId='9', :limit='1'' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(66): CActiveRecord->find(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+---
+2013/03/17 17:13:07 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='1' LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId limit=:limit LIMIT 1. Bound with :PersonId='9', :limit='1'.
+in /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php (66)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/03/17 17:13:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='1' LIMIT 1' at line 1. The SQL statement executed was: SELECT start_date FROM `p_person_occupation_historical` `t` WHERE person_id=:PersonId limit=:limit LIMIT 1. Bound with :PersonId='9', :limit='1'' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/AMPPS/www/ihcms/protected/modules/pim/controllers/RollingController.php(66): CActiveRecord->find(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): RollingController->actionAjaxUpdate()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('AjaxUpdate')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('pim/rolling/Aja...')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/pim/rolling/AjaxUpdate
+---
+2013/03/22 12:11:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/view/id/79
+---
+2013/03/24 03:57:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://192.168.100.10/ihcms/index.php/renum/cbr/form
+---
+2013/03/25 09:41:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/softCompetency/exercise
+---
+2013/03/25 09:41:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "face2.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('face2.png')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('face2.png')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face2.png')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2013/03/25 09:41:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "face3.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('face3.png')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('face3.png')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face3.png')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2013/03/25 09:41:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "face1.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('face1.png')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('face1.png')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face1.png')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2013/03/26 03:49:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
+---
+2013/03/26 03:49:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
+---
+2013/03/26 03:52:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "face3.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('face3.png')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('face3.png')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face3.png')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/user/face3.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2013/03/26 03:52:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "face1.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('face1.png')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('face1.png')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face1.png')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/user/face1.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2013/03/26 03:52:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "face2.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('face2.png')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('face2.png')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('user/face2.png')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/user/face2.png
+HTTP_REFERER=http://localhost/ihcms/index.php/
+---
+2013/03/26 03:55:16 [error] [exception.CException] exception 'CException' with message 'SettingController cannot find the requested view "admin".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(34): CController->render('admin', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SettingController->actionAktivasi()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('aktivasi')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/setting/akt...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/setting/aktivasi
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2013/03/26 03:58:10 [error] [exception.CException] exception 'CException' with message 'Property "WPreference.dateField" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('dateField')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('dateField')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(WPreference), 'dateField')
+#3 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(WPreference), 'dateField', Array)
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDatePicker.php(56): CHtml::activeTextField(Object(WPreference), 'dateField', Array)
+#5 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): TbDatePicker->run()
+#6 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInputHorizontal.php(267): CBaseController->widget('bootstrap.widge...', Array)
+#7 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInput.php(241): TbInputHorizontal->datepickerField()
+#8 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/input/TbInputHorizontal.php(24): TbInput->run()
+#9 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): TbInputHorizontal->run()
+#10 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbActiveForm.php(584): CBaseController->widget('bootstrap.widge...', Array)
+#11 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbActiveForm.php(274): TbActiveForm->inputRow('datepicker', Object(WPreference), 'dateField', NULL, Array)
+#12 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/setting/aktivasi.php(14): TbActiveForm->datepickerRow(Object(WPreference), 'dateField', Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#14 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#15 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('aktivasi', Array, true)
+#17 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(34): CController->render('aktivasi', Array)
+#18 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SettingController->actionAktivasi()
+#19 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#20 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#22 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#23 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#26 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('aktivasi')
+#28 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/setting/akt...')
+#29 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#30 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/ihcms/index.php/cli/setting/aktivasi
+HTTP_REFERER=http://localhost/ihcms/index.php/site/login
+---
+2013/03/26 04:36:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT name as tahun_cli FROM `w_preference` `t` WHERE name=:name. Bound with :status='tahun_cli'.
+in /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php (37)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+in /Applications/AMPPS/www/ihcms/index.php (13)
+2013/03/26 04:36:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT name as tahun_cli FROM `w_preference` `t` WHERE name=:name. Bound with :status='tahun_cli'' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(37): CActiveRecord->findAll(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SettingController->actionAktivasi()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('aktivasi')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/setting/akt...')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/cli/setting/aktivasi
+---
+2013/03/26 04:51:32 [error] [exception.CException] exception 'CException' with message 'SettingController and its behaviors do not have a method or closure named "loadModel".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(47): CComponent->__call('loadModel', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(47): SettingController->loadModel('14')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SettingController->actionAktivasi()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('aktivasi')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/setting/akt...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/setting/aktivasi
+---
+2013/03/26 04:52:26 [error] [exception.CException] exception 'CException' with message 'WPreference and its behaviors do not have a method or closure named "loadModel".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('loadModel', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(47): CActiveRecord->__call('loadModel', Array)
+#2 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(47): WPreference->loadModel('14')
+#3 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SettingController->actionAktivasi()
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('aktivasi')
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/setting/akt...')
+#14 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/ihcms/index.php/cli/setting/aktivasi
+---
+2013/03/26 05:08:58 [error] [exception.CException] exception 'CException' with message 'SettingController and its behaviors do not have a method or closure named "loadPreference".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(48): CComponent->__call('loadPreference', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(48): SettingController->loadPreference('15')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SettingController->actionAktivasi()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('aktivasi')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/setting/akt...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/setting/aktivasi
+---
+2013/03/26 06:20:35 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15, value, name, id FROM `w_preference` `t` WHERE name=15 LIMIT 1' at line 1. The SQL statement executed was: SELECT value as 15, value, name, id FROM `w_preference` `t` WHERE name=:name LIMIT 1. Bound with :name=15.
+in /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php (76)
+in /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php (48)
+in /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php (36)
+2013/03/26 06:20:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '15, value, name, id FROM `w_preference` `t` WHERE name=15 LIMIT 1' at line 1. The SQL statement executed was: SELECT value as 15, value, name, id FROM `w_preference` `t` WHERE name=:name LIMIT 1. Bound with :name=15' in /Applications/AMPPS/www/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryRow()
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(76): CActiveRecord->find(Object(CDbCriteria))
+#4 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SettingController.php(48): SettingController->loadModel(15)
+#5 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SettingController->actionAktivasi()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('aktivasi')
+#15 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/setting/akt...')
+#16 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/ihcms/index.php/cli/setting/aktivasi
+---
+2013/03/26 06:22:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/softCompetency/exercise
+---
+2013/03/26 06:45:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/cli
+---
+2013/03/26 06:45:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/renum/cbr/byJobFamily
+---
+2013/03/26 06:47:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/setting/aktivasi
+---
+2013/03/28 05:12:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
+---
+2013/03/28 05:12:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
+---
+2013/03/28 05:37:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "core".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('core')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/core
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencytype
+---
+2013/03/28 12:25:33 [error] [php] Invalid argument supplied for foreach() (/Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php:1770)
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CompetencyLibraryController->renderInternal()
+#1 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CompetencyLibraryController->renderFile()
+#2 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/create.php(13): CompetencyLibraryController->renderPartial()
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require()
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CompetencyLibraryController->renderInternal()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CompetencyLibraryController->renderFile()
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CompetencyLibraryController->renderPartial()
+#7 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(88): CompetencyLibraryController->render()
+#8 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionCreate()
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CompetencyLibraryController->runAction()
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): RightsFilter->filter()
+#13 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): CompetencyLibraryController->filterRights()
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#15 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CompetencyLibraryController->runActionWithFilters()
+#17 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CompetencyLibraryController->run()
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#19 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/AMPPS/www/ihcms/index.php(13): CWebApplication->run()
+REQUEST_URI=/ihcms/index.php/cli/competencyLibrary/create
+in /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/_form.php (14)
+in /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/create.php (13)
+in /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php (88)
+2013/03/28 12:53:43 [error] [exception.CException] exception 'CException' with message 'TbActiveForm and its behaviors do not have a method or closure named "markdownEditorRow".' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/_form.php(24): CComponent->__call('markdownEditorR...', Array)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/_form.php(24): TbActiveForm->markdownEditorRow(Object(CompetencyLibrary), 'definition', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/create.php(13): CController->renderPartial('_form', Array)
+#6 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#7 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#8 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#10 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(88): CController->render('create', Array)
+#11 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionCreate()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#13 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#15 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#17 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#19 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#21 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/competencyL...')
+#22 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#23 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 13:09:31 [error] [exception.CException] exception 'CException' with message 'SoftCompetencyController cannot find the requested view "test".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('test', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SoftCompetencyController.php(60): CController->render('test', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SoftCompetencyController->actionTest()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('test')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/test
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 13:10:15 [error] [exception.CException] exception 'CException' with message 'SoftCompetencyController cannot find the requested view "test".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('test', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SoftCompetencyController.php(60): CController->render('test', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SoftCompetencyController->actionTest()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('test')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/test
+---
+2013/03/28 13:10:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/
+---
+2013/03/28 13:10:49 [error] [exception.CException] exception 'CException' with message 'SoftCompetencyController cannot find the requested view "test".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('test', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SoftCompetencyController.php(60): CController->render('test', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SoftCompetencyController->actionTest()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('test')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/test
+---
+2013/03/28 13:11:18 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyLibrary.description" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('description')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('description')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(CompetencyLibrary), 'description')
+#3 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(CompetencyLibrary), 'description', Array)
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(89): CHtml::activeTextField(Object(CompetencyLibrary), 'description', Array)
+#5 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(62): TbDataColumn->renderFilterCellContent()
+#6 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(477): TbDataColumn->renderFilterCell()
+#7 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderFilter()
+#8 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(425): CGridView->renderTableHeader()
+#9 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(161): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(144): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(129): CBaseListView->renderContent()
+#13 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#14 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/admin.php(46): CBaseController->widget('bootstrap.widge...', Array)
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#16 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#19 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(170): CController->render('admin', Array)
+#20 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(152): CompetencyLibraryController->actionAdmin()
+#21 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionIndex()
+#22 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#23 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#25 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#26 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#27 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#28 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#29 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#31 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyL...')
+#32 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#33 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyLibrary/index
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 13:11:40 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyLibrary.description" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('description')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('description')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(CompetencyLibrary), 'description')
+#3 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(CompetencyLibrary), 'description', Array)
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(89): CHtml::activeTextField(Object(CompetencyLibrary), 'description', Array)
+#5 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(62): TbDataColumn->renderFilterCellContent()
+#6 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(477): TbDataColumn->renderFilterCell()
+#7 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderFilter()
+#8 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(425): CGridView->renderTableHeader()
+#9 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(161): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(144): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(129): CBaseListView->renderContent()
+#13 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#14 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/admin.php(46): CBaseController->widget('bootstrap.widge...', Array)
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#16 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#19 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(170): CController->render('admin', Array)
+#20 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(152): CompetencyLibraryController->actionAdmin()
+#21 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionIndex()
+#22 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#23 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#25 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#26 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#27 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#28 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#29 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#31 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyL...')
+#32 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#33 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyLibrary/index
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 13:11:44 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyLibrary.description" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('description')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('description')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(CompetencyLibrary), 'description')
+#3 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(CompetencyLibrary), 'description', Array)
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(89): CHtml::activeTextField(Object(CompetencyLibrary), 'description', Array)
+#5 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(62): TbDataColumn->renderFilterCellContent()
+#6 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(477): TbDataColumn->renderFilterCell()
+#7 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderFilter()
+#8 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(425): CGridView->renderTableHeader()
+#9 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(161): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(144): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(129): CBaseListView->renderContent()
+#13 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#14 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/admin.php(46): CBaseController->widget('bootstrap.widge...', Array)
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#16 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#19 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(170): CController->render('admin', Array)
+#20 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(152): CompetencyLibraryController->actionAdmin()
+#21 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionIndex()
+#22 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#23 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#25 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#26 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#27 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#28 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#29 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#31 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyL...')
+#32 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#33 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyLibrary/index
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 13:36:02 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyLibrary.description" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('description')
+#1 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(2158): CActiveRecord->__get('description')
+#2 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1887): CHtml::resolveValue(Object(CompetencyLibrary), 'description')
+#3 /Applications/AMPPS/www/yii/framework/web/helpers/CHtml.php(1217): CHtml::activeInputField('text', Object(CompetencyLibrary), 'description', Array)
+#4 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(89): CHtml::activeTextField(Object(CompetencyLibrary), 'description', Array)
+#5 /Applications/AMPPS/www/ihcms/protected/extensions/bootstrap/widgets/TbDataColumn.php(62): TbDataColumn->renderFilterCellContent()
+#6 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(477): TbDataColumn->renderFilterCell()
+#7 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderFilter()
+#8 /Applications/AMPPS/www/yii/framework/zii/widgets/grid/CGridView.php(425): CGridView->renderTableHeader()
+#9 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(161): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(144): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 /Applications/AMPPS/www/yii/framework/zii/widgets/CBaseListView.php(129): CBaseListView->renderContent()
+#13 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#14 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/admin.php(46): CBaseController->widget('bootstrap.widge...', Array)
+#15 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#16 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#18 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#19 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(170): CController->render('admin', Array)
+#20 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(152): CompetencyLibraryController->actionAdmin()
+#21 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionIndex()
+#22 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#23 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#24 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#25 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#26 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#27 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#28 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#29 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#30 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#31 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyL...')
+#32 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#33 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#34 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyLibrary/index
+---
+2013/03/28 17:57:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CompetencyCategory/lookup".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('CompetencyCateg...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/CompetencyCategory/lookup?term=s.
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 17:57:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CompetencyCategory/lookup".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('CompetencyCateg...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/CompetencyCategory/lookup?term=s.1
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 17:57:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CompetencyCategory/lookup".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('CompetencyCateg...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/CompetencyCategory/lookup?term=s.1
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 17:57:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CompetencyCategory/lookup".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('CompetencyCateg...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/CompetencyCategory/lookup?term=s.1
+---
+2013/03/28 17:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CompetencyCategory/lookup".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('CompetencyCateg...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/CompetencyCategory/lookup
+---
+2013/03/28 17:59:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "CompetencyCategory/lookup".' in /Applications/AMPPS/www/yii/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('CompetencyCateg...')
+#1 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ihcms/index.php/CompetencyCategory/lookup
+---
+2013/03/28 17:59:35 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyCategory.wUnit" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('wUnit')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyCategoryController.php(206): CActiveRecord->__get('wUnit')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyCategoryController->actionLookup()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyC...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyCategory/lookup?term=ac
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 17:59:35 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyCategory.wUnit" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('wUnit')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyCategoryController.php(206): CActiveRecord->__get('wUnit')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyCategoryController->actionLookup()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyC...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyCategory/lookup?term=ach
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 17:59:42 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyCategory.wUnit" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('wUnit')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyCategoryController.php(206): CActiveRecord->__get('wUnit')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyCategoryController->actionLookup()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyC...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyCategory/lookup?term=ac
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/create
+---
+2013/03/28 17:59:47 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyCategory.wUnit" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('wUnit')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyCategoryController.php(206): CActiveRecord->__get('wUnit')
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyCategoryController->actionLookup()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('lookup')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyC...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyCategory/lookup?term=ac
+---
+2013/03/29 03:52:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon-precomposed.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon-precomposed.png
+---
+2013/03/29 03:52:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "apple-touch-icon.png".' in /Applications/AMPPS/www/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(271): CController->missingAction('apple-touch-ico...')
+#1 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('apple-touch-ico...')
+#2 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/apple-touc...')
+#3 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ihcms/index.php/site/apple-touch-icon.png
+---
+2013/03/29 07:43:47 [error] [exception.CException] exception 'CException' with message 'SoftCompetencyController cannot find the requested view "test".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('test', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SoftCompetencyController.php(60): CController->render('test', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SoftCompetencyController->actionTest()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('test')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/test
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyCategory/index
+---
+2013/03/29 07:43:52 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyLibrary.dictionary_type_id" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('dictionary_type...')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/models/CompetencyLibrary.php(121): CActiveRecord->__get('dictionary_type...')
+#2 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/admin.php(23): CompetencyLibrary->search()
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(169): CController->render('admin', Array)
+#8 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(151): CompetencyLibraryController->actionAdmin()
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionIndex()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyL...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyLibrary/index
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyCategory/index
+---
+2013/03/29 07:55:01 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyLibrary.dictionary_type_id" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('dictionary_type...')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/models/CompetencyLibrary.php(121): CActiveRecord->__get('dictionary_type...')
+#2 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/competencyLibrary/admin.php(23): CompetencyLibrary->search()
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#4 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#6 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(170): CController->render('admin', Array)
+#8 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/CompetencyLibraryController.php(152): CompetencyLibraryController->actionAdmin()
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): CompetencyLibraryController->actionIndex()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('index')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/CompetencyL...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/cli/CompetencyLibrary/index
+---
+2013/03/29 17:54:23 [error] [exception.CException] exception 'CException' with message 'SoftCompetencyController cannot find the requested view "test".' in /Applications/AMPPS/www/yii/framework/web/CController.php:879
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('test', Array, true)
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SoftCompetencyController.php(60): CController->render('test', Array)
+#2 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SoftCompetencyController->actionTest()
+#3 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#8 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('test')
+#12 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#13 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/test
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/view/id/49
+---
+2013/03/29 18:22:17 [error] [exception.CDbException] exception 'CDbException' with message 'Relation "competency_category" is not defined in active record class "CompetencyLibrary".' in /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php:216
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveFinder.php(49): CActiveFinder->buildJoinTree(Object(CJoinElement), 'competency_cate...')
+#1 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1295): CActiveFinder->__construct(Object(CompetencyLibrary), 'competency_cate...')
+#2 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(1396): CActiveRecord->query(Object(CDbCriteria))
+#3 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SoftCompetencyController.php(65): CActiveRecord->find(Object(CDbCriteria))
+#4 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(50): SoftCompetencyController->actionTest()
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#9 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#10 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('test')
+#14 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#15 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/test
+HTTP_REFERER=http://localhost/ihcms/index.php/cli/competencyLibrary/view/id/49
+---
+2013/03/29 19:02:31 [error] [exception.CException] exception 'CException' with message 'Property "CompetencyCategory.definiton" is not defined.' in /Applications/AMPPS/www/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/AMPPS/www/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('definiton')
+#1 /Applications/AMPPS/www/ihcms/protected/modules/cli/views/softCompetency/test.php(36): CActiveRecord->__get('definiton')
+#2 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(127): require('/Applications/A...')
+#3 /Applications/AMPPS/www/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/A...', Array, true)
+#4 /Applications/AMPPS/www/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/A...', Array, true)
+#5 /Applications/AMPPS/www/yii/framework/web/CController.php(783): CController->renderPartial('test', Array, true)
+#6 /Applications/AMPPS/www/ihcms/protected/modules/cli/controllers/SoftCompetencyController.php(78): CController->render('test', Array)
+#7 [internal function]: SoftCompetencyController->actionTest('0')
+#8 /Applications/AMPPS/www/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(SoftCompetencyController), Array)
+#9 /Applications/AMPPS/www/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(SoftCompetencyController), Object(ReflectionMethod), Array)
+#10 /Applications/AMPPS/www/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/AMPPS/www/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/AMPPS/www/ihcms/protected/modules/rights/components/RController.php(36): CFilter->filter(Object(CFilterChain))
+#14 /Applications/AMPPS/www/yii/framework/web/filters/CInlineFilter.php(59): RController->filterRights(Object(CFilterChain))
+#15 /Applications/AMPPS/www/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/AMPPS/www/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/AMPPS/www/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(283): CController->run('test')
+#19 /Applications/AMPPS/www/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('cli/SoftCompete...')
+#20 /Applications/AMPPS/www/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/AMPPS/www/ihcms/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/ihcms/index.php/cli/SoftCompetency/test
+---

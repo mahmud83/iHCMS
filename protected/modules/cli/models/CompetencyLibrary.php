@@ -5,10 +5,10 @@
  *
  * The followings are the available columns in table 'competency_library':
  * @property integer $id
+ * @property integer $category
  * @property string $code
  * @property string $dimension
  * @property string $name
- * @property string $description
  * @property string $definition
  * @property string $level_1
  * @property string $level_2
@@ -17,10 +17,11 @@
  * @property string $level_5
  * @property string $date
  * @property string $active
- * @property integer $dictionary_type_id
  *
  * The followings are the available model relations:
- * @property CompetencyType $dictionaryType
+ * @property CompetencyCategory $category0
+ * @property CompetencyRekap[] $competencyRekaps
+ * @property CompetencyResult[] $competencyResults
  * @property WOccupation[] $wOccupations
  */
 class CompetencyLibrary extends CActiveRecord
@@ -51,16 +52,15 @@ class CompetencyLibrary extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('dictionary_type_id', 'required'),
-			array('dictionary_type_id', 'numerical', 'integerOnly'=>true),
+			array('category', 'required'),
+			array('category', 'numerical', 'integerOnly'=>true),
 			array('code, dimension', 'length', 'max'=>45),
-			array('name, description', 'length', 'max'=>100),
-			array('level_1, level_2, level_3, level_4, level_5', 'length', 'max'=>255),
+			array('name', 'length', 'max'=>100),
 			array('active', 'length', 'max'=>1),
-			array('definition, date', 'safe'),
+			array('definition, level_1, level_2, level_3, level_4, level_5, date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, code, dimension, name, description, definition, level_1, level_2, level_3, level_4, level_5, date, active, dictionary_type_id', 'safe', 'on'=>'search'),
+			array('id, category, code, dimension, name, definition, level_1, level_2, level_3, level_4, level_5, date, active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,7 +72,9 @@ class CompetencyLibrary extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'dictionaryType' => array(self::BELONGS_TO, 'CompetencyType', 'dictionary_type_id'),
+			'category0' => array(self::BELONGS_TO, 'CompetencyCategory', 'category'),
+			'competencyRekaps' => array(self::HAS_MANY, 'CompetencyRekap', 'competency_library_id'),
+			'competencyResults' => array(self::HAS_MANY, 'CompetencyResult', 'competency_library_id'),
 			'wOccupations' => array(self::MANY_MANY, 'WOccupation', 'competency_task(competency_library_id, w_occupation_id)'),
 		);
 	}
@@ -84,10 +86,10 @@ class CompetencyLibrary extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'category' => 'Category',
 			'code' => 'Code',
 			'dimension' => 'Dimension',
 			'name' => 'Name',
-			'description' => 'Description',
 			'definition' => 'Definition',
 			'level_1' => 'Level 1',
 			'level_2' => 'Level 2',
@@ -96,7 +98,6 @@ class CompetencyLibrary extends CActiveRecord
 			'level_5' => 'Level 5',
 			'date' => 'Date',
 			'active' => 'Active',
-			'dictionary_type_id' => 'Dictionary Type',
 		);
 	}
 
@@ -112,10 +113,10 @@ class CompetencyLibrary extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('category',$this->category);
 		$criteria->compare('code',$this->code,true);
 		$criteria->compare('dimension',$this->dimension,true);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('description',$this->description,true);
 		$criteria->compare('definition',$this->definition,true);
 		$criteria->compare('level_1',$this->level_1,true);
 		$criteria->compare('level_2',$this->level_2,true);
@@ -124,7 +125,6 @@ class CompetencyLibrary extends CActiveRecord
 		$criteria->compare('level_5',$this->level_5,true);
 		$criteria->compare('date',$this->date,true);
 		$criteria->compare('active',$this->active,true);
-		$criteria->compare('dictionary_type_id',$this->dictionary_type_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -47,10 +47,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'filter'=>$model,
 			'columns'=>array(
 					'id',
+		'category',
 		'code',
 		'dimension',
 		'name',
-		'description',
 		'definition',
 		/*
 		'level_1',
@@ -60,7 +60,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'level_5',
 		'date',
 		'active',
-		'dictionary_type_id',
 		*/
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',

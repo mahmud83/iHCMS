@@ -22,7 +22,7 @@
 				    	'showAnim' => 'fold',
 				    	'minLength'=>'2',
 				    	'select'=>'js:function( event, ui ) {  
-			                       $("#Cbr_jabatan_id").val(ui.item.id);  
+			                       $("#PPerson_jabatan_id").val(ui.item.id);  
 			                       $("#user").val(ui.item.value);  
 			                       return false;  
 			                  }',
@@ -31,13 +31,29 @@
 				     	'style' => 'height:20px; z-index: 4;'
 				     	),
 				    )); ?>
-				    <input type="hidden" readonly="readonly" size="2" maxlength="2" name="Cbr[jabatan_id]" id="Cbr_jabatan_id">
+				    <input type="hidden" readonly="readonly" size="2" maxlength="2" name="PPerson[id]" id="PPerson_jabatan_id">
 				</div>
 			</div>
 			
-			<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>'Submit')); ?>
-			
+			<?php //$this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>'Submit')); ?>
+			<?php
+			echo CHtml::ajaxSubmitButton('Submit',CController::createUrl('rolling/AjaxUpdate'),
+				array(
+					'type'=>'POST',
+					'url'=>'CController::createUrl("rolling/AjaxUpdate")',
+					'update' => '#data',                    
+					'beforeSend'=>'js:function(data) { $("#data").show(400); }'
+				),
+				array(
+					'class'=>'btn',
+				)
+			);
+			?>
 			<?php $this->endWidget(); ?>
 		</div>
 	</div>
+</div>
+
+<div id="data" style="display:none;">
+   <?php $this->renderPartial('_ajaxContent', array('myValue'=>$myValue)); ?>
 </div>

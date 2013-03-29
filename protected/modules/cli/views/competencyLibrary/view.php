@@ -23,10 +23,10 @@ $this->menu=array(
 			'data'=>$model,
 			'attributes'=>array(
 				'id',
+		'category',
 		'code',
 		'dimension',
 		'name',
-		'description',
 		'definition',
 		'level_1',
 		'level_2',
@@ -35,7 +35,6 @@ $this->menu=array(
 		'level_5',
 		'date',
 		'active',
-		'dictionary_type_id',
 			),
 		)); ?>
 		</div>

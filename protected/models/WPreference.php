@@ -10,6 +10,12 @@
  */
 class WPreference extends CActiveRecord
 {
+	
+	//custom field
+	public $tahun_cli;
+	public $tanggal_cli;
+	
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -64,6 +70,8 @@ class WPreference extends CActiveRecord
 			'id' => 'ID',
 			'name' => 'Name',
 			'value' => 'Value',
+			'tahun_cli' => 'Tahun Pengisian CLI',
+			'tanggal_cli'=> 'Tanggal Pengisian CLI',
 		);
 	}
 

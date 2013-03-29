@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Competency Types'=>array('index'),
+	'Competency Categories'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List CompetencyType','url'=>array('index')),
-	array('label'=>'Create CompetencyType','url'=>array('create')),
+	array('label'=>'List CompetencyCategory','url'=>array('index')),
+	array('label'=>'Create CompetencyCategory','url'=>array('create')),
 );
 
 ?>
@@ -15,16 +15,20 @@ $this->menu=array(
 	<div class="span12 widget">
 		<div class="widget-title">
 			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen Competency Type</p>
+			<p>Manajemen Competency Category</p>
 		</div>
 		<div class="widget-content">
 			<?php $this->widget('bootstrap.widgets.TbGridView',array(
-			'id'=>'competency-type-grid',
+			'id'=>'competency-category-grid',
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-					//'id',
-					'name',
+					'id',
+		'code',
+		'name',
+		'description',
+		'definition',
+		'competency_type_id',
 					array(
 						'class'=>'bootstrap.widgets.TbButtonColumn',
 					),
