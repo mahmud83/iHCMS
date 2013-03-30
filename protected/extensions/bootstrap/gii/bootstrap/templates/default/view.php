@@ -22,22 +22,15 @@ $this->menu=array(
 	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin')),
 );
 ?>
-<div class="row-fluid no-clear">
-	<div class="span12 widget">
-		<div class="widget-title">
-			<i class="icon-bar-chart titleicon"></i>
-			<p>Detail <?php echo $this->modelClass." #<?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?></p>
-		</div>
-		<div class="widget-content">
-		<?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbDetailView',array(
-			'data'=>$model,
-			'attributes'=>array(
-		<?php
-		foreach($this->tableSchema->columns as $column)
-			echo "\t\t'".$column->name."',\n";
-		?>
-			),
-		)); ?>
-		</div>
-	</div>
-</div>
+
+<h1>View <?php echo $this->modelClass." #<?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?></h1>
+
+<?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbDetailView',array(
+	'data'=>$model,
+	'attributes'=>array(
+<?php
+foreach($this->tableSchema->columns as $column)
+	echo "\t\t'".$column->name."',\n";
+?>
+	),
+)); ?>

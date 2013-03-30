@@ -32,15 +32,28 @@
 		    </table>
 		    
 		    <?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-		    	'id'=>'cli_soft',
+		    	'id'=>'verticalForm',
 		    	'htmlOptions'=>array('class'=>'well'),
+		    	'stateful'=>true,
 		    )); ?>
-		    
-		    <?php echo $form->redactorRow($modelResult, 'evidence', array('class'=>'span4', 'rows'=>5)); ?>
+		    <div class="redactor-yeah">
+		    <?php echo $form->redactorRow($modelResult, 'evidence', array('class'=>'span4',)); ?>
+		    </div>
+            <div class="form-cli-button">
             
-            <div class="form-actions">
-            <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Submit')); ?>
+            <?php //echo CHtml::statefulForm(); ?>
+            <?php //$this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>'Submit')); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array(
+            	'buttonType'=>'submit',
+            	'type'=>'primary',
+            	'label'=>$modelResult->isNewRecord ? 'Simpan' : 'Ubah',
+            )); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array(
+            	'buttonType'=>'reset',
+            	'label'=>'Reset',
+            )); ?>
         	</div>
+			
             
             <?php $this->endWidget(); ?>
         </div>

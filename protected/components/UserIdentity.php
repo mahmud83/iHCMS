@@ -39,6 +39,8 @@ class UserIdentity extends CUserIdentity
 			$this->username = $user->username;
 			$this->_username = $user->username;
 			$this->errorCode=self::ERROR_NONE;
+			
+			Yii::app()->session['userid'] = $user->id;
 		endif;
 		/*
 		if(!isset($users[$this->username]))

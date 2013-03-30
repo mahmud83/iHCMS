@@ -31,6 +31,9 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+
+<h1>Manage <?php echo $this->pluralize($this->class2name($this->modelClass)); ?></h1>
+
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
@@ -44,34 +47,24 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 )); ?>\n"; ?>
 </div><!-- search-form -->
 
-<div class="row-fluid no-clear">
-	<div class="span12 widget">
-		<div class="widget-title">
-			<i class="icon-bar-chart titleicon"></i>
-			<p>Manajemen <?php echo $this->class2name($this->modelClass);?></p>
-		</div>
-		<div class="widget-content">
-			<?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbGridView',array(
-			'id'=>'<?php echo $this->class2id($this->modelClass); ?>-grid',
-			'dataProvider'=>$model->search(),
-			'filter'=>$model,
-			'columns'=>array(
-			<?php
-			$count=0;
-			foreach($this->tableSchema->columns as $column)
-			{
-				if(++$count==7)
-					echo "\t\t/*\n";
-				echo "\t\t'".$column->name."',\n";
-			}
-			if($count>=7)
-				echo "\t\t*/\n";
-			?>
-					array(
-						'class'=>'bootstrap.widgets.TbButtonColumn',
-					),
-				),
-			)); ?>
-		</div>
-	</div>
-</div>
+<?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbGridView',array(
+	'id'=>'<?php echo $this->class2id($this->modelClass); ?>-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+<?php
+$count=0;
+foreach($this->tableSchema->columns as $column)
+{
+	if(++$count==7)
+		echo "\t\t/*\n";
+	echo "\t\t'".$column->name."',\n";
+}
+if($count>=7)
+	echo "\t\t*/\n";
+?>
+		array(
+			'class'=>'bootstrap.widgets.TbButtonColumn',
+		),
+	),
+)); ?>

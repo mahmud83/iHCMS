@@ -14,18 +14,14 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-	public $breadcrumbs=array();
-	public $sub_title = '';
-	public $title = '';
-	
+
 	/**
 	 * @return array action filters
 	 */
 	public function filters()
 	{
 		return array(
-			//'accessControl', // perform access control for CRUD operations
-			'rights', // perform access control for CRUD operations
+			'accessControl', // perform access control for CRUD operations
 		);
 	}
 
@@ -61,9 +57,6 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionView($id)
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', '<?php echo $this->class2name($this->modelClass);?>');
-		$this->sub_title = 'Detail Data <?php echo $this->class2name($this->modelClass);?>';
-		
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -75,13 +68,10 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionCreate()
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', '<?php echo $this->class2name($this->modelClass);?>');
-		$this->sub_title = 'Tambah Data <?php echo $this->class2name($this->modelClass);?>';
-		
 		$model=new <?php echo $this->modelClass; ?>;
 
-		// Comment the following line if AJAX validation is not needed
-		$this->performAjaxValidation($model);
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['<?php echo $this->modelClass; ?>']))
 		{
@@ -102,13 +92,10 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionUpdate($id)
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', '<?php echo $this->class2name($this->modelClass);?>');
-		$this->sub_title = 'Ubah Data <?php echo $this->class2name($this->modelClass);?>';
-		
 		$model=$this->loadModel($id);
 
-		// Comment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['<?php echo $this->modelClass; ?>']))
 		{
@@ -147,9 +134,6 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionIndex()
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', 'list');
-		$this->sub_title = 'Daftar Data <?php echo $this->class2name($this->modelClass);?>';
-		
 		$dataProvider=new CActiveDataProvider('<?php echo $this->modelClass; ?>');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -161,9 +145,6 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionAdmin()
 	{
-		$this->breadcrumbs = array('<?php echo $this->modelClass;?>'=>'', 'list');
-		$this->sub_title = 'Manajemen Data <?php echo $this->class2name($this->modelClass);?>';
-		
 		$model=new <?php echo $this->modelClass; ?>('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['<?php echo $this->modelClass; ?>']))

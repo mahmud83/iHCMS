@@ -12,7 +12,11 @@
  * @property string $evidence
  * @property string $date
  * @property integer $competency_library_id
- * @property integer $w_occupation_id
+ *
+ * The followings are the available model relations:
+ * @property CompetencyLibrary $competencyLibrary
+ * @property PPerson $assessor
+ * @property PPerson $assessed
  */
 class CompetencyResult extends CActiveRecord
 {
@@ -42,13 +46,13 @@ class CompetencyResult extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('assessor_id, assessed_id, competency_library_id, w_occupation_id', 'required'),
-			array('assessor_id, assessed_id, level, competency_library_id, w_occupation_id', 'numerical', 'integerOnly'=>true),
+			array('assessor_id, assessed_id, competency_library_id', 'required'),
+			array('assessor_id, assessed_id, level, competency_library_id', 'numerical', 'integerOnly'=>true),
 			array('year', 'length', 'max'=>4),
 			array('evidence, date', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, year, assessor_id, assessed_id, level, evidence, date, competency_library_id, w_occupation_id', 'safe', 'on'=>'search'),
+			array('id, year, assessor_id, assessed_id, level, evidence, date, competency_library_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +64,9 @@ class CompetencyResult extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'competencyLibrary' => array(self::BELONGS_TO, 'CompetencyLibrary', 'competency_library_id'),
+			'assessor' => array(self::BELONGS_TO, 'PPerson', 'assessor_id'),
+			'assessed' => array(self::BELONGS_TO, 'PPerson', 'assessed_id'),
 		);
 	}
 
@@ -77,7 +84,6 @@ class CompetencyResult extends CActiveRecord
 			'evidence' => 'Evidence',
 			'date' => 'Date',
 			'competency_library_id' => 'Competency Library',
-			'w_occupation_id' => 'W Occupation',
 		);
 	}
 
@@ -100,7 +106,6 @@ class CompetencyResult extends CActiveRecord
 		$criteria->compare('evidence',$this->evidence,true);
 		$criteria->compare('date',$this->date,true);
 		$criteria->compare('competency_library_id',$this->competency_library_id);
-		$criteria->compare('w_occupation_id',$this->w_occupation_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

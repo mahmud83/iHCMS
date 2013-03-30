@@ -20,8 +20,7 @@
 			<?php echo $form->redactorRow($model, 'description', array('class'=>'span4', 'rows'=>6)); ?>
 		
 			<?php echo $form->redactorRow($model, 'definition', array('class'=>'span4', 'rows'=>8)); ?>
-			<?php //echo $form->textAreaRow($model,'definition',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
-		
+				
 			<?php //echo $form->textFieldRow($model,'competency_type_id',array('class'=>'span5')); ?>
 					
 		

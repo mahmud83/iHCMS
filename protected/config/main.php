@@ -18,6 +18,7 @@ return array(
 		'application.components.*',
 		'application.modules.rights.*', 
 		'application.modules.rights.components.*',
+		'application.modules.pim.models.*',
 	),
 
 	'modules'=>array(
@@ -132,7 +133,12 @@ return array(
 				),
 				*/
 			),
-		),
+		),/*
+		'session' => array (
+			'sessionName' => 'integrated Human Capital Management System',
+			'cookieMode' => 'only',
+			//'savePath' => '/path/to/new/directory',
+		),*/
 	),
 
 	// application-level parameters that can be accessed

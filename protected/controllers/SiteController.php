@@ -105,6 +105,7 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
+		unset(Yii::app()->session['userid']);
 		$this->redirect(Yii::app()->homeUrl);
 	}
 }
