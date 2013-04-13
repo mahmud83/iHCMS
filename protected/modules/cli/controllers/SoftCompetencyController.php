@@ -183,6 +183,25 @@ class SoftCompetencyController extends Controller
 	    
     }
     
+    public function actionResult() {
+    	$this->breadcrumbs = array('SoftCompetency'=>'', 'result');
+		$this->sub_title = 'Competency Level Index';
+		
+		//$model = $this->getCompetency(array('type'=>'list', 'offset'=>$page));
+		
+		$criteria = new CDbCriteria;
+		$criteria->select = 't.id, t.category, t.code, t.dimension, t.name, t.definition, t.level_1, t.level_2, t.level_3, t.level_4, t.level_5, a.level as level';
+		$criteria->with = 'category0';
+		$criteria->condition = 't.active=:active AND category0.competency_type_id=:category';
+		$criteria->params = array(':active'=>'1', ':category'=>'1');
+		$criteria->join = 'LEFT JOIN competency_result a ON t.id = a.competency_library_id';
+		$model = CompetencyLibrary::model()->findAll($criteria);
+		
+	    $this->render('result', array(
+	    	'model'=>$model,
+	    ));
+    }
+    
     private function getEmployee($userid) {
 	    $employee = PPerson::model()->find(array(
 	    	'condition'=>'user_id=:user_id',
@@ -226,4 +245,6 @@ class SoftCompetencyController extends Controller
 		
 		return $modelResult;
     }
+    
+    
 }

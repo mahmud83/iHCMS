@@ -87,7 +87,7 @@ label, input, button, select, textarea  {
 
 body {
 	/*background: #f5f5f5 url('../img/background1.png')  left top;*/
-	background: #f5f5f5 url('../img/sawit1.jpg')  left top;
+	background: #f5f5f5 url('../img/bg.jpg')  fixed top center;
 	-webkit-font-smoothing: antialiased;
 	font-size: 12px !important;
 	color: #424242;
@@ -852,4 +852,5 @@ legend {
 	display: table;
 	content: ""; 
 	width: 100%;
+	margin-bottom: 10px;
 }

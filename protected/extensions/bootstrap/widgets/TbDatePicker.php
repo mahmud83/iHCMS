@@ -35,7 +35,7 @@ class TbDatePicker extends CInputWidget
 			$this->options['language'] = Yii::app()->language;
 
 		if (!isset($this->options['format']))
-			$this->options['format'] = 'mm/dd/yyyy';
+			$this->options['format'] = 'yyyy-mm-dd';
 
 		if (!isset($this->options['weekStart']))
 			$this->options['weekStart'] = 0; // Sunday
@@ -71,7 +71,7 @@ class TbDatePicker extends CInputWidget
 		Yii::app()->bootstrap->registerAssetJs('bootstrap.datepicker.js');
 		if(isset($this->options['language']))
 		{
-			Yii::app()->bootstrap->registerAssetJs('locales/bootstrap-datepicker.'.$this->options['language'].'.js', CClientScript::POS_END);
+			//Yii::app()->bootstrap->registerAssetJs('locales/bootstrap-datepicker.'.$this->options['language'].'.js', CClientScript::POS_END);
 		}
 		$options = !empty($this->options) ? CJavaScript::encode($this->options) : '';
 

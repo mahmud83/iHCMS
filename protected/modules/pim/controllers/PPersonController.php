@@ -140,6 +140,7 @@ class PPersonController extends Controller
 	 */
 	public function actionIndex()
 	{
+		/*
 		$this->breadcrumbs = array('PPerson'=>'', 'list');
 		$this->sub_title = 'Daftar Data Karyawan';
 		
@@ -147,6 +148,8 @@ class PPersonController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+		*/
+		$this->redirect(array('admin'));
 	}
 
 	/**
@@ -363,7 +366,7 @@ class PPersonController extends Controller
 				if($model->save()):
 					$modelHistory->person_id = $model->primaryKey;
 					$modelHistory->occupation_id = $_POST['PPerson']['jabatan_id'];
-					$modelHistory->start_date = $var_date;
+					$modelHistory->start_date = $_POST['PPersonOccupationHistorical']['start_date'];
 					
 					if($modelHistory->save())
 						$this->redirect(array('view','id'=>$model->id));
@@ -374,6 +377,7 @@ class PPersonController extends Controller
 
 		$this->render('plus',array(
 			'model'=>$model,
+			'modelHistory'=>$modelHistory,
 		));
 
     }

@@ -53,6 +53,8 @@ $this->menu=array(
 				    <input type="hidden" readonly="readonly" size="2" maxlength="2" name="PPerson[jabatan_id]" id="PPerson_jabatan_id">
 				</div>
 			</div>
+			
+			<?php echo $form->datepickerRow($modelHistory, 'start_date', array('prepend'=>'<i class="icon-calendar"></i>')); ?>
 		
 			<div class="control-group">
 				<div class="controls">

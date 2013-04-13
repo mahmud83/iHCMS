@@ -60,6 +60,8 @@
  */
 class PPerson extends CActiveRecord
 {
+	public $fullname;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -171,6 +173,7 @@ class PPerson extends CActiveRecord
 			'create_by' => 'Create By',
 			'modified_date' => 'Modified Date',
 			'modified_by' => 'Modified By',
+			'fullname' => 'Full Name',
 		);
 	}
 
