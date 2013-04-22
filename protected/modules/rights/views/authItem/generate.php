@@ -1,55 +1,90 @@
-<?php $this->breadcrumbs = array(
-	'Rights'=>Rights::getBaseUrl(),
-	Rights::t('core', 'Generate items'),
-); ?>
+<?php
+$this->breadcrumbs = array(
+    'Rights' => Rights::getBaseUrl(),
+    Rights::t('core', 'Generate items'),
+);
+?>
 <p><?php echo Rights::t('core', 'Please select which items you wish to generate.'); ?></p>
 <div class="row-fluid no-clear">
-	<div class="span12 widget">
-		<div class="widget-title">
-			<i class="icon-bar-chart titleicon"></i>
-			<p><?php echo Rights::t('core', 'Generate items'); ?></p>
-		</div>
-		<div class="widget-content">
-			<?php //$form=$this->beginWidget('CActiveForm'); ?>
-			<?php /** @var BootActiveForm $form */
-				$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-					'id'=>'horizontalForm',
-					'type'=>'horizontal',
-				)); ?>
-			<div>
-				<table class="table table-striped table-bordered items generate-item-table">
-					<tbody>
-						<tr class="application-heading-row">
-							<th colspan="3"><?php echo Rights::t('core', 'Application'); ?></th>
-						</tr>
-						<?php $this->renderPartial('_generateItems', array(
-							'model'=>$model,
-							'form'=>$form,
-							'items'=>$items,
-							'existingItems'=>$existingItems,
-							'displayModuleHeadingRow'=>true,
-							'basePathLength'=>strlen(Yii::app()->basePath),
-						)); ?>
-					</tbody>
-				</table>
-			</div>
+    <div class="span12 widget">
+        <div class="widget-title">
+            <i class="icon-bar-chart titleicon"></i>
+            <p><?php echo Rights::t('core', 'Generate items'); ?></p>
+        </div>
+        <div class="widget-content">
+            <?php //$form=$this->beginWidget('CActiveForm'); ?>
+            <?php
+            /** @var BootActiveForm $form */
+            $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+                'id' => 'horizontalForm',
+                'type' => 'horizontal',
+                    ));
+            ?><?php if ($items['controllers'] !== array()): ?>
 
-			<div class="form-actions">
-   				<?php echo CHtml::link(Rights::t('core', 'Select all'), '#', array(
-   					'onclick'=>"jQuery('.generate-item-table').find(':checkbox').attr('checked', 'checked'); return false;",
-   					'class'=>'selectAllLink')); ?>
-   				/
-				<?php echo CHtml::link(Rights::t('core', 'Select none'), '#', array(
-					'onclick'=>"jQuery('.generate-item-table').find(':checkbox').removeAttr('checked'); return false;",
-					'class'=>'selectNoneLink')); ?>
-			</div>
+                <?php foreach ($items['controllers'] as $key => $item): ?>
 
-   			<div class="form-actions">
-				<?php //echo CHtml::submitButton(Rights::t('core', 'Generate')); ?>
-				<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>Rights::t('core', 'Generate'))); ?>
-			</div>
+        <?php if (isset($item['actions']) === true && $item['actions'] !== array()): ?>
 
-			<?php $this->endWidget(); ?>
-		</div>
-	</div>
+            <?php $controllerKey = isset($moduleName) === true ? ucfirst($moduleName) . '.' . $item['name'] : $item['name']; ?>
+            <?php $controllerExists = isset($existingItems[$controllerKey . '.*']); ?>
+
+                        <tr class="controller-row <?php echo $controllerExists === true ? 'exists' : ''; ?>">
+                            <td class="checkbox-column"><?php echo $controllerExists === false ? $form->checkBox($model, 'items[' . $controllerKey . '.*]') : ''; ?></td>
+                            <td class="name-column"><?php echo ucfirst($item['name']) . '.*'; ?></td>
+                            <td class="path-column"><?php echo substr($item['path'], $basePathLength + 1); ?></td>
+                        </tr>
+
+            <?php $i = 0;
+            foreach ($item['actions'] as $action): ?>
+
+                <?php $actionKey = $controllerKey . '.' . ucfirst($action['name']); ?>
+                <?php $actionExists = isset($existingItems[$actionKey]); ?>
+
+                            <tr class="action-row<?php echo $actionExists === true ? ' exists' : ''; ?><?php echo ($i++ % 2) === 0 ? ' odd' : ' even'; ?>">
+                                <td class="checkbox-column"><?php echo $actionExists === false ? $form->checkBox($model, 'items[' . $actionKey . ']') : ''; ?></td>
+                                <td class="name-column"><?php echo $action['name']; ?></td>
+                                <td class="path-column"><?php echo substr($item['path'], $basePathLength + 1) . (isset($action['line']) === true ? ':' . $action['line'] : ''); ?></td>
+                            </tr>
+
+                        <?php endforeach; ?>
+
+        <?php endif; ?>
+
+                <?php endforeach; ?>
+
+            <?php else: ?>
+
+                <tr><th  class="no-items-row" colspan="3"><?php echo Rights::t('core', 'No actions found.'); ?></th></tr>
+
+<?php endif; ?>
+
+            <?php if ($items['modules'] !== array()): ?>
+
+                <?php if ($displayModuleHeadingRow === true): ?>
+
+                    <tr><th class="module-heading-row" colspan="3"><?php echo Rights::t('core', 'Modules'); ?></th></tr>
+
+                <?php endif; ?>
+
+                <?php foreach ($items['modules'] as $moduleName => $moduleItems): ?>
+
+                    <tr><th class="module-row" colspan="3"><?php echo ucfirst($moduleName) . 'Module'; ?></th></tr>
+
+                    <?php
+                    $this->renderPartial('_generateItems', array(
+                        'model' => $model,
+                        'form' => $form,
+                        'items' => $moduleItems,
+                        'existingItems' => $existingItems,
+                        'moduleName' => $moduleName,
+                        'displayModuleHeadingRow' => false,
+                        'basePathLength' => $basePathLength,
+                    ));
+                    ?>
+
+    <?php endforeach; ?>
+
+<?php endif; ?>
+        </div>
+    </div>
 </div>
