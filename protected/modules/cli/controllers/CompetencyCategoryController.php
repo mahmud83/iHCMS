@@ -1,213 +1,209 @@
 <?php
 
-class CompetencyCategoryController extends Controller
-{
-	/**
-	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
-	 * using two-column layout. See 'protected/views/layouts/column2.php'.
-	 */
-	public $layout='//layouts/column2';
-	public $breadcrumbs=array();
-	public $sub_title = '';
-	public $title = '';
-	
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			//'accessControl', // perform access control for CRUD operations
-			'rights', // perform access control for CRUD operations
-		);
-	}
+class CompetencyCategoryController extends Controller {
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+    /**
+     * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+     * using two-column layout. See 'protected/views/layouts/column2.php'.
+     */
+    public $layout = '//layouts/column2';
+    public $breadcrumbs = array();
+    public $sub_title = '';
+    public $title = '';
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->breadcrumbs = array('CompetencyCategory'=>'', 'Competency Category');
-		$this->sub_title = 'Detail Data Competency Category';
-		
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
-	}
+    /**
+     * @return array action filters
+     */
+    public function filters() {
+        return array(
+            //'accessControl', // perform access control for CRUD operations
+            'rights', // perform access control for CRUD operations
+        );
+    }
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
-	public function actionCreate()
-	{
-		$this->breadcrumbs = array('CompetencyCategory'=>'', 'Competency Category');
-		$this->sub_title = 'Tambah Data Competency Category';
-		
-		$model=new CompetencyCategory;
+    /**
+     * Specifies the access control rules.
+     * This method is used by the 'accessControl' filter.
+     * @return array access control rules
+     */
+    public function accessRules() {
+        return array(
+            array('allow', // allow all users to perform 'index' and 'view' actions
+                'actions' => array('index', 'view'),
+                'users' => array('*'),
+            ),
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions' => array('create', 'update'),
+                'users' => array('@'),
+            ),
+            array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                'actions' => array('admin', 'delete'),
+                'users' => array('admin'),
+            ),
+            array('deny', // deny all users
+                'users' => array('*'),
+            ),
+        );
+    }
 
-		// Comment the following line if AJAX validation is not needed
-		$this->performAjaxValidation($model);
+    /**
+     * Displays a particular model.
+     * @param integer $id the ID of the model to be displayed
+     */
+    public function actionView($id) {
+        $this->breadcrumbs = array('CompetencyCategory' => '', 'Competency Category');
+        $this->sub_title = 'Detail Data Competency Category';
 
-		if(isset($_POST['CompetencyCategory']))
-		{
-			$model->attributes=$_POST['CompetencyCategory'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+        $this->render('view', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
+    /**
+     * Creates a new model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     */
+    public function actionCreate() {
+        $this->breadcrumbs = array('CompetencyCategory' => '', 'Competency Category');
+        $this->sub_title = 'Tambah Data Competency Category';
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$this->breadcrumbs = array('CompetencyCategory'=>'', 'Competency Category');
-		$this->sub_title = 'Ubah Data Competency Category';
-		
-		$model=$this->loadModel($id);
+        $model = new CompetencyCategory;
 
-		// Comment the following line if AJAX validation is needed
-		$this->performAjaxValidation($model);
+        // Comment the following line if AJAX validation is not needed
+        $this->performAjaxValidation($model);
 
-		if(isset($_POST['CompetencyCategory']))
-		{
-			$model->attributes=$_POST['CompetencyCategory'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
-		}
+        if (isset($_POST['CompetencyCategory'])) {
+            $model->attributes = $_POST['CompetencyCategory'];
+            if ($model->save())
+                $this->redirect(array('view', 'id' => $model->id));
+        }
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
+        $this->render('create', array(
+            'model' => $model,
+        ));
+    }
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+    /**
+     * Updates a particular model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id the ID of the model to be updated
+     */
+    public function actionUpdate($id) {
+        $this->breadcrumbs = array('CompetencyCategory' => '', 'Competency Category');
+        $this->sub_title = 'Ubah Data Competency Category';
 
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
-	}
+        $model = $this->loadModel($id);
 
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		/*
-		$this->breadcrumbs = array('CompetencyCategory'=>'', 'list');
-		$this->sub_title = 'Daftar Data Competency Category';
-		
-		$dataProvider=new CActiveDataProvider('CompetencyCategory');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-		*/
-		$this->actionAdmin();
-	}
+        // Comment the following line if AJAX validation is needed
+        $this->performAjaxValidation($model);
 
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$this->breadcrumbs = array('CompetencyCategory'=>'', 'list');
-		$this->sub_title = 'Manajemen Data Competency Category';
-		
-		$model=new CompetencyCategory('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['CompetencyCategory']))
-			$model->attributes=$_GET['CompetencyCategory'];
+        if (isset($_POST['CompetencyCategory'])) {
+            $model->attributes = $_POST['CompetencyCategory'];
+            if ($model->save())
+                $this->redirect(array('view', 'id' => $model->id));
+        }
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
+        $this->render('update', array(
+            'model' => $model,
+        ));
+    }
 
-	/**
-	 * Returns the data model based on the primary key given in the GET variable.
-	 * If the data model is not found, an HTTP exception will be raised.
-	 * @param integer the ID of the model to be loaded
-	 */
-	public function loadModel($id)
-	{
-		$model=CompetencyCategory::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
+    /**
+     * Deletes a particular model.
+     * If deletion is successful, the browser will be redirected to the 'admin' page.
+     * @param integer $id the ID of the model to be deleted
+     */
+    public function actionDelete($id) {
+        if (Yii::app()->request->isPostRequest) {
+            // we only allow deletion via POST request
+            $this->loadModel($id)->delete();
 
-	/**
-	 * Performs the AJAX validation.
-	 * @param CModel the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='competency-category-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
-	
-	public function actionLookup () {
-		//if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
-			$models = CompetencyCategory::model()->suggestUsername($_GET['term']);
-			
-			$result = array();
-			foreach ($models as $m)
-	            $result[] = array(
-	                'value' => '['.$m->code.'] '.$m->name.'',
-	                'id' => $m->id,
-	            );
-	        
-	        echo CJSON::encode($result);
-		//}
-	}
+            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            if (!isset($_GET['ajax']))
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        }
+        else
+            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+    }
+
+    /**
+     * Lists all models.
+     */
+    public function actionIndex() {
+        /*
+          $this->breadcrumbs = array('CompetencyCategory'=>'', 'list');
+          $this->sub_title = 'Daftar Data Competency Category';
+
+          $dataProvider=new CActiveDataProvider('CompetencyCategory');
+          $this->render('index',array(
+          'dataProvider'=>$dataProvider,
+          ));
+         */
+        $this->actionAdmin();
+    }
+
+    /**
+     * Manages all models.
+     */
+    public function actionAdmin() {
+        $this->breadcrumbs = array('CompetencyCategory' => '', 'list');
+        $this->sub_title = 'Manajemen Data Competency Category';
+
+        $model = new CompetencyCategory('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['CompetencyCategory']))
+            $model->attributes = $_GET['CompetencyCategory'];
+
+        $this->render('admin', array(
+            'model' => $model,
+        ));
+    }
+
+    /**
+     * Returns the data model based on the primary key given in the GET variable.
+     * If the data model is not found, an HTTP exception will be raised.
+     * @param integer the ID of the model to be loaded
+     */
+    public function loadModel($id) {
+        $model = CompetencyCategory::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
+
+    /**
+     * Performs the AJAX validation.
+     * @param CModel the model to be validated
+     */
+    protected function performAjaxValidation($model) {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'competency-category-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
+
+    public function actionLookup() {
+        //if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
+        $models = CompetencyCategory::model()->suggestUsername($_GET['term']);
+
+        $result = array();
+        foreach ($models as $m)
+            $result[] = array(
+                'value' => '[' . $m->code . '] ' . $m->name . '',
+                'id' => $m->id,
+            );
+
+        echo CJSON::encode($result);
+        //}
+    }
+    
+    public function actionGetDynamicType() {
+        $data = CompetencyCategory::model()->findAll('competency_type_id=:competency_type_id', array(':competency_type_id' => (int) $_POST['competency_type_id']));
+
+        $data = CHtml::listData($data, 'id', 'name');
+        echo "<option value=''>Pilih Salah Satu</option>";
+        foreach ($data as $value => $judul)
+            echo CHtml::tag('option', array('value' => $value), CHtml::encode($judul), true);
+    }
+
 }

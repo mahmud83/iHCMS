@@ -106,8 +106,8 @@ return array(
 			'username' => 'tarjono',
 			'password' => 'tarjono',
 			'charset' => 'utf8',
-			'enableProfiling'=>true,
-			'enableParamLogging' => true,
+			//'enableProfiling'=>true,
+			//'enableParamLogging' => true,
 		),
 		
 		'errorHandler'=>array(
