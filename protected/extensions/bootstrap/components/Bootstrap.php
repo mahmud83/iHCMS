@@ -97,7 +97,8 @@ class Bootstrap extends CApplicationComponent
 		// Prevents the extension from registering scripts and publishing assets when ran from the command line.
 		if (Yii::app() instanceof CConsoleApplication)
 			return;
-
+                
+                
 		if ($this->coreCss !== false)
 			$this->registerCoreCss();
 
@@ -112,7 +113,7 @@ class Bootstrap extends CApplicationComponent
 
 		if ($this->enableJS !== false)
 			$this->registerCoreScripts();
-
+                
 		parent::init();
 	}
 

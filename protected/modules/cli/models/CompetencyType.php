@@ -8,10 +8,10 @@
  * @property string $name
  *
  * The followings are the available model relations:
+ * @property CompetencyCategory[] $competencyCategories
  * @property CompetencyCli[] $competencyClis
- * @property CompetencyLibrary[] $competencyLibraries
  */
-class CompetencyType extends CActiveRecord
+class CompetencyType extends DssdbCActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
@@ -21,6 +21,14 @@ class CompetencyType extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	/**
+	 * @return CDbConnection database connection
+	 */
+	public function getDbConnection()
+	{
+		return Yii::app()->dssdb;
 	}
 
 	/**
@@ -54,8 +62,8 @@ class CompetencyType extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'competencyCategories' => array(self::HAS_MANY, 'CompetencyCategory', 'competency_type_id'),
 			'competencyClis' => array(self::HAS_MANY, 'CompetencyCli', 'competency_type_id'),
-			'competencyLibraries' => array(self::HAS_MANY, 'CompetencyLibrary', 'dictionary_type_id'),
 		);
 	}
 

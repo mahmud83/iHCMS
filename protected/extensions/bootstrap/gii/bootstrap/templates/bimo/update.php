@@ -4,25 +4,37 @@
  * - $this: the BootCrudCode object
  */
 ?>
-<?php
-echo "<?php\n";
-$nameColumn=$this->guessNameColumn($this->tableSchema->columns);
-$label=$this->pluralize($this->class2name($this->modelClass));
-echo "\$this->breadcrumbs=array(
-	'$label'=>array('index'),
-	\$model->{$nameColumn}=>array('view','id'=>\$model->{$this->tableSchema->primaryKey}),
-	'Update',
-);\n";
-?>
+<div class="page-header">
+    <?php
+    echo "<?php\n";
+    $nameColumn=$this->guessNameColumn($this->tableSchema->columns);
+    $label=$this->pluralize($this->class2name($this->modelClass));
+    echo "\$this->widget('ext.battleship.widgets.Breadcrumbs', array(
+        'columns' => array(
+            '$label'=>array('index'),
+            \$model->{$nameColumn}=>array('view','id'=>\$model->{$this->tableSchema->primaryKey}),
+            'Update',
+        ),
+    ));\n";
+    ?>
+    ?>
 
-$this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
-	array('label'=>'View <?php echo $this->modelClass; ?>','url'=>array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin')),
-);
-?>
+    <h1 id="main-heading">
+        Ubah Data <?php echo $this->modelClass." <?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?> <span>mengubah data <?php echo $this->modelClass;?> pada aplikasi</span>
+    </h1>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title">
+                        <i class="icon-edit"></i> Form Id <?php echo " <?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?>
+                    </span>
+                </div>
+                <?php echo "<?php echo \$this->renderPartial('_form',array('model'=>\$model)); ?>"; ?>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>Update <?php echo $this->modelClass." <?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?></h1>
-
-<?php echo "<?php echo \$this->renderPartial('_form',array('model'=>\$model)); ?>"; ?>

@@ -1,7 +1,7 @@
 <?php
 return array (
   'template' => 'default',
-  'connectionId' => 'db',
+  'connectionId' => 'dssdb',
   'tablePrefix' => '',
   'modelPath' => 'application.modules.cli.models',
   'baseClass' => 'CActiveRecord',

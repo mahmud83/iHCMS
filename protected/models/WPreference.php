@@ -5,17 +5,15 @@
  *
  * The followings are the available columns in table 'w_preference':
  * @property integer $id
+ * @property integer $id_module
  * @property string $name
  * @property string $value
+ *
+ * The followings are the available model relations:
+ * @property WModule $idModule
  */
-class WPreference extends CActiveRecord
+class WPreference extends DssdbCActiveRecord
 {
-	
-	//custom field
-	public $tahun_cli;
-	public $tanggal_cli;
-	
-	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -24,6 +22,14 @@ class WPreference extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	/**
+	 * @return CDbConnection database connection
+	 */
+	public function getDbConnection()
+	{
+		return Yii::app()->dssdb;
 	}
 
 	/**
@@ -42,11 +48,12 @@ class WPreference extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, value', 'required'),
+			array('id_module, name, value', 'required'),
+			array('id_module', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, value', 'safe', 'on'=>'search'),
+			array('id, id_module, name, value', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +65,7 @@ class WPreference extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'idModule' => array(self::BELONGS_TO, 'WModule', 'id_module'),
 		);
 	}
 
@@ -68,10 +76,9 @@ class WPreference extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'id_module' => 'Id Module',
 			'name' => 'Name',
 			'value' => 'Value',
-			'tahun_cli' => 'Tahun Pengisian CLI',
-			'tanggal_cli'=> 'Tanggal Pengisian CLI',
 		);
 	}
 
@@ -87,6 +94,7 @@ class WPreference extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('id_module',$this->id_module);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('value',$this->value,true);
 

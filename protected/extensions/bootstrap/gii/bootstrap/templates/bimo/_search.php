@@ -4,9 +4,11 @@
  * - $this: the BootCrudCode object
  */
 ?>
+<div class="widget-content form-container">
 <?php echo "<?php \$form=\$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'action'=>Yii::app()->createUrl(\$this->route),
 	'method'=>'get',
+        'type'=>'horizontal',
 )); ?>\n"; ?>
 
 <?php foreach($this->tableSchema->columns as $column): ?>
@@ -27,3 +29,4 @@
 	</div>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>
+</div>

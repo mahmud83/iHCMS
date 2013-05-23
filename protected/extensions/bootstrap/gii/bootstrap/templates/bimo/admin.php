@@ -6,17 +6,7 @@
 ?>
 <?php
 echo "<?php\n";
-$label=$this->pluralize($this->class2name($this->modelClass));
-echo "\$this->breadcrumbs=array(
-	'$label'=>array('index'),
-	'Manage',
-);\n";
 ?>
-
-$this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
-	array('label'=>'Create <?php echo $this->modelClass; ?>','url'=>array('create')),
-);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -31,40 +21,85 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+<div class="page-header">
+    <?php
+    echo "<?php\n";
+    $label=$this->pluralize($this->class2name($this->modelClass));
+    echo "\$this->widget('ext.battleship.widgets.Breadcrumbs', array(
+        'columns' => array(
+            '$label'=>array('index'),
+            'Manage',
+        ),
+    ));\n";
+    ?>
+    ?>
 
-<h1>Manage <?php echo $this->pluralize($this->class2name($this->modelClass)); ?></h1>
+    <h1 id="main-heading">
+        Manajemen <?php echo $this->pluralize($this->class2name($this->modelClass)); ?> <span>pengelolaan <?php echo $this->class2name($this->modelClass);?> pada aplikasi</span>
+    </h1>
+</div>
+<div class="row-fluid">
+    <div class="span12">
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-content clearfix">
+                    <h4>Informasi</h4>
+                    <blockquote>
+                        <p>Anda dapat memilih memasukkan operator pembanding (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+                            atau <b>=</b>) pada awal setiap nilai pencarian Anda untuk menentukan bagaimana perbandingan harus dilakukan</p>
+                    </blockquote>
+                </div>
+                <div class="form-actions">
+                    <button class="btn search-button">Pencarian Lanjutan</button>
+                </div>
+            </div>
+        </div>
 
-<?php echo "<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>"; ?>
+        <div class="row-fluid search-form" style="display:none">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title"><i class="icon-resize-horizontal"></i> Form Pencarian Lanjutan</span>
+                </div>
 
-<div class="search-form" style="display:none">
-<?php echo "<?php \$this->renderPartial('_search',array(
-	'model'=>\$model,
-)); ?>\n"; ?>
-</div><!-- search-form -->
+                <?php echo "<?php \$this->renderPartial('_search',array(
+                        'model'=>\$model,
+                )); ?>\n"; ?>
 
-<?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbGridView',array(
-	'id'=>'<?php echo $this->class2id($this->modelClass); ?>-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-<?php
-$count=0;
-foreach($this->tableSchema->columns as $column)
-{
-	if(++$count==7)
-		echo "\t\t/*\n";
-	echo "\t\t'".$column->name."',\n";
-}
-if($count>=7)
-	echo "\t\t*/\n";
-?>
-		array(
-			'class'=>'bootstrap.widgets.TbButtonColumn',
-		),
-	),
-)); ?>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title">
+                        <i class="icon-table"></i> Daftar Data Menu
+                    </span>
+                </div>
+                <?php echo "<?php"; ?> $this->widget('bootstrap.widgets.TbGridView',array(
+                        'id'=>'<?php echo $this->class2id($this->modelClass); ?>-grid',
+                        'dataProvider'=>$model->search(),
+                        'type'=>'striped',
+                        'filter'=>$model,
+                        'template'=>'{items}{pager}',
+                        'columns'=>array(
+                <?php
+                $count=0;
+                foreach($this->tableSchema->columns as $column)
+                {
+                        if(++$count==7)
+                                echo "\t\t/*\n";
+                        echo "\t\t'".$column->name."',\n";
+                }
+                if($count>=7)
+                        echo "\t\t*/\n";
+                ?>
+                                array(
+                                        'class'=>'bootstrap.widgets.TbButtonColumn',
+                                ),
+                        ),
+                )); ?>
+            </div>
+        </div>
+    </div>
+</div>

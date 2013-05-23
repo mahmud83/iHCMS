@@ -6,43 +6,15 @@ class CompetencyCategoryController extends Controller {
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/column2';
-    public $breadcrumbs = array();
-    public $sub_title = '';
-    public $title = '';
+    public $layout = '//layouts/NMain';
 
     /**
      * @return array action filters
      */
     public function filters() {
         return array(
-            //'accessControl', // perform access control for CRUD operations
             'rights', // perform access control for CRUD operations
-        );
-    }
-
-    /**
-     * Specifies the access control rules.
-     * This method is used by the 'accessControl' filter.
-     * @return array access control rules
-     */
-    public function accessRules() {
-        return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
-            ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
-                'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
-                'users' => array('admin'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
-            ),
+                //'postOnly + delete', // we only allow deletion via POST request
         );
     }
 
@@ -51,9 +23,6 @@ class CompetencyCategoryController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-        $this->breadcrumbs = array('CompetencyCategory' => '', 'Competency Category');
-        $this->sub_title = 'Detail Data Competency Category';
-
         $this->render('view', array(
             'model' => $this->loadModel($id),
         ));
@@ -64,12 +33,9 @@ class CompetencyCategoryController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $this->breadcrumbs = array('CompetencyCategory' => '', 'Competency Category');
-        $this->sub_title = 'Tambah Data Competency Category';
-
         $model = new CompetencyCategory;
 
-        // Comment the following line if AJAX validation is not needed
+        // Comment the following line if AJAX validation is needed
         $this->performAjaxValidation($model);
 
         if (isset($_POST['CompetencyCategory'])) {
@@ -89,9 +55,6 @@ class CompetencyCategoryController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-        $this->breadcrumbs = array('CompetencyCategory' => '', 'Competency Category');
-        $this->sub_title = 'Ubah Data Competency Category';
-
         $model = $this->loadModel($id);
 
         // Comment the following line if AJAX validation is needed
@@ -114,41 +77,28 @@ class CompetencyCategoryController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        if (Yii::app()->request->isPostRequest) {
-            // we only allow deletion via POST request
-            $this->loadModel($id)->delete();
+        $this->loadModel($id)->delete();
 
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-        }
-        else
-            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+        if (!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        /*
-          $this->breadcrumbs = array('CompetencyCategory'=>'', 'list');
-          $this->sub_title = 'Daftar Data Competency Category';
-
-          $dataProvider=new CActiveDataProvider('CompetencyCategory');
-          $this->render('index',array(
-          'dataProvider'=>$dataProvider,
-          ));
-         */
-        $this->actionAdmin();
+        $dataProvider = new CActiveDataProvider('CompetencyCategory');
+        //$data = WModule::model()->findAll();
+        $this->render('index', array(
+            'dataProvider' => $dataProvider,
+        ));
     }
 
     /**
      * Manages all models.
      */
     public function actionAdmin() {
-        $this->breadcrumbs = array('CompetencyCategory' => '', 'list');
-        $this->sub_title = 'Manajemen Data Competency Category';
-
         $model = new CompetencyCategory('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['CompetencyCategory']))
@@ -196,7 +146,7 @@ class CompetencyCategoryController extends Controller {
         echo CJSON::encode($result);
         //}
     }
-    
+
     public function actionGetDynamicType() {
         $data = CompetencyCategory::model()->findAll('competency_type_id=:competency_type_id', array(':competency_type_id' => (int) $_POST['competency_type_id']));
 

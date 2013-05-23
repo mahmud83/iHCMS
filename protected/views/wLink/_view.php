@@ -28,5 +28,15 @@
 	<?php echo CHtml::encode($data->auth); ?>
 	<br />
 
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('w_module_id')); ?>:</b>
+	<?php echo CHtml::encode($data->w_module_id); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('ordering')); ?>:</b>
+	<?php echo CHtml::encode($data->ordering); ?>
+	<br />
+
+	*/ ?>
 
 </div>

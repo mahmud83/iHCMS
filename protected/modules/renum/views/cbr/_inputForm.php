@@ -30,7 +30,8 @@
 			     	'style' => 'height:20px;'
 			     	),
 			    )); ?>
-			</div>
+			</div><div id="loading"></div>
+                        
 		</div>
 		
 		<div id="wizard">

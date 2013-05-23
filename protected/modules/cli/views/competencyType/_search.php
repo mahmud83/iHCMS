@@ -1,6 +1,8 @@
+<div class="widget-content form-container">
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
+        'type'=>'horizontal',
 )); ?>
 
 	<?php echo $form->textFieldRow($model,'id',array('class'=>'span5')); ?>
@@ -16,3 +18,4 @@
 	</div>
 
 <?php $this->endWidget(); ?>
+</div>

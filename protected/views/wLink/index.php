@@ -1,14 +1,47 @@
-<?php
-$this->breadcrumbs=array(
-	'Wlinks',
-);
+<div class="page-header">
+    <?php
+    $this->widget('ext.battleship.widgets.Breadcrumbs', array(
+        'columns' => array(
+            'Wlinks',
+        ),
+    ));
+    ?>
 
-$this->menu=array(
-	array('label'=>'Create WLink','url'=>array('create')),
-	array('label'=>'Manage WLink','url'=>array('admin')),
-);
-?>
-<?php $this->widget('bootstrap.widgets.TbListView',array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+    <h1 id="main-heading">
+        Manajemen Menu <span>pengelolaan menu pada aplikasi</span>
+    </h1>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title">
+                        <i class="icon-table"></i> Daftar Data Modul
+                    </span>
+                </div>
+                <?php
+                $this->widget('bootstrap.widgets.TbGridView', array(
+                    'id' => 'wlink-grid',
+                    'type'=>'striped',
+                    'dataProvider' => $dataProvider,
+                    'template' => "{items}",
+                    'columns' => array(
+                        'parent_id',
+                        'name',
+                        'title',
+                        'url',
+                        'image',
+                        'ordering',
+                    /*
+                      'auth',
+                      'w_module_id',
+                      'order',
+                     */
+                    ),
+                ));
+                ?>
+            </div>
+        </div>
+    </div>
+</div>

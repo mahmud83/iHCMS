@@ -4,12 +4,15 @@
  * - $this: the BootCrudCode object
  */
 ?>
+<div class="widget-content form-container">
+    <div class="alert alert-info">
+        Kotak isian dengan tanda <span class="required">*</span> wajib diisi.
+    </div>
 <?php echo "<?php \$form=\$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'id'=>'".$this->class2id($this->modelClass)."-form',
 	'enableAjaxValidation'=>false,
+        'type'=>'horizontal',
 )); ?>\n"; ?>
-
-	<p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
 
@@ -33,3 +36,4 @@ foreach($this->tableSchema->columns as $column)
 	</div>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>
+</div>

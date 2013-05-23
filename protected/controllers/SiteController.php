@@ -70,7 +70,7 @@ class SiteController extends Controller {
      * Displays the login page
      */
     public function actionLogin() {
-        $this->layout = "login";
+        $this->layout = "none";
         $model = new LoginForm;
 
         // if it is ajax validation request
@@ -83,11 +83,23 @@ class SiteController extends Controller {
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
-            if ($model->validate() && $model->login())
-                $this->redirect(Yii::app()->user->returnUrl);
+            if ($model->validate() && $model->login()):
+                //echo Yii::app()->user->returnUrl;
+                //exit();
+                $this->redirect(array('summary/dashboard'));
+            /*
+                if ((Yii::app()->user->returnUrl == 'ihcms/index.php/site/login') || (Yii::app()->user->returnUrl == 'ihcms/index.php')):
+                    $this->redirect('summary/dashboard');
+                else:
+                    $this->redirect(Yii::app()->user->returnUrl);
+                endif;
+             * 
+             */
+                //$this->redirect (array('site/hae'));
+            endif;
         }
         // display the login form
-        $this->render('login', array('model' => $model));
+        $this->render('NLogin', array('model' => $model));
     }
 
     /**
@@ -97,6 +109,10 @@ class SiteController extends Controller {
         Yii::app()->user->logout();
         unset(Yii::app()->session['userid']);
         $this->redirect(Yii::app()->homeUrl);
+    }
+    
+    public function actionHae() {
+        echo "hae";
     }
 
 }

@@ -4,21 +4,36 @@
  * - $this: the BootCrudCode object
  */
 ?>
-<?php
-echo "<?php\n";
-$label=$this->pluralize($this->class2name($this->modelClass));
-echo "\$this->breadcrumbs=array(
-	'$label'=>array('index'),
-	'Create',
-);\n";
-?>
+<div class="page-header">
+    <?php
+    echo "<?php\n";
+    $label=$this->pluralize($this->class2name($this->modelClass));
+    echo "\$this->widget('ext.battleship.widgets.Breadcrumbs', array(
+        'columns' => array(
+            '$label'=>array('index'),
+            'Create',
+        ),
+    ));\n";
+    ?>
+    ?>
 
-$this->menu=array(
-	array('label'=>'List <?php echo $this->modelClass; ?>','url'=>array('index')),
-	array('label'=>'Manage <?php echo $this->modelClass; ?>','url'=>array('admin')),
-);
-?>
+    <h1 id="main-heading">
+        Tambah Data <?php echo $this->modelClass; ?> <span>menambah data <?php echo $this->modelClass; ?> pada aplikasi</span>
+    </h1>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header">
+                    <span class="title">
+                        <i class="icon-edit"></i> Form
+                    </span>
+                </div>
+                <?php echo "<?php echo \$this->renderPartial('_form', array('model'=>\$model)); ?>"; ?>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>Create <?php echo $this->modelClass; ?></h1>
 
-<?php echo "<?php echo \$this->renderPartial('_form', array('model'=>\$model)); ?>"; ?>

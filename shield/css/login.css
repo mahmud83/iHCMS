@@ -1,0 +1,83 @@
+*{
+	margin:0;padding:0;
+}
+#container{
+	position: absolute;
+	top:0px;right:0px;bottom:0px;left:0px;
+}
+#loginbox{
+	width:300px;
+	position: absolute;
+	top:50%;left:50%;
+	margin-top:-150px;
+	margin-left:-150px;
+	background:#222 url(../img/texture.png);
+	color:#fff;
+	padding:15px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border:1px solid #111;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+	z-index:10;
+	-moz-animation: boxin 1s;
+    -webkit-animation: boxin 1s;
+}
+#loginbox h3{
+	background-color: #222;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#222));
+    background-image: -moz-linear-gradient(#333, #222);
+    background-image: -o-linear-gradient(#333, #222);
+    background-image: linear-gradient(#333, #222);
+    margin:-15px -15px 15px;
+    padding:5px 10px;
+    border-radius:5px 5px 0 0;
+    -moz-border-radius:5px 5px 0 0;
+    -webkit-border-radius:5px 5px 0 0;
+    font-size:16px;
+    text-align: center;
+    box-shadow:0px 1px 1px rgba(0,0,0,0.5),inset 0px 1px 0px rgba(255,255,255,0.3);
+    -moz-box-shadow:0px 1px 1px rgba(0,0,0,0.5),inset 0px 1px 0px rgba(255,255,255,0.3);
+    -webkit-box-shadow:0px 1px 1px rgba(0,0,0,0.5),inset 0px 1px 0px rgba(255,255,255,0.3);
+    opacity:0.8;
+}
+.control-group{
+	overflow: hidden;
+}
+input.big{
+	width:280px;
+}
+.form-actions{
+	background:none;
+	border:none;
+	padding:0px;
+	margin:15px 0 0px;
+}
+#slideshow{
+	position: absolute;
+	top:0px;right:0px;bottom:0px;left:0px;
+	overflow: hidden;
+	z-index: 1;
+}
+#slideshow img{
+	width:100%;
+}
+
+@-moz-keyframes boxin {
+   0% { 
+    -moz-transform: scale(0) rotateX(180deg) translateY(500px);
+   }
+   100% { 
+    -moz-transform: scale(1) rotateX(0deg) translateY(0px);
+   }
+}
+@-webkit-keyframes boxin {
+   0% { 
+    -webkit-transform: scale(0) rotateX(180deg) translateY(500px);
+   }
+   100% { 
+    -webkit-transform: scale(1) rotateX(0deg) translateY(0px);
+   }
+}

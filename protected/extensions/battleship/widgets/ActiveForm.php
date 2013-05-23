@@ -7,12 +7,12 @@
  * @package bootstrap.widgets
  */
 
-Yii::import('bootstrap.widgets.input.TbInput');
+Yii::import('ext.battleship.widgets.input.Input');
 
 /**
  * Bootstrap active form widget.
  */
-class TbActiveForm extends CActiveForm
+class ActiveForm extends CActiveForm
 {
 	// Form types.
 	const TYPE_VERTICAL = 'vertical';
@@ -21,10 +21,10 @@ class TbActiveForm extends CActiveForm
 	const TYPE_SEARCH = 'search';
 
 	// Input classes.
-	const INPUT_HORIZONTAL = 'bootstrap.widgets.input.TbInputHorizontal';
-	const INPUT_INLINE = 'bootstrap.widgets.input.TbInputInline';
-	const INPUT_SEARCH = 'bootstrap.widgets.input.TbInputSearch';
-	const INPUT_VERTICAL = 'bootstrap.widgets.input.TbInputVertical';
+	const INPUT_HORIZONTAL = 'ext.battleship.widgets.input.InputHorizontal';
+	const INPUT_INLINE = 'ext.battleship.widgets.input.InputInline';
+	const INPUT_SEARCH = 'ext.battleship.widgets.input.InputSearch';
+	const INPUT_VERTICAL = 'ext.battleship.widgets.input.InputVertical';
 
 	/**
 	 * @var string the form type. See class constants.
