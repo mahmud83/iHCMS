@@ -28,6 +28,21 @@ class WUserController extends Controller {
         //echo $person->user_name;
         $this->render('none');
     }
+    
+    public function actionAjaxLookup() {
+        //if (Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
+        $models = WUserDetail::model()->suggestUsername($_GET['term']);
+
+        $result = array();
+        foreach ($models as $m)
+            $result[] = array(
+                'value' => '' . $m->nama . ' (' . $m->nik . ')',
+                'id' => $m->id,
+            );
+
+        echo CJSON::encode($result);
+        //}
+    }
 
 }
 

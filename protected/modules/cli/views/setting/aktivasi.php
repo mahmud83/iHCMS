@@ -1,57 +1,100 @@
-<div class="row-fluid no-clear">
-	<button class="span3 big-button medium-blue" href="<?php echo Yii::app()->controller->createUrl('setting/aktivasi'); ?>">
-		<i class="icon-cogs icon-large"></i>
-		<span class="button-text">Setting Jadwal Penilaian CLI</span>
-	</button>
-	
-	<button class="span3 big-button medium-blue" href="<?php echo Yii::app()->controller->createUrl('setting/aktivasi'); ?>">
-		<i class="icon-cogs icon-large"></i>
-		<span class="button-text">Tipe Kompetensi</span>
-	</button>
-	
-	<button class="span3 big-button medium-blue" href="<?php echo Yii::app()->controller->createUrl('setting/aktivasi'); ?>">
-		<i class="icon-cogs icon-large"></i>
-		<span class="button-text">Setting Jadwal Penilaian CLI</span>
-	</button>
-	
-	<button class="span3 big-button medium-blue" href="<?php echo Yii::app()->controller->createUrl('setting/aktivasi'); ?>">
-		<i class="icon-cogs icon-large"></i>
-		<span class="button-text">Setting Jadwal Penilaian CLI</span>
-	</button>
+<div class="page-header">
+    <?php
+    $this->widget('ext.battleship.widgets.Breadcrumbs', array(
+        'columns' => array(
+            'Setting' => array('index'),
+            'Aktivasi',
+        ),
+    ));
+    ?>
+
+    <h1 id="main-heading">
+        Setting Tanggal Kompetensi<span>halaman untuk melakukan setting tanggal cli aktif</span>
+    </h1>
 </div>
 
+<div class="row-fluid">
+    <div class="span12" id="request">
+        <div class="row-fluid">
+            <div class="span12 widget">
 
-<div class="row-fluid no-clear">
-	<div class="span12 widget">
-		<div class="widget-title">
-			<i class="icon-bar-chart titleicon"></i>
-			<p>Aktivasi Competency Level Index</p>
-		</div>
-		<div class="widget-content">
-			<?php //echo $model_tahun->name;?>
-		    <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
-				'id'=>'competency-library-form',
-				'type'=>'horizontal',
-				'enableAjaxValidation'=>true,
-			)); ?>
-			
-				<?php echo $form->textFieldRow($model_tahun, 'tahun_cli', array('label'=>'Tahun Penilaian CLI')); ?>
-				
-				<?php echo $form->dateRangeRow($model_tanggal, 'tanggal_cli', array('hint'=>'Tekan pada kolom untuk mengisi!.', 'prepend'=>'<i class="icon-calendar"></i>', 'options' => array('callback'=>'js:function(start, end){console.log(start.toString("MMMM d, yyyy") + " - " + end.toString("MMMM d, yyyy"));}'))); ?>
-                
-            <div class="controls">
-				<?php $this->widget('bootstrap.widgets.TbButton', array(
-					'buttonType'=>'submit',
-					'type'=>'primary',
-					'label'=>'Submit',
-				)); ?>
-				<?php $this->widget('bootstrap.widgets.TbButton', array(
-					'buttonType'=>'reset',
-					'label'=>'Reset',
-				)); ?>
-			</div>
-			
-			<?php $this->endWidget(); ?>
+                <form class="form-horizontal" action="" method="POST">
+                    <?php
+                    if (isset($message)):
+                        echo '<div class="alert alert-success"><i class="icon-ok"></i>' . $message . '</div>';
+                    elseif (isset($error)):
+                        echo '<div class="alert alert-error">';
+                        echo '<ul>';
+                        foreach($error as $row=>$value):
+                            echo '<li>'.$row.'</li>';                            
+                        endforeach;
+                        echo '</ul>';
+                        echo '</div>';
+                    endif;
+                    ?>
+                    <div class="control-group">
+                        <label class="control-label">Tahun Penilaian</label>
+                        <div class="controls">
+                            <input type="text" name="Competency[year]" id='year' placeholder="<?php echo date('Y'); ?>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Tanggal Mulai</label>
+                        <div class="controls">
+                            <input type="text" name="Competency[start]" class="datepicker" placeholder="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Tanggal Berakhir</label>
+                        <div class="controls">
+                            <input type="text" name="Competency[end]" class="datepicker" placeholder="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button name="submit" type="submit" class="btn btn-primary">Simpan Data</button>
+                    </div>
+                </form>
+            </div>
         </div>
-	</div>
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header"><span class="title">Daftar CLI</span></div>
+                <div class="widget-content">
+                    <?php
+                    $this->widget('bootstrap.widgets.TbGridView', array(
+                        'dataProvider' => $cliList,
+                        'type' => 'striped bordered condensed',
+                        'template' => "{items}",
+                        'columns' => array(
+                            'year',
+                            'start',
+                            'end',
+                            'status',
+                            array(
+                                'name' => 'detail',
+                                'header' => 'Detail',
+                                'type' => 'raw',
+                                'value' => 'CHtml::link("Detail", array("stats/dashboard"), array("class" => "btn btn-info"))'
+                            ),
+                        ),
+                    ));
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script type="text/javascript">
+    $(function() {
+        $(".datepicker").datepicker({
+            format: "yyyy-mm-dd"
+        });
+
+        $('#year').datepicker({
+            format: " yyyy",
+            viewMode: "years",
+            minViewMode: "years"
+        });
+    });
+</script>
+

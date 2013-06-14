@@ -12,10 +12,10 @@
  * @property string $id_cli
  * @property string $parent_id_cli
  * @property string $ulist
- * @property integer $w_unitkerja_id
- *
- * The followings are the available model relations:
- * @property WUnitkerja $unitkerja0
+ * @property string $id_jobclass
+ * @property string $id_jobfamily
+ * @property string $kode
+ * @property string $level
  */
 class WJabatan extends CActiveRecord {
 
@@ -42,14 +42,14 @@ class WJabatan extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('unitkerja, id_cli, parent_id_cli, ulist, w_unitkerja_id', 'required'),
-            array('parent_id, w_unitkerja_id', 'numerical', 'integerOnly' => true),
+            array('unitkerja, id_cli, parent_id_cli, ulist, id_jobclass, id_jobfamily, kode', 'required'),
+            array('parent_id', 'numerical', 'integerOnly' => true),
             array('nama, unitkerja', 'length', 'max' => 255),
             array('status', 'length', 'max' => 1),
-            array('id_cli, parent_id_cli', 'length', 'max' => 10),
+            array('id_cli, parent_id_cli, id_jobclass, id_jobfamily, kode, level', 'length', 'max' => 10),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, parent_id, nama, status, unitkerja, id_cli, parent_id_cli, ulist, w_unitkerja_id', 'safe', 'on' => 'search'),
+            array('id, parent_id, nama, status, unitkerja, id_cli, parent_id_cli, ulist, id_jobclass, id_jobfamily, kode, level', 'safe', 'on' => 'search'),
         );
     }
 
@@ -76,7 +76,10 @@ class WJabatan extends CActiveRecord {
             'id_cli' => 'Id Cli',
             'parent_id_cli' => 'Parent Id Cli',
             'ulist' => 'Ulist',
-            'w_unitkerja_id' => 'W Unitkerja',
+            'id_jobclass' => 'Id Jobclass',
+            'id_jobfamily' => 'Id Jobfamily',
+            'kode' => 'Kode',
+            'level' => 'Level',
         );
     }
 
@@ -98,7 +101,10 @@ class WJabatan extends CActiveRecord {
         $criteria->compare('id_cli', $this->id_cli, true);
         $criteria->compare('parent_id_cli', $this->parent_id_cli, true);
         $criteria->compare('ulist', $this->ulist, true);
-        $criteria->compare('w_unitkerja_id', $this->w_unitkerja_id);
+        $criteria->compare('id_jobclass', $this->id_jobclass, true);
+        $criteria->compare('id_jobfamily', $this->id_jobfamily, true);
+        $criteria->compare('kode', $this->kode, true);
+        $criteria->compare('level', $this->level, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -117,13 +123,13 @@ class WJabatan extends CActiveRecord {
 
         return $tags;
     }
-    
-    public function namaUnit(){
+
+    public function namaUnit() {
         $query = WUnitkerja::model()->find(array(
-            'condition'=>'id_unit = :nama',
-            'params'=>array(':nama'=>$this->unitkerja),
+            'condition' => 'id_unit = :nama',
+            'params' => array(':nama' => $this->unitkerja),
         ));
-        
+
         return $query->nama;
     }
 

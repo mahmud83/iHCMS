@@ -10,7 +10,8 @@
   *   @license http://www.opensource.org/licenses/gpl-2.0.php GPLv2
   *   @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
   *      @link http://kcfinder.sunhater.com
-  */?>
+  */
+ ?>
 
 var browser = {
     opener: {},

@@ -27,15 +27,37 @@
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/fullcalendar/fullcalendar.css" media="screen" />
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/fullcalendar/fullcalendar.print.css" media="print" />
         
+        <!-- datepicker -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/datepicker/css/datepicker.css" />
+
         <!-- DualListBox -->
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/bootstrap-duallistbox/bootstrap-duallistbox.css" />
+        <style>
+            .my-loader {
+                background: white url('<?php echo Yii::app()->request->baseUrl; ?>/shield/img/loading.gif') right center no-repeat;
+                height: 25px;
+                width: 25px;
+                padding: 5px 15px;
+            }
+            .white-load {
+                width:200px;
+                height:200px;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-top: -50px;
+                margin-left: -100px;
+                background: url('<?php echo Yii::app()->request->baseUrl; ?>/shield/img/loader-yes.gif') right center no-repeat;
+                background-size:300px auto;
+            }
+        </style>
     </head>
     <body>
         <div id="container">
             <?php $this->beginContent('//layouts/NHeader'); ?>
             <?php $this->endContent(); ?>
             <div id="wrapper">
-                
+
                 <?php $this->beginContent('//layouts/NSidebar'); ?>
                 <?php $this->endContent(); ?>
 
@@ -44,10 +66,10 @@
                     <?php echo $content; ?>
                 </div>
                 <!-- End MainContent -->
-                
+
                 <div class="clearfix"></div>
             </div>
-            
+
             <div class="clearfix"></div>
         </div>
         
@@ -62,6 +84,8 @@
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/shield/js/application.js"></script>
 
         <!-- ===================== PLUGINS JS ===================== -->
+        <!-- datepicker !-->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/datepicker/js/bootstrap-datepicker.js"></script>
         <!-- SparkLine -->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/sparkline/jquery.sparkline.min.js"></script>
         <!-- DualListBox -->
@@ -71,5 +95,9 @@
                 $('.sparkline').sparkline('html', {enableTagOptions: true});
             });
         </script>
+        
+        <div class="modal-backdrop fade in" id="backdrop" style="display:none;">
+            <div class="white-load"></div>
+        </div>
     </body>
 </html>

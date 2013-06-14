@@ -52,7 +52,7 @@ class WLink extends DssdbCActiveRecord {
         // will receive user inputs.
         return array(
             array('w_module_id, ordering', 'numerical', 'integerOnly' => true),
-            array('parent_id', 'numerical'),
+            //array('parent_id', 'numerical'),
             array('name', 'length', 'max' => 45),
             array('title', 'length', 'max' => 100),
             array('url, image', 'length', 'max' => 200),

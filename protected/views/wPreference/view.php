@@ -3,7 +3,6 @@
 $this->widget('ext.battleship.widgets.Breadcrumbs', array(
         'columns' => array(
             'Wlinks'=>array('index'),
-            ,
         ),
     ));
     ?>

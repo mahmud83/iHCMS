@@ -5,18 +5,18 @@
  *
  * The followings are the available columns in table 'competency_result':
  * @property integer $id
- * @property string $year
  * @property integer $assessor_id
  * @property integer $assessed_id
  * @property integer $level
  * @property string $evidence
- * @property string $date
+ * @property string $created
+ * @property string $modified
  * @property integer $competency_library_id
+ * @property integer $competency_id
  *
  * The followings are the available model relations:
+ * @property Competency $competency
  * @property CompetencyLibrary $competencyLibrary
- * @property PPerson $assessor
- * @property PPerson $assessed
  */
 class CompetencyResult extends CActiveRecord
 {
@@ -28,6 +28,14 @@ class CompetencyResult extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	/**
+	 * @return CDbConnection database connection
+	 */
+	public function getDbConnection()
+	{
+		return Yii::app()->dssdb;
 	}
 
 	/**
@@ -46,13 +54,12 @@ class CompetencyResult extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('assessor_id, assessed_id, competency_library_id', 'required'),
-			array('assessor_id, assessed_id, level, competency_library_id', 'numerical', 'integerOnly'=>true),
-			array('year', 'length', 'max'=>4),
-			array('evidence, date', 'safe'),
+			array('assessor_id, assessed_id, competency_library_id, competency_id', 'required'),
+			array('assessor_id, assessed_id, level, competency_library_id, competency_id', 'numerical', 'integerOnly'=>true),
+			array('evidence, created, modified', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, year, assessor_id, assessed_id, level, evidence, date, competency_library_id', 'safe', 'on'=>'search'),
+			array('id, assessor_id, assessed_id, level, evidence, created, modified, competency_library_id, competency_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,9 +71,8 @@ class CompetencyResult extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'competency' => array(self::BELONGS_TO, 'Competency', 'competency_id'),
 			'competencyLibrary' => array(self::BELONGS_TO, 'CompetencyLibrary', 'competency_library_id'),
-			'assessor' => array(self::BELONGS_TO, 'PPerson', 'assessor_id'),
-			'assessed' => array(self::BELONGS_TO, 'PPerson', 'assessed_id'),
 		);
 	}
 
@@ -77,13 +83,14 @@ class CompetencyResult extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'year' => 'Year',
 			'assessor_id' => 'Assessor',
 			'assessed_id' => 'Assessed',
 			'level' => 'Level',
 			'evidence' => 'Evidence',
-			'date' => 'Date',
+			'created' => 'Created',
+			'modified' => 'Modified',
 			'competency_library_id' => 'Competency Library',
+			'competency_id' => 'Competency',
 		);
 	}
 
@@ -99,13 +106,14 @@ class CompetencyResult extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('year',$this->year,true);
 		$criteria->compare('assessor_id',$this->assessor_id);
 		$criteria->compare('assessed_id',$this->assessed_id);
 		$criteria->compare('level',$this->level);
 		$criteria->compare('evidence',$this->evidence,true);
-		$criteria->compare('date',$this->date,true);
+		$criteria->compare('created',$this->created,true);
+		$criteria->compare('modified',$this->modified,true);
 		$criteria->compare('competency_library_id',$this->competency_library_id);
+		$criteria->compare('competency_id',$this->competency_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -6,7 +6,7 @@ class SettingController extends Controller {
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/column1';
+    public $layout = '//layouts/NMain';
     public $breadcrumbs = array();
     public $sub_title = '';
     public $title = '';
@@ -26,41 +26,44 @@ class SettingController extends Controller {
     }
 
     public function actionAktivasi() {
-        $model = new WPreference;
-
-        /*
-          $model_tahun=WPreference::model()->findAll(array(
-          'select'=>'name as tahun_cli',
-          'condition'=>'name=:name',
-          'params'=>array(':name'=>'tahun_cli'),
-          ));
-
-          $model_tanggal=WPreference::model()->findAll(array(
-          'select'=>'name as tanggal_cli',
-          'condition'=>'name=:name',
-          'params'=>array(':name'=>'tanggal_cli'),
-          ));
-         */
-
-        $model_tahun = $this->loadModel('tahun_cli');
-        $model_tanggal = $this->loadModel('tanggal_cli');
-
-        if (isset($_POST['WPreference'])) {
-            if ($_POST['WPreference']['tahun_cli']) {
-                $model_tahun->value = $_POST['WPreference']['tahun_cli'];
-                $model_tahun->save();
-            }
-            if ($_POST['WPreference']['tanggal_cli']) {
-                $model_tanggal->value = $_POST['WPreference']['tanggal_cli'];
-                $model_tanggal->save();
-            }
-            $this->redirect(array('aktivasi'));
+        //model competency
+        $comp = new Competency;
+        
+        if(isset($_POST['Competency'])){
+            
+            //print_r($_POST['Competency']);
+            //exit();
+            $year = str_replace(' ', '', $_POST['Competency']['year']);
+            $comp->year = $year;
+            $comp->start = $_POST['Competency']['start'];
+            $comp->end = $_POST['Competency']['end'];
+            
+            //$_POST = array_filter($_POST);
+            //print_r($model->attributes);
+            //exit();
+            if (!$comp->save()):
+                $error = $comp->getErrors();
+            else:
+                $message = 'data berhasil disimpan';
+            endif;
+            //exit();
+            
+            //print_r($_POST['Competency']);
+            //exit();
         }
-
-
+        
+        //get list cli
+        $cliCriteria = new CDbCriteria();
+        $cliCriteria->order = 'year DESC';
+        
+        $cliList = new CActiveDataProvider('Competency', array('criteria'=>$cliCriteria));
+        
+        
         $this->render('aktivasi', array(
-            'model_tahun' => $model_tahun,
-            'model_tanggal' => $model_tanggal,
+            'cliList'=>$cliList,
+            'model'=>$comp,
+            'message'=>$message,
+            'error'=>$error
         ));
     }
 

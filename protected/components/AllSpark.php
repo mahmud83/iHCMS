@@ -210,4 +210,14 @@ class AllSpark extends CApplicationComponent {
             echo '</ul>';
         endif;
     }
+    
+    public function getCliActive() {
+        $cli = Competency::model()->find(array(
+            'condition'=>'status = :status',
+            'params'=>array(':status'=>'on going'),
+            'order'=>'id DESC'
+        ));
+        
+        return $cli;
+    }
 }

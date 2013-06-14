@@ -1,0 +1,37 @@
+.progressbox{
+	border-top:1px solid #fff;
+	border-bottom:1px solid #ddd;
+	overflow: hidden;
+	background:#f5f5f5;
+}
+.progressbox .progress{
+	margin:10px;
+	border:1px solid #ccc;
+}
+.form-step,.form-step-soft fieldset legend,
+.form-step,.form-step-soft fieldset .description{
+	display: none;
+}
+.form-step,.form-step-soft .title{
+	padding:5px 10px;
+	background:#f5f5f5;
+	border-bottom:1px solid #ddd;
+}
+.form-step,.form-step-soft .title h4{
+	margin:5px 0 0;padding:0;
+}
+.form-step,.form-step-soft .title .description{
+	font-size: 12px;
+	color:#aaa;
+}
+.form-step,.form-step-soft .buttonpane{
+	padding:10px 10px 0;
+	margin-bottom:-10px;
+	overflow: hidden;
+}
+.form-step,.form-step-soft .buttonpane a.next{
+	float:right;
+}
+.form-step,.form-step-soft .buttonpane button{
+	float:right;
+}

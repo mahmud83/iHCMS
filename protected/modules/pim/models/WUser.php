@@ -61,6 +61,8 @@ class WUser extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'userDetail' => array(self::HAS_ONE, 'WUserDetail', 'id_user'),
+            'mutasiHistoryLama' => array(self::HAS_MANY, 'MutasiHistoryLama', 'id_user'),
         );
     }
 

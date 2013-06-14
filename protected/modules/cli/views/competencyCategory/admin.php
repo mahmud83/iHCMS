@@ -24,7 +24,7 @@ $this->widget('ext.battleship.widgets.Breadcrumbs', array(
     ?>
 
     <h1 id="main-heading">
-        Manajemen Competency Categories <span>pengelolaan Competency Category pada aplikasi</span>
+        Manajemen Kategori Kompetensi <span>pengelolaan katogeri kompetensi pada aplikasi</span>
     </h1>
 </div>
 <div class="row-fluid">
