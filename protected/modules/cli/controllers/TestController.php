@@ -39,7 +39,7 @@ class TestController extends Controller {
             'cli' => $cli,
         ));
     }
-
+    /*
     public function actionSoftNext() {
         $cli = Yii::app()->allspark->getCliActive();
 
@@ -56,12 +56,13 @@ class TestController extends Controller {
             'cli' => $cli,
         ));
     }
+     * 
+     */
 
     public function actionAjaxSoftSatu() {
         if ($_POST['soft']['evidence']):
             //cli aktif
             $cli = Yii::app()->allspark->getCliActive();
-            //$now = $dates =date('Y-m-d H:i:s', strtotime('2010-10-12 15:09:00') );
             $now = $dates = date('Y-m-d H:i:s');
             //echo Yii::app()->user->getId();
 
@@ -96,16 +97,30 @@ class TestController extends Controller {
                     echo 'success';
                 endif;
             endforeach;
-
+        //cek jika masukin level
         elseif ($_POST['soft']['level']):
             //cli aktif
             $cli = Yii::app()->allspark->getCliActive();
-            //$now = $dates =date('Y-m-d H:i:s', strtotime('2010-10-12 15:09:00') );
             $now = $dates = date('Y-m-d H:i:s');
             //echo Yii::app()->user->getId();
 
             foreach ($_POST['soft']['level'] as $row => $value):
                 //cek data di database
+                /*
+                  $competencyResult = CompetencyResult::model()->find(array(
+                  'condition' => 'assessor_id = :assessor AND assessed_id = :assessed AND competency_library_id = :library AND competency_id = :compActive',
+                  'params' => array(
+                  ':assessor' => Yii::app()->user->getId(),
+                  ':assessed' => Yii::app()->user->getId(),
+                  ':library' => $row,
+                  ':compActive' => $cli->id,
+                  ),
+                  ));
+                  if (count($competencyResult) == 0):
+                 * 
+                 */
+                //$
+                //$competencyResult = new CompetencyResult;
                 $competencyResult = CompetencyResult::model()->find(array(
                     'condition' => 'assessor_id = :assessor AND assessed_id = :assessed AND competency_library_id = :library AND competency_id = :compActive',
                     'params' => array(
@@ -115,28 +130,54 @@ class TestController extends Controller {
                         ':compActive' => $cli->id,
                     ),
                 ));
-                if (count($competencyResult) == 0):
-                    //$
-                    $competencyResult = new CompetencyResult;
+                if ($competencyResult->level != NULL) {
+                    echo 'error';
+                } else {
+                    //$competencyResult = CompetencyResult::model()->findByPk($row);
                     $competencyResult->assessor_id = Yii::app()->user->getId();
                     $competencyResult->assessed_id = Yii::app()->user->getId();
                     //$competencyResult->year = $cli->year;
-                    $competencyResult->competency_library_id = $row;
-                    $competencyResult->evidence = $value;
+                    //$competencyResult->competency_library_id = $row;
+                    //$competencyResult->evidence = $value;
                     //$competencyResult->date = date('Y-m-d');
-                    $competencyResult->created = $now;
+                    $competencyResult->level = $value;
+                    $competencyResult->modified = $now;
                     $competencyResult->competency_id = $cli->id;
                     if (!$competencyResult->save()) :
                         print_r($competencyResult->errors);
                     else :
                         echo 'success';
                     endif;
-                else:
-                    echo 'success';
-                endif;
+                }
+            /*
+              else:
+              echo 'success';
+              endif;
+             * 
+             */
             endforeach;
-
         endif;
+    }
+    
+    public function actionBisnis(){
+        $cli = Yii::app()->allspark->getCliActive();
+
+        $criteriaCompetency = new CDbCriteria();
+        $criteriaCompetency->with = array('category0');
+        $criteriaCompetency->together = true;
+        $criteriaCompetency->condition = 'category0.competency_type_id = :type';
+        $criteriaCompetency->params = array(':type' => 2);
+
+        $competency = CompetencyLibrary::model()->findAll($criteriaCompetency);
+
+        $this->render('bisnis', array(
+            'competency' => $competency,
+            'cli' => $cli,
+        ));
+    }
+    
+    public function actionAjaxBisnis() {
+        echo 'success';
     }
 
 }

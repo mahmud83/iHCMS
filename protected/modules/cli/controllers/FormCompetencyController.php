@@ -22,6 +22,13 @@ class FormCompetencyController extends Controller {
                 //'postOnly + delete', // we only allow deletion via POST request
         );
     }
+    
+    public function actionBisnis() {
+        $jabatan = new CActiveDataProvider('WJabatan');
+        $this->render('bisnis', array(
+            'jabatan'=>$jabatan,
+        ));
+    }
 
     public function actionSoft() {
         $golongan = new CActiveDataProvider('WGolongan');

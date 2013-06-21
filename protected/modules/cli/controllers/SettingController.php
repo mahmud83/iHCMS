@@ -133,18 +133,22 @@ class SettingController extends Controller {
         if ((isset($_POST['penilaisoft'])) && (isset($_POST['penilaihard']))) {
             $transaction = Yii::app()->db->beginTransaction();
             try {
-                $delete = Yii::app()->db->beginTransaction();
+                //$delete = Yii::app()->db->beginTransaction();
                 $cli = Yii::app()->allspark->getCliActive();
-                if (!CompetencyPeers::model()->deleteAll(array(
-                            'condition' => 'assessed = :assessed AND competency_id = :cid AND competency_type = :ctype',
-                            'params' => array(
-                                ':cid' => $cli->id,
-                                ':assessed' => $_POST['user_id'],
-                                ':ctype' => '1',
-                            ),
-                        )))
-                    throw new Exception("Error");
-                
+                $dataCriteria = new CDbCriteria();
+                $dataCriteria->condition = 'assessed = :assessed AND competency_id = :cid';
+                $dataCriteria->params = array(
+                    ':cid' => $cli->id,
+                    ':assessed' => $_POST['userDetail'],
+                );
+
+                $dataStart = CompetencyPeers::model()->findAll($dataCriteria);
+                if (count($dataStart) > 0) {
+                    //$dataDelete = CompetencyPeers::model()->deleteAll($dataCriteria);
+                    CompetencyPeers::model()->deleteAll($dataCriteria);
+                }
+
+
                 foreach ($_POST['penilaisoft'] as $rowSoft => $valueSoft):
                     //echo value = $value;
                     $competencySoft = new CompetencyPeers;
@@ -161,7 +165,7 @@ class SettingController extends Controller {
                     //echo value = $value;
                     $competencyBisnis = new CompetencyPeers;
                     $competencyBisnis->assessed = $_POST['userDetail'];
-                    $competencyBisnis->assessor = $value;
+                    $competencyBisnis->assessor = $valueBisnis;
                     $competencyBisnis->competency_id = $cli->id;
                     $competencyBisnis->competency_type = '2';
                     //$competencyPeers->status = $value;
@@ -173,7 +177,7 @@ class SettingController extends Controller {
                     //echo value = $value;
                     $competencyManajerial = new CompetencyPeers;
                     $competencyManajerial->assessed = $_POST['userDetail'];
-                    $competencyManajerial->assessor = $value;
+                    $competencyManajerial->assessor = $valueManajerial;
                     $competencyManajerial->competency_id = $cli->id;
                     $competencyManajerial->competency_type = '3';
                     //$competencyPeers->status = $value;
@@ -187,7 +191,8 @@ class SettingController extends Controller {
                 echo CJSON::encode($var);
             } catch (Exception $e) {
                 $transaction->rollback();
-                echo CJSON::encode(array('message' => 'error', 'detail'=>'gagal cuy'));
+                $error = array('errorsoft' => $competencySoft->errors, 'errorhard' => $competencyBisnis->errors, 'errorman' => $competencyManajerial->errors);
+                echo CJSON::encode(array('message' => 'error', 'detail' => $error));
                 //$var['message'] = 'error ';
                 //$var['detail'] = 'gagal memasukkan ke dalam database';
                 //echo $e->getMessage();

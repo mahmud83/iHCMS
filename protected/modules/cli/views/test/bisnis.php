@@ -9,7 +9,7 @@
     ?>
 
     <h1 id="main-heading">
-        Pengukuran Individu Soft tahun 2013<span>pengukuran kompetensi berdasar tahun pengukuran</span>
+        Pengukuran Individu Bisnis tahun 2013<span>pengukuran kompetensi berdasar tahun pengukuran</span>
     </h1>
 </div>
 
@@ -17,7 +17,7 @@
     <div class="span12" id="request">
         <div class="row-fluid">
             <div class="span12 widget">
-                <div class="widget-header"><span class="title">Kompetensi Soft</span></div>
+                <div class="widget-header"><span class="title">Kompetensi Bisnis</span></div>
                 <div class="widget-content form-container">
                     <form id="wizard_soft" class="form-horizontal form-step-soft" >
                         <?php
@@ -54,7 +54,7 @@
                                             ),
                                         ));
                                         ?>
-                                        <textarea for="<?php echo $row->id; ?>" class="span12 evidence" name="soft[evidence][<?php echo $row->id; ?>]" <?php echo (count($data) > 0) ? 'disabled' : ''; ?> ><?php echo (count($data) > 0) ? $data->evidence : ''; ?></textarea>
+                                        <textarea for="<?php echo $row->id; ?>" class="span12 evidence" name="bisnis[evidence][<?php echo $row->id; ?>]" <?php echo (count($data) > 0) ? 'disabled' : ''; ?> ><?php echo (count($data) > 0) ? $data->evidence : ''; ?></textarea>
                                     </div>
                                 </div>
                             </fieldset>
@@ -97,7 +97,7 @@
                                     <div class="controls">
                                         <?php for ($i=1;$i<=5;$i++):?>
                                         <label class="radio">
-                                            <input <?php echo ($data->level != NULL)?'disabled':'';?> <?php echo ($data->level == $i)?'checked="checked"':'';?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="<?php echo $i;?>">Level <?php echo $i;?>
+                                            <input <?php echo ($data->level != NULL)?'disabled':'';?> <?php echo ($data->level == $i)?'checked="checked"':'';?> type="radio" class="uniform" name="bisnis[level][<?php echo $row->id; ?>]" value="<?php echo $i;?>">Level <?php echo $i;?>
                                         </label>
                                         <?php endfor;?>
                                     </div>
@@ -216,7 +216,7 @@
                 //alert(textarea);
                 if ((textarea.serialize() != '') || (radio.serialize() != '')) {
                     $.ajax({
-                        url: "<?php echo Yii::app()->createUrl('cli/test/ajaxSoftSatu'); ?>",
+                        url: "<?php echo Yii::app()->createUrl('cli/test/ajaxBisnis'); ?>",
                         type: "post",
                         cache: false,
                         data: textarea.serialize()+radio.serialize(),

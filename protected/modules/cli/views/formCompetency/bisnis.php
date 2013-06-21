@@ -9,7 +9,7 @@
     ?>
 
     <h1 id="main-heading">
-        Generator Formulir Profil Soft<span>halaman untuk menggenerasi formulir per golongan per tipe kompetensi per tahun</span>
+        Generator Formulir Profil Bisnis<span>halaman untuk menggenerasi formulir per jabatan per tipe kompetensi per tahun</span>
     </h1>
 </div>
 <div class="row-fluid">
@@ -23,7 +23,7 @@
                 </div>
                 <?php $this->widget('bootstrap.widgets.TbGridView',array(
                         'id'=>'dashboard-grid',
-                        'dataProvider'=>$golongan,
+                        'dataProvider'=>$jabatan,
                         'type'=>'striped',
                         'template'=>'{items}{pager}',
                         'columns'=>array(
