@@ -24,9 +24,24 @@ class FormCompetencyController extends Controller {
     }
     
     public function actionBisnis() {
-        $golongan = new CActiveDataProvider('WGolongan');
+        $strata = new CActiveDataProvider('WStrata');
         $this->render('bisnis', array(
-            'golongan'=>$golongan,
+            'strata'=>$strata,
+        ));
+    }
+    
+    public function actionSetBisnis($id = null) {
+        if ($id == null):
+            $this->redirect('bisnis');
+        endif;
+        
+        $strata = WStrata::model()->find(array(
+            'condition'=>'id = :id',
+            'params'=>array(':id'=>$id),
+        ));
+        
+        $this->render('setbisnis', array(
+            'strata'=>$strata,
         ));
     }
     
@@ -35,10 +50,6 @@ class FormCompetencyController extends Controller {
         $this->render('managerial', array(
             'jabatan'=>$jabatan,
         ));
-    }
-    
-    public function actionSetManagerial() {
-        
     }
 
     public function actionSoft() {

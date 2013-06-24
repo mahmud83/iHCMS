@@ -74,7 +74,35 @@
                                         <th>Deskripsi</th>
                                         <td><?php echo $row->category0->description; ?></td>
                                     </tr>
+                                    <tr>
+                                        <th>Definisi</th>
+                                        <td><?php echo $row->category0->definition; ?></td>
+                                    </tr>
                                 </table>
+                                
+                                <table class="table table-striped table-detail-view">
+                                    <tr>
+                                        <th>Level 1</th>
+                                        <td><?php echo $row->level_1; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Level 2</th>
+                                        <td><?php echo $row->level_2; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>level 3</th>
+                                        <td><?php echo $row->level_3; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>level 4</th>
+                                        <td><?php echo $row->level_4; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>level 5</th>
+                                        <td><?php echo $row->level_5; ?></td>
+                                    </tr>
+                                </table>
+                                
                                 <div class="control-group">
                                     <label class="control-label">Evidence</label>
                                     <div class="controls">
@@ -92,6 +120,7 @@
                                         <textarea class="span12 level_<?php echo $row->id; ?>" disabled><?php echo (count($data) > 0) ? $data->evidence : ''; ?></textarea>
                                     </div>
                                 </div>
+                                
                                 <div class="control-group radio-group">
                                     <label class="control-label">Level</label>
                                     <div class="controls">
