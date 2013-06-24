@@ -1,90 +1,155 @@
 <?php
-$this->breadcrumbs = array(
-    'Rights' => Rights::getBaseUrl(),
-    Rights::t('core', 'Generate items'),
-);
+/*
+  $this->breadcrumbs = array(
+  'Rights' => Rights::getBaseUrl(),
+  Rights::t('core', 'Generate items'),
+  );
+ * 
+ */
 ?>
-<p><?php echo Rights::t('core', 'Please select which items you wish to generate.'); ?></p>
-<div class="row-fluid no-clear">
-    <div class="span12 widget">
-        <div class="widget-title">
-            <i class="icon-bar-chart titleicon"></i>
-            <p><?php echo Rights::t('core', 'Generate items'); ?></p>
-        </div>
-        <div class="widget-content">
-            <?php //$form=$this->beginWidget('CActiveForm'); ?>
-            <?php
-            /** @var BootActiveForm $form */
-            $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-                'id' => 'horizontalForm',
-                'type' => 'horizontal',
-                    ));
-            ?><?php if ($items['controllers'] !== array()): ?>
 
-                <?php foreach ($items['controllers'] as $key => $item): ?>
+<div class="page-header">
+    <?php
+    $this->widget('ext.battleship.widgets.Breadcrumbs', array(
+        'columns' => array(
+            'Rights' => Rights::getBaseUrl(),
+            Rights::t('core', 'Generate items'),
+        ),
+    ));
+    ?>
 
-        <?php if (isset($item['actions']) === true && $item['actions'] !== array()): ?>
+    <h1 id="main-heading">
+        <?php echo Rights::t('core', 'Generate items'); ?><span><?php echo Rights::t('core', 'Please select which items you wish to generate.'); ?></span>
+    </h1>
+</div>
 
-            <?php $controllerKey = isset($moduleName) === true ? ucfirst($moduleName) . '.' . $item['name'] : $item['name']; ?>
-            <?php $controllerExists = isset($existingItems[$controllerKey . '.*']); ?>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-header"><span class="title"><?php echo Rights::t('core', 'Permissions'); ?></span></div>
+                <div class="widget-content form">
+                    <?php $form = $this->beginWidget('CActiveForm'); ?>
 
-                        <tr class="controller-row <?php echo $controllerExists === true ? 'exists' : ''; ?>">
-                            <td class="checkbox-column"><?php echo $controllerExists === false ? $form->checkBox($model, 'items[' . $controllerKey . '.*]') : ''; ?></td>
-                            <td class="name-column"><?php echo ucfirst($item['name']) . '.*'; ?></td>
-                            <td class="path-column"><?php echo substr($item['path'], $basePathLength + 1); ?></td>
-                        </tr>
 
-            <?php $i = 0;
-            foreach ($item['actions'] as $action): ?>
 
-                <?php $actionKey = $controllerKey . '.' . ucfirst($action['name']); ?>
-                <?php $actionExists = isset($existingItems[$actionKey]); ?>
+                    <table class="table table-striped table-bordered table-condensed items generate-item-table">
 
-                            <tr class="action-row<?php echo $actionExists === true ? ' exists' : ''; ?><?php echo ($i++ % 2) === 0 ? ' odd' : ' even'; ?>">
-                                <td class="checkbox-column"><?php echo $actionExists === false ? $form->checkBox($model, 'items[' . $actionKey . ']') : ''; ?></td>
-                                <td class="name-column"><?php echo $action['name']; ?></td>
-                                <td class="path-column"><?php echo substr($item['path'], $basePathLength + 1) . (isset($action['line']) === true ? ':' . $action['line'] : ''); ?></td>
+                        <tbody>
+
+                            <tr class="application-heading-row">
+                                <th colspan="3"><?php echo Rights::t('core', 'Application'); ?></th>
                             </tr>
 
-                        <?php endforeach; ?>
+                            <?php
+                            $this->renderPartial('_generateItems', array(
+                                'model' => $model,
+                                'form' => $form,
+                                'items' => $items,
+                                'existingItems' => $existingItems,
+                                'displayModuleHeadingRow' => true,
+                                'basePathLength' => strlen(Yii::app()->basePath),
+                            ));
+                            ?>
 
-        <?php endif; ?>
+                        </tbody>
 
-                <?php endforeach; ?>
-
-            <?php else: ?>
-
-                <tr><th  class="no-items-row" colspan="3"><?php echo Rights::t('core', 'No actions found.'); ?></th></tr>
-
-<?php endif; ?>
-
-            <?php if ($items['modules'] !== array()): ?>
-
-                <?php if ($displayModuleHeadingRow === true): ?>
-
-                    <tr><th class="module-heading-row" colspan="3"><?php echo Rights::t('core', 'Modules'); ?></th></tr>
-
-                <?php endif; ?>
-
-                <?php foreach ($items['modules'] as $moduleName => $moduleItems): ?>
-
-                    <tr><th class="module-row" colspan="3"><?php echo ucfirst($moduleName) . 'Module'; ?></th></tr>
-
+                    </table>
+                    
                     <?php
-                    $this->renderPartial('_generateItems', array(
-                        'model' => $model,
-                        'form' => $form,
-                        'items' => $moduleItems,
-                        'existingItems' => $existingItems,
-                        'moduleName' => $moduleName,
-                        'displayModuleHeadingRow' => false,
-                        'basePathLength' => $basePathLength,
-                    ));
+                    echo CHtml::link(Rights::t('core', 'Select all'), '#', array(
+                        'onclick' => "jQuery('.generate-item-table').find(':checkbox').attr('checked', 'checked'); return false;",
+                        'class' => 'selectAllLink'));
+                    ?>
+                    /
+                    <?php
+                    echo CHtml::link(Rights::t('core', 'Select none'), '#', array(
+                        'onclick' => "jQuery('.generate-item-table').find(':checkbox').removeAttr('checked'); return false;",
+                        'class' => 'selectNoneLink'));
                     ?>
 
-    <?php endforeach; ?>
+                    <?php echo CHtml::submitButton(Rights::t('core', 'Generate')); ?>
 
-<?php endif; ?>
+                    <?php $this->endWidget(); ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<?php
+/*
+  <div id="generator">
+
+  <div class="page-header">
+  <h1>
+  <?php //echo CHtml::image(Yii::app()->request->baseUrl.'/images/icon/cash.png')  ?>
+  <?php echo Rights::t('core', 'Generate items'); ?>
+  </h1>
+  </div>
+  <p>
+  <?php echo Rights::t('core', 'Please select which items you wish to generate.'); ?>
+  </p>
+
+  <div class="form">
+
+  <?php $form = $this->beginWidget('CActiveForm'); ?>
+
+  <div class="row">
+
+  <table class="items generate-item-table" border="0" cellpadding="0"
+  cellspacing="0">
+
+  <tbody>
+
+  <tr class="application-heading-row">
+  <th colspan="3"><?php echo Rights::t('core', 'Application'); ?></th>
+  </tr>
+
+  <?php
+  $this->renderPartial('_generateItems', array(
+  'model' => $model,
+  'form' => $form,
+  'items' => $items,
+  'existingItems' => $existingItems,
+  'displayModuleHeadingRow' => true,
+  'basePathLength' => strlen(Yii::app()->basePath),
+  ));
+  ?>
+
+  </tbody>
+
+  </table>
+
+  </div>
+
+  <div class="row">
+
+  <?php
+  echo CHtml::link(Rights::t('core', 'Select all'), '#', array(
+  'onclick' => "jQuery('.generate-item-table').find(':checkbox').attr('checked', 'checked'); return false;",
+  'class' => 'selectAllLink'));
+  ?>
+  /
+  <?php
+  echo CHtml::link(Rights::t('core', 'Select none'), '#', array(
+  'onclick' => "jQuery('.generate-item-table').find(':checkbox').removeAttr('checked'); return false;",
+  'class' => 'selectNoneLink'));
+  ?>
+
+  </div>
+
+  <div class="row">
+
+  <?php echo CHtml::submitButton(Rights::t('core', 'Generate')); ?>
+
+  </div>
+
+  <?php $this->endWidget(); ?>
+
+  </div>
+
+  </div>
+ * 
+ */
+?>

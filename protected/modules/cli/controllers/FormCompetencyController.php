@@ -24,10 +24,21 @@ class FormCompetencyController extends Controller {
     }
     
     public function actionBisnis() {
-        $jabatan = new CActiveDataProvider('WJabatan');
+        $golongan = new CActiveDataProvider('WGolongan');
         $this->render('bisnis', array(
+            'golongan'=>$golongan,
+        ));
+    }
+    
+    public function actionManagerial() {
+        $jabatan = new CActiveDataProvider('WJabatan');
+        $this->render('managerial', array(
             'jabatan'=>$jabatan,
         ));
+    }
+    
+    public function actionSetManagerial() {
+        
     }
 
     public function actionSoft() {
@@ -142,6 +153,7 @@ class FormCompetencyController extends Controller {
             $transaction = Yii::app()->db->beginTransaction();
             try {
                 $comp = $_POST['detail']['competency'];
+                $cli = Yii::app()->allspark->getCliActive();
                 //echo '<pre>';
                 //print_r($comp);
                 //exit();
@@ -153,6 +165,7 @@ class FormCompetencyController extends Controller {
                         $competency->competency_library_id = $rowCompetency['id'];
                         $competency->rcl = $rowCompetency['rcl'];
                         $competency->itj = $rowCompetency['itj'];
+                        $competency->competency_id = $cli->id;
                         //echo '<pre>';
                         //print_r($competency->attributes);
                         //exit();

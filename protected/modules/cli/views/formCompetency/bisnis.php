@@ -23,7 +23,7 @@
                 </div>
                 <?php $this->widget('bootstrap.widgets.TbGridView',array(
                         'id'=>'dashboard-grid',
-                        'dataProvider'=>$jabatan,
+                        'dataProvider'=>$golongan,
                         'type'=>'striped',
                         'template'=>'{items}{pager}',
                         'columns'=>array(
@@ -31,12 +31,12 @@
                             'status',
                             array(
                                 'class'=>'bootstrap.widgets.TbButtonColumn',
-                                'header'=>'Soft Competency',
-                                'template'=>'{soft}',
+                                'header'=>'Kompetensi Bisnis',
+                                'template'=>'{bisnis}',
                                 'buttons'=>array(
-                                    'soft'=>array(
+                                    'bisnis'=>array(
                                         'icon'=>'icon-remove',
-                                        'url'=>'Yii::app()->createUrl("cli/formCompetency/setSoft", array("id"=>$data->id))', 
+                                        'url'=>'Yii::app()->createUrl("cli/formCompetency/setBisnis", array("id"=>$data->id))', 
                                     ),
                                 ),
                             ),

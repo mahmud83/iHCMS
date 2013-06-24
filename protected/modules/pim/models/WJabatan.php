@@ -132,5 +132,9 @@ class WJabatan extends CActiveRecord {
 
         return $query->nama;
     }
+    
+    public function getStatus(){
+        return ($this->status == 1)?'aktif':'non aktif';
+    }
 
 }
