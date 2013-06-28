@@ -1,17 +1,27 @@
-<?php
-/* @var $this DefaultController */
+<div class="page-header">
+    <?php
+    $this->widget('ext.battleship.widgets.Breadcrumbs', array(
+        'columns' => array(
+            'Form Competency' => $this->module->id,
+            'soft',
+        ),
+    ));
+    ?>
 
-$this->breadcrumbs=array(
-	$this->module->id,
-);
-?>
-<h1><?php echo $this->uniqueId . '/' . $this->action->id; ?></h1>
+    <h1 id="main-heading">
+        Competency Level Index <span><?php echo $this->uniqueId . '/' . $this->action->id; ?></span>
+    </h1>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="row-fluid">
+            <div class="span12 widget">
+                <div class="widget-content">
+                    
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/animasi.gif" alt="PTPN 5">
+                </div>
 
-<p>
-This is the view content for action "<?php echo $this->action->id; ?>".
-The action belongs to the controller "<?php echo get_class($this); ?>"
-in the "<?php echo $this->module->id; ?>" module.
-</p>
-<p>
-You may customize this page by editing <tt><?php echo __FILE__; ?></tt>
-</p>
+            </div>
+        </div>
+    </div>
+</div>

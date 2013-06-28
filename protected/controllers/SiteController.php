@@ -86,16 +86,17 @@ class SiteController extends Controller {
             if ($model->validate() && $model->login()):
                 //echo Yii::app()->user->returnUrl;
                 //exit();
-                $this->redirect(array('summary/dashboard'));
+                //$this->redirect(array('summary/dashboard'));
+                $this->redirect(array('/cli'));
             /*
-                if ((Yii::app()->user->returnUrl == 'ihcms/index.php/site/login') || (Yii::app()->user->returnUrl == 'ihcms/index.php')):
-                    $this->redirect('summary/dashboard');
-                else:
-                    $this->redirect(Yii::app()->user->returnUrl);
-                endif;
+              if ((Yii::app()->user->returnUrl == 'ihcms/index.php/site/login') || (Yii::app()->user->returnUrl == 'ihcms/index.php')):
+              $this->redirect('summary/dashboard');
+              else:
+              $this->redirect(Yii::app()->user->returnUrl);
+              endif;
              * 
              */
-                //$this->redirect (array('site/hae'));
+            //$this->redirect (array('site/hae'));
             endif;
         }
         // display the login form
@@ -110,9 +111,83 @@ class SiteController extends Controller {
         unset(Yii::app()->session['userid']);
         $this->redirect(Yii::app()->homeUrl);
     }
-    
+
     public function actionHae() {
         echo "hae";
+    }
+    /*
+    public function actionGeneratePass() {
+        $user = WUser::model()->findAll('id_user > 4');
+        $transaction = Yii::app()->db->beginTransaction();
+        try {
+            foreach ($user as $row):
+                $hash = WUser::model()->generateHash();
+                $password = WUser::model()->hashPassword($row->user_name, $hash);
+
+                $simpanUser = WUser::model()->findByPk($row->id_user);
+                $simpanUser->password = $password;
+                $simpanUser->hash = $hash;
+                if (!$simpanUser->save()) :
+                    //print_r($competencyResult->errors);
+                    throw new Exception('Error saving');
+                endif;
+            endforeach;
+            $transaction->commit();
+            echo 'success';
+        } catch (Exception $e) {
+            $transaction->rollBack();
+            //Yii::app()->user->setFlash('error', "{$e->getMessage()}");
+            //$this->refresh();
+            echo '<pre>';
+            print_r($competencyResult->errors);
+            var_dump($e->getMessage());
+        }
+    }
+     * 
+     */
+
+    public function actionHow($username) {
+        $hash = WUser::model()->generateHash();
+        $password = WUser::model()->hashPassword($username, $hash);
+        echo 'username = ' . $username . '<br/>';
+        echo 'password = ' . $password . '<br/>';
+        echo 'hash = ' . $hash . '<br/>';
+    }
+
+    public function actionGetJabatan() {
+        $jabatan = Yii::app()->allspark->getEmpJabatan();
+        echo '<pre>';
+        print_r($jabatan);
+        echo '</pre>';
+    }
+
+    public function actionGetGolongan() {
+        $golongan = Yii::app()->allspark->getEmpGolongan();
+        echo '<pre>';
+        print_r($golongan);
+        echo '</pre>';
+    }
+
+    public function actionGetSoft() {
+        //get user id
+        $id = Yii::app()->user->Id;
+
+        //get user golongan
+        $golongan = Yii::app()->allspark->getEmpGolongan();
+
+        //get tahun cli
+        $cli = Yii::app()->allspark->getCliActive();
+
+        //get task
+        $competencyCriteria = new CDbCriteria();
+        $competencyCriteria->with = array('competencyLibrary' => array('with' => array('category0')));
+        //$criteriaCompetency->with = array('competencyTasks');
+        $competencyCriteria->together = true;
+        $competencyCriteria->condition = 'golongan = :golongan AND competency_id = :cid';
+        $competencyCriteria->params = array(':golongan' => $golongan->id, ':cid' => $cli->id);
+        $competencyCriteria->order = 'category0.code ASC';
+        //$competency = CompetencyLibrary::model()->findAll($competencyCriteria);
+        $competency = CompetencyTask::model()->findAll();
     }
 
 }

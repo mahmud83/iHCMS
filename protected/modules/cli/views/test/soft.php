@@ -9,7 +9,7 @@
     ?>
 
     <h1 id="main-heading">
-        Pengukuran Individu Soft tahun 2013<span>pengukuran kompetensi berdasar tahun pengukuran</span>
+        Pengukuran Individu Soft <span>tahun <?php echo $cli->year;?> Golongan <?php echo $golongan->nama;?></span>
     </h1>
 </div>
 
@@ -24,20 +24,20 @@
                         $i = 1;
                         foreach ($competency as $row):
                             ?>
-                            <fieldset title="<?php echo $row->code . ' : ' . $row->name; ?>" step="<?php echo $row->id; ?>" type="evidence">
-                                <legend><i class="icon-book"></i> <?php echo $row->category0->code . ' : ' . $row->category0->name; ?></legend>
+                            <fieldset title="<?php echo $row->competencyLibrary->code . ' : ' . $row->competencyLibrary->name; ?>" step="<?php echo $row->competencyLibrary->id; ?>" type="evidence">
+                                <legend><i class="icon-book"></i> <?php echo $row->competencyLibrary->category0->code . ' : ' . $row->competencyLibrary->category0->name; ?></legend>
                                 <table class="table table-striped table-detail-view">
                                     <tr>
                                         <th>Kode</th>
-                                        <td><?php echo $row->code; ?></td>
+                                        <td><?php echo $row->competencyLibrary->code; ?></td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td><?php echo $row->name; ?></td>
+                                        <td><?php echo $row->competencyLibrary->name; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>Deskripsi</th>
-                                        <td><?php echo $row->category0->description; ?></td>
+                                        <th>Definisi</th>
+                                        <td><?php echo $row->competencyLibrary->category0->description; ?></td>
                                     </tr>
                                 </table>
                                 <div class="control-group">
@@ -45,11 +45,11 @@
                                     <div class="controls">
                                         <?php
                                         $data = CompetencyResult::model()->find(array(
-                                            'condition' => 'assessor_id = :assessor AND assessed_id = :assessed AND competency_library_id = :library AND competency_id = :compActive',
+                                            'condition' => 'assessor_id = :assessor AND assessed_id = :assessed AND competency_task_id = :task AND competency_id = :compActive',
                                             'params' => array(
                                                 ':assessor' => Yii::app()->user->getId(),
                                                 ':assessed' => Yii::app()->user->getId(),
-                                                ':library' => $row->id,
+                                                ':task' => $row->id,
                                                 ':compActive' => $cli->id,
                                             ),
                                         ));
@@ -59,60 +59,30 @@
                                 </div>
                             </fieldset>
 
-                            <fieldset title="<?php echo $row->code . ' : ' . $row->name; ?>" step="<?php echo $row->id; ?>" type="level">
-                                <legend><i class="icon-book"></i> <?php echo $row->category0->code . ' : ' . $row->category0->name; ?></legend>
+                            <fieldset title="<?php echo $row->competencyLibrary->code . ' : ' . $row->competencyLibrary->name; ?>" step="<?php echo $row->competencyLibrary->id; ?>" type="level">
+                                <legend><i class="icon-book"></i> <?php echo $row->competencyLibrary->category0->code . ' : ' . $row->competencyLibrary->category0->name; ?></legend>
                                 <table class="table table-striped table-detail-view">
                                     <tr>
                                         <th>Kode</th>
-                                        <td><?php echo $row->code; ?></td>
+                                        <td><?php echo $row->competencyLibrary->code; ?></td>
                                     </tr>
                                     <tr>
                                         <th>Nama</th>
-                                        <td><?php echo $row->name; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Deskripsi</th>
-                                        <td><?php echo $row->category0->description; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Definisi</th>
-                                        <td><?php echo $row->category0->definition; ?></td>
+                                        <td><?php echo $row->competencyLibrary->name; ?></td>
                                     </tr>
                                 </table>
-                                
-                                <table class="table table-striped table-detail-view">
-                                    <tr>
-                                        <th>Level 1</th>
-                                        <td><?php echo $row->level_1; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Level 2</th>
-                                        <td><?php echo $row->level_2; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>level 3</th>
-                                        <td><?php echo $row->level_3; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>level 4</th>
-                                        <td><?php echo $row->level_4; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>level 5</th>
-                                        <td><?php echo $row->level_5; ?></td>
-                                    </tr>
-                                </table>
-                                
+
                                 <div class="control-group">
                                     <label class="control-label">Evidence</label>
                                     <div class="controls">
                                         <?php
+                                        
                                         $data = CompetencyResult::model()->find(array(
-                                            'condition' => 'assessor_id = :assessor AND assessed_id = :assessed AND competency_library_id = :library AND competency_id = :compActive',
+                                            'condition' => 'assessor_id = :assessor AND assessed_id = :assessed AND competency_task_id = :task AND competency_id = :compActive',
                                             'params' => array(
                                                 ':assessor' => Yii::app()->user->getId(),
                                                 ':assessed' => Yii::app()->user->getId(),
-                                                ':library' => $row->id,
+                                                ':task' => $row->id,
                                                 ':compActive' => $cli->id,
                                             ),
                                         ));
@@ -120,15 +90,47 @@
                                         <textarea class="span12 level_<?php echo $row->id; ?>" disabled><?php echo (count($data) > 0) ? $data->evidence : ''; ?></textarea>
                                     </div>
                                 </div>
-                                
+
                                 <div class="control-group radio-group">
                                     <label class="control-label">Level</label>
                                     <div class="controls">
-                                        <?php for ($i=1;$i<=5;$i++):?>
-                                        <label class="radio">
-                                            <input <?php echo ($data->level != NULL)?'disabled':'';?> <?php echo ($data->level == $i)?'checked="checked"':'';?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="<?php echo $i;?>">Level <?php echo $i;?>
-                                        </label>
-                                        <?php endfor;?>
+                                        <table class="table table-striped table-detail-view">
+                                            <tr>
+                                                <td style="vertical-align:middle; text-align:center;">
+                                                    <input <?php echo ($data->level != NULL) ? 'disabled' : ''; ?> <?php echo ($data->level == 1) ? 'checked="checked"' : ''; ?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="1">
+                                                </td>
+                                                <td><?php echo $row->competencyLibrary->level_1; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align:middle; text-align:center;">
+                                                    <input <?php echo ($data->level != NULL) ? 'disabled' : ''; ?> <?php echo ($data->level == 2) ? 'checked="checked"' : ''; ?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="2">
+                                                </td>
+                                                <td><?php echo $row->competencyLibrary->level_2; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align:middle; text-align:center;">
+                                                    <input <?php echo ($data->level != NULL) ? 'disabled' : ''; ?> <?php echo ($data->level == 3) ? 'checked="checked"' : ''; ?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="3">
+                                                </td>
+                                                <td><?php echo $row->competencyLibrary->level_3; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align:middle; text-align:center;">
+                                                    <input <?php echo ($data->level != NULL) ? 'disabled' : ''; ?> <?php echo ($data->level == 4) ? 'checked="checked"' : ''; ?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="4">
+                                                </td>
+                                                <td><?php echo $row->competencyLibrary->level_4; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align:middle; text-align:center; ">
+                                                    <input <?php echo ($data->level != NULL) ? 'disabled' : ''; ?> <?php echo ($data->level == 5) ? 'checked="checked"' : ''; ?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="5">
+                                                </td>
+                                                <td><?php echo $row->competencyLibrary->level_5; ?></td>
+                                            </tr>
+                                        </table>
+                                        <?php /* for ($i = 1; $i <= 5; $i++):  ?>
+                                            <label class="radio">
+                                                <input <?php echo ($data->level != NULL) ? 'disabled' : ''; ?> <?php echo ($data->level == $i) ? 'checked="checked"' : ''; ?> type="radio" class="uniform" name="soft[level][<?php echo $row->id; ?>]" value="<?php echo $i; ?>">Level <?php echo $i; ?>
+                                            </label>
+                                        <?php endfor; */ ?>
                                     </div>
                                 </div>
                             </fieldset>
@@ -214,7 +216,7 @@
             var textarea = $('fieldset.active').find('textarea');
             var radio = $('fieldset.active').find('input[type="radio"]');
             var typeForm = $('fieldset.active').attr('type');
-            
+
             //cek validitas
             if ((typeForm == 'evidence') && (!$.trim(textarea.val()))) {
                 //if (!$.trim(textarea.val())) {
@@ -224,11 +226,11 @@
                 //return false;
                 //}
             }
-            else if((typeForm == 'level') && ($('fieldset.active').find('input[type="radio"]:checked').length == 0)){
+            else if ((typeForm == 'level') && ($('fieldset.active').find('input[type="radio"]:checked').length == 0)) {
                 //if(!$.trim(radio.val())){
-                    alert('data level masih kosong');
-                    $('fieldset.active').find('.radio-group').addClass('error');
-                    $('fieldset.active').find('label[class="radio"]:last').after('<p class="help-block">* Maaf data level harus di isi</p>');
+                alert('data level masih kosong');
+                $('fieldset.active').find('.radio-group').addClass('error');
+                $('fieldset.active').find('label[class="radio"]:last').after('<p class="help-block">* Maaf data level harus di isi</p>');
                 //}
             }
             else {
@@ -248,7 +250,7 @@
                         url: "<?php echo Yii::app()->createUrl('cli/test/ajaxSoftSatu'); ?>",
                         type: "post",
                         cache: false,
-                        data: textarea.serialize()+radio.serialize(),
+                        data: textarea.serialize() + radio.serialize(),
                         beforeSend: function(xhr) {
                             $("#backdrop").show();
                         },
@@ -256,7 +258,7 @@
                             //$('#last-step').after(hasil);
                             if (hasil == 'success') {
                                 formStepSoft('next');
-                                $('fieldset.active').find('.level_'+attr+'').val(evidence);
+                                $('fieldset.active').find('.level_' + attr + '').val(evidence);
                             }
                             else {
                                 alert(hasil);

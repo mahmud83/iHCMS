@@ -1,11 +1,12 @@
-
 <div id="container">
+    
     <div id="slideshow">
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/shield/img/slideshow/1.jpg" alt=""/>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/shield/img/slideshow/2.jpg" alt=""/>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/shield/img/slideshow/3.jpg" alt=""/>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/shield/img/slideshow/4.jpg" alt=""/>
     </div>
+    
     <div id="loginbox">
         <h3>Login Administrator</h3>
         <?php
@@ -20,6 +21,10 @@
             ),
         ));
         ?>
+        <div class="alert alert-info">
+            <?php echo $form->error($model,'username'); ?>
+            <?php echo $form->error($model,'password'); ?>
+        </div>
         <!-- <form class="form-vertical" action="beranda-dashboard.html">  !-->
         <div class="control-group">
             <?php echo $form->textField($model,'username', array('class'=>'big', 'placeholder'=>'Username')); ?>

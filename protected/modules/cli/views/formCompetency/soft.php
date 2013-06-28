@@ -23,7 +23,9 @@
                 </div>
                 <?php $this->widget('bootstrap.widgets.TbGridView',array(
                         'id'=>'dashboard-grid',
-                        'dataProvider'=>$golongan,
+                        //'dataProvider'=>$golongan,
+                        'dataProvider'=>$golongan->search(),
+                        'filter'=>$golongan,
                         'type'=>'striped',
                         'template'=>'{items}{pager}',
                         'columns'=>array(

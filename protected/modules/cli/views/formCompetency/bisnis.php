@@ -23,7 +23,8 @@
                 </div>
                 <?php $this->widget('bootstrap.widgets.TbGridView',array(
                         'id'=>'dashboard-grid',
-                        'dataProvider'=>$strata,
+                        'dataProvider'=>$strata->search(),
+                        'filter'=>$strata,
                         'type'=>'striped',
                         'template'=>'{items}{pager}',
                         'columns'=>array(

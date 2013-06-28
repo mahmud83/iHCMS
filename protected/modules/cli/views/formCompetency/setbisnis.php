@@ -100,9 +100,9 @@
                         </div>
 
                         <div class="control-group" id="golongan">
-                            <label class="control-label" for="setbisnis[golonganlain]">Strata</label>
+                            <label class="control-label" for="setbisnis[stratalain]">Strata</label>
                             <div class="controls">
-                                <select name="setbisnis[golonganlain]">
+                                <select name="setbisnis[stratalain]">
                                     <option>Silahkan pilih salah satu</option>
                                     <?php
                                     $listStrata = WStrata::model()->findAll();
@@ -148,7 +148,7 @@
 
                         <div class="form-actions">
                             <?php echo CHtml::ajaxButton ("Update data",
-                                    CController::createUrl('formCompetency/ajaxSoft'), 
+                                    CController::createUrl('formCompetency/ajaxBisnis'), 
                                     array(
                                         'type'=>'POST',
                                         'update' => '#detail',
@@ -160,6 +160,6 @@
                 </div>
             </div>
         </div>
-        <?php $this->renderPartial('_ajaxsoft', array('data' => $data, 'listCompetency' => $listCompetency)); ?>
+        <?php $this->renderPartial('_ajaxbisnis', array('data' => $data, 'listCompetency' => $listCompetency)); ?>
     </div>
 </div>

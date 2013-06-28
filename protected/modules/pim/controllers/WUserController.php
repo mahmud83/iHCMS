@@ -38,6 +38,7 @@ class WUserController extends Controller {
             $result[] = array(
                 'value' => '' . $m->nama . ' (' . $m->nik . ')',
                 'id' => $m->id,
+                'id_user'=>$m->id_user,
             );
 
         echo CJSON::encode($result);

@@ -18,7 +18,7 @@
 
 	<?php echo $form->textAreaRow($model,'definition',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
 
-	<?php echo $form->textFieldRow($model,'competency_type_id',array('class'=>'span5')); ?>
+	<?php echo $form->dropDownListRow($model,'competency_type_id',  CHtml::listData(CompetencyType::model()->findAll(), 'id', 'name'), array('class'=>'span5')); ?>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(

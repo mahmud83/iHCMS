@@ -32,6 +32,10 @@
 
         <!-- DualListBox -->
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/bootstrap-duallistbox/bootstrap-duallistbox.css" />
+        
+        <!-- Select2 -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/select2/select2.css" />
+        
         <style>
             .my-loader {
                 background: white url('<?php echo Yii::app()->request->baseUrl; ?>/shield/img/loading.gif') right center no-repeat;
@@ -90,6 +94,8 @@
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/sparkline/jquery.sparkline.min.js"></script>
         <!-- DualListBox -->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/bootstrap-duallistbox/jquery.bootstrap-duallistbox.js"></script>
+        <!-- Select2 -->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/shield/plugins/select2/select2.js"></script>
         <script type="text/javascript">
             $(function() {
                 $('.sparkline').sparkline('html', {enableTagOptions: true});

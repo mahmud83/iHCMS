@@ -69,7 +69,6 @@ return array(
             'assignmentTable' => 'AuthAssignment',
             'rightsTable' => 'Rights',
         ),
-        
         'bootstrap' => array(
             'class' => 'ext.bootstrap.components.Bootstrap',
             'responsiveCss' => true,
@@ -97,6 +96,8 @@ return array(
             'username' => 'tarjono',
             'password' => 'tarjono',
             'charset' => 'utf8',
+            'enableProfiling' => true,
+            'enableParamLogging' => true,
         //'enableProfiling'=>true,
         //'enableParamLogging' => true,
         ),
@@ -108,8 +109,8 @@ return array(
             'username' => 'tarjono',
             'password' => 'tarjono',
             'charset' => 'utf8',
-            //'enableProfiling'=>true,
-            //'enableParamLogging' => true,
+            'enableProfiling' => true,
+            'enableParamLogging' => true,
             'class' => 'CDbConnection'
         ),
         'errorHandler' => array(
@@ -119,6 +120,11 @@ return array(
         'log' => array(
             'class' => 'CLogRouter',
             'routes' => array(
+                array(
+                    'class' => 'CProfileLogRoute',
+                    'levels' => 'profile',
+                    'enabled' => true,
+                ),
             /*
               array(
               'class'=>'CFileLogRoute',

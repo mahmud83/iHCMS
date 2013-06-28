@@ -19,6 +19,8 @@ class SummaryController extends Controller {
     }
     
     public function actionDashboard() {
-        echo 'hae';
+        //echo 'hae';
+        echo "<pre>";
+        print_r(Yii::app()->allspark->getEmpJabatan());
     }
 }

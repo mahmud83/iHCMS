@@ -4,6 +4,7 @@
  * This is the model class for table "competency_task".
  *
  * The followings are the available columns in table 'competency_task':
+ * @property integer $id
  * @property string $tahun
  * @property integer $occupation
  * @property integer $golongan
@@ -14,8 +15,9 @@
  * @property integer $competency_id
  *
  * The followings are the available model relations:
- * @property CompetencyLibrary $competencyLibrary
+ * @property CompetencyResult[] $competencyResults
  * @property Competency $competency
+ * @property CompetencyLibrary $competencyLibrary
  */
 class CompetencyTask extends CActiveRecord
 {
@@ -58,7 +60,7 @@ class CompetencyTask extends CActiveRecord
 			array('tahun', 'length', 'max'=>4),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('tahun, occupation, golongan, strata, competency_library_id, rcl, itj, competency_id', 'safe', 'on'=>'search'),
+			array('id, tahun, occupation, golongan, strata, competency_library_id, rcl, itj, competency_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,8 +72,9 @@ class CompetencyTask extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'competencyLibrary' => array(self::BELONGS_TO, 'CompetencyLibrary', 'competency_library_id'),
+			'competencyResults' => array(self::HAS_MANY, 'CompetencyResult', 'competency_task_id'),
 			'competency' => array(self::BELONGS_TO, 'Competency', 'competency_id'),
+			'competencyLibrary' => array(self::BELONGS_TO, 'CompetencyLibrary', 'competency_library_id'),
 		);
 	}
 
@@ -81,6 +84,7 @@ class CompetencyTask extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'tahun' => 'Tahun',
 			'occupation' => 'Occupation',
 			'golongan' => 'Golongan',
@@ -103,6 +107,7 @@ class CompetencyTask extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('tahun',$this->tahun,true);
 		$criteria->compare('occupation',$this->occupation);
 		$criteria->compare('golongan',$this->golongan);

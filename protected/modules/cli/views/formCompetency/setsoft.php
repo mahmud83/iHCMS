@@ -9,7 +9,7 @@
     ?>
 
     <h1 id="main-heading">
-        Generator Formulir <span>halaman untuk menggenerasi formulir perj jabatan per tipe kompetensi per tahun</span>
+        Generator Formulir <span>halaman untuk menggenerasi formulir per golongan per tipe kompetensi per tahun</span>
     </h1>
 </div>
 <div class="row-fluid">
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label" for="input01">Jabatan</label>
+                            <label class="control-label" for="input01">Golongan</label>
                             <div class="controls">
                                 <input type="text" name="golongan" value="<?php echo $golongan->nama; ?>" readonly="readonly" />
                                 <input type="hidden" name="setsoft[golongan]" value="<?php echo $golongan->id; ?>" />

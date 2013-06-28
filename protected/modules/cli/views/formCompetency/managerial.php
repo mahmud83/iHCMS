@@ -24,12 +24,19 @@
                 <?php
                 $this->widget('bootstrap.widgets.TbGridView', array(
                     'id' => 'dashboard-grid',
-                    'dataProvider' => $jabatan,
+                    'dataProvider'=>$jabatan->search(),
+                    'filter'=>$jabatan,
+                    //'dataProvider' => $jabatan,
                     'type' => 'striped',
                     'template' => '{items}{pager}',
                     'columns' => array(
                         'nama',
                         //'status',
+                        array(
+                            'header'=>'Unit',
+                            'name'=>'unitkerja',
+                            'value'=>'$data->namaUnit()',
+                        ),
                         array(
                             'header'=>'Status',
                             'name'=>'status',

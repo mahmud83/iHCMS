@@ -131,93 +131,225 @@ class AllSpark extends CApplicationComponent {
 
         return $columns;
     }
-    
-    
+
     public function getMenu() {
         $module = WModule::model()->findAll(array(
-                    'condition'=>'parent_id IS NULL',
-                ));
+            'condition' => 'parent_id IS NULL',
+        ));
         $controllerID = Yii::app()->controller->id;
-        
         if (isset(Yii::app()->controller->module->id)):
             $moduleID = Yii::app()->controller->module->id;
         else:
             $moduleID = 'core';
         endif;
-        
-        if (count($module) > 0):
-            echo '<ul class="nav-mainmenu" id="nav-mainmenu">';
-            foreach ($module as $row):
-                if($moduleID == $row->name):
-                    $moduleActive = 'class="active"';
-                else:
-                    $moduleActive = '';
-                endif;
-                
-                if (isset($row->image)):
-                    $icon = $row->image;
-                else:
-                    $icon = 'icon-plus-sign-alt';
-                endif;
-                
-                echo '<li><a href="#" '.$moduleActive.'><i class="'.$icon.'"></i><span class="text">'.$row->title.'</span></a>';
-                $links = WLink::model()->findAll(array(
-                    //'with'=>array('wLinks'),
-                    'condition'=>'parent_id IS NULL AND w_module_id = :module',
-                    'params'=> array(':module'=>$row->id),
-                    'order'=>'ordering ASC ',
-                ));
-                if (count($links) > 0):
-                    echo '<ul>';
-                    foreach ($links as $rowLink):
-                        if ($rowLink->parent_id == NULL):
-                            if ($controllerID == $rowLink->name):
-                                $controllerActive = 'class="active"';
-                                $display = 'style="display: block;"';
-                            else:
-                                $controllerActive = '';
-                                $display = 'style="display: none;"';
-                            endif;
+        //cek employee apa bukan
+        if ($this->ifEmployee() == true):
+            //echo 'hae';
+            if (count($module) > 0):
+                echo '<ul class="nav-mainmenu" id="nav-mainmenu">';
+                foreach ($module as $row):
+                    if ($moduleID == $row->name):
+                        $moduleActive = 'class="active"';
+                    else:
+                        $moduleActive = '';
+                    endif;
 
-                            if ((isset($rowLink->image)) && ($rowLink->image != '') && (empty($rowLink->image))):
-                                $icon = $rowLink->image;
-                            else:
-                                $icon = 'icon-plus-sign-alt';
-                            endif;
+                    if (isset($row->image)):
+                        $icon = $row->image;
+                    else:
+                        $icon = 'icon-plus-sign-alt';
+                    endif;
 
-                            if (count($rowLink->wLinks) > 0):
-                                $childLinks = WLink::model()->findAll(array(
-                                    'condition'=>'parent_id = :parent AND w_module_id = :module',
-                                    'params'=> array(':module'=>$row->id, ':parent'=>$rowLink->id),
-                                    'order'=>'ordering ASC ',
-                                ));
-                                echo '<li>';
-                                echo '<a href="#"><i class="'.$icon.'"></i><span class="text">'.$rowLink->title.'</span><i class="accordion-icon icon-minus"></i></a>';
-                                echo '<ul '.$display.'>';
+                    echo '<li><a href="#" ' . $moduleActive . '><i class="' . $icon . '"></i><span class="text">' . $row->title . '</span></a>';
+                    $links = WLink::model()->findAll(array(
+                        //'with'=>array('wLinks'),
+                        'condition' => 'parent_id IS NULL AND w_module_id = :module AND auth = :auth',
+                        'params' => array(':module' => $row->id, ':auth' => 'employee'),
+                        'order' => 'ordering ASC ',
+                    ));
+                    if (count($links) > 0):
+                        echo '<ul>';
+                        foreach ($links as $rowLink):
+                            if ($rowLink->parent_id == NULL):
+                                if ($controllerID == $rowLink->name):
+                                    $controllerActive = 'class="active"';
+                                    $display = 'style="display: block;"';
+                                else:
+                                    $controllerActive = '';
+                                    $display = 'style="display: none;"';
+                                endif;
+
+                                if ((isset($rowLink->image)) && ($rowLink->image != '') && (empty($rowLink->image))):
+                                    $icon = $rowLink->image;
+                                else:
+                                    $icon = 'icon-plus-sign-alt';
+                                endif;
+
+                                if (count($rowLink->wLinks) > 0):
+                                    $childLinks = WLink::model()->findAll(array(
+                                        'condition' => 'parent_id = :parent AND w_module_id = :module AND auth = :auth',
+                                        'params' => array(':module' => $row->id, ':parent' => $rowLink->id, ':auth' => 'employee'),
+                                        'order' => 'ordering ASC ',
+                                    ));
+                                    echo '<li>';
+                                    echo '<a href="#"><i class="' . $icon . '"></i><span class="text">' . $rowLink->title . '</span><i class="accordion-icon icon-minus"></i></a>';
+                                    echo '<ul ' . $display . '>';
                                     foreach ($childLinks as $rowChild):
-                                        echo '<li><a href="'.Yii::app()->createUrl($rowChild->url).'"><i class="icon-caret-right"></i>'.$rowChild->title.'</a></li>';
+                                        echo '<li><a href="' . Yii::app()->createUrl($rowChild->url) . '"><i class="icon-caret-right"></i>' . $rowChild->title . '</a></li>';
                                     endforeach;
-                                echo '</ul>';
-                                echo '</li>';
-                            else:
-                                echo '<li><a href="'.Yii::app()->createUrl($rowLink->url).'" '.$controllerActive.'><i class="'.$icon.'"></i><span class="text">'.$rowLink->title.'</span></a></li>';
+                                    echo '</ul>';
+                                    echo '</li>';
+                                else:
+                                    echo '<li><a href="' . Yii::app()->createUrl($rowLink->url) . '" ' . $controllerActive . '><i class="' . $icon . '"></i><span class="text">' . $rowLink->title . '</span></a></li>';
+                                endif;
                             endif;
-                        endif;
-                    endforeach;
-                    echo '</ul>';
-                endif;
-            endforeach;
-            echo '</ul>';
+                        endforeach;
+                        echo '</ul>';
+                    endif;
+                endforeach;
+                echo '</ul>';
+            endif;
+        else:
+            if (count($module) > 0):
+                echo '<ul class="nav-mainmenu" id="nav-mainmenu">';
+                foreach ($module as $row):
+                    if ($moduleID == $row->name):
+                        $moduleActive = 'class="active"';
+                    else:
+                        $moduleActive = '';
+                    endif;
+
+                    if (isset($row->image)):
+                        $icon = $row->image;
+                    else:
+                        $icon = 'icon-plus-sign-alt';
+                    endif;
+
+                    echo '<li><a href="#" ' . $moduleActive . '><i class="' . $icon . '"></i><span class="text">' . $row->title . '</span></a>';
+                    $links = WLink::model()->findAll(array(
+                        //'with'=>array('wLinks'),
+                        'condition' => 'parent_id IS NULL AND w_module_id = :module',
+                        'params' => array(':module' => $row->id),
+                        'order' => 'ordering ASC ',
+                    ));
+                    if (count($links) > 0):
+                        echo '<ul>';
+                        foreach ($links as $rowLink):
+                            if ($rowLink->parent_id == NULL):
+                                if ($controllerID == $rowLink->name):
+                                    $controllerActive = 'class="active"';
+                                    $display = 'style="display: block;"';
+                                else:
+                                    $controllerActive = '';
+                                    $display = 'style="display: none;"';
+                                endif;
+
+                                if ((isset($rowLink->image)) && ($rowLink->image != '') && (empty($rowLink->image))):
+                                    $icon = $rowLink->image;
+                                else:
+                                    $icon = 'icon-plus-sign-alt';
+                                endif;
+
+                                if (count($rowLink->wLinks) > 0):
+                                    $childLinks = WLink::model()->findAll(array(
+                                        'condition' => 'parent_id = :parent AND w_module_id = :module',
+                                        'params' => array(':module' => $row->id, ':parent' => $rowLink->id),
+                                        'order' => 'ordering ASC ',
+                                    ));
+                                    echo '<li>';
+                                    echo '<a href="#"><i class="' . $icon . '"></i><span class="text">' . $rowLink->title . '</span><i class="accordion-icon icon-minus"></i></a>';
+                                    echo '<ul ' . $display . '>';
+                                    foreach ($childLinks as $rowChild):
+                                        echo '<li><a href="' . Yii::app()->createUrl($rowChild->url) . '"><i class="icon-caret-right"></i>' . $rowChild->title . '</a></li>';
+                                    endforeach;
+                                    echo '</ul>';
+                                    echo '</li>';
+                                else:
+                                    echo '<li><a href="' . Yii::app()->createUrl($rowLink->url) . '" ' . $controllerActive . '><i class="' . $icon . '"></i><span class="text">' . $rowLink->title . '</span></a></li>';
+                                endif;
+                            endif;
+                        endforeach;
+                        echo '</ul>';
+                    endif;
+                endforeach;
+                echo '</ul>';
+            endif;
         endif;
     }
-    
+
     public function getCliActive() {
         $cli = Competency::model()->find(array(
-            'condition'=>'status = :status',
-            'params'=>array(':status'=>'on going'),
-            'order'=>'id DESC'
+            'condition' => 'status = :status',
+            'params' => array(':status' => 'on going'),
+            'order' => 'id DESC'
         ));
-        
+
         return $cli;
     }
+
+    public function ifEmployee() {
+        $roles = Rights::getAssignedRoles(Yii::app()->user->Id);
+        foreach ($roles as $role):
+            //echo $role->name;
+            switch ($role->name) {
+                case 'employee':
+                    return true;
+                    break;
+                default :
+                    return false;
+            }
+        endforeach;
+    }
+
+    public function getEmpName() {
+        $id = Yii::app()->user->Id;
+        $userDetail = WUserDetail::model()->find(array(
+            'condition' => 'id_user = :id_user',
+            'params' => array(':id_user' => $id),
+        ));
+        return $userDetail;
+    }
+
+    public function getEmpJabatan($id = NULL) {
+        if ($id == NUll)
+            $id = Yii::app()->user->Id;
+        $mutasiCriteria = new CDbCriteria();
+        $mutasiCriteria->order = 'tgl_mulai DESC';
+        $mutasiCriteria->condition = 'id_user = :user';
+        $mutasiCriteria->params = array(':user' => $id);
+
+        $jabatan = XMutasi::model()->find($mutasiCriteria);
+
+        if (count($jabatan) > 0):
+            $id_jab = $jabatan->id_jabatan;
+        else:
+            $jabatan = WUserDetail::model()->find('id_user = :id_user', array(':id_user' => $id));
+            $id_jab = $jabatan->id_jabatan;
+        endif;
+
+        return WJabatan::model()->find('id = :id', array(':id' => $id_jab));
+    }
+
+    public function getEmpGolongan($id = NULL) {
+        if ($id == NUll)
+            $id = Yii::app()->user->Id;
+        $golonganCriteria = new CDbCriteria();
+        $golonganCriteria->join = 'JOIN w_user_detail ON w_user_detail.golongan2 = t.nama';
+        $golonganCriteria->condition = 'w_user_detail.id_user = :id_user';
+        $golonganCriteria->params = array(':id_user' => $id);
+
+        return WGolongan::model()->find($golonganCriteria);
+    }
+
+    public function getEmpStrata($id = NULL) {
+        if ($id == NUll)
+            $id = Yii::app()->user->Id;
+        $strataCriteria = new CDbCriteria();
+        $strataCriteria->join = 'JOIN w_user_detail ON w_user_detail.golongan = t.nama';
+        $strataCriteria->condition = 'w_user_detail.id_user = :id_user';
+        $strataCriteria->params = array(':id_user' => $id);
+
+        return WStrata::model()->find($strataCriteria);
+    }
+
 }

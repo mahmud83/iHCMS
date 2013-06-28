@@ -9,7 +9,7 @@
     ?>
 
     <h1 id="main-heading">
-        Input Penilai Soft Competency<span>halaman untuk menginput data penilai per karyawan</span>
+        Input Menilai Soft Competency<span>halaman untuk menginput data penilai per karyawan</span>
     </h1>
 </div>
 <form class="form-horizontal">
@@ -36,7 +36,7 @@
                                         $("#loader").hide(); 
                                         }',
                                     'select' => 'js:function( event, ui ) {  
-                                        $("#userdetail_id").val(ui.item.id);  
+                                        $("#userdetail_id").val(ui.item.id_user);  
                                         $("#user").val(ui.item.value);  
                                         return false;
                                    }',
@@ -92,7 +92,7 @@
                     <div class="span12 widget">
                         <div class="widget-header">
                             <span class="title">
-                                <i class="icon-table"></i> Daftar Penilai Soft
+                                <i class="icon-table"></i> Daftar Menilai Soft
                             </span>
                         </div>
                         <div class="control-group">
@@ -141,7 +141,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody id="softData">
                             </tbody>
                         </table>
                     </div>
@@ -151,7 +151,7 @@
                     <div class="span12 widget">
                         <div class="widget-header">
                             <span class="title">
-                                <i class="icon-table"></i> Daftar Penilai Soft
+                                <i class="icon-table"></i> Daftar Menilai Hard
                             </span>
                         </div>
                         <div class="control-group">
@@ -200,7 +200,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody id="hardData">
                             </tbody>
                         </table>
                     </div>
@@ -240,6 +240,10 @@
                                                     //$('#ajaxResponse').html('');
                                                     //$('#ajaxResponse').append(data);
                                                     $('#response').show('slide', {direction: 'up'}, 1000);
+                                                    //var rows = ('#softData tr').length + 1;
+                                                    //$.each(data.userSoft, function(m) { 
+                                                        //$('#softData').append('<tr><td>' + rows + '</td><td>' + m.nama + '</td><td>' + m.nik + '</td><td>' + m.jabatan + '</td><td><input type="hidden" name="penilaisoft[]" value="' + m.nik + '"/> <a onClick="return false;" class="delete" for="' + m.nik + '"><i class="icon-remove"></i></a></td></tr>'); 
+                                                    //});
                                                     $('#detail_nik').html(data.detail_nik);
                                                     $('#detail_nama').html(data.detail_nama);
                                                     $('#detail_jab').html(data.detail_jab);

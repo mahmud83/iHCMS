@@ -4,7 +4,7 @@
         <div class="row-fluid">
             <div class="span12">
                 <div class="title pull-left">
-                    <h1>DSS PT PN V <small>v2.1</small><h1>
+                    <h1>DSS PT PN V <small>v2.1</small></h1>
                 </div>
                 <div class="toolbar pull-left">
                     <a href="#"><i class="icon-envelope"></i></a>

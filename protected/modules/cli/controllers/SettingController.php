@@ -95,7 +95,7 @@ class SettingController extends Controller {
     public function actionAjaxSoftPeers() {
         if (isset($_POST['userDetail'])) {
             $cli = Yii::app()->allspark->getCliActive();
-            $userDetail = WUserDetail::model()->find('id = :id', array(':id' => $_POST['userDetail']));
+            $userDetail = WUserDetail::model()->find('id_user = :id', array(':id' => $_POST['userDetail']));
 
             $var['detail_nik'] = $userDetail->nik;
             $var['detail_nama'] = $userDetail->nama;
@@ -122,7 +122,104 @@ class SettingController extends Controller {
             $jabatanDetail = WJabatan::model()->find('id = :id', array(':id' => $userDetail->id_jabatan));
             $var['detail_jab'] = $jabatanDetail->nama;
 
+            //daftar menilai
+            $soft = CompetencyPeers::model()->findAll(array(
+                'condition' => 'assessor = :assessor AND competency_type = :type AND competency_id = :cid',
+                'params'=> array(
+                    ':assessor'=>$userDetail->id_user,
+                    ':type'=>1,
+                    ':cid'=>$cli->id,
+                ),
+            ));
+            $bisnis = CompetencyPeers::model()->findAll(array(
+                'condition' => 'assessor = :assessor AND competency_type = :type AND competency_id = :cid',
+                'params'=> array(
+                    ':assessor'=>$userDetail->id_user,
+                    ':type'=>2,
+                    ':cid'=>$cli->id,
+                ),
+            ));
+            $manajerial = CompetencyPeers::model()->findAll(array(
+                'condition' => 'assessor = :assessor AND competency_type = :type AND competency_id = :cid',
+                'params'=> array(
+                    ':assessor'=>$userDetail->id_user,
+                    ':type'=>3,
+                    ':cid'=>$cli->id,
+                ),
+            ));
+            
+            $listSoft = array();
+            $userSoft = array();
+            if (count($soft) > 0){
+                foreach ($soft as $row) {
+                    $listSoft[] = $row->assessed;
+                }
+                if (count($listSoft) > 0){
+                    $criteria = new CDbCriteria();
+                    $criteria->addInCondition('id_user', $listSoft);
+                    $userList = WUserDetail::model()->find($criteria);
+                    if (count($userList) > 0):
+                        foreach ($userList as $rowlist):
+                            $userSoft[] = array(
+                                'nama'=>$rowlist->nama,
+                                'nik'=>$rowlist->nik,
+                                'jabatan'=>$rowlist->id_jabatan,
+                            );  
+                        endforeach;
+                    endif;
+                }
+            }
+            $listBisnis = array();
+            $userBisnis = array();
+            if (count($bisnis) > 0){
+                foreach ($soft as $row) {
+                    $listBisnis[] = $row->assessed;
+                }
+                if (count($listSoft) > 0){
+                    $criteria = new CDbCriteria();
+                    $criteria->addInCondition('id_user', $listBisnis);
+                    $userList = WUserDetail::model()->find($criteria);
+                    if (count($userList) > 0):
+                        foreach ($userList as $rowlist):
+                            $userBisnis[] = array(
+                                'nama'=>$rowlist->nama,
+                                'nik'=>$rowlist->nik,
+                                'jabatan'=>$rowlist->id_jabatan,
+                            );  
+                        endforeach;
+                    endif;
+                    
+                }
+            }
+            $listManajerial = array();
+            $userManajerial = array();
+            if (count($manajerial) > 0){
+                foreach ($manajerial as $row) {
+                    $listManajerial[] = $row->assessed;
+                }
+                if (count($listManajerial) > 0){
+                    $criteria = new CDbCriteria();
+                    $criteria->addInCondition('id_user', $listManajerial);
+                    $userList = WUserDetail::model()->find($criteria);
+                    if (count($userList) > 0):
+                        foreach ($userList as $rowlist):
+                            $userManajerial[] = array(
+                                'nama'=>$rowlist->nama,
+                                'nik'=>$rowlist->nik,
+                                'jabatan'=>$rowlist->id_jabatan,
+                            );  
+                        endforeach;
+                    endif;
+                }
+            }
+            
+            $var['soft'] = $userSoft;
+            $var['bisis'] = $bisnis;
+            $var['manajerial'] = $manajerial;
             $var['message'] = 'success';
+            
+            //$var['penilai_soft'] = $penilaisoft;
+            
             echo CJSON::encode($var);
         } else {
             echo CJSON::encode(array('message' => 'error'));
@@ -152,8 +249,10 @@ class SettingController extends Controller {
                 foreach ($_POST['penilaisoft'] as $rowSoft => $valueSoft):
                     //echo value = $value;
                     $competencySoft = new CompetencyPeers;
-                    $competencySoft->assessed = $_POST['userDetail'];
-                    $competencySoft->assessor = $valueSoft;
+                    //$competencySoft->assessed = $_POST['userDetail'];
+                    //$competencySoft->assessor = $valueSoft;
+                    $competencySoft->assessor = $_POST['userDetail'];
+                    $competencySoft->assessed = $valueSoft;
                     $competencySoft->competency_id = $cli->id;
                     $competencySoft->competency_type = '1';
                     //$competencyPeers->status = $value;
@@ -164,8 +263,10 @@ class SettingController extends Controller {
                 foreach ($_POST['penilaihard'] as $rowBisnis => $valueBisnis):
                     //echo value = $value;
                     $competencyBisnis = new CompetencyPeers;
-                    $competencyBisnis->assessed = $_POST['userDetail'];
-                    $competencyBisnis->assessor = $valueBisnis;
+                    //$competencyBisnis->assessed = $_POST['userDetail'];
+                    //$competencyBisnis->assessor = $valueBisnis;
+                    $competencyBisnis->assessor = $_POST['userDetail'];
+                    $competencyBisnis->assessed = $valueBisnis;
                     $competencyBisnis->competency_id = $cli->id;
                     $competencyBisnis->competency_type = '2';
                     //$competencyPeers->status = $value;
@@ -176,8 +277,10 @@ class SettingController extends Controller {
                 foreach ($_POST['penilaihard'] as $rowManajerial => $valueManajerial):
                     //echo value = $value;
                     $competencyManajerial = new CompetencyPeers;
-                    $competencyManajerial->assessed = $_POST['userDetail'];
-                    $competencyManajerial->assessor = $valueManajerial;
+                    //$competencyManajerial->assessed = $_POST['userDetail'];
+                    //$competencyManajerial->assessor = $valueManajerial;
+                    $competencyManajerial->assessor = $_POST['userDetail'];
+                    $competencyManajerial->assessed = $valueManajerial;
                     $competencyManajerial->competency_id = $cli->id;
                     $competencyManajerial->competency_type = '3';
                     //$competencyPeers->status = $value;
